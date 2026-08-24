@@ -1,9 +1,9 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Logo } from "@/components/layout/logo"
-import { MainNav } from "@/components/layout/main-nav"
-import { MobileNav } from "@/components/layout/mobile-nav"
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/layout/logo";
+import { MainNav } from "@/components/layout/main-nav";
+import { MobileNav } from "@/components/layout/mobile-nav";
 
 function Header() {
   return (
@@ -17,7 +17,7 @@ function Header() {
           render={<Link href="/contact" />}
           nativeButton={false}
           size="lg"
-          className="ml-auto hidden h-11 rounded-md bg-brand px-7 text-brand-foreground hover:bg-brand/90 lg:inline-flex"
+          className="ml-auto hidden h-11 rounded-[4px] bg-(image:--brand-gradient) px-[26px] py-[12px] text-brand-foreground transition-opacity hover:opacity-90 lg:inline-flex"
         >
           Contact Us
         </Button>
@@ -25,7 +25,7 @@ function Header() {
         <MobileNav className="ml-auto lg:hidden" />
       </div>
     </header>
-  )
+  );
 }
 
-export { Header }
+export { Header };

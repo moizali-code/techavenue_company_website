@@ -78,7 +78,8 @@
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
   /* Tech Avenue brand: navy wordmark, blue active link, orange swoosh. */
-  --brand: oklch(0.26 0.12 268);
+  --brand: #1e3c8c;
+  --brand-gradient: linear-gradient(233.28deg, #000000 5.1%, #1e3c8c 106.09%);
   --brand-foreground: oklch(0.99 0 0);
   --brand-link: oklch(0.48 0.2 264);
   --brand-accent: oklch(0.68 0.17 50);
@@ -111,7 +112,7 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --brand: oklch(0.42 0.16 266);
+  --brand: #2c50ad;
   --brand-foreground: oklch(0.99 0 0);
   --brand-link: oklch(0.72 0.14 262);
   --brand-accent: oklch(0.74 0.16 52);

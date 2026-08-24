@@ -76,7 +76,7 @@ function MobileNav({ className }: { className?: string }) {
             render={<Link href="/contact" onClick={close} />}
             nativeButton={false}
             size="lg"
-            className="mt-4 w-full bg-brand text-brand-foreground hover:bg-brand/90"
+            className="mt-4 w-full bg-(image:--brand-gradient) text-brand-foreground transition-opacity hover:opacity-90"
           >
             Contact Us
           </Button>
