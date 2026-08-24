@@ -74,6 +74,8 @@ next_app/
   - `layout/` — layout components (header, footer, etc.)
   - `features/` — feature-specific sub-components, e.g. `features/about/about-header.tsx` instead of one large page component.
   - Note: `components/features/` is the one place that **does** use a per-feature subfolder, since a feature has many components. The `types`/`validations`/`services`/`hooks` split above uses a single flat file per feature instead.
+- **No comments**: Do not write comments in code — no inline `//`, no block comments, no JSDoc, no `TODO`/`FIXME` notes, and no CSS comments. Code must be self-explanatory through naming and structure instead. If something genuinely needs explaining (an unwired form, placeholder data, a non-obvious workaround), raise it in the chat response rather than leaving a note in the file.
+- **Responsive by default**: Every component must work at all screen sizes — mobile, tablet, and desktop — not just the width shown in a design mockup. Design mobile-first and layer breakpoints upward (`sm:`, `md:`, `lg:`, `xl:`). Multi-column layouts must stack, navigation must have a mobile equivalent, and text, images, and tables must never cause horizontal overflow.
 - **shadcn usage**: We use shadcn as much as possible. Before creating a new component, always check `components/ui/` first for an existing related component. Prefer extending it via props/variants over creating a new component from scratch. Only build a custom component when no suitable shadcn component exists.
 
 use lucide-react for icons and do not use any other library.

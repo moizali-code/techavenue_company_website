@@ -11,8 +11,11 @@ import {
   CircleHelp,
   ClipboardList,
   Cloud,
+  Cpu,
   Factory,
+  Fuel,
   GraduationCap,
+  HardHat,
   Headset,
   HeartPulse,
   Info,
@@ -24,9 +27,9 @@ import {
   Rocket,
   ShieldCheck,
   Sprout,
-  Truck,
   Users,
   Workflow,
+  Zap,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -211,20 +214,32 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
-    // TODO: placeholder content — replace with the real Industries panel.
     label: "Industries",
     columns: 2,
     items: [
       {
-        title: "Government",
-        description: "Public sector platforms built for scale and compliance.",
-        href: "/industries/government",
+        title: "Government & Public Sector",
+        description:
+          "Citizen services built for scale, security, and compliance.",
+        href: "/industries/government-public-sector",
         icon: Landmark,
       },
       {
-        title: "Banking & Finance",
+        title: "Information Technology",
+        description: "Platform and product engineering for technology firms.",
+        href: "/industries/information-technology",
+        icon: Cpu,
+      },
+      {
+        title: "Telecommunications",
+        description: "Operator-grade tooling for networks under constant load.",
+        href: "/industries/telecommunications",
+        icon: RadioTower,
+      },
+      {
+        title: "Banking & Financial Services",
         description: "Secure systems for regulated financial institutions.",
-        href: "/industries/banking-finance",
+        href: "/industries/banking-financial-services",
         icon: Banknote,
       },
       {
@@ -234,22 +249,41 @@ const navigationItems: NavItem[] = [
         icon: HeartPulse,
       },
       {
-        title: "Telecom",
-        description: "Operator-grade tooling for networks under constant load.",
-        href: "/industries/telecom",
-        icon: RadioTower,
+        title: "Education & Skill Development",
+        description: "Learning platforms that widen access and track outcomes.",
+        href: "/industries/education-skill-development",
+        icon: GraduationCap,
+      },
+      {
+        title: "Construction & Smart Infrastructure",
+        description: "Connected sites and buildings managed from one place.",
+        href: "/industries/construction-smart-infrastructure",
+        icon: HardHat,
+      },
+      {
+        title: "Agriculture",
+        description: "Sensor-driven insight for higher yield and lower waste.",
+        href: "/industries/agriculture",
+        icon: Sprout,
+      },
+      {
+        title: "Energy & Utilities",
+        description:
+          "Grid, metering, and distribution visibility in real time.",
+        href: "/industries/energy-utilities",
+        icon: Zap,
+      },
+      {
+        title: "Oil & Gas",
+        description: "Upstream and downstream operations with safer oversight.",
+        href: "/industries/oil-gas",
+        icon: Fuel,
       },
       {
         title: "Manufacturing",
         description: "Connected production floors with real-time visibility.",
         href: "/industries/manufacturing",
         icon: Factory,
-      },
-      {
-        title: "Logistics",
-        description: "Fleet, warehouse, and supply chain intelligence.",
-        href: "/industries/logistics",
-        icon: Truck,
       },
     ],
   },
@@ -293,7 +327,7 @@ function MainNav({ className }: { className?: string }) {
                 </p>
                 <ul
                   className={cn(
-                    "grid gap-x-8 gap-y-1",
+                    "grid gap-x-8 gap-y-1 h-[300px] overflow-auto",
                     item.columns === 2
                       ? "w-184 grid-cols-2"
                       : "w-88 grid-cols-1",

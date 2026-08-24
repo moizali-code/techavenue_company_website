@@ -77,7 +77,6 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  /* Tech Avenue brand: navy wordmark, blue active link, orange swoosh. */
   --brand: #1e3c8c;
   --brand-gradient: linear-gradient(233.28deg, #000000 5.1%, #1e3c8c 106.09%);
   --brand-foreground: oklch(0.99 0 0);
