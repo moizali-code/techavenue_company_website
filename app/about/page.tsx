@@ -5,12 +5,9 @@ import { useRouter } from "next/navigation";
 import { CompanyValues } from "@/components/features/about/company-values";
 import { TeamCarousel } from "@/components/features/about/team-carousel";
 import { TrustedPartners } from "@/components/features/about/trusted-partners";
-import { Card } from "@/components/shared/card";
-import { Carousel } from "@/components/shared/carousel";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
-import { CarouselItem } from "@/components/ui/carousel";
-import { caseStudies } from "@/mock/case-studies";
+
 import {
   companyValues,
   companyValuesHeading,

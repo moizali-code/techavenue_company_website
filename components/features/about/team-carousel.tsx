@@ -2,7 +2,7 @@ import { Card } from "@/components/shared/card";
 import { Carousel } from "@/components/shared/carousel";
 import { CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import type { TeamMember } from "@/types/features/team";
+import type { TeamMember } from "@/types/features/about-team";
 
 type TeamCarouselProps = {
   heading: string;

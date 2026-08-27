@@ -33,6 +33,7 @@ const cardContentVariants = cva("flex flex-1 flex-col gap-3", {
 });
 
 function Card({
+  icon,
   title,
   description,
   image,
@@ -42,14 +43,13 @@ function Card({
   href,
   onActionClick,
   variant = "default",
-  className,
   classNames,
 }: CardProps) {
   const hasAction = Boolean(href || onActionClick);
-  const hasContent = Boolean(title || description || hasAction);
+  const hasContent = Boolean(icon || title || description || hasAction);
 
   return (
-    <article className={cn(cardVariants({ variant }), className)}>
+    <article className={cn(cardVariants({ variant }), classNames?.mainWrapper)}>
       {image ? (
         <div
           className={cn(
@@ -92,6 +92,10 @@ function Card({
         <div
           className={cn(cardContentVariants({ variant }), classNames?.content)}
         >
+          {icon ? (
+            <div className={cn("text-[#1E3C8C]", classNames?.icon)}>{icon}</div>
+          ) : null}
+
           {title ? (
             <h3
               className={cn(

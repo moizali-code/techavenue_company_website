@@ -26,8 +26,11 @@ function CompanyValues({
           <Card
             image={image.src}
             imageAlt={image.alt}
-            className="min-h-[260px] max-w-none md:min-h-[340px] lg:min-h-0"
-            classNames={{ imageWrapper: "aspect-auto h-full flex-1" }}
+            classNames={{
+              mainWrapper:
+                "min-h-[260px] max-w-none md:min-h-[340px] lg:min-h-0",
+              imageWrapper: "aspect-auto h-full flex-1",
+            }}
           />
 
           <div className="grid gap-4 md:grid-cols-2 lg:col-span-2">
@@ -38,14 +41,14 @@ function CompanyValues({
                 <Card
                   key={id}
                   {...value}
-                  className={cn(
-                    "h-full max-w-none rounded-[8px] border-transparent shadow-none hover:shadow-none",
-                    isHighlighted
-                      ? "bg-[#1E3C8C] text-[#FFFFFF]"
-                      : "bg-[#F8F8F8] text-[#494949]",
-                    index === 0 && "md:col-span-2",
-                  )}
                   classNames={{
+                    mainWrapper: cn(
+                      "h-full max-w-none rounded-[8px] border-transparent shadow-none hover:shadow-none",
+                      isHighlighted
+                        ? "bg-[#1E3C8C] text-[#FFFFFF]"
+                        : "bg-[#F8F8F8] text-[#494949]",
+                      index === 0 && "md:col-span-2",
+                    ),
                     title: `text-[28px] font-semibold  ${
                       isHighlighted ? "text-[#FFFFFF]" : "text-[#191C1E]"
                     }`,

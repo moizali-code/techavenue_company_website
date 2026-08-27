@@ -6,6 +6,7 @@ export type CardVariant = "default" | "bare";
 
 export type CardProps = {
   variant?: CardVariant;
+  icon?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
   image?: string;
@@ -14,11 +15,12 @@ export type CardProps = {
   actionLabel?: string;
   href?: string;
   onActionClick?: () => void;
-  className?: string;
   classNames?: {
+    mainWrapper?: string;
     imageWrapper?: string;
     image?: string;
     content?: string;
+    icon?: string;
     title?: string;
     description?: string;
     tags?: string;

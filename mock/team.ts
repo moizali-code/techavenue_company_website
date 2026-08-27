@@ -1,4 +1,4 @@
-import type { TeamMember } from "@/types/features/team";
+import type { TeamMember } from "@/types/features/about-team";
 
 export const teamHeading = "Meet Our Team";
 
