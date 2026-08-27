@@ -8,12 +8,17 @@ export type JumbotronProps = {
   description?: ReactNode;
   action?: ReactNode;
   align?: JumbotronAlign;
-  className?: string;
+  backgroundImage?: string;
+  backgroundImageAlt?: string;
+  overlay?: boolean;
   classNames?: {
+    backgroundImage?: string;
+    overlay?: string;
     content?: string;
     eyebrow?: string;
     title?: string;
     description?: string;
     action?: string;
+    mainWrapper?: string;
   };
 };

@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 function Header() {
   return (
     <header className="sticky top-0 z-50 w-full  bg-background">
-      <div className="mx-auto flex h-20 w-full max-w-360 items-center gap-6 px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-20 w-full max-w-360 items-center gap-6 px-4 lg:px-10">
         <Logo />
 
         <MainNav className="mx-auto hidden max-w-none lg:flex" />

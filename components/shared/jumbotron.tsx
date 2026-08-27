@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import type { JumbotronProps } from "@/types/features/jumbotron";
 
@@ -7,23 +9,49 @@ function Jumbotron({
   description,
   action,
   align = "center",
-  className,
+  backgroundImage,
+  backgroundImageAlt = "",
+  overlay = true,
   classNames,
 }: JumbotronProps) {
   const isCentered = align === "center";
+  const hasBackgroundImage = Boolean(backgroundImage);
 
   return (
     <section
       className={cn(
-        "w-full px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24",
-        className
+        "w-full px-4 py-14 lg:px-10 lg:py-24",
+        hasBackgroundImage && "relative isolate overflow-hidden",
+        classNames?.mainWrapper,
       )}
     >
+      {hasBackgroundImage ? (
+        <>
+          <Image
+            src={backgroundImage as string}
+            alt={backgroundImageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className={cn("-z-10 object-cover", classNames?.backgroundImage)}
+          />
+          {overlay ? (
+            <div
+              aria-hidden="true"
+              className={cn(
+                "absolute inset-0 -z-10 bg-[rgba(0,0,0,0.7)]",
+                classNames?.overlay,
+              )}
+            />
+          ) : null}
+        </>
+      ) : null}
+
       <div
         className={cn(
           "mx-auto flex w-full max-w-3xl flex-col gap-5",
           isCentered ? "items-center text-center" : "items-start text-left",
-          classNames?.content
+          classNames?.content,
         )}
       >
         {eyebrow ? (
@@ -31,7 +59,7 @@ function Jumbotron({
             className={cn(
               "flex w-full",
               isCentered ? "justify-center" : "justify-start",
-              classNames?.eyebrow
+              classNames?.eyebrow,
             )}
           >
             {eyebrow}
@@ -40,8 +68,8 @@ function Jumbotron({
 
         <h1
           className={cn(
-            "text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl",
-            classNames?.title
+            "text-3xl font-bold tracking-tight text-balance lg:text-5xl",
+            classNames?.title,
           )}
         >
           {title}
@@ -50,8 +78,8 @@ function Jumbotron({
         {description ? (
           <p
             className={cn(
-              "max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg",
-              classNames?.description
+              "max-w-2xl text-base leading-relaxed text-muted-foreground ",
+              classNames?.description,
             )}
           >
             {description}
@@ -63,7 +91,7 @@ function Jumbotron({
             className={cn(
               "mt-2 flex flex-wrap items-center gap-3",
               isCentered ? "justify-center" : "justify-start",
-              classNames?.action
+              classNames?.action,
             )}
           >
             {action}

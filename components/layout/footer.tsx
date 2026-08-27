@@ -41,8 +41,8 @@ const socialLinks = [
 function Footer() {
   return (
     <footer className="w-full bg-[#FAFAFA]">
-      <div className="mx-auto w-full max-w-360 px-4 py-14 sm:px-6 lg:px-10">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr] lg:gap-12">
+      <div className="mx-auto w-full max-w-360 px-4 py-14 lg:px-10">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr] lg:gap-12">
           <div>
             <p className="font-serif text-base font-bold text-foreground">
               Tech Avenue
@@ -162,8 +162,9 @@ function Footer() {
               />
               <Button
                 type="submit"
+                variant="brand"
                 size="lg"
-                className="h-12 rounded-full bg-brand text-xs font-semibold tracking-[0.12em] text-brand-foreground uppercase hover:bg-brand/90"
+                className="h-12 rounded-full uppercase"
               >
                 Subscribe
               </Button>
@@ -171,7 +172,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4  pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4  pt-6 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Tech Avenue. All Rights Reserved.
           </p>
