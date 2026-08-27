@@ -327,7 +327,7 @@ function MainNav({ className }: { className?: string }) {
                 </p>
                 <ul
                   className={cn(
-                    "grid gap-x-8 gap-y-1 h-[300px] overflow-auto",
+                    "grid gap-x-8 gap-y-1 h-[300px] ",
                     item.columns === 2
                       ? "w-184 grid-cols-2"
                       : "w-88 grid-cols-1",
