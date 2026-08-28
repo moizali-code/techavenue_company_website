@@ -1,21 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
-import { Button } from "@/components/ui/button";
+import { Paginator } from "@/components/shared/paginator";
 import { formatDay } from "@/lib/formatters/day-formatter";
 import type { NewsGridProps } from "@/types/features/news";
 
-const VISIBLE_STEP = 9;
+const STORIES_PER_PAGE = 9;
 
 function NewsGrid({ stories, className }: NewsGridProps) {
-  const [visibleCount, setVisibleCount] = useState(VISIBLE_STEP);
-  const visibleStories = stories.slice(0, visibleCount);
-  const hasMore = visibleCount < stories.length;
+  const [page, setPage] = useState(1);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const previousPageRef = useRef(page);
+
+  const totalPages = Math.max(1, Math.ceil(stories.length / STORIES_PER_PAGE));
+  const visibleStories = stories.slice(
+    (page - 1) * STORIES_PER_PAGE,
+    page * STORIES_PER_PAGE,
+  );
+
+  useEffect(() => {
+    if (previousPageRef.current === page) return;
+    previousPageRef.current = page;
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [page]);
 
   return (
     <Container
@@ -24,7 +36,10 @@ function NewsGrid({ stories, className }: NewsGridProps) {
         container: "flex flex-col gap-10",
       }}
     >
-      <div className="grid gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+      <div
+        ref={gridRef}
+        className="grid gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3"
+      >
         {visibleStories.map((story) => (
           <Link
             key={story.uuid}
@@ -62,18 +77,7 @@ function NewsGrid({ stories, className }: NewsGridProps) {
         ))}
       </div>
 
-      {hasMore && (
-        <div className="flex justify-center">
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => setVisibleCount((count) => count + VISIBLE_STEP)}
-            className="h-12 px-8 text-[14px] font-semibold tracking-[0.08em] uppercase"
-          >
-            Load More
-          </Button>
-        </div>
-      )}
+      <Paginator page={page} totalPages={totalPages} setPage={setPage} />
     </Container>
   );
 }
