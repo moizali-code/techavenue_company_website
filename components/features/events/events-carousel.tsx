@@ -36,7 +36,7 @@ function EventsCarousel({ events, className }: EventsCarouselProps) {
               <Card
                 image={event.image}
                 title={event.title}
-                tags={
+                imageOverlay={
                   <span className="flex flex-col items-center rounded-[8px] bg-white px-2.5 py-1 shadow-[0_2px_8px_#00000026]">
                     <span className="text-[16px] font-bold text-[#1E3C8C]">
                       {formatDay(event.startsAt, "day")}

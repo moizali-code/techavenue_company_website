@@ -37,7 +37,7 @@ function Card({
   description,
   image,
   imageAlt = "",
-  tags,
+  imageOverlay,
   actionLabel = "View Case Study",
   href,
   onActionClick,
@@ -86,14 +86,14 @@ function Card({
             className={cn("object-cover", classNames?.image)}
           />
 
-          {tags && (
+          {imageOverlay && (
             <div
               className={cn(
                 "absolute top-3 left-3 flex flex-wrap items-center gap-2 lg:top-4 lg:left-4",
-                classNames?.tags,
+                classNames?.imageOverlay,
               )}
             >
-              {tags}
+              {imageOverlay}
             </div>
           )}
         </div>

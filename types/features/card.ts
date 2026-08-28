@@ -14,7 +14,7 @@ export type CardProps = {
   description?: ReactNode;
   image?: string;
   imageAlt?: string;
-  tags?: ReactNode;
+  imageOverlay?: ReactNode;
   actionLabel?: string;
   href?: string;
   onActionClick?: () => void;
@@ -28,7 +28,7 @@ export type CardProps = {
     eyebrow?: string;
     title?: string;
     description?: string;
-    tags?: string;
+    imageOverlay?: string;
     action?: string;
     footer?: string;
   };

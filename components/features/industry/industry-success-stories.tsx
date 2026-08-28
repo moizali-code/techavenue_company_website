@@ -53,7 +53,7 @@ function IndustrySuccessStories({
             key={story.title}
             image={story.image}
             imageAlt={story.imageAlt}
-            tags={story.tags.map((tag, index) => (
+            imageOverlay={story.tags.map((tag, index) => (
               <Badge
                 key={tag}
                 className={cn(
