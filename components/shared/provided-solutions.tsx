@@ -33,10 +33,10 @@ function ProvidedSolutions({
         {items.map((item) => (
           <Card
             key={item.title}
-            iconPosition="inline"
+            eyebrowPosition="inline"
             title={item.title}
             description={item.description}
-            icon={
+            eyebrow={
               <Image
                 src={item.icon}
                 alt=""

@@ -4,30 +4,32 @@ export type CardTags = [string, string];
 
 export type CardVariant = "default" | "bare";
 
-export type CardIconPosition = "top" | "inline";
+export type CardEyebrowPosition = "top" | "inline";
 
 export type CardProps = {
   variant?: CardVariant;
-  iconPosition?: CardIconPosition;
-  icon?: ReactNode;
+  eyebrowPosition?: CardEyebrowPosition;
+  eyebrow?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
   image?: string;
   imageAlt?: string;
-  tags?: CardTags;
+  tags?: ReactNode;
   actionLabel?: string;
   href?: string;
   onActionClick?: () => void;
+  footer?: ReactNode;
   classNames?: {
     mainWrapper?: string;
     imageWrapper?: string;
     image?: string;
     content?: string;
     titleRow?: string;
-    icon?: string;
+    eyebrow?: string;
     title?: string;
     description?: string;
     tags?: string;
     action?: string;
+    footer?: string;
   };
 };

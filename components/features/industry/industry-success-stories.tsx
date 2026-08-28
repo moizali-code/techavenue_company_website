@@ -4,6 +4,8 @@ import { CircleArrowRight } from "lucide-react";
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import type { IndustrySuccessStoriesProps } from "@/types/features/industry";
 
 const VISIBLE_STORIES_COUNT = 3;
@@ -51,7 +53,17 @@ function IndustrySuccessStories({
             key={story.title}
             image={story.image}
             imageAlt={story.imageAlt}
-            tags={story.tags}
+            tags={story.tags.map((tag, index) => (
+              <Badge
+                key={tag}
+                className={cn(
+                  "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase",
+                  index === 0 ? "bg-[#1E3C8C]" : "bg-[#F97316]",
+                )}
+              >
+                {tag}
+              </Badge>
+            ))}
             title={story.title}
             description={story.description}
             href={story.href}

@@ -37,7 +37,7 @@ function IndustryChallenges({
             key={item.title}
             title={item.title}
             description={item.description}
-            icon={
+            eyebrow={
               <Image
                 src={item.icon}
                 alt=""

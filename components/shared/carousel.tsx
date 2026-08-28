@@ -48,7 +48,7 @@ export function Carousel({
       )}
     >
       {isTopRight ? (
-        <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+        <div className="mb-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:gap-10 md:text-left">
           {header}
 
           <div className="flex shrink-0 items-center gap-3">

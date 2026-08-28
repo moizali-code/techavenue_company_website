@@ -1,0 +1,68 @@
+import type { EventItem } from "@/types/features/events";
+
+export const events: EventItem[] = [
+  {
+    id: 1,
+    uuid: "e1a47c30-5b28-4d96-8f01-763ca9b2e5d4",
+    title: "Cyber Security Summit",
+    location: "Singapore",
+    startsAt: "2026-06-15T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 2,
+    uuid: "7b30d5f9-146a-42c8-9e75-08b3fc6a1d27",
+    title: "AI Innovation Expo",
+    location: "San Francisco",
+    startsAt: "2026-07-22T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 3,
+    uuid: "c9482e18-6d05-4b73-a1f8-52970be4c36d",
+    title: "Tech Avenue Connect",
+    location: "London",
+    startsAt: "2026-08-05T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 4,
+    uuid: "2f68a5b1-90c7-4e34-b6d2-1804e7f95a63",
+    title: "Sustainability Forum",
+    location: "Berlin",
+    startsAt: "2026-09-12T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 5,
+    uuid: "8d51c027-b3e6-4a19-97f4-6c205ab85e31",
+    title: "Smart Infrastructure Week",
+    location: "Dubai",
+    startsAt: "2026-10-03T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 6,
+    uuid: "4a7e9b62-1580-4cd3-8e07-b95f3a1c6720",
+    title: "Public Sector Digital Congress",
+    location: "Toronto",
+    startsAt: "2026-10-28T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 7,
+    uuid: "b0c38fd5-7291-4e46-a3b8-14e6072d95fc",
+    title: "Enterprise Cloud Conference",
+    location: "Amsterdam",
+    startsAt: "2026-11-17T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+  {
+    id: 8,
+    uuid: "6e2140ba-8c53-4f07-9d61-70a5b8e3241f",
+    title: "Telecom Intelligence Forum",
+    location: "Tokyo",
+    startsAt: "2026-12-09T09:00:00.000Z",
+    image: "/about_image.png",
+  },
+];

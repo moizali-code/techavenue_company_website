@@ -63,12 +63,12 @@ function CoreServices({
             <Card
               key={id}
               {...service}
-              icon={Icon && <Icon className="size-6" strokeWidth={1.5} />}
+              eyebrow={Icon && <Icon className="size-6" strokeWidth={1.5} />}
               classNames={{
                 mainWrapper:
                   "h-[280px] max-w-none rounded-[12px] border-transparent bg-white shadow-[0_4px_12px_#00000040] hover:shadow-[0_4px_12px_#00000040]",
                 content: "justify-center gap-2 p-6",
-                icon: "mb-1",
+                eyebrow: "mb-1",
                 title:
                   "text-[20px] font-bold text-[#191C1E] after:mt-2 after:block after:h-[2px] after:w-8 after:bg-[#1E3C8C]",
                 description: "text-[14px] text-[#494949]",

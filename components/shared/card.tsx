@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { cva } from "class-variance-authority";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { CardProps } from "@/types/features/card";
@@ -33,7 +32,7 @@ const cardContentVariants = cva("flex flex-1 flex-col gap-3", {
 });
 
 function Card({
-  icon,
+  eyebrow,
   title,
   description,
   image,
@@ -42,15 +41,18 @@ function Card({
   actionLabel = "View Case Study",
   href,
   onActionClick,
+  footer,
   variant = "default",
-  iconPosition = "top",
+  eyebrowPosition = "top",
   classNames,
 }: CardProps) {
   const hasAction = Boolean(href || onActionClick);
-  const hasContent = Boolean(icon || title || description || hasAction);
+  const hasContent = Boolean(
+    eyebrow || title || description || hasAction || footer,
+  );
 
-  const iconNode = icon && (
-    <div className={cn("text-[#1E3C8C]", classNames?.icon)}>{icon}</div>
+  const eyebrowNode = eyebrow && (
+    <div className={cn("text-[#1E3C8C]", classNames?.eyebrow)}>{eyebrow}</div>
   );
 
   const titleNode = title && (
@@ -64,7 +66,8 @@ function Card({
     </h3>
   );
 
-  const isInlineTitleRow = iconPosition === "inline" && Boolean(icon && title);
+  const isInlineTitleRow =
+    eyebrowPosition === "inline" && Boolean(eyebrow && title);
 
   return (
     <article className={cn(cardVariants({ variant }), classNames?.mainWrapper)}>
@@ -90,17 +93,7 @@ function Card({
                 classNames?.tags,
               )}
             >
-              {tags.map((tag, index) => (
-                <Badge
-                  key={tag}
-                  className={cn(
-                    "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase",
-                    index === 0 ? "bg-[#1E3C8C]" : "bg-[#F97316]",
-                  )}
-                >
-                  {tag}
-                </Badge>
-              ))}
+              {tags}
             </div>
           )}
         </div>
@@ -110,7 +103,7 @@ function Card({
         <div
           className={cn(cardContentVariants({ variant }), classNames?.content)}
         >
-          {(icon || title) && (
+          {(eyebrow || title) && (
             <div
               className={cn(
                 "flex gap-3",
@@ -118,7 +111,7 @@ function Card({
                 classNames?.titleRow,
               )}
             >
-              {iconNode}
+              {eyebrowNode}
               {titleNode}
             </div>
           )}
@@ -157,6 +150,10 @@ function Card({
                 </Button>
               )}
             </div>
+          )}
+
+          {footer && (
+            <div className={cn("mt-auto", classNames?.footer)}>{footer}</div>
           )}
         </div>
       )}

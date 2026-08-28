@@ -276,7 +276,7 @@ function MainNav({ className }: { className?: string }) {
                 <p className="mb-4 text-sm font-semibold text-foreground border-b border-[#F5F5F5 ] pb-2">
                   {item.label}
                 </p>
-                <ul className="flex h-[350px] flex-col flex-wrap gap-x-2 ">
+                <ul className="flex max-h-[350px] h-fit flex-col flex-wrap gap-x-2 ">
                   {item.items.map(
                     ({ title, description, href, icon: Icon }) => (
                       <li key={title} className=" w-[300px]">
