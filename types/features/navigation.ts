@@ -8,5 +8,5 @@ export type NavLink = {
 }
 
 export type NavItem =
-  | { label: string; href: string; items?: never; columns?: never }
-  | { label: string; href?: never; items: NavLink[]; columns: 1 | 2 }
+  | { label: string; href: string; items?: never }
+  | { label: string; href?: never; items: NavLink[] }

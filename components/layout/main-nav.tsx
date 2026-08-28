@@ -70,7 +70,6 @@ const navigationItems: NavItem[] = [
   { label: "Home", href: "/" },
   {
     label: "Company",
-    columns: 1,
     items: [
       {
         title: "About Us",
@@ -100,7 +99,6 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Solutions",
-    columns: 2,
     items: [
       {
         title: "Network Security",
@@ -170,7 +168,6 @@ const navigationItems: NavItem[] = [
   {
     label: "Services",
     href: "/services",
-    // columns: 2,
     // items: [
     //   {
     //     title: "AI & Machine Learning",
@@ -239,7 +236,6 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Industries",
-    columns: 2,
     items: industryNavLinks,
   },
   { label: "Success Stories", href: "/success-stories" },
@@ -280,17 +276,10 @@ function MainNav({ className }: { className?: string }) {
                 <p className="mb-4 text-sm font-semibold text-foreground border-b border-[#F5F5F5 ] pb-2">
                   {item.label}
                 </p>
-                <ul
-                  className={cn(
-                    "grid gap-x-8 gap-y-1 h-[300px] ",
-                    item.columns === 2
-                      ? "w-184 grid-cols-2"
-                      : "w-88 grid-cols-1",
-                  )}
-                >
+                <ul className="flex h-[350px] flex-col flex-wrap gap-x-2 ">
                   {item.items.map(
                     ({ title, description, href, icon: Icon }) => (
-                      <li key={title}>
+                      <li key={title} className=" w-[300px]">
                         <NavigationMenuLink
                           render={<Link href={href} />}
                           closeOnClick
