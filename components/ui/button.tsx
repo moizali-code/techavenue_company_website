@@ -12,8 +12,7 @@ const buttonVariants = cva(
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
         outline:
           "border-[2px] border-[#1E3C8C]  hover:bg-[#1E3C8C] text-[#1E3C8C] hover:text-white dark:border-input dark:bg-input/30 dark:hover:bg-input/50 rounded-[4px]",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+        secondary: "bg-[#EFEFEF] text-[#494949] hover:bg-[#E4E4E4]",
         ghost:
           "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
         destructive:
@@ -64,7 +63,7 @@ function Button({
       {...props}
     >
       {children}
-      {arrow ? <ArrowRight /> : null}
+      {arrow && <ArrowRight />}
     </ButtonPrimitive>
   );
 }

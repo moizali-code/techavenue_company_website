@@ -4,8 +4,11 @@ export type CardTags = [string, string];
 
 export type CardVariant = "default" | "bare";
 
+export type CardIconPosition = "top" | "inline";
+
 export type CardProps = {
   variant?: CardVariant;
+  iconPosition?: CardIconPosition;
   icon?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
@@ -20,6 +23,7 @@ export type CardProps = {
     imageWrapper?: string;
     image?: string;
     content?: string;
+    titleRow?: string;
     icon?: string;
     title?: string;
     description?: string;

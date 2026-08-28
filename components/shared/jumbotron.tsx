@@ -25,7 +25,7 @@ function Jumbotron({
         classNames?.mainWrapper,
       )}
     >
-      {hasBackgroundImage ? (
+      {hasBackgroundImage && (
         <>
           <Image
             src={backgroundImage as string}
@@ -35,7 +35,7 @@ function Jumbotron({
             sizes="100vw"
             className={cn("-z-10 object-cover", classNames?.backgroundImage)}
           />
-          {overlay ? (
+          {overlay && (
             <div
               aria-hidden="true"
               className={cn(
@@ -43,9 +43,9 @@ function Jumbotron({
                 classNames?.overlay,
               )}
             />
-          ) : null}
+          )}
         </>
-      ) : null}
+      )}
 
       <div
         className={cn(
@@ -54,7 +54,7 @@ function Jumbotron({
           classNames?.content,
         )}
       >
-        {eyebrow ? (
+        {eyebrow && (
           <div
             className={cn(
               "flex w-full",
@@ -64,7 +64,7 @@ function Jumbotron({
           >
             {eyebrow}
           </div>
-        ) : null}
+        )}
 
         <h1
           className={cn(
@@ -75,7 +75,7 @@ function Jumbotron({
           {title}
         </h1>
 
-        {description ? (
+        {description && (
           <p
             className={cn(
               "max-w-2xl text-base leading-relaxed text-muted-foreground ",
@@ -84,9 +84,9 @@ function Jumbotron({
           >
             {description}
           </p>
-        ) : null}
+        )}
 
-        {action ? (
+        {action && (
           <div
             className={cn(
               "mt-2 flex flex-wrap items-center gap-3",
@@ -96,7 +96,7 @@ function Jumbotron({
           >
             {action}
           </div>
-        ) : null}
+        )}
       </div>
     </section>
   );

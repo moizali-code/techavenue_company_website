@@ -34,7 +34,7 @@ function MobileNav({ className }: { className?: string }) {
         {open ? <X /> : <Menu />}
       </Button>
 
-      {open ? (
+      {open && (
         <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto border-b border-border bg-background px-4 py-4 shadow-lg">
           <ul className="flex flex-col gap-1">
             {navigationItems.map((item) => (
@@ -68,7 +68,7 @@ function MobileNav({ className }: { className?: string }) {
                         aria-hidden="true"
                       />
                     </button>
-                    {openSection === item.label ? (
+                    {openSection === item.label && (
                       <ul
                         id={`mobile-nav-${item.label}`}
                         className="mt-1 flex flex-col gap-0.5 border-l border-border pl-3"
@@ -89,7 +89,7 @@ function MobileNav({ className }: { className?: string }) {
                           </li>
                         ))}
                       </ul>
-                    ) : null}
+                    )}
                   </>
                 )}
               </li>
@@ -105,7 +105,7 @@ function MobileNav({ className }: { className?: string }) {
             Contact Us
           </Button>
         </div>
-      ) : null}
+      )}
     </div>
   )
 }

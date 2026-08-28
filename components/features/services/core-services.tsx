@@ -64,7 +64,7 @@ function CoreServices({
                 key={id}
                 {...service}
                 icon={
-                  Icon ? <Icon className="size-6" strokeWidth={1.5} /> : null
+                  Icon && <Icon className="size-6" strokeWidth={1.5} />
                 }
                 classNames={{
                   mainWrapper:

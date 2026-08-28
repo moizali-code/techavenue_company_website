@@ -1,9 +1,18 @@
 "use client";
 import { IndustryChallenges } from "@/components/features/industry/industry-challenges";
+import { IndustrySuccessStories } from "@/components/features/industry/industry-success-stories";
+import { IndustryTabs } from "@/components/features/industry/industry-tabs";
 import { Jumbotron } from "@/components/shared/jumbotron";
+import { ProvidedSolutions } from "@/components/shared/provided-solutions";
 import { SplitSection } from "@/components/shared/split-section";
 import { Button } from "@/components/ui/button";
-import { industryChallenges, industryOverview } from "@/mock/industry";
+import {
+  industryChallenges,
+  industryOverview,
+  industryProvidedSolutions,
+  industrySuccessStories,
+  industryTabs,
+} from "@/mock/industry";
 import { Lightbulb, UserRoundCheck, type LucideIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import React from "react";
@@ -29,6 +38,11 @@ const page = () => {
         backgroundImage="/about_image.png"
       />
 
+      <IndustryTabs
+        tabs={industryTabs}
+        activeUuid={typeof industry === "string" ? industry : undefined}
+      />
+
       <SplitSection
         image={industryOverview.image}
         imageAlt={industryOverview.imageAlt}
@@ -46,7 +60,7 @@ const page = () => {
                   className="flex items-start gap-3 text-left"
                 >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#1E3C8C]/10 text-[#1E3C8C]">
-                    {Icon ? <Icon className="size-5" strokeWidth={1.5} /> : null}
+                    {Icon && <Icon className="size-5" strokeWidth={1.5} />}
                   </span>
                   <span className="flex flex-col gap-0.5">
                     <span className="text-[15px] font-bold text-[#191C1E]">
@@ -72,6 +86,10 @@ const page = () => {
       />
 
       <IndustryChallenges challenges={industryChallenges} />
+
+      <ProvidedSolutions providedSolutions={industryProvidedSolutions} />
+
+      <IndustrySuccessStories successStories={industrySuccessStories} />
     </div>
   );
 };

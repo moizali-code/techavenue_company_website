@@ -67,7 +67,7 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
     errorMessage?: string,
   ) => (
     <div className={cn("flex w-full flex-col gap-1.5", containerClassName)}>
-      {label ? (
+      {label && (
         <label
           htmlFor={inputId}
           className={cn(
@@ -77,7 +77,7 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
         >
           {label}
         </label>
-      ) : null}
+      )}
 
       <div className="relative w-full">
         <Input
@@ -90,10 +90,10 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
           className={cn(hasTrailingSlot && "pr-10", inputClassName)}
         />
 
-        {hasTrailingSlot ? (
+        {hasTrailingSlot && (
           <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-2.5">
             {trailingElement}
-            {showPasswordToggle ? (
+            {showPasswordToggle && (
               <button
                 type="button"
                 onClick={() => setIsPasswordVisible((visible) => !visible)}
@@ -109,16 +109,16 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
                   <Eye className="size-4" aria-hidden="true" />
                 )}
               </button>
-            ) : null}
+            )}
           </div>
-        ) : null}
+        )}
       </div>
 
-      {errorMessage ? (
+      {errorMessage && (
         <p id={errorId} role="alert" className="text-sm text-destructive">
           {errorMessage}
         </p>
-      ) : null}
+      )}
     </div>
   );
 

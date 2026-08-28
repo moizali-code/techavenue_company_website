@@ -43,14 +43,32 @@ function Card({
   href,
   onActionClick,
   variant = "default",
+  iconPosition = "top",
   classNames,
 }: CardProps) {
   const hasAction = Boolean(href || onActionClick);
   const hasContent = Boolean(icon || title || description || hasAction);
 
+  const iconNode = icon && (
+    <div className={cn("text-[#1E3C8C]", classNames?.icon)}>{icon}</div>
+  );
+
+  const titleNode = title && (
+    <h3
+      className={cn(
+        "text-[24px] font-bold tracking-tight text-balance ",
+        classNames?.title,
+      )}
+    >
+      {title}
+    </h3>
+  );
+
+  const isInlineTitleRow = iconPosition === "inline" && Boolean(icon && title);
+
   return (
     <article className={cn(cardVariants({ variant }), classNames?.mainWrapper)}>
-      {image ? (
+      {image && (
         <div
           className={cn(
             "relative aspect-[16/11] w-full overflow-hidden",
@@ -65,7 +83,7 @@ function Card({
             className={cn("object-cover", classNames?.image)}
           />
 
-          {tags ? (
+          {tags && (
             <div
               className={cn(
                 "absolute top-3 left-3 flex flex-wrap items-center gap-2 lg:top-4 lg:left-4",
@@ -84,30 +102,28 @@ function Card({
                 </Badge>
               ))}
             </div>
-          ) : null}
+          )}
         </div>
-      ) : null}
+      )}
 
-      {hasContent ? (
+      {hasContent && (
         <div
           className={cn(cardContentVariants({ variant }), classNames?.content)}
         >
-          {icon ? (
-            <div className={cn("text-[#1E3C8C]", classNames?.icon)}>{icon}</div>
-          ) : null}
-
-          {title ? (
-            <h3
+          {(icon || title) && (
+            <div
               className={cn(
-                "text-[24px] font-bold tracking-tight text-balance ",
-                classNames?.title,
+                "flex gap-3",
+                isInlineTitleRow ? "flex-row items-center" : "flex-col",
+                classNames?.titleRow,
               )}
             >
-              {title}
-            </h3>
-          ) : null}
+              {iconNode}
+              {titleNode}
+            </div>
+          )}
 
-          {description ? (
+          {description && (
             <p
               className={cn(
                 "text-[16px] text-[#444651] leading-relaxed text-muted-foreground",
@@ -116,9 +132,9 @@ function Card({
             >
               {description}
             </p>
-          ) : null}
+          )}
 
-          {hasAction ? (
+          {hasAction && (
             <div className={cn("mt-3 flex", classNames?.action)}>
               {href ? (
                 <Button
@@ -141,9 +157,9 @@ function Card({
                 </Button>
               )}
             </div>
-          ) : null}
+          )}
         </div>
-      ) : null}
+      )}
     </article>
   );
 }
