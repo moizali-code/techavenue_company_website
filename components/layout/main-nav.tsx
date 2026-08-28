@@ -30,9 +30,11 @@ import {
   Users,
   Workflow,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { industries } from "@/mock/industry";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
   NavigationMenu,
@@ -42,6 +44,27 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+
+const industryIcons: Record<string, LucideIcon> = {
+  "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901": Landmark,
+  "8c74b1d9-2e35-4af6-9d10-6b83f7a2c542": Cpu,
+  "5d92e0a7-6c81-4b23-97ef-2a14d8b60c73": RadioTower,
+  "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64": Banknote,
+  "e4718b53-0d6a-49c7-b218-3c9f6a5d7e20": HeartPulse,
+  "27ac95f1-4b60-4d83-a5e9-8d012f7b6c34": GraduationCap,
+  "9b53d7c0-8e14-42f6-b073-5a6c1e8f4d29": HardHat,
+  "1e60f4b8-53a9-4c07-8d62-7b94e0a3c518": Sprout,
+  "6a2d81e4-b703-4f59-9c48-0e35d7b1a962": Zap,
+  "c85b0937-1a4e-4620-b7d3-2f16c9e08a45": Fuel,
+  "4d19a7f2-6c58-4b31-90ae-8e27b5d3f016": Factory,
+};
+
+const industryNavLinks: NavLink[] = industries.map((industry) => ({
+  title: industry.title,
+  description: industry.description,
+  href: `/industry/${industry.uuid}`,
+  icon: industryIcons[industry.uuid] ?? Building2,
+}));
 
 const navigationItems: NavItem[] = [
   { label: "Home", href: "/" },
@@ -146,146 +169,78 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Services",
-    columns: 2,
-    items: [
-      {
-        title: "AI & Machine Learning",
-        description: "Models that move from proof of concept to production.",
-        href: "/services/ai-machine-learning",
-        icon: BrainCircuit,
-      },
-      {
-        title: "Cybersecurity Services",
-        description: "Assessments, hardening, and round-the-clock monitoring.",
-        href: "/services/cybersecurity",
-        icon: ShieldCheck,
-      },
-      {
-        title: "Digital Transformation",
-        description:
-          "Modernise legacy processes without stalling the business.",
-        href: "/services/digital-transformation",
-        icon: Rocket,
-      },
-      {
-        title: "Technology Consulting",
-        description: "Independent guidance on architecture and vendor choices.",
-        href: "/services/technology-consulting",
-        icon: Lightbulb,
-      },
-      {
-        title: "Cloud & Infrastructure",
-        description: "Migration, cost control, and resilient platform design.",
-        href: "/services/cloud-infrastructure",
-        icon: Cloud,
-      },
-      {
-        title: "System Integration",
-        description: "Connect disparate systems into one coherent estate.",
-        href: "/services/system-integration",
-        icon: Workflow,
-      },
-      {
-        title: "DevOps & Automation",
-        description: "Faster, safer releases through pipelines and IaC.",
-        href: "/services/devops-automation",
-        icon: Workflow,
-      },
-      {
-        title: "Data Analytics",
-        description:
-          "Pipelines, warehouses, and dashboards teams actually use.",
-        href: "/services/data-analytics",
-        icon: ChartColumn,
-      },
-      {
-        title: "Project Advisory",
-        description:
-          "Delivery oversight that keeps scope, cost, and time honest.",
-        href: "/services/project-advisory",
-        icon: ClipboardList,
-      },
-      {
-        title: "Managed Support Services",
-        description: "Ongoing operations and support with clear SLAs.",
-        href: "/services/managed-support",
-        icon: Headset,
-      },
-    ],
+    href: "/services",
+    // columns: 2,
+    // items: [
+    //   {
+    //     title: "AI & Machine Learning",
+    //     description: "Models that move from proof of concept to production.",
+    //     href: "/services/ai-machine-learning",
+    //     icon: BrainCircuit,
+    //   },
+    //   {
+    //     title: "Cybersecurity Services",
+    //     description: "Assessments, hardening, and round-the-clock monitoring.",
+    //     href: "/services/cybersecurity",
+    //     icon: ShieldCheck,
+    //   },
+    //   {
+    //     title: "Digital Transformation",
+    //     description:
+    //       "Modernise legacy processes without stalling the business.",
+    //     href: "/services/digital-transformation",
+    //     icon: Rocket,
+    //   },
+    //   {
+    //     title: "Technology Consulting",
+    //     description: "Independent guidance on architecture and vendor choices.",
+    //     href: "/services/technology-consulting",
+    //     icon: Lightbulb,
+    //   },
+    //   {
+    //     title: "Cloud & Infrastructure",
+    //     description: "Migration, cost control, and resilient platform design.",
+    //     href: "/services/cloud-infrastructure",
+    //     icon: Cloud,
+    //   },
+    //   {
+    //     title: "System Integration",
+    //     description: "Connect disparate systems into one coherent estate.",
+    //     href: "/services/system-integration",
+    //     icon: Workflow,
+    //   },
+    //   {
+    //     title: "DevOps & Automation",
+    //     description: "Faster, safer releases through pipelines and IaC.",
+    //     href: "/services/devops-automation",
+    //     icon: Workflow,
+    //   },
+    //   {
+    //     title: "Data Analytics",
+    //     description:
+    //       "Pipelines, warehouses, and dashboards teams actually use.",
+    //     href: "/services/data-analytics",
+    //     icon: ChartColumn,
+    //   },
+    //   {
+    //     title: "Project Advisory",
+    //     description:
+    //       "Delivery oversight that keeps scope, cost, and time honest.",
+    //     href: "/services/project-advisory",
+    //     icon: ClipboardList,
+    //   },
+    //   {
+    //     title: "Managed Support Services",
+    //     description: "Ongoing operations and support with clear SLAs.",
+    //     href: "/services/managed-support",
+    //     icon: Headset,
+    //   },
+    // ],
   },
   {
     label: "Industries",
     columns: 2,
-    items: [
-      {
-        title: "Government & Public Sector",
-        description:
-          "Citizen services built for scale, security, and compliance.",
-        href: "/industries/government-public-sector",
-        icon: Landmark,
-      },
-      {
-        title: "Information Technology",
-        description: "Platform and product engineering for technology firms.",
-        href: "/industries/information-technology",
-        icon: Cpu,
-      },
-      {
-        title: "Telecommunications",
-        description: "Operator-grade tooling for networks under constant load.",
-        href: "/industries/telecommunications",
-        icon: RadioTower,
-      },
-      {
-        title: "Banking & Financial Services",
-        description: "Secure systems for regulated financial institutions.",
-        href: "/industries/banking-financial-services",
-        icon: Banknote,
-      },
-      {
-        title: "Healthcare",
-        description: "Patient-centred technology that protects sensitive data.",
-        href: "/industries/healthcare",
-        icon: HeartPulse,
-      },
-      {
-        title: "Education & Skill Development",
-        description: "Learning platforms that widen access and track outcomes.",
-        href: "/industries/education-skill-development",
-        icon: GraduationCap,
-      },
-      {
-        title: "Construction & Smart Infrastructure",
-        description: "Connected sites and buildings managed from one place.",
-        href: "/industries/construction-smart-infrastructure",
-        icon: HardHat,
-      },
-      {
-        title: "Agriculture",
-        description: "Sensor-driven insight for higher yield and lower waste.",
-        href: "/industries/agriculture",
-        icon: Sprout,
-      },
-      {
-        title: "Energy & Utilities",
-        description:
-          "Grid, metering, and distribution visibility in real time.",
-        href: "/industries/energy-utilities",
-        icon: Zap,
-      },
-      {
-        title: "Oil & Gas",
-        description: "Upstream and downstream operations with safer oversight.",
-        href: "/industries/oil-gas",
-        icon: Fuel,
-      },
-      {
-        title: "Manufacturing",
-        description: "Connected production floors with real-time visibility.",
-        href: "/industries/manufacturing",
-        icon: Factory,
-      },
-    ],
+    items: industryNavLinks,
   },
   { label: "Success Stories", href: "/success-stories" },
 ];
