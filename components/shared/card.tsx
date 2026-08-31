@@ -37,6 +37,7 @@ function Card({
   description,
   image,
   imageAlt = "",
+  video,
   imageOverlay,
   actionLabel = "View Case Study",
   href,
@@ -71,20 +72,33 @@ function Card({
 
   return (
     <article className={cn(cardVariants({ variant }), classNames?.mainWrapper)}>
-      {image && (
+      {(image || video) && (
         <div
           className={cn(
             "relative aspect-[16/11] w-full overflow-hidden",
             classNames?.imageWrapper,
           )}
         >
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
-            className={cn("object-cover", classNames?.image)}
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
+              className={cn("object-cover", classNames?.image)}
+            />
+          ) : (
+            <video
+              src={video}
+              controls
+              playsInline
+              preload="metadata"
+              className={cn(
+                "absolute inset-0 size-full object-cover",
+                classNames?.video,
+              )}
+            />
+          )}
 
           {imageOverlay && (
             <div

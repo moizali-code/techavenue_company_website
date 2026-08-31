@@ -12,12 +12,13 @@ function SplitSection({
   title,
   description,
   action,
+  mediaOverlay,
   classNames,
 }: SplitSectionProps) {
   return (
     <div
       className={cn(
-        "grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14",
+        "grid items-stretch gap-6 md:grid-cols-2 md:gap-10 lg:gap-14",
         classNames?.mainWrapper,
       )}
     >
@@ -35,6 +36,17 @@ function SplitSection({
           sizes="(min-width: 768px) 50vw, 100vw"
           className={cn("object-cover", classNames?.image)}
         />
+
+        {mediaOverlay && (
+          <div
+            className={cn(
+              "absolute right-4 bottom-4 z-10",
+              classNames?.mediaOverlay,
+            )}
+          >
+            {mediaOverlay}
+          </div>
+        )}
       </div>
 
       <div className={cn(reversed && "md:order-1")}>

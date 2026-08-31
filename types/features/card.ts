@@ -14,6 +14,7 @@ export type CardProps = {
   description?: ReactNode;
   image?: string;
   imageAlt?: string;
+  video?: string;
   imageOverlay?: ReactNode;
   actionLabel?: string;
   href?: string;
@@ -23,6 +24,7 @@ export type CardProps = {
     mainWrapper?: string;
     imageWrapper?: string;
     image?: string;
+    video?: string;
     content?: string;
     titleRow?: string;
     eyebrow?: string;

@@ -69,16 +69,16 @@ export function Carousel({
       <CarouselContent>{children}</CarouselContent>
 
       {isTopRight ? null : (
-        <>
-          <CarouselPrevious className="p-6 cursor-pointer  my-0 top-162 left-[43%]" />
+        <div className="mt-10 flex items-center justify-center gap-4">
+          <CarouselPrevious className="static inset-auto m-0 size-11 shrink-0 cursor-pointer self-center" />
           <CarouselNext
             page={page}
             setPage={setPage ?? (() => {})}
             totalPages={totalPages}
             isFetchingData={isFetchingData}
-            className="right-[47%] top-162 p-6 cursor-pointer"
+            className="static inset-auto m-0 size-11 shrink-0 cursor-pointer self-center"
           />
-        </>
+        </div>
       )}
     </ShadcnCarousel>
   );

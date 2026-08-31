@@ -8,9 +8,11 @@ export type SplitSectionProps = {
   title: ReactNode;
   description?: ReactNode;
   action?: ReactNode;
+  mediaOverlay?: ReactNode;
   classNames?: {
     mainWrapper?: string;
     media?: string;
+    mediaOverlay?: string;
     image?: string;
     content?: string;
     eyebrow?: string;

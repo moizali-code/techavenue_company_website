@@ -80,7 +80,7 @@ const navigationItems: NavItem[] = [
       {
         title: "FAQs",
         description: "Answers to the questions we hear most often.",
-        href: "/faqs",
+        href: "/#faqs",
         icon: CircleHelp,
       },
       {

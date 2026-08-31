@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { CompanyValues } from "@/components/features/about/company-values";
 import { TeamCarousel } from "@/components/features/about/team-carousel";
-import { TrustedPartners } from "@/components/features/about/trusted-partners";
+import { TrustedPartners } from "@/components/shared/trusted-partners";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
 
@@ -42,7 +42,7 @@ const page = () => {
         values={companyValues}
       />
 
-      <TrustedPartners partners={trustedPartners} />
+      <TrustedPartners heading="Trusted Partners" partners={trustedPartners} />
 
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-10">
         {caseStudies.map(({ id, ...caseStudy }) => (

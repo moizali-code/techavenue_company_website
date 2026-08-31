@@ -1,5 +1,4 @@
 import { Container } from "@/components/shared/container";
-import { cn } from "@/lib/utils";
 
 type TrustedPartnersProps = {
   heading?: string;
@@ -8,20 +7,22 @@ type TrustedPartnersProps = {
 };
 
 function TrustedPartners({
-  heading = "Trusted Partners",
+  heading,
   partners,
   className,
 }: TrustedPartnersProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: cn("lg:py-12", className),
+        mainWrapper: className,
         container: "flex flex-col items-center gap-6 lg:gap-8",
       }}
     >
-      <h2 className="font-times text-sm font-bold tracking-[0.18em] text-[#1E3C8C] uppercase lg:text-base">
-        {heading}
-      </h2>
+      {heading && (
+        <h2 className="font-times text-sm font-bold tracking-[0.18em] text-[#1E3C8C] uppercase lg:text-base">
+          {heading}
+        </h2>
+      )}
 
       <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12 lg:gap-x-14">
         {partners.map((partner) => (
