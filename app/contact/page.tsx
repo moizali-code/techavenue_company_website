@@ -1,14 +1,14 @@
 import { ContactDetails } from "@/components/features/contact/contact-details";
 import { ContactForm } from "@/components/features/contact/contact-form";
 import { ContactHeader } from "@/components/features/contact/contact-header";
-import { contactDetails, contactForm, contactHeader } from "@/mock/contact";
+import { contactForm, contactSection } from "@/mock/contact";
 
 const page = () => {
   return (
     <>
-      <ContactHeader {...contactHeader} />
+      <ContactHeader {...contactSection.header} />
 
-      <ContactDetails {...contactDetails} />
+      <ContactDetails {...contactSection.details} />
 
       <ContactForm {...contactForm} />
     </>

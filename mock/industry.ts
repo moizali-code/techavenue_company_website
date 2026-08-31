@@ -1067,53 +1067,96 @@ export const industrySuccessStories: IndustrySuccessStories = {
   title: "Success Stories in this Industry",
   description:
     "Proven outcomes delivered across global financial, healthcare, and technology infrastructures.",
-  actionLabel: "View all Succes Stories",
-  actionHref: "/case-studies",
   items: [
     {
+      id: 1,
+      uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
       image: "/about_image.png",
-      imageAlt: "Security analyst monitoring a wall of threat dashboards",
-      tags: ["Cybersecurity", "Banking"],
+      industry: {
+        id: 1,
+        uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
+        title: "Banking",
+      },
+      solution: {
+        id: 1,
+        uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
+        title: "Cybersecurity",
+      },
       title: "Enterprise Threat Detection Platform",
       description:
         "A multi-layered AI-driven security framework implemented for a global Tier-1 bank to mitigate zero-day vulnerabilities.",
-      href: "/case-studies/enterprise-threat-detection-platform",
     },
     {
+      id: 2,
+      uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
       image: "/about_image.png",
-      imageAlt: "Fibre optic cabling powering a city-wide network",
-      tags: ["Telecom", "Smart Cities"],
+      industry: {
+        id: 2,
+        uuid: "e6924c31-8b57-4d02-a719-3c0f5d86b471",
+        title: "Telecom",
+      },
+      solution: {
+        id: 2,
+        uuid: "5c81f4a6-0d29-473b-96e8-b247a1c30f95",
+        title: "Smart Cities",
+      },
       title: "5G Municipal Infrastructure",
       description:
         "Deploying next-gen connectivity across 500+ square kilometers for seamless urban IoT integration.",
-      href: "/case-studies/5g-municipal-infrastructure",
     },
     {
+      id: 3,
+      uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
       image: "/about_image.png",
-      imageAlt: "Tablet displaying predictive analytics dashboards",
-      tags: ["AI & Analytics", "Government"],
+      industry: {
+        id: 3,
+        uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
+        title: "Government",
+      },
+      solution: {
+        id: 3,
+        uuid: "9a4e0c76-1b38-45d9-b072-8f63e2a5147c",
+        title: "AI & Analytics",
+      },
       title: "Predictive Governance Model",
       description:
         "Leveraging deep learning to optimize public resource allocation and emergency response times by 30%.",
-      href: "/case-studies/predictive-governance-model",
     },
     {
+      id: 4,
+      uuid: "6d70a382-4f19-4c25-9b08-e35a1c72f4b6",
       image: "/about_image.png",
-      imageAlt: "Engineers reviewing cloud migration architecture",
-      tags: ["Cloud", "Healthcare"],
+      industry: {
+        id: 4,
+        uuid: "c0f83a15-7d46-49b2-85e0-1a29b7c46d38",
+        title: "Healthcare",
+      },
+      solution: {
+        id: 4,
+        uuid: "48b1d907-5e62-4c37-90af-6d35c821e094",
+        title: "Cloud",
+      },
       title: "Regional Health Cloud Migration",
       description:
         "Migrating patient-critical workloads to a compliant hybrid cloud with zero downtime across 12 hospitals.",
-      href: "/case-studies/regional-health-cloud-migration",
     },
     {
+      id: 5,
+      uuid: "b52f8c19-0a63-4d74-8e21-47c9b6d035fa",
       image: "/about_image.png",
-      imageAlt: "Automated production line monitored by control software",
-      tags: ["Automation", "Manufacturing"],
+      industry: {
+        id: 5,
+        uuid: "d739e2b8-4a10-4f65-b83c-05e7a1946cd2",
+        title: "Manufacturing",
+      },
+      solution: {
+        id: 5,
+        uuid: "16ac5f83-9027-4e41-a5d6-83b0c7524fe1",
+        title: "Automation",
+      },
       title: "Smart Factory Control Suite",
       description:
         "Unifying plant floor telemetry into a single control suite that cut unplanned downtime by 42%.",
-      href: "/case-studies/smart-factory-control-suite",
     },
   ],
 };

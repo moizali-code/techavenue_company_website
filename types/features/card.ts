@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-export type CardTags = [string, string];
-
 export type CardVariant = "default" | "bare";
 
 export type CardEyebrowPosition = "top" | "inline";

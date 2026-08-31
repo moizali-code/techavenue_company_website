@@ -1,5 +1,5 @@
-import type { CardTags } from "@/types/features/card";
 import type { ProvidedSolutions } from "@/types/features/provided-solutions";
+import type { SuccessStoryTag } from "@/types/shared/tag";
 
 export type IndustryTab = {
   id: number;
@@ -57,19 +57,18 @@ export type Industry = IndustryTab & {
 };
 
 export type IndustrySuccessStory = {
+  id: number;
+  uuid: string;
   image: string;
-  imageAlt: string;
-  tags: CardTags;
+  industry: SuccessStoryTag;
+  solution: SuccessStoryTag;
   title: string;
   description: string;
-  href: string;
 };
 
 export type IndustrySuccessStories = {
   title: string;
   description: string;
-  actionLabel: string;
-  actionHref: string;
   items: IndustrySuccessStory[];
 };
 

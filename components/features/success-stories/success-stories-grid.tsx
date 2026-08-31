@@ -1,0 +1,135 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+import {
+  ALL_FILTER_UUID,
+  SuccessStoriesFilterRow,
+} from "@/components/features/success-stories/success-stories-filter-row";
+import { Card } from "@/components/shared/card";
+import { Container } from "@/components/shared/container";
+import { Paginator } from "@/components/shared/paginator";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import type { SuccessStoriesGridProps } from "@/types/features/success-stories";
+
+const STORIES_PER_PAGE = 9;
+const TAG_BADGE_CLASSNAME =
+  "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase";
+
+function SuccessStoriesGrid({
+  stories,
+  filters,
+  className,
+}: SuccessStoriesGridProps) {
+  const [solutionUuid, setSolutionUuid] = useState(ALL_FILTER_UUID);
+  const [industryUuid, setIndustryUuid] = useState(ALL_FILTER_UUID);
+  const [page, setPage] = useState(1);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const previousPageRef = useRef(page);
+
+  const matchingStories = stories.filter((story) => {
+    const matchesSolution =
+      solutionUuid === ALL_FILTER_UUID || story.solution.uuid === solutionUuid;
+    const matchesIndustry =
+      industryUuid === ALL_FILTER_UUID || story.industry.uuid === industryUuid;
+
+    return matchesSolution && matchesIndustry;
+  });
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(matchingStories.length / STORIES_PER_PAGE),
+  );
+  const visibleStories = matchingStories.slice(
+    (page - 1) * STORIES_PER_PAGE,
+    page * STORIES_PER_PAGE,
+  );
+
+  useEffect(() => {
+    if (previousPageRef.current === page) return;
+    previousPageRef.current = page;
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [page]);
+
+  const selectSolution = (uuid: string) => {
+    setSolutionUuid(uuid);
+    setPage(1);
+  };
+
+  const selectIndustry = (uuid: string) => {
+    setIndustryUuid(uuid);
+    setPage(1);
+  };
+
+  return (
+    <Container
+      classNames={{
+        mainWrapper: cn("bg-[#FAFAFA]  py-18", className),
+        container: "flex flex-col gap-8 lg:gap-10",
+      }}
+    >
+      <div className="flex flex-col gap-5  rounded-[12px]  p-5 lg:p-6">
+        <SuccessStoriesFilterRow
+          label="Solutions:"
+          options={filters.solutions}
+          activeUuid={solutionUuid}
+          onSelect={selectSolution}
+        />
+
+        <SuccessStoriesFilterRow
+          label="Industry:"
+          options={filters.industries}
+          activeUuid={industryUuid}
+          onSelect={selectIndustry}
+        />
+      </div>
+
+      {visibleStories.length === 0 ? (
+        <p className="py-10 text-center text-[15px] text-[#444651]">
+          No success stories match the selected filters yet.
+        </p>
+      ) : (
+        <>
+          <div
+            ref={gridRef}
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          >
+            {visibleStories.map((story) => (
+              <Card
+                key={story.uuid}
+                image={story.image}
+                imageAlt={story.title}
+                imageOverlay={
+                  <>
+                    <Badge className={cn(TAG_BADGE_CLASSNAME, "bg-[#1E3C8C]")}>
+                      {story.solution.title}
+                    </Badge>
+                    <Badge className={cn(TAG_BADGE_CLASSNAME, "bg-[#F97316]")}>
+                      {story.industry.title}
+                    </Badge>
+                  </>
+                }
+                title={story.title}
+                description={story.description}
+                href={`/success-stories/${story.uuid}`}
+                classNames={{
+                  mainWrapper:
+                    "h-full max-w-none rounded-[12px] border-transparent bg-white shadow-[0_4px_12px_#0000001F]",
+                  content: "gap-3 p-5 lg:p-6",
+                  title: "text-[20px] font-bold text-[#191C1E] lg:text-[22px]",
+                  description: "text-[14px] leading-relaxed text-[#494949]",
+                  action: "mt-auto pt-3",
+                }}
+              />
+            ))}
+          </div>
+
+          <Paginator page={page} totalPages={totalPages} setPage={setPage} />
+        </>
+      )}
+    </Container>
+  );
+}
+
+export { SuccessStoriesGrid };
