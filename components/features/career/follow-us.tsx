@@ -22,8 +22,7 @@ function FollowUs({ title, description, links, className }: FollowUsProps) {
           content: "max-w-none gap-3",
           title:
             "font-poppins text-[26px] font-bold text-[#191C1E] lg:text-[32px]",
-          description:
-            "max-w-none text-[16px] leading-relaxed text-[#444651]",
+          description: "max-w-none text-[16px] leading-relaxed text-[#444651]",
         }}
       />
 
