@@ -1,40 +1,33 @@
 import { CoreServices } from "@/components/features/services/core-services";
-import { ServiceSolutions } from "@/components/features/services/service-solutions";
+import { ServiceDetails } from "@/components/features/services/service-details";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
-import {
-  coreServices,
-  coreServicesDescription,
-  coreServicesHeading,
-  serviceSolutions,
-} from "@/mock/services";
+import { serviceDetails, servicesPageContent } from "@/mock/services";
+
+const { servicesHeader, coreServices } = servicesPageContent;
 
 const page = () => {
   return (
     <div>
       <Jumbotron
-        title={"Future-Ready Enterprise Services"}
+        title={servicesHeader.title}
         classNames={{
           title: "text-white !text-[48px] font-times",
           description: "text-white text-[18px]",
           mainWrapper: "h-[400px] lg:h-[600px]",
         }}
-        description={`Precision-engineered solutions designed to scale your operations, secure your assets, and accelerate your digital evolution through advanced institutional innovation.`}
+        description={servicesHeader.description}
         eyebrow={
           <Button variant={"tab"} className={"rounded-full "}>
-            Cybersecurity and Compliance
+            Company
           </Button>
         }
-        backgroundImage="/about_image.png"
+        backgroundImage={servicesHeader.image}
       />
 
-      <CoreServices
-        heading={coreServicesHeading}
-        description={coreServicesDescription}
-        services={coreServices}
-      />
+      <CoreServices {...coreServices} />
 
-      <ServiceSolutions solutions={serviceSolutions} />
+      <ServiceDetails details={serviceDetails} />
     </div>
   );
 };

@@ -1,79 +1,91 @@
-import type { CoreService, ServiceSolution } from "@/types/features/services";
+import type {
+  ServiceDetail,
+  ServicesPageContent,
+} from "@/types/features/services";
 
-export const coreServicesHeading = "Our Core Services";
+export const servicesPageContent: ServicesPageContent = {
+  servicesHeader: {
+    title: "Future-Ready Enterprise Services",
+    description:
+      "Precision-engineered solutions designed to scale your operations, secure your assets, and accelerate your digital evolution through advanced institutional innovation.",
+    image: "/about_image.png",
+  },
+  coreServices: {
+    heading: "Our Core Services",
+    description:
+      "Powering enterprises with intelligent, scalable, and secure digital solutions through institutional reliability and forward-thinking innovation.",
+    services: [
+      {
+        id: 1,
+        icon: "artificial-intelligence",
+        title: "Artificial Intelligence",
+        description:
+          "AI-powered automation, predictive analytics, and intelligent business solutions.",
+      },
+      {
+        id: 2,
+        icon: "cybersecurity",
+        title: "Cybersecurity",
+        description:
+          "Enterprise security protecting networks, identities, applications, and critical infrastructure.",
+      },
+      {
+        id: 3,
+        icon: "technology-consulting",
+        title: "Technology Consulting",
+        description:
+          "Strategic consulting accelerating innovation, transformation, and sustainable business growth.",
+      },
+      {
+        id: 4,
+        icon: "cloud-services",
+        title: "Cloud Services",
+        description:
+          "Secure cloud infrastructure enabling scalable enterprise applications and operations.",
+      },
+      {
+        id: 5,
+        icon: "digital-transformation",
+        title: "Digital Transformation",
+        description:
+          "Modernizing organizations through innovative technologies and intelligent digital strategies.",
+      },
+      {
+        id: 6,
+        icon: "system-integration",
+        title: "System Integration",
+        description:
+          "Connecting enterprise systems for seamless workflows and operational efficiency.",
+      },
+      {
+        id: 7,
+        icon: "data-analytics",
+        title: "Data Analytics",
+        description:
+          "Turning complex business data into actionable intelligence and insights.",
+      },
+      {
+        id: 8,
+        icon: "software-development",
+        title: "Software Development",
+        description:
+          "Building secure, scalable software tailored to enterprise business requirements.",
+      },
+      {
+        id: 9,
+        icon: "managed-services",
+        title: "Managed Services",
+        description:
+          "Proactive technology management ensuring reliability, performance, and continuous support.",
+      },
+    ],
+  },
+};
 
-export const coreServicesDescription =
-  "Powering enterprises with intelligent, scalable, and secure digital solutions through institutional reliability and forward-thinking innovation.";
-
-export const coreServices: CoreService[] = [
+export const serviceDetails: ServiceDetail[] = [
   {
     id: 1,
-    icon: "artificial-intelligence",
-    title: "Artificial Intelligence",
-    description:
-      "AI-powered automation, predictive analytics, and intelligent business solutions.",
-  },
-  {
-    id: 2,
-    icon: "cybersecurity",
-    title: "Cybersecurity",
-    description:
-      "Enterprise security protecting networks, identities, applications, and critical infrastructure.",
-  },
-  {
-    id: 3,
-    icon: "technology-consulting",
-    title: "Technology Consulting",
-    description:
-      "Strategic consulting accelerating innovation, transformation, and sustainable business growth.",
-  },
-  {
-    id: 4,
-    icon: "cloud-services",
-    title: "Cloud Services",
-    description:
-      "Secure cloud infrastructure enabling scalable enterprise applications and operations.",
-  },
-  {
-    id: 5,
-    icon: "digital-transformation",
-    title: "Digital Transformation",
-    description:
-      "Modernizing organizations through innovative technologies and intelligent digital strategies.",
-  },
-  {
-    id: 6,
-    icon: "system-integration",
-    title: "System Integration",
-    description:
-      "Connecting enterprise systems for seamless workflows and operational efficiency.",
-  },
-  {
-    id: 7,
-    icon: "data-analytics",
-    title: "Data Analytics",
-    description:
-      "Turning complex business data into actionable intelligence and insights.",
-  },
-  {
-    id: 8,
-    icon: "software-development",
-    title: "Software Development",
-    description:
-      "Building secure, scalable software tailored to enterprise business requirements.",
-  },
-  {
-    id: 9,
-    icon: "managed-services",
-    title: "Managed Services",
-    description:
-      "Proactive technology management ensuring reliability, performance, and continuous support.",
-  },
-];
-
-export const serviceSolutions: ServiceSolution[] = [
-  {
-    id: 1,
+    uuid: "5c1a7e08-3d94-4b62-8f17-a0d5e93c2416",
     eyebrow: "Artificial Intelligence",
     title: "AI & Machine Learning",
     description:
@@ -93,10 +105,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Analytics dashboard displayed above an open hand",
+    iconImage: "/icons/artificial-intelligence.svg",
   },
   {
     id: 2,
+    uuid: "9f3b6d21-70c5-4e83-b149-2a6f8c05d7e3",
     eyebrow: "Security & Compliance",
     title: "Enterprise Cybersecurity",
     description:
@@ -116,10 +129,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Digital padlock representing enterprise cybersecurity",
+    iconImage: "/icons/cybersecurity.svg",
   },
   {
     id: 3,
+    uuid: "2e84c05f-1b37-49da-8c60-73f1b9e4a528",
     eyebrow: "Consulting Services",
     title: "Technology Consulting",
     description:
@@ -139,10 +153,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Consultants reviewing a technology roadmap together",
+    iconImage: "/icons/technology-consulting.svg",
   },
   {
     id: 4,
+    uuid: "7a19d3b6-8c42-4f05-91e7-c5028b6d4f31",
     eyebrow: "Digital Engineering",
     title: "Enterprise Software",
     description:
@@ -162,10 +177,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Engineering team working on enterprise software",
+    iconImage: "/icons/enterprise-software.svg",
   },
   {
     id: 5,
+    uuid: "c04f8172-6ad9-4b31-85e0-9f27d1c6350b",
     eyebrow: "Smart Infrastructure",
     title: "Intelligent Infrastructure",
     description:
@@ -185,10 +201,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Connected city skyline representing smart infrastructure",
+    iconImage: "/icons/intelligent-infrastructure.svg",
   },
   {
     id: 6,
+    uuid: "3d76e2b9-95f4-4c18-a70d-6b83f0512e94",
     eyebrow: "Digital Government",
     title: "E-Government Services",
     description:
@@ -208,10 +225,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Hand interacting with a digital government interface",
+    iconImage: "/icons/e-government-services.svg",
   },
   {
     id: 7,
+    uuid: "8b52c0a7-4e61-49d3-92f8-107c5da6b38f",
     eyebrow: "Telecom & Networks",
     title: "Telecom Intelligence",
     description:
@@ -231,10 +249,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Technician working on telecom network equipment",
+    iconImage: "/icons/telecom-intelligence.svg",
   },
   {
     id: 8,
+    uuid: "1f9d4386-c25b-4703-8e64-b0a179f3c852",
     eyebrow: "Human Capital",
     title: "Workforce Solutions",
     description:
@@ -254,10 +273,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Team collaborating around a workforce planning board",
+    iconImage: "/icons/workforce-solutions.svg",
   },
   {
     id: 9,
+    uuid: "6c30b8f5-a749-4d21-95b3-4e8d72c0f169",
     eyebrow: "Agriculture Technology",
     title: "Smart Agriculture",
     description:
@@ -277,10 +297,11 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Farmer using a tablet in a crop field",
+    iconImage: "/icons/smart-agriculture.svg",
   },
   {
     id: 10,
+    uuid: "0a4e17c8-b36d-4592-8f21-d95c630a7e48",
     eyebrow: "Energy & Climate",
     title: "Sustainable Energy",
     description:
@@ -300,6 +321,6 @@ export const serviceSolutions: ServiceSolution[] = [
       },
     ],
     image: "/about_image.png",
-    imageAlt: "Wind turbines and solar panels in an energy field",
+    iconImage: "/icons/sustainable-energy.svg",
   },
 ];

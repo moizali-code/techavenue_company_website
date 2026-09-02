@@ -5,11 +5,25 @@ export type CoreService = Omit<CardProps, "icon"> & {
   icon: string;
 };
 
-export type CoreServicesProps = {
+export type CoreServicesSection = {
   heading: string;
   description: string;
   services: CoreService[];
+};
+
+export type CoreServicesProps = CoreServicesSection & {
   className?: string;
+};
+
+export type ServicesHeader = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+export type ServicesPageContent = {
+  servicesHeader: ServicesHeader;
+  coreServices: CoreServicesSection;
 };
 
 export type ServiceFeature = {
@@ -17,17 +31,18 @@ export type ServiceFeature = {
   title: string;
 };
 
-export type ServiceSolution = {
+export type ServiceDetail = {
   id: number;
+  uuid: string;
   eyebrow: string;
   title: string;
   description: string;
   features: ServiceFeature[];
   image: string;
-  imageAlt: string;
+  iconImage: string;
 };
 
-export type ServiceSolutionsProps = {
-  solutions: ServiceSolution[];
+export type ServiceDetailsProps = {
+  details: ServiceDetail[];
   className?: string;
 };

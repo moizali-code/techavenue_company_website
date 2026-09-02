@@ -7,6 +7,7 @@ import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { industries } from "@/mock/industry";
+import { serviceDetails } from "@/mock/services";
 import { solutions } from "@/mock/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
@@ -30,6 +31,13 @@ const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
   description: solution.description,
   href: `/solutions/${solution.uuid}`,
   image: solution.image,
+}));
+
+const serviceNavLinks: NavLink[] = serviceDetails.map((service) => ({
+  title: service.title,
+  description: service.description,
+  href: `/services#${service.uuid}`,
+  image: service.iconImage,
 }));
 
 const navigationItems: NavItem[] = [
@@ -69,72 +77,7 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Services",
-    href: "/services",
-    // items: [
-    //   {
-    //     title: "AI & Machine Learning",
-    //     description: "Models that move from proof of concept to production.",
-    //     href: "/services/ai-machine-learning",
-    //     icon: BrainCircuit,
-    //   },
-    //   {
-    //     title: "Cybersecurity Services",
-    //     description: "Assessments, hardening, and round-the-clock monitoring.",
-    //     href: "/services/cybersecurity",
-    //     icon: ShieldCheck,
-    //   },
-    //   {
-    //     title: "Digital Transformation",
-    //     description:
-    //       "Modernise legacy processes without stalling the business.",
-    //     href: "/services/digital-transformation",
-    //     icon: Rocket,
-    //   },
-    //   {
-    //     title: "Technology Consulting",
-    //     description: "Independent guidance on architecture and vendor choices.",
-    //     href: "/services/technology-consulting",
-    //     icon: Lightbulb,
-    //   },
-    //   {
-    //     title: "Cloud & Infrastructure",
-    //     description: "Migration, cost control, and resilient platform design.",
-    //     href: "/services/cloud-infrastructure",
-    //     icon: Cloud,
-    //   },
-    //   {
-    //     title: "System Integration",
-    //     description: "Connect disparate systems into one coherent estate.",
-    //     href: "/services/system-integration",
-    //     icon: Workflow,
-    //   },
-    //   {
-    //     title: "DevOps & Automation",
-    //     description: "Faster, safer releases through pipelines and IaC.",
-    //     href: "/services/devops-automation",
-    //     icon: Workflow,
-    //   },
-    //   {
-    //     title: "Data Analytics",
-    //     description:
-    //       "Pipelines, warehouses, and dashboards teams actually use.",
-    //     href: "/services/data-analytics",
-    //     icon: ChartColumn,
-    //   },
-    //   {
-    //     title: "Project Advisory",
-    //     description:
-    //       "Delivery oversight that keeps scope, cost, and time honest.",
-    //     href: "/services/project-advisory",
-    //     icon: ClipboardList,
-    //   },
-    //   {
-    //     title: "Managed Support Services",
-    //     description: "Ongoing operations and support with clear SLAs.",
-    //     href: "/services/managed-support",
-    //     icon: Headset,
-    //   },
-    // ],
+    items: serviceNavLinks,
   },
   {
     label: "Industries",
@@ -204,7 +147,7 @@ function MainNav({ className }: { className?: string }) {
                             <span className="text-sm font-semibold text-foreground">
                               {title}
                             </span>
-                            <span className="text-xs leading-snug text-muted-foreground">
+                            <span className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                               {description}
                             </span>
                           </span>
