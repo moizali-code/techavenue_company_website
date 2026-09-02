@@ -1,10 +1,9 @@
-import type { LucideIcon } from "lucide-react";
+import type { Solution } from "@/types/features/solutions";
 
 export type HomeStat = {
   uuid: string;
   value: string;
   label: string;
-  icon: LucideIcon;
 };
 
 export type HomeStatsProps = {
@@ -24,8 +23,6 @@ export type HomeAboutProps = {
   description: string;
   image: string;
   highlights: HomeAboutHighlight[];
-  actionLabel: string;
-  href: string;
   className?: string;
 };
 
@@ -69,6 +66,12 @@ export type HomeFaqsProps = {
   className?: string;
 };
 
+export type HomeSolutionsProps = {
+  heading: string;
+  solutions: Solution[];
+  className?: string;
+};
+
 export type HomeIntroProps = {
   headingStart: string;
   headingHighlight: string;
@@ -78,4 +81,14 @@ export type HomeIntroProps = {
   experienceValue: string;
   description: string;
   className?: string;
+};
+
+export type HomeData = {
+  intro: Omit<HomeIntroProps, "className">;
+  stats: HomeStat[];
+  about: Omit<HomeAboutProps, "className">;
+  missionVision: HomeMissionVisionItem[];
+  solutions: Omit<HomeSolutionsProps, "className" | "solutions">;
+  testimonials: Omit<HomeTestimonialsProps, "className">;
+  faqs: Omit<HomeFaqsProps, "className">;
 };

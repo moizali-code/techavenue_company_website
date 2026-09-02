@@ -41,6 +41,12 @@ export type SolutionTestimonial = {
   avatar: string;
 };
 
+export type SolutionHighlight = {
+  uuid: string;
+  label: string;
+  icon: string;
+};
+
 export type SolutionSummary = {
   id: number;
   uuid: string;
@@ -51,6 +57,7 @@ export type SolutionSummary = {
 
 export type Solution = SolutionSummary & {
   header: SolutionHeader;
+  highlights: SolutionHighlight[];
   overview: SolutionOverview;
   keyInfo: SolutionKeyInfo;
   experience: SolutionExperience;

@@ -4,24 +4,19 @@ import { HomeAbout } from "@/components/features/home/home-about";
 import { HomeFaqs } from "@/components/features/home/home-faqs";
 import { HomeIntro } from "@/components/features/home/home-intro";
 import { HomeMissionVision } from "@/components/features/home/home-mission-vision";
+import { HomeSolutions } from "@/components/features/home/home-solutions";
 import { HomeStats } from "@/components/features/home/home-stats";
 import { HomeTestimonials } from "@/components/features/home/home-testimonials";
 import { Container } from "@/components/shared/container";
 import { TrustedPartners } from "@/components/shared/trusted-partners";
-import {
-  homeAbout,
-  homeFaqs,
-  homeIntro,
-  homeMissionVision,
-  homeStats,
-  homeTestimonials,
-} from "@/mock/home";
+import { homeData } from "@/mock/home";
 import { homePartners } from "@/mock/partners";
+import { solutions } from "@/mock/solutions";
 
 export default function Home() {
   return (
     <>
-      <HomeIntro {...homeIntro} />
+      <HomeIntro {...homeData.intro} />
 
       <Container
         classNames={{
@@ -41,21 +36,23 @@ export default function Home() {
           />
         </div>
 
-        <HomeStats stats={homeStats} />
+        <HomeStats stats={homeData.stats} />
       </Container>
 
       <TrustedPartners partners={homePartners} />
 
-      <HomeAbout {...homeAbout} />
+      <HomeAbout {...homeData.about} />
 
       <HomeMissionVision
-        items={homeMissionVision}
+        items={homeData.missionVision}
         className="py-0 lg:py-0 pb-8 lg:pb-18"
       />
 
-      <HomeTestimonials {...homeTestimonials} />
+      <HomeSolutions {...homeData.solutions} solutions={solutions} />
 
-      <HomeFaqs {...homeFaqs} />
+      <HomeTestimonials {...homeData.testimonials} />
+
+      <HomeFaqs {...homeData.faqs} />
     </>
   );
 }

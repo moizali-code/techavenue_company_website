@@ -12,8 +12,6 @@ function HomeAbout({
   description,
   image,
   highlights,
-  actionLabel,
-  href,
   className,
 }: HomeAboutProps) {
   return (
@@ -49,10 +47,10 @@ function HomeAbout({
               size="lg"
               arrow
               nativeButton={false}
-              render={<Link href={href} />}
+              render={<Link href="/about" />}
               className="h-12 w-fit px-6 text-[15px] font-medium"
             >
-              {actionLabel}
+              Learn More
             </Button>
           </div>
         }
