@@ -1,18 +1,15 @@
 import { SuccessStoriesGrid } from "@/components/features/success-stories/success-stories-grid";
 import { SuccessStoriesHeader } from "@/components/features/success-stories/success-stories-header";
-import {
-  successStories,
-  successStoriesContent,
-} from "@/mock/success-stories";
+import { successStories, successStoriesContent } from "@/mock/success-stories";
 
 const page = () => {
-  const { header, intro, filters } = successStoriesContent;
+  const { header, intro } = successStoriesContent;
 
   return (
     <>
       <SuccessStoriesHeader header={header} intro={intro} />
 
-      <SuccessStoriesGrid stories={successStories} filters={filters} />
+      <SuccessStoriesGrid stories={successStories} />
     </>
   );
 };

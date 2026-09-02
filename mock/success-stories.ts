@@ -17,57 +17,6 @@ export const successStoriesContent: SuccessStoriesContent = {
     description:
       "From critical national systems to citywide smart infrastructure, our success stories showcase real-world impact across industries and global markets.",
   },
-  filters: {
-    solutions: [
-      {
-        id: 1,
-        uuid: "0b7d4e29-5c31-4a86-9f02-6d84c1b73e50",
-        title: "Software & AI",
-      },
-      {
-        id: 2,
-        uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
-        title: "Cybersecurity",
-      },
-      {
-        id: 3,
-        uuid: "c94a1e08-6b72-4f35-80d9-27e5a3b16c40",
-        title: "Defence",
-      },
-      {
-        id: 4,
-        uuid: "5c81f4a6-0d29-473b-96e8-b247a1c30f95",
-        title: "Smart Cities",
-      },
-      {
-        id: 5,
-        uuid: "d21b7f34-08e6-4c95-a70d-3f5e9c246b81",
-        title: "Telecom",
-      },
-    ],
-    industries: [
-      {
-        id: 1,
-        uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
-        title: "Government",
-      },
-      {
-        id: 2,
-        uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
-        title: "Banking",
-      },
-      {
-        id: 3,
-        uuid: "6e35c7a9-1d48-4b02-95f7-c04a8b21e763",
-        title: "Energy",
-      },
-      {
-        id: 4,
-        uuid: "b8f2091c-7a56-4d34-8e60-15c37d9ab420",
-        title: "Enterprise",
-      },
-    ],
-  },
 };
 
 export const successStories: SuccessStory[] = [
@@ -76,14 +25,14 @@ export const successStories: SuccessStory[] = [
     uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
     image: "/about_image.png",
     solution: {
-      id: 2,
-      uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
-      title: "Cybersecurity",
+      id: 1,
+      uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
+      title: "Network Security",
     },
     industry: {
-      id: 2,
-      uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
-      title: "Banking",
+      id: 4,
+      uuid: "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64",
+      title: "Banking & Financial Services",
     },
     title: "Enterprise Threat Detection Platform",
     description:
@@ -207,14 +156,14 @@ export const successStories: SuccessStory[] = [
     uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
     image: "/about_image.png",
     solution: {
-      id: 4,
-      uuid: "5c81f4a6-0d29-473b-96e8-b247a1c30f95",
-      title: "Smart Cities",
+      id: 3,
+      uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
+      title: "Smart Infrastructure Solutions",
     },
     industry: {
       id: 1,
-      uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
-      title: "Government",
+      uuid: "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901",
+      title: "Government & Public Sector",
     },
     title: "5G Municipal Infrastructure",
     description:
@@ -342,14 +291,14 @@ export const successStories: SuccessStory[] = [
     uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
     image: "/about_image.png",
     solution: {
-      id: 1,
-      uuid: "0b7d4e29-5c31-4a86-9f02-6d84c1b73e50",
-      title: "Software & AI",
+      id: 7,
+      uuid: "71bc4f83-0e26-45d9-8a73-b4c62f019d75",
+      title: "E-Government Solutions",
     },
     industry: {
       id: 1,
-      uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
-      title: "Government",
+      uuid: "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901",
+      title: "Government & Public Sector",
     },
     title: "Predictive Governance Model",
     description:
@@ -477,14 +426,14 @@ export const successStories: SuccessStory[] = [
     uuid: "6d70a382-4f19-4c25-9b08-e35a1c72f4b6",
     image: "/about_image.png",
     solution: {
-      id: 1,
-      uuid: "0b7d4e29-5c31-4a86-9f02-6d84c1b73e50",
-      title: "Software & AI",
+      id: 6,
+      uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
+      title: "AI & Software Solutions",
     },
     industry: {
-      id: 4,
-      uuid: "b8f2091c-7a56-4d34-8e60-15c37d9ab420",
-      title: "Enterprise",
+      id: 2,
+      uuid: "8c74b1d9-2e35-4af6-9d10-6b83f7a2c542",
+      title: "Information Technology",
     },
     title: "Unified Operations Intelligence Suite",
     description:
@@ -611,14 +560,14 @@ export const successStories: SuccessStory[] = [
     uuid: "b52f8c19-0a63-4d74-8e21-47c9b6d035fa",
     image: "/about_image.png",
     solution: {
-      id: 5,
-      uuid: "d21b7f34-08e6-4c95-a70d-3f5e9c246b81",
-      title: "Telecom",
+      id: 8,
+      uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
+      title: "Telecom Intelligence Solutions",
     },
     industry: {
-      id: 4,
-      uuid: "b8f2091c-7a56-4d34-8e60-15c37d9ab420",
-      title: "Enterprise",
+      id: 3,
+      uuid: "5d92e0a7-6c81-4b23-97ef-2a14d8b60c73",
+      title: "Telecommunications",
     },
     title: "Nationwide Network Modernisation",
     description:
@@ -743,14 +692,14 @@ export const successStories: SuccessStory[] = [
     uuid: "1a7c3e05-9d84-4b62-8f31-06e5c2a94db7",
     image: "/about_image.png",
     solution: {
-      id: 3,
-      uuid: "c94a1e08-6b72-4f35-80d9-27e5a3b16c40",
-      title: "Defence",
+      id: 1,
+      uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
+      title: "Network Security",
     },
     industry: {
       id: 1,
-      uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
-      title: "Government",
+      uuid: "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901",
+      title: "Government & Public Sector",
     },
     title: "Secure Command & Control Backbone",
     description:
@@ -874,14 +823,14 @@ export const successStories: SuccessStory[] = [
     uuid: "e0b46d91-2f57-4a38-95c0-7d13b8a6e425",
     image: "/about_image.png",
     solution: {
-      id: 2,
-      uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
-      title: "Cybersecurity",
+      id: 1,
+      uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
+      title: "Network Security",
     },
     industry: {
-      id: 3,
-      uuid: "6e35c7a9-1d48-4b02-95f7-c04a8b21e763",
-      title: "Energy",
+      id: 9,
+      uuid: "6a2d81e4-b703-4f59-9c48-0e35d7b1a962",
+      title: "Energy & Utilities",
     },
     title: "Grid Resilience Operations Centre",
     description:
@@ -1008,14 +957,14 @@ export const successStories: SuccessStory[] = [
     uuid: "74f8c250-b613-4e09-a72d-9c58e1067b3a",
     image: "/about_image.png",
     solution: {
-      id: 1,
-      uuid: "0b7d4e29-5c31-4a86-9f02-6d84c1b73e50",
-      title: "Software & AI",
+      id: 6,
+      uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
+      title: "AI & Software Solutions",
     },
     industry: {
-      id: 3,
-      uuid: "6e35c7a9-1d48-4b02-95f7-c04a8b21e763",
-      title: "Energy",
+      id: 10,
+      uuid: "c85b0937-1a4e-4620-b7d3-2f16c9e08a45",
+      title: "Oil & Gas",
     },
     title: "Predictive Maintenance for Refineries",
     description:
@@ -1141,14 +1090,14 @@ export const successStories: SuccessStory[] = [
     uuid: "2d905b7e-4c18-46fa-b039-8e17c6d24509",
     image: "/about_image.png",
     solution: {
-      id: 4,
-      uuid: "5c81f4a6-0d29-473b-96e8-b247a1c30f95",
-      title: "Smart Cities",
+      id: 3,
+      uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
+      title: "Smart Infrastructure Solutions",
     },
     industry: {
-      id: 3,
-      uuid: "6e35c7a9-1d48-4b02-95f7-c04a8b21e763",
-      title: "Energy",
+      id: 9,
+      uuid: "6a2d81e4-b703-4f59-9c48-0e35d7b1a962",
+      title: "Energy & Utilities",
     },
     title: "Connected Street Lighting Programme",
     description:
@@ -1273,14 +1222,14 @@ export const successStories: SuccessStory[] = [
     uuid: "8c31f6a4-0e29-4d75-91b8-53a0d7c26e14",
     image: "/about_image.png",
     solution: {
-      id: 2,
-      uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
-      title: "Cybersecurity",
+      id: 1,
+      uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
+      title: "Network Security",
     },
     industry: {
-      id: 4,
-      uuid: "b8f2091c-7a56-4d34-8e60-15c37d9ab420",
-      title: "Enterprise",
+      id: 2,
+      uuid: "8c74b1d9-2e35-4af6-9d10-6b83f7a2c542",
+      title: "Information Technology",
     },
     title: "Zero Trust Access Rollout",
     description:
@@ -1404,14 +1353,14 @@ export const successStories: SuccessStory[] = [
     uuid: "5b027e93-a4d8-4c61-b295-0f38e7a1c6d2",
     image: "/about_image.png",
     solution: {
-      id: 5,
-      uuid: "d21b7f34-08e6-4c95-a70d-3f5e9c246b81",
-      title: "Telecom",
+      id: 8,
+      uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
+      title: "Telecom Intelligence Solutions",
     },
     industry: {
-      id: 2,
-      uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
-      title: "Banking",
+      id: 4,
+      uuid: "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64",
+      title: "Banking & Financial Services",
     },
     title: "Branch Connectivity Consolidation",
     description:
@@ -1536,14 +1485,14 @@ export const successStories: SuccessStory[] = [
     uuid: "f4a610c8-73b2-4d59-8e07-b1c9257ad430",
     image: "/about_image.png",
     solution: {
-      id: 3,
-      uuid: "c94a1e08-6b72-4f35-80d9-27e5a3b16c40",
-      title: "Defence",
+      id: 2,
+      uuid: "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85",
+      title: "Business Consulting Services",
     },
     industry: {
-      id: 4,
-      uuid: "b8f2091c-7a56-4d34-8e60-15c37d9ab420",
-      title: "Enterprise",
+      id: 11,
+      uuid: "4d19a7f2-6c58-4b31-90ae-8e27b5d3f016",
+      title: "Manufacturing",
     },
     title: "Critical Supplier Assurance Platform",
     description:

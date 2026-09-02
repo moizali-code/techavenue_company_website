@@ -10,6 +10,7 @@ function TabGroup({
   id,
   tabs,
   activeUuid,
+  onSelect,
   hrefPrefix,
   variant = "pill",
   classNames,
@@ -18,6 +19,7 @@ function TabGroup({
     <Tabs
       id={id}
       value={activeUuid}
+      onValueChange={(value) => onSelect?.(String(value))}
       className={cn("w-full", classNames?.mainWrapper)}
     >
       <TabsList variant={variant} className={classNames?.list}>

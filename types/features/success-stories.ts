@@ -58,15 +58,9 @@ export type SuccessStory = {
   detail: SuccessStoryDetail;
 };
 
-export type SuccessStoryFilters = {
-  solutions: SuccessStoryTag[];
-  industries: SuccessStoryTag[];
-};
-
 export type SuccessStoriesContent = {
   header: SuccessStoryHeader;
   intro: SuccessStoryIntro;
-  filters: SuccessStoryFilters;
 };
 
 export type SuccessStoriesHeaderProps = {
@@ -77,13 +71,5 @@ export type SuccessStoriesHeaderProps = {
 
 export type SuccessStoriesGridProps = {
   stories: SuccessStory[];
-  filters: SuccessStoryFilters;
   className?: string;
-};
-
-export type SuccessStoryFilterRowProps = {
-  label: string;
-  options: SuccessStoryTag[];
-  activeUuid: string;
-  onSelect: (uuid: string) => void;
 };

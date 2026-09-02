@@ -2,26 +2,41 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import {
-  ALL_FILTER_UUID,
-  SuccessStoriesFilterRow,
-} from "@/components/features/success-stories/success-stories-filter-row";
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { Paginator } from "@/components/shared/paginator";
+import { TabGroup } from "@/components/shared/tab-group";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { industries } from "@/mock/industry";
+import { solutions } from "@/mock/solutions";
 import type { SuccessStoriesGridProps } from "@/types/features/success-stories";
+import type { TabGroupItem } from "@/types/shared/tab-group";
 
 const STORIES_PER_PAGE = 9;
+const ALL_FILTER_UUID = "all";
 const TAG_BADGE_CLASSNAME =
   "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase";
+const FILTER_LABEL_CLASSNAME =
+  "pt-2 text-[13px] font-semibold text-[#191C1E] md:w-24 md:shrink-0 lg:text-[14px]";
 
-function SuccessStoriesGrid({
-  stories,
-  filters,
-  className,
-}: SuccessStoriesGridProps) {
+const allFilterTab: TabGroupItem = {
+  id: 0,
+  uuid: ALL_FILTER_UUID,
+  title: "All",
+};
+
+const solutionTabs: TabGroupItem[] = [
+  allFilterTab,
+  ...solutions.map(({ id, uuid, title }) => ({ id, uuid, title })),
+];
+
+const industryTabs: TabGroupItem[] = [
+  allFilterTab,
+  ...industries.map(({ id, uuid, title }) => ({ id, uuid, title })),
+];
+
+function SuccessStoriesGrid({ stories, className }: SuccessStoriesGridProps) {
   const [solutionUuid, setSolutionUuid] = useState(ALL_FILTER_UUID);
   const [industryUuid, setIndustryUuid] = useState(ALL_FILTER_UUID);
   const [page, setPage] = useState(1);
@@ -70,19 +85,25 @@ function SuccessStoriesGrid({
       }}
     >
       <div className="flex flex-col gap-5  rounded-[12px]  p-5 lg:p-6">
-        <SuccessStoriesFilterRow
-          label="Solutions:"
-          options={filters.solutions}
-          activeUuid={solutionUuid}
-          onSelect={selectSolution}
-        />
+        <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
+          <span className={FILTER_LABEL_CLASSNAME}>Solutions:</span>
 
-        <SuccessStoriesFilterRow
-          label="Industry:"
-          options={filters.industries}
-          activeUuid={industryUuid}
-          onSelect={selectIndustry}
-        />
+          <TabGroup
+            tabs={solutionTabs}
+            activeUuid={solutionUuid}
+            onSelect={selectSolution}
+          />
+        </div>
+
+        <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
+          <span className={FILTER_LABEL_CLASSNAME}>Industry:</span>
+
+          <TabGroup
+            tabs={industryTabs}
+            activeUuid={industryUuid}
+            onSelect={selectIndustry}
+          />
+        </div>
       </div>
 
       {visibleStories.length === 0 ? (
