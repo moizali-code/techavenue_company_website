@@ -20,7 +20,7 @@ function SuccessStoriesHeader({
           </Button>
         }
         classNames={{
-          mainWrapper: className,
+          mainWrapper: `h-[400px] lg:h-[500px] items-end ${className}`,
           content: "w-full max-w-4xl gap-4",
           title:
             "font-times text-[30px] font-bold text-white md:text-[40px] lg:text-[48px]",

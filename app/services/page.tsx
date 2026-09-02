@@ -14,7 +14,7 @@ const page = () => {
         classNames={{
           title: "text-white !text-[48px] font-times",
           description: "text-white text-[18px]",
-          mainWrapper: "h-[400px] lg:h-[600px]",
+          mainWrapper: "h-[400px] lg:h-[600px] items-end",
         }}
         description={servicesHeader.description}
         eyebrow={
