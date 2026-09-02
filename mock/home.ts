@@ -33,6 +33,43 @@ export const homeData: HomeData = {
       label: "Years of Expertise",
     },
   ],
+  partners: [
+    {
+      id: 1,
+      uuid: "d7c40b6e-19a5-4382-b0f7-6e3512a9c847",
+      image: "/partners/ibm.svg",
+    },
+    {
+      id: 2,
+      uuid: "3b8e51fa-620d-4c97-85b1-0a74e6c23f59",
+      image: "/partners/dell.svg",
+    },
+    {
+      id: 3,
+      uuid: "a02f7d43-8c16-495e-b738-51d9e0b46c72",
+      image: "/partners/lenovo.svg",
+    },
+    {
+      id: 4,
+      uuid: "5e91c8b0-4d72-43a6-91e5-70b83c14da96",
+      image: "/partners/huawei.svg",
+    },
+    {
+      id: 5,
+      uuid: "9146ea75-0b38-4f2c-86d0-2c57b9e41830",
+      image: "/partners/forescout.svg",
+    },
+    {
+      id: 6,
+      uuid: "c8735b01-6e49-4a2d-93f8-14a0d7c65b23",
+      image: "/partners/cisco.svg",
+    },
+    {
+      id: 7,
+      uuid: "42d0a986-7f51-4b63-a8c4-903e7b21d5f6",
+      image: "/partners/microsoft.svg",
+    },
+  ],
   about: {
     eyebrow: "About Us",
     title: "Leading the Innovation Drive",

@@ -6,13 +6,3 @@ export const trustedPartners = [
   "AWS",
   "Oracle",
 ];
-
-export const homePartners = [
-  "IBM",
-  "Dell",
-  "Lenovo",
-  "Huawei",
-  "Forescout",
-  "Cisco",
-  "Microsoft",
-];

@@ -66,6 +66,17 @@ export type HomeFaqsProps = {
   className?: string;
 };
 
+export type HomePartner = {
+  id: number;
+  uuid: string;
+  image: string;
+};
+
+export type HomePartnersProps = {
+  partners: HomePartner[];
+  className?: string;
+};
+
 export type HomeSolutionsProps = {
   heading: string;
   solutions: Solution[];
@@ -86,6 +97,7 @@ export type HomeIntroProps = {
 export type HomeData = {
   intro: Omit<HomeIntroProps, "className">;
   stats: HomeStat[];
+  partners: HomePartner[];
   about: Omit<HomeAboutProps, "className">;
   missionVision: HomeMissionVisionItem[];
   solutions: Omit<HomeSolutionsProps, "className" | "solutions">;
