@@ -1,7 +1,7 @@
 "use client";
-import { IndustryChallenges } from "@/components/features/industry/industry-challenges";
 import { IndustrySuccessStories } from "@/components/features/industry/industry-success-stories";
 import { IndustryTabs } from "@/components/features/industry/industry-tabs";
+import { Challenges } from "@/components/shared/challenges";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { ProvidedSolutions } from "@/components/shared/provided-solutions";
@@ -85,7 +85,7 @@ const page = () => {
         />
       </Container>
 
-      <IndustryChallenges challenges={challenges} />
+      <Challenges challenges={challenges} />
 
       <ProvidedSolutions providedSolutions={providedSolutions} />
 

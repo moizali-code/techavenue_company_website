@@ -1,3 +1,8 @@
+import type { CardProps } from "@/types/features/card";
+import type { ContainerProps } from "@/types/features/container";
+import type { JumbotronProps } from "@/types/features/jumbotron";
+import type { ProvidedSolutions } from "@/types/features/provided-solutions";
+import type { Challenges } from "@/types/shared/challenges";
 import type { SuccessStoryTag } from "@/types/shared/tag";
 
 export type SuccessStoryHeader = {
@@ -13,6 +18,35 @@ export type SuccessStoryIntro = {
   description: string;
 };
 
+export type SuccessStoryImpactResult = {
+  id: number;
+  uuid: string;
+  value: string;
+  title: string;
+  description: string;
+};
+
+export type SuccessStoryImpact = {
+  title: string;
+  description: string;
+  items: SuccessStoryImpactResult[];
+};
+
+export type SuccessStoryDetail = {
+  challenges: Challenges;
+  providedSolutions: ProvidedSolutions;
+  impact: SuccessStoryImpact;
+};
+
+export type SuccessStoryImpactProps = {
+  impact: SuccessStoryImpact;
+  classNames?: {
+    container?: ContainerProps["classNames"];
+    jumbotron?: JumbotronProps["classNames"];
+    card?: CardProps["classNames"];
+  };
+};
+
 export type SuccessStory = {
   id: number;
   uuid: string;
@@ -21,6 +55,7 @@ export type SuccessStory = {
   solution: SuccessStoryTag;
   title: string;
   description: string;
+  detail: SuccessStoryDetail;
 };
 
 export type SuccessStoryFilters = {
@@ -36,10 +71,6 @@ export type SuccessStoriesContent = {
 
 export type SuccessStoriesHeaderProps = {
   header: SuccessStoryHeader;
-  className?: string;
-};
-
-export type SuccessStoriesIntroProps = {
   intro: SuccessStoryIntro;
   className?: string;
 };

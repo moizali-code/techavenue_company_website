@@ -2,20 +2,20 @@ import type { CardProps } from "@/types/features/card";
 import type { ContainerProps } from "@/types/features/container";
 import type { JumbotronProps } from "@/types/features/jumbotron";
 
-export type ProvidedSolution = {
+export type Challenge = {
   icon: string;
   title: string;
   description: string;
 };
 
-export type ProvidedSolutions = {
+export type Challenges = {
   title: string;
   description: string;
-  items: ProvidedSolution[];
+  items: Challenge[];
 };
 
-export type ProvidedSolutionsProps = {
-  providedSolutions: ProvidedSolutions;
+export type ChallengesProps = {
+  challenges: Challenges;
   classNames?: {
     container?: ContainerProps["classNames"];
     jumbotron?: JumbotronProps["classNames"];
