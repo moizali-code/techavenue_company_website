@@ -42,7 +42,7 @@ export type HiringStep = {
   uuid: string;
   title: string;
   description: string;
-  icon: string;
+  image: string;
 };
 
 export type HiringProcessProps = {
@@ -65,7 +65,7 @@ export type SocialLink = {
   uuid: string;
   label: string;
   href: string;
-  icon: string;
+  image: string;
 };
 
 export type FollowUsProps = {

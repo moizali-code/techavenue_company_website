@@ -24,8 +24,5 @@ export type ContactDetailsProps = {
 export type ContactFormProps = {
   title: string;
   description: string;
-  industries: string[];
-  services: string[];
-  successStoriesHref: string;
   className?: string;
 };

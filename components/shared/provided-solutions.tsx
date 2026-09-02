@@ -48,7 +48,7 @@ function ProvidedSolutions({
             description={item.description}
             eyebrow={
               <Image
-                src={item.icon}
+                src={item.image}
                 alt=""
                 width={20}
                 height={20}

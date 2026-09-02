@@ -12,13 +12,13 @@ function HomeMissionVision({ items, className }: HomeMissionVisionProps) {
         container: "grid gap-6 md:grid-cols-2 lg:gap-8",
       }}
     >
-      {items.map(({ uuid, title, description, icon }) => (
+      {items.map(({ uuid, title, description, image }) => (
         <Card
           key={uuid}
           eyebrow={
             <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#EEF2FB]">
               <Image
-                src={icon}
+                src={image}
                 alt=""
                 width={24}
                 height={24}

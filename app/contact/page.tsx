@@ -1,7 +1,7 @@
 import { ContactDetails } from "@/components/features/contact/contact-details";
 import { ContactForm } from "@/components/features/contact/contact-form";
 import { ContactHeader } from "@/components/features/contact/contact-header";
-import { contactForm, contactSection } from "@/mock/contact";
+import { contactSection } from "@/mock/contact";
 
 const page = () => {
   return (
@@ -10,7 +10,7 @@ const page = () => {
 
       <ContactDetails {...contactSection.details} />
 
-      <ContactForm {...contactForm} />
+      <ContactForm {...contactSection.form} />
     </>
   );
 };

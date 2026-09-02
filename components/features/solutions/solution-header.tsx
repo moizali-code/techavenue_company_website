@@ -1,3 +1,4 @@
+import { RequestDemoModal } from "@/components/features/solutions/request-demo-modal";
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
 import { Badge } from "@/components/ui/badge";
@@ -42,13 +43,17 @@ function SolutionHeader({ eyebrow, header, classNames }: SolutionHeaderProps) {
             </dl>
 
             <div className="flex w-full flex-col gap-4 md:w-auto lg:flex-row lg:items-center">
-              <Button
-                size="lg"
-                variant="brand"
-                className="border-2 border-[#1E3C8C] h-auto rounded-[4px] px-8 py-3.5 text-[15px] font-medium tracking-normal"
-              >
-                {PRIMARY_ACTION_LABEL}
-              </Button>
+              <RequestDemoModal
+                trigger={
+                  <Button
+                    size="lg"
+                    variant="brand"
+                    className="border-2 border-[#1E3C8C] h-auto rounded-[4px] px-8 py-3.5 text-[15px] font-medium tracking-normal"
+                  >
+                    {PRIMARY_ACTION_LABEL}
+                  </Button>
+                }
+              />
 
               <Button
                 size="lg"

@@ -51,7 +51,7 @@ function HiringProcess({
                   )}
                 >
                   <Image
-                    src={step.icon}
+                    src={step.image}
                     alt=""
                     width={24}
                     height={24}

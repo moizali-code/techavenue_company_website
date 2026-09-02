@@ -3,7 +3,7 @@ import type { ContainerProps } from "@/types/features/container";
 import type { JumbotronProps } from "@/types/features/jumbotron";
 
 export type ProvidedSolution = {
-  icon: string;
+  image: string;
   title: string;
   description: string;
 };

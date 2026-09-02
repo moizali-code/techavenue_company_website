@@ -44,7 +44,7 @@ export type SolutionTestimonial = {
 export type SolutionHighlight = {
   uuid: string;
   label: string;
-  icon: string;
+  image: string;
 };
 
 export type SolutionSummary = {

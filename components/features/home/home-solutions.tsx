@@ -54,7 +54,7 @@ function HomeSolutions({ heading, solutions, className }: HomeSolutionsProps) {
                       className="flex items-center gap-3 text-[12px] font-normal text-[#191818]"
                     >
                       <Image
-                        src={highlight.icon}
+                        src={highlight.image}
                         alt=""
                         width={20}
                         height={20}

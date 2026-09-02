@@ -12,22 +12,22 @@ export const solutions: Solution[] = [
       {
         uuid: "f1d8a35c-0b76-4e29-9a41-63c07e2b5d84",
         label: "Zero-Trust Access & Identity Control",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "4a92c7e0-5d13-48b6-b70f-91e4a836c25d",
         label: "24/7 Threat Monitoring & Detection",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "8c05f6b3-7e41-4290-85da-2f6b9c0d374e",
         label: "Endpoint & Cloud Workload Protection",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "b63e0947-1c58-4a3d-92f0-7d81e5a4c063",
         label: "Automated Incident Containment & Response",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -100,22 +100,22 @@ export const solutions: Solution[] = [
       {
         uuid: "27b4d9f1-3a60-4c85-b19e-5f70c286a4d3",
         label: "Technology Assessments & Estate Reviews",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "9e10c5a8-72b6-4f03-91d4-8a35e0c7b26f",
         label: "Enterprise Architecture Design",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "6d3f81a5-4e07-42b9-8c16-0b95e7d3f2c8",
         label: "Transformation Roadmaps & Sequencing",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "c58a2607-9b34-4df1-a075-3e62b8c1904f",
         label: "Operating Model & Change Enablement",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -188,22 +188,22 @@ export const solutions: Solution[] = [
       {
         uuid: "3f7c0b92-8d45-41e6-a2b7-59e04c8d1736",
         label: "Unified Building Management Console",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "a04e6d18-2f93-45c7-b830-7c15e9a26d40",
         label: "Digital Twin Modelling & Simulation",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "5b81f4c7-6a20-49d3-8e15-0f37b6c24e9a",
         label: "IoT Sensor Networks & Energy Monitoring",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "e2960c5b-4d78-4103-97af-6b48d105e372",
         label: "Predictive Maintenance & Asset Lifecycle",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -276,22 +276,22 @@ export const solutions: Solution[] = [
       {
         uuid: "7c3b95e0-1a64-4d28-b0f9-46e28c517b3d",
         label: "Online Learning & Course Management",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "1e58d0a4-9c37-4b61-85e2-30f7b9c6d148",
         label: "Progress Tracking & Certifications",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "b90427fc-5e18-4a73-96d0-2c81f4e7053b",
         label: "Virtual Classrooms & Mobile Learning",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "48f1c6a2-0d95-4e37-81b6-5a70e3d92c48",
         label: "AI-Powered Skills Assessment & Analytics",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -364,22 +364,22 @@ export const solutions: Solution[] = [
       {
         uuid: "0a67e3d5-8b14-42f9-a3c7-61d95b027e4a",
         label: "Field Sensor Networks & Offline Capture",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "d5c81f43-2079-4b6e-95a0-8e13c7f4062b",
         label: "Plot-Level Soil & Moisture Insight",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "62e094a7-b358-41cd-807f-4a29d6b13e50",
         label: "Irrigation & Input Optimization",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "9f4a72b6-0e51-4837-b6d2-73c08e5a1f96",
         label: "Farm-to-Buyer Traceability",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -452,22 +452,22 @@ export const solutions: Solution[] = [
       {
         uuid: "3d90b5e7-4c26-4f18-a97b-05e14c8d267a",
         label: "Generative AI & Intelligent Assistants",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "c47e81a0-9b52-4d36-80f1-6a93e5c74b28",
         label: "Predictive Models & Computer Vision",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "80b26f34-1e07-49a5-b6c8-2d54a9e03f61",
         label: "Human-in-the-Loop Review Workflows",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "e51c3a89-7d40-42b6-95e3-1f68b0c4a75d",
         label: "Continuous Evaluation & Explainability",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -540,22 +540,22 @@ export const solutions: Solution[] = [
       {
         uuid: "16f8c073-5a29-4e84-b1d6-70a35e9c2b41",
         label: "Single Verified Citizen Identity",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "72d05b9e-3c61-478f-a0b4-59e17c8d3620",
         label: "Cross-Department Case Management",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "af31e6c8-0d75-4923-86b1-4c60f9a25e73",
         label: "WCAG-Compliant Accessible Services",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "5c907e21-8b46-4d0a-93f7-2e68b1c05a94",
         label: "Complete Audit Trail & Oversight Reporting",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -628,22 +628,22 @@ export const solutions: Solution[] = [
       {
         uuid: "24b8e0f6-7c31-45a9-b073-8e51d6c92a30",
         label: "Correlated Network Fault View",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "9013a7cd-5e28-4b64-82f1-6c04b9e73d15",
         label: "Subscriber Impact Mapping",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "6ea45c02-1b97-483d-95c6-0f72a8d31b64",
         label: "Real-Time Service Quality Analytics",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "b7d31e58-4a06-42f7-8b09-3e64c1a05f27",
         label: "Predictive Maintenance & Outage Prevention",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -716,22 +716,22 @@ export const solutions: Solution[] = [
       {
         uuid: "0f52c81b-6d34-4907-a2e5-84b17c60d3f9",
         label: "Unified Employee Record",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "83a6d094-2f71-4e58-b06c-5917e3a84d20",
         label: "Recruitment & Onboarding Workflows",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "d419b7e3-8c05-42a6-91f7-60d38b5c27ae",
         label: "Payroll & Manager Self-Service",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "5e08f3a7-1b96-4c40-87d2-3a71e0c69b58",
         label: "Performance Reviews & Development Tracking",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {
@@ -804,22 +804,22 @@ export const solutions: Solution[] = [
       {
         uuid: "7ab30945-c218-4de6-90b3-2f57e6c14a80",
         label: "Interval Meter Data Ingestion at Scale",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "c2e75b18-0946-43af-85d0-7e31b9c4602f",
         label: "Asset-Level Consumption Attribution",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "48910de5-7b62-4c03-9a17-5d0e26b83f74",
         label: "Emissions Tracking & Target Management",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
       {
         uuid: "e6053ca9-3d17-482b-b64f-90a71c58d326",
         label: "Continuous ESG & Regulatory Disclosure",
-        icon: "/icons/check.svg",
+        image: "/icons/check.svg",
       },
     ],
     header: {

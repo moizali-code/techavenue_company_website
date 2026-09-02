@@ -17,63 +17,72 @@ export const servicesPageContent: ServicesPageContent = {
     services: [
       {
         id: 1,
-        icon: "artificial-intelligence",
+        uuid: "b7e41c92-58af-4d16-9c73-0e5a2d84f6b1",
+        image: "/icons/artificial-intelligence.svg",
         title: "Artificial Intelligence",
         description:
           "AI-powered automation, predictive analytics, and intelligent business solutions.",
       },
       {
         id: 2,
-        icon: "cybersecurity",
+        uuid: "4a90d3e7-2c68-4b51-8f04-71d6b95ac238",
+        image: "/icons/cybersecurity.svg",
         title: "Cybersecurity",
         description:
           "Enterprise security protecting networks, identities, applications, and critical infrastructure.",
       },
       {
         id: 3,
-        icon: "technology-consulting",
+        uuid: "e2158fb4-6d07-49c3-a5b8-3c94e70d1a65",
+        image: "/icons/technology-consulting.svg",
         title: "Technology Consulting",
         description:
           "Strategic consulting accelerating innovation, transformation, and sustainable business growth.",
       },
       {
         id: 4,
-        icon: "cloud-services",
+        uuid: "9c63a084-1e5b-4f27-b9d0-8a24f61c73e5",
+        image: "/icons/cloud-services.svg",
         title: "Cloud Services",
         description:
           "Secure cloud infrastructure enabling scalable enterprise applications and operations.",
       },
       {
         id: 5,
-        icon: "digital-transformation",
+        uuid: "17d4be59-8a32-4c60-95f7-2b0e8d36c491",
+        image: "/icons/digital-transformation.svg",
         title: "Digital Transformation",
         description:
           "Modernizing organizations through innovative technologies and intelligent digital strategies.",
       },
       {
         id: 6,
-        icon: "system-integration",
+        uuid: "5f80c327-94d1-4a68-b3e2-6c17a950df84",
+        image: "/icons/system-integration.svg",
         title: "System Integration",
         description:
           "Connecting enterprise systems for seamless workflows and operational efficiency.",
       },
       {
         id: 7,
-        icon: "data-analytics",
+        uuid: "a3c26e15-70b9-4d84-8215-cf9e30b7a6d2",
+        image: "/icons/data-analytics.svg",
         title: "Data Analytics",
         description:
           "Turning complex business data into actionable intelligence and insights.",
       },
       {
         id: 8,
-        icon: "software-development",
+        uuid: "68b1f947-c503-42ea-971d-04a8c25e6b30",
+        image: "/icons/software-development.svg",
         title: "Software Development",
         description:
           "Building secure, scalable software tailored to enterprise business requirements.",
       },
       {
         id: 9,
-        icon: "managed-services",
+        uuid: "d0946a83-3fb7-4159-8ce6-72b5140da9c7",
+        image: "/icons/managed-services.svg",
         title: "Managed Services",
         description:
           "Proactive technology management ensuring reliability, performance, and continuous support.",
@@ -92,15 +101,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We design and deploy intelligent AI solutions that help organizations automate operations, improve decision-making, and accelerate innovation. Our expertise includes Generative AI, custom AI models, intelligent assistants, computer vision, predictive analytics, and enterprise automation, enabling businesses and governments to transform complex processes into scalable, data-driven solutions.",
     features: [
       {
-        icon: "/icons/generative-ai.svg",
+        image: "/icons/generative-ai.svg",
         title: "Generative AI & Custom AI Models",
       },
       {
-        icon: "/icons/process-automation.svg",
+        image: "/icons/process-automation.svg",
         title: "Intelligent Process Automation",
       },
       {
-        icon: "/icons/predictive-analytics.svg",
+        image: "/icons/predictive-analytics.svg",
         title: "Predictive Analytics & Computer Vision",
       },
     ],
@@ -116,15 +125,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We protect critical digital infrastructure through comprehensive cybersecurity solutions designed for modern enterprises and government organizations. Our services include network security, endpoint protection, identity management, governance, risk assessment, and security operations to strengthen resilience against evolving cyber threats.",
     features: [
       {
-        icon: "/icons/network-security.svg",
+        image: "/icons/network-security.svg",
         title: "Advanced Network Security",
       },
       {
-        icon: "/icons/identity-access.svg",
+        image: "/icons/identity-access.svg",
         title: "Identity & Access Management",
       },
       {
-        icon: "/icons/governance-risk.svg",
+        image: "/icons/governance-risk.svg",
         title: "Governance, Risk & Compliance",
       },
     ],
@@ -140,15 +149,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We help organizations develop effective technology strategies that support digital transformation and long-term business growth. From technology assessments and IT planning to enterprise architecture and innovation consulting, our experts guide every stage of transformation.",
     features: [
       {
-        icon: "/icons/transformation-strategy.svg",
+        image: "/icons/transformation-strategy.svg",
         title: "Digital Transformation Strategy",
       },
       {
-        icon: "/icons/technology-planning.svg",
+        image: "/icons/technology-planning.svg",
         title: "Enterprise Technology Planning",
       },
       {
-        icon: "/icons/business-advisory.svg",
+        image: "/icons/business-advisory.svg",
         title: "Innovation & Business Advisory",
       },
     ],
@@ -164,15 +173,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We develop secure, scalable, and high-performance enterprise software tailored to complex business requirements. Our team delivers web platforms, AI-enabled applications, system integrations, and digital solutions designed to improve operational efficiency and organizational performance.",
     features: [
       {
-        icon: "/icons/software-development.svg",
+        image: "/icons/software-development.svg",
         title: "Enterprise Software Development",
       },
       {
-        icon: "/icons/system-integration.svg",
+        image: "/icons/system-integration.svg",
         title: "Secure System Integration",
       },
       {
-        icon: "/icons/digital-applications.svg",
+        image: "/icons/digital-applications.svg",
         title: "Scalable Digital Applications",
       },
     ],
@@ -188,15 +197,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We build connected infrastructure using Building Information Modeling (BIM), digital twin technologies, IoT platforms, and intelligent asset management systems. Our solutions improve operational visibility, sustainability, and infrastructure lifecycle management.",
     features: [
       {
-        icon: "/icons/building-information-modeling.svg",
+        image: "/icons/building-information-modeling.svg",
         title: "Building Information Modeling",
       },
       {
-        icon: "/icons/digital-twin.svg",
+        image: "/icons/digital-twin.svg",
         title: "Digital Twin Technologies",
       },
       {
-        icon: "/icons/asset-management.svg",
+        image: "/icons/asset-management.svg",
         title: "Intelligent Asset Management",
       },
     ],
@@ -212,15 +221,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We deliver secure digital government platforms that improve citizen engagement, streamline public services, and enable transparent digital governance. Our solutions include e-payments, complaint management, case tracking, and citizen self-service portals.",
     features: [
       {
-        icon: "/icons/citizen-portals.svg",
+        image: "/icons/citizen-portals.svg",
         title: "Citizen Self-Service Portals",
       },
       {
-        icon: "/icons/public-services.svg",
+        image: "/icons/public-services.svg",
         title: "Digital Public Services",
       },
       {
-        icon: "/icons/e-government-platforms.svg",
+        image: "/icons/e-government-platforms.svg",
         title: "Secure E-Government Platforms",
       },
     ],
@@ -236,15 +245,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We support telecommunications providers with intelligent network solutions, OSS/BSS platforms, AI-powered analytics, and next-generation connectivity. Our services help improve network performance, operational efficiency, and customer experience.",
     features: [
       {
-        icon: "/icons/oss-bss-integration.svg",
+        image: "/icons/oss-bss-integration.svg",
         title: "OSS/BSS Integration",
       },
       {
-        icon: "/icons/network-analytics.svg",
+        image: "/icons/network-analytics.svg",
         title: "AI Network Analytics",
       },
       {
-        icon: "/icons/next-generation-connectivity.svg",
+        image: "/icons/next-generation-connectivity.svg",
         title: "Next-Generation Connectivity",
       },
     ],
@@ -260,15 +269,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We empower organizations with intelligent workforce management solutions including AI recruitment, performance management, attendance systems, learning platforms, and employee development technologies that enhance productivity.",
     features: [
       {
-        icon: "/icons/ai-recruitment.svg",
+        image: "/icons/ai-recruitment.svg",
         title: "AI Recruitment Solutions",
       },
       {
-        icon: "/icons/learning-management.svg",
+        image: "/icons/learning-management.svg",
         title: "Learning Management Systems",
       },
       {
-        icon: "/icons/performance-management.svg",
+        image: "/icons/performance-management.svg",
         title: "Performance Management Platforms",
       },
     ],
@@ -284,15 +293,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We modernize agriculture through AI, IoT, GIS, drone technologies, and precision farming solutions. Our services help organizations increase productivity, improve sustainability, and make informed agricultural decisions using real-time intelligence.",
     features: [
       {
-        icon: "/icons/precision-farming.svg",
+        image: "/icons/precision-farming.svg",
         title: "Precision Farming Solutions",
       },
       {
-        icon: "/icons/drone-gis-analytics.svg",
+        image: "/icons/drone-gis-analytics.svg",
         title: "Drone & GIS Analytics",
       },
       {
-        icon: "/icons/agricultural-monitoring.svg",
+        image: "/icons/agricultural-monitoring.svg",
         title: "IoT Agricultural Monitoring",
       },
     ],
@@ -308,15 +317,15 @@ export const serviceDetails: ServiceDetail[] = [
       "We support organizations with renewable energy technologies, ESG initiatives, carbon management, drilling services, and climate-focused solutions that promote operational efficiency and long-term environmental sustainability.",
     features: [
       {
-        icon: "/icons/esg-carbon.svg",
+        image: "/icons/esg-carbon.svg",
         title: "ESG & Carbon Solutions",
       },
       {
-        icon: "/icons/renewable-energy.svg",
+        image: "/icons/renewable-energy.svg",
         title: "Renewable Energy Services",
       },
       {
-        icon: "/icons/climate-consulting.svg",
+        image: "/icons/climate-consulting.svg",
         title: "Climate Technology Consulting",
       },
     ],

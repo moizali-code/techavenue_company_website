@@ -48,7 +48,7 @@ function Challenges({ challenges, classNames }: ChallengesProps) {
             description={item.description}
             eyebrow={
               <Image
-                src={item.icon}
+                src={item.image}
                 alt=""
                 width={24}
                 height={24}

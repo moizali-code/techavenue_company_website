@@ -1,14 +1,7 @@
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { cn } from "@/lib/utils";
-import type { CardProps } from "@/types/features/card";
-
-type CompanyValuesProps = {
-  heading: string;
-  image: { src: string; alt?: string };
-  values: (CardProps & { id: string })[];
-  className?: string;
-};
+import type { CompanyValuesProps } from "@/types/features/about";
 
 function CompanyValues({
   heading,
@@ -29,8 +22,7 @@ function CompanyValues({
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card
-          image={image.src}
-          imageAlt={image.alt}
+          image={image}
           classNames={{
             mainWrapper: "min-h-[260px] max-w-none md:min-h-[340px] lg:min-h-0",
             imageWrapper: "aspect-auto h-full flex-1",
@@ -38,12 +30,12 @@ function CompanyValues({
         />
 
         <div className="grid gap-4 md:grid-cols-2 lg:col-span-2">
-          {values.map(({ id, ...value }, index) => {
+          {values.map(({ id, uuid, ...value }, index) => {
             const isHighlighted = index === 1;
 
             return (
               <Card
-                key={id}
+                key={uuid}
                 {...value}
                 classNames={{
                   mainWrapper: cn(

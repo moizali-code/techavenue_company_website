@@ -25,13 +25,13 @@ function HomeAbout({
         action={
           <div className="flex w-full flex-col gap-6">
             <ul className="flex flex-col gap-3">
-              {highlights.map(({ uuid, label, icon }) => (
+              {highlights.map(({ uuid, label, image: highlightImage }) => (
                 <li
                   key={uuid}
                   className="flex items-center gap-3 text-[14px] font-semibold text-[#2D2D2D] lg:text-[14px]"
                 >
                   <Image
-                    src={icon}
+                    src={highlightImage}
                     alt=""
                     width={20}
                     height={20}

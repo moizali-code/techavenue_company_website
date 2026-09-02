@@ -44,25 +44,25 @@ export const successStories: SuccessStory[] = [
           "Complex enterprise environments often suffer from visibility gaps and specialised friction that slow down response times.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Evolving Threat Landscape",
             description:
               "Attack techniques changed faster than signature-based tooling could be updated.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Fragmented Infrastructure",
             description:
               "Security telemetry scattered across twelve disconnected monitoring products.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Delayed Detection",
             description:
               "Intrusions surfacing days after the initial compromise rather than minutes.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "High Volume of Alerts",
             description:
               "Analysts triaging thousands of low-value alerts and missing genuine incidents.",
@@ -75,25 +75,25 @@ export const successStories: SuccessStory[] = [
           "An AI-driven platform that bridges the gap between signal and action, providing a unified defensive layer for the modern enterprise.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Real-Time Monitoring",
             description:
               "Continuous observation of every packet and endpoint across the estate.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Centralized Intelligence",
             description:
               "Aggregating threat feeds from global sensors into a single source of truth.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "AI-Based Analysis",
             description:
               "Behavioural models that surface patterns invisible to heuristic rules.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Automated Response",
             description:
               "Instant containment playbooks triggered by verified threat detections.",
@@ -175,25 +175,25 @@ export const successStories: SuccessStory[] = [
           "Extending modern connectivity across a dense urban footprint without disrupting the services residents rely on every day.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Coverage Blackspots",
             description:
               "Dense building stock leaving whole districts without reliable signal.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Permit Complexity",
             description:
               "Street works approvals spread across multiple municipal authorities.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Ageing Duct Networks",
             description:
               "Existing conduit built for copper and unable to carry new fibre routes.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Disconnected Sensors",
             description:
               "IoT devices deployed by departments that could not share a common network.",
@@ -206,25 +206,25 @@ export const successStories: SuccessStory[] = [
           "A phased rollout that layers small-cell coverage, municipal fibre and shared IoT services onto one governed platform.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Small-Cell Densification",
             description:
               "Street-level cells placed to close coverage gaps in the busiest districts.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Shared IoT Platform",
             description:
               "One onboarding path for every department deploying connected devices.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Network Slicing",
             description:
               "Guaranteed capacity reserved for emergency and transport services.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Unified Works Planning",
             description:
               "A single dig schedule coordinating every authority on one timeline.",
@@ -310,25 +310,25 @@ export const successStories: SuccessStory[] = [
           "Public bodies holding vast operational history with no practical way to use it for planning the year ahead.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Reactive Planning",
             description:
               "Resources allocated on last year's totals rather than expected demand.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Explainability Duty",
             description:
               "Every automated recommendation required a defensible public rationale.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Archived Records",
             description:
               "Historic case data locked in formats no current system could read.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Interagency Silos",
             description:
               "Departments forecasting independently against conflicting assumptions.",
@@ -341,25 +341,25 @@ export const successStories: SuccessStory[] = [
           "A governed modelling environment that produces auditable forecasts every department can plan against.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Demand Forecasting",
             description:
               "Service volumes projected by district, season and time of day.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Shared Data Foundation",
             description:
               "One curated record set that every department models against.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Explainable Models",
             description:
               "Each prediction paired with the factors that produced it.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Scenario Planning",
             description:
               "Budget and staffing options tested before commitments are made.",
@@ -445,25 +445,25 @@ export const successStories: SuccessStory[] = [
           "Years of tool sprawl left leadership arguing about whose figures were correct instead of acting on them.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Conflicting Reports",
             description:
               "The same metric calculated four different ways across four teams.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Manual Consolidation",
             description:
               "Analysts spending days each month stitching spreadsheets together.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Tool Sprawl",
             description:
               "Eleven licensed reporting products with overlapping capabilities.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Stale Dashboards",
             description:
               "Decisions taken against figures already a full week out of date.",
@@ -476,25 +476,25 @@ export const successStories: SuccessStory[] = [
           "A single governed analytics layer with shared definitions, live pipelines and self-service reporting.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Live Data Pipelines",
             description:
               "Operational systems streaming into the workspace continuously.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Shared Metric Catalogue",
             description:
               "One agreed definition per metric, governed and versioned.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Anomaly Detection",
             description:
               "Unusual movements surfaced before they reach monthly review.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Self-Service Reporting",
             description:
               "Teams building their own views without waiting on a backlog.",
@@ -579,25 +579,25 @@ export const successStories: SuccessStory[] = [
           "Replacing the core of a live national network while every customer stayed connected throughout.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Hardware End-of-Life",
             description:
               "Core routing platforms past vendor support with no spare inventory.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Zero-Downtime Mandate",
             description:
               "Service level commitments allowing no planned customer outage.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Manual Provisioning",
             description:
               "Circuit changes handled device by device over several weeks.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Limited Visibility",
             description:
               "Faults located by trial and error rather than measured telemetry.",
@@ -610,25 +610,25 @@ export const successStories: SuccessStory[] = [
           "A software-defined core with automated provisioning and full-path telemetry, cut over region by region.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "End-to-End Telemetry",
             description:
               "Every path measured continuously from access to core.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Software-Defined Core",
             description:
               "Routing policy managed centrally instead of per device.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Capacity Forecasting",
             description:
               "Growth modelled per region so upgrades land before congestion.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Automated Provisioning",
             description:
               "Circuit changes delivered in minutes through a single workflow.",
@@ -711,25 +711,25 @@ export const successStories: SuccessStory[] = [
           "Coordinating dispersed units under strict classification rules where no commercial cloud service could be used.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Contested Environments",
             description:
               "Communications expected to degrade under active interference.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Classification Boundaries",
             description:
               "Information cleared for different tiers held in isolated systems.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Incompatible Field Systems",
             description:
               "Sensor fleets from separate procurement cycles speaking different protocols.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Fragmented Picture",
             description:
               "Commanders assembling situational awareness from separate consoles.",
@@ -742,25 +742,25 @@ export const successStories: SuccessStory[] = [
           "A hardened, air-gapped platform that fuses every sensor feed into one accredited operational view.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Unified Operational Picture",
             description:
               "All field telemetry fused into one live situational display.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Cross-Domain Gateways",
             description:
               "Controlled transfer between classification tiers with full audit.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Sensor Fusion",
             description:
               "Multiple sensor types correlated into single confirmed tracks.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Resilient Communications",
             description:
               "Automatic failover across redundant links when a bearer degrades.",
@@ -842,25 +842,25 @@ export const successStories: SuccessStory[] = [
           "Protecting operational technology built for isolated networks that had gradually become reachable from corporate systems.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Exposed Control Systems",
             description:
               "Industrial controllers designed for isolation now indirectly reachable.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Critical Infrastructure Rules",
             description:
               "Regulatory reporting duties measured in hours after an incident.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Unpatchable Assets",
             description:
               "Substation equipment that cannot be taken offline for updates.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Regional Fragmentation",
             description:
               "Three regions monitoring their own assets with no shared view.",
@@ -873,25 +873,25 @@ export const successStories: SuccessStory[] = [
           "A single operations centre combining passive OT monitoring, segmentation and rehearsed response across all three regions.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "24/7 OT Monitoring",
             description:
               "Passive sensing across substations with no impact on control traffic.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Single Regional View",
             description:
               "All three regions monitored from one consolidated centre.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Behavioural Baselines",
             description:
               "Normal process behaviour learned so deviations stand out immediately.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Rehearsed Playbooks",
             description:
               "Containment steps pre-agreed with engineering and practised quarterly.",
@@ -976,25 +976,25 @@ export const successStories: SuccessStory[] = [
           "Maintenance carried out on fixed calendars while the failures that actually stopped production went unpredicted.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Unplanned Shutdowns",
             description:
               "Critical rotating equipment failing without any prior warning.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Safety Case Duties",
             description:
               "Every intervention requiring documented justification and sign-off.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Unused Sensor Data",
             description:
               "Years of historian readings collected but never analysed.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Calendar-Based Servicing",
             description:
               "Healthy assets stripped down on schedule while failing ones ran on.",
@@ -1007,25 +1007,25 @@ export const successStories: SuccessStory[] = [
           "Condition models built on existing historian data, delivered into the maintenance workflow engineers already use.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Continuous Condition Monitoring",
             description:
               "Live vibration and thermal readings tracked against known limits.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Unified Asset History",
             description:
               "Historian, maintenance and inspection records joined per asset.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Failure Forecasting",
             description:
               "Remaining useful life estimated weeks ahead of breakdown.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Work Order Automation",
             description:
               "Predicted faults raised directly as scheduled maintenance jobs.",
@@ -1109,25 +1109,25 @@ export const successStories: SuccessStory[] = [
           "A lighting estate running at full output every night with faults reported only when residents noticed them.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Constant Full Output",
             description:
               "Every fixture burning at maximum regardless of street activity.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Carbon Reduction Targets",
             description:
               "Binding municipal commitments with limited capital available.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Uncontrolled Fixtures",
             description:
               "Columns wired with no addressing or remote control capability.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Reactive Fault Repair",
             description:
               "Outages found only when a resident reported a dark street.",
@@ -1140,25 +1140,25 @@ export const successStories: SuccessStory[] = [
           "Individually addressable nodes on every column, driven by adaptive schedules and self-reporting fault detection.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Per-Fixture Telemetry",
             description:
               "Every column reporting output, consumption and health nightly.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Central Lighting Control",
             description:
               "One console managing the full estate by zone or individual asset.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Adaptive Dimming",
             description:
               "Output tuned to traffic, weather and time without losing safe levels.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Self-Reporting Faults",
             description:
               "Failing lamps raising their own repair jobs before complaints arrive.",
@@ -1241,25 +1241,25 @@ export const successStories: SuccessStory[] = [
           "A workforce that had left the office permanently, still reaching internal systems through controls designed for a building.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Flat Internal Network",
             description:
               "One VPN session granting reach across the entire estate.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Access Audit Gaps",
             description:
               "No reliable record of who reached which system, or when.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Unmanaged Devices",
             description:
               "Contractors connecting from endpoints outside any device policy.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Poor User Experience",
             description:
               "Daily VPN drops driving staff toward unsanctioned workarounds.",
@@ -1272,25 +1272,25 @@ export const successStories: SuccessStory[] = [
           "Identity and device posture evaluated on every request, with policy replacing network location as the control point.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Continuous Session Checks",
             description:
               "Trust re-evaluated during a session, not only at sign-in.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Central Policy Engine",
             description:
               "One place defining who reaches what, across every application.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Risk-Based Authentication",
             description:
               "Step-up prompts triggered only by genuinely unusual behaviour.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Automatic Revocation",
             description:
               "Access withdrawn the moment a device falls out of compliance.",
@@ -1372,25 +1372,25 @@ export const successStories: SuccessStory[] = [
           "A branch estate assembled through acquisition, where no two regions were connected or configured the same way.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Inconsistent Branch Security",
             description:
               "Firewall policy configured locally and differently in each region.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Payment Compliance Scope",
             description:
               "Card data traversing links that fell outside audited boundaries.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Inherited Circuits",
             description:
               "Contracts from four acquisitions running on incompatible technologies.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Slow Branch Openings",
             description:
               "New sites waiting months for connectivity before they could trade.",
@@ -1403,25 +1403,25 @@ export const successStories: SuccessStory[] = [
           "A single managed overlay across all branches, with templated builds and one policy source for the whole estate.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Branch Health Monitoring",
             description:
               "Every site's link quality and device status tracked centrally.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Single Policy Source",
             description:
               "One security and routing template applied to all 600 branches.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Traffic Prioritisation",
             description:
               "Teller and payment traffic protected ahead of general browsing.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Zero-Touch Provisioning",
             description:
               "New branches online the day hardware arrives, without an engineer visit.",
@@ -1504,25 +1504,25 @@ export const successStories: SuccessStory[] = [
           "Supplier assurance carried out once a year on paper, across a chain where sub-tier partners were largely unknown.",
         items: [
           {
-            icon: "/icons/evolving-cyber-threats.svg",
+            image: "/icons/evolving-cyber-threats.svg",
             title: "Sub-Tier Blind Spots",
             description:
               "Second and third tier suppliers never formally identified or assessed.",
           },
           {
-            icon: "/icons/regulatory-compliance.svg",
+            image: "/icons/regulatory-compliance.svg",
             title: "Evidence Collection Burden",
             description:
               "Certificates chased by email and stored in unmanaged folders.",
           },
           {
-            icon: "/icons/legacy-infrastructure.svg",
+            image: "/icons/legacy-infrastructure.svg",
             title: "Point-in-Time Vetting",
             description:
               "Annual assessments leaving eleven months of unmonitored risk.",
           },
           {
-            icon: "/icons/customer-expectations.svg",
+            image: "/icons/customer-expectations.svg",
             title: "Slow Onboarding",
             description:
               "New partners cleared to work only after months of manual review.",
@@ -1535,25 +1535,25 @@ export const successStories: SuccessStory[] = [
           "Continuous supplier assessment with automated evidence gathering and a live view of the full chain.",
         items: [
           {
-            icon: "/icons/real-time-monitoring.svg",
+            image: "/icons/real-time-monitoring.svg",
             title: "Continuous Supplier Scoring",
             description:
               "Risk positions refreshed as new evidence and signals arrive.",
           },
           {
-            icon: "/icons/centralized-intelligence.svg",
+            image: "/icons/centralized-intelligence.svg",
             title: "Full Chain Visibility",
             description:
               "Every tier mapped, from prime contractor to component supplier.",
           },
           {
-            icon: "/icons/ai-based-analysis.svg",
+            image: "/icons/ai-based-analysis.svg",
             title: "Anomaly Screening",
             description:
               "Ownership and financial changes flagged as they are published.",
           },
           {
-            icon: "/icons/automated-response.svg",
+            image: "/icons/automated-response.svg",
             title: "Automated Evidence Capture",
             description:
               "Certifications requested, validated and filed without manual chasing.",

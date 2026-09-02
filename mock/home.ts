@@ -80,22 +80,22 @@ export const homeData: HomeData = {
       {
         uuid: "3e6c1a94-8d25-4b71-9f38-0c7a5e2d6b19",
         label: "AI-powered enterprise solutions",
-        icon: "/icons/ai-enterprise-solutions.svg",
+        image: "/icons/ai-enterprise-solutions.svg",
       },
       {
         uuid: "c72b4d80-1f5a-4e63-8a97-2d6f0b3c9e51",
         label: "Decades of industry expertise",
-        icon: "/icons/industry-expertise.svg",
+        image: "/icons/industry-expertise.svg",
       },
       {
         uuid: "58a0e7f2-6b39-4c1d-b502-9e8c3a7d4f60",
         label: "Regional presence, global partnerships",
-        icon: "/icons/global-partnerships.svg",
+        image: "/icons/global-partnerships.svg",
       },
       {
         uuid: "e419d6b7-2c85-4a30-97f1-6b0d8e5a3c72",
         label: "End-to-end consulting & delivery",
-        icon: "/icons/end-to-end-delivery.svg",
+        image: "/icons/end-to-end-delivery.svg",
       },
     ],
   },
@@ -105,14 +105,14 @@ export const homeData: HomeData = {
       title: "Our Mission",
       description:
         "To empower organizations with integrated technology solutions that accelerate innovation, strengthen security, and enable sustainable digital transformation across industries.",
-      icon: "/icons/mission.svg",
+      image: "/icons/mission.svg",
     },
     {
       uuid: "0c8d5a13-4f72-4b96-8e05-3a1b7c2d9f64",
       title: "Our Vision",
       description:
         "To become a trusted global technology leader recognized for innovation, engineering excellence, and delivering intelligent solutions across enterprise and public sectors.",
-      icon: "/icons/vision.svg",
+      image: "/icons/vision.svg",
     },
   ],
   solutions: {
@@ -175,7 +175,8 @@ export const homeData: HomeData = {
       },
       {
         uuid: "9d34b7f1-0e68-4295-8c47-1b5a6d0e3c92",
-        question: "Can Tech Avenue Deliver End-To-End Digital Transformation Projects?",
+        question:
+          "Can Tech Avenue Deliver End-To-End Digital Transformation Projects?",
         answer:
           "From strategy and architecture through implementation, migration, and long-term support, our teams manage the full transformation lifecycle as a single accountable partner.",
       },

@@ -1,14 +1,12 @@
+import { TeamMemberModal } from "@/components/features/about/team-member-modal";
 import { Card } from "@/components/shared/card";
 import { Carousel } from "@/components/shared/carousel";
 import { Container } from "@/components/shared/container";
 import { CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import type { TeamMember } from "@/types/features/about-team";
+import type { TeamSection } from "@/types/features/about-team";
 
-type TeamCarouselProps = {
-  heading: string;
-  description: string;
-  members: TeamMember[];
+type TeamCarouselProps = TeamSection & {
   className?: string;
 };
 
@@ -35,23 +33,30 @@ function TeamCarousel({
           </div>
         }
       >
-        {members.map(({ id, name, role, image, imageAlt }) => (
+        {members.map((member) => (
           <CarouselItem
-            key={id}
+            key={member.uuid}
             className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
           >
-            <Card
-              variant="bare"
-              image={image}
-              imageAlt={imageAlt}
-              title={name}
-              description={role}
-              classNames={{
-                imageWrapper: "aspect-[8/9] rounded-[4px]",
-                content: "gap-1",
-                title: "text-[15px] font-bold uppercase text-[#191C1E]",
-                description: "text-[14px] font-normal text-[#494949]",
-              }}
+            <TeamMemberModal
+              member={member}
+              trigger={
+                <button type="button" className="cursor-pointer">
+                  <Card
+                    variant="bare"
+                    image={member.image}
+                    imageAlt={member.name}
+                    title={member.name}
+                    description={member.role}
+                    classNames={{
+                      imageWrapper: "aspect-[8/9] rounded-[4px]",
+                      content: "gap-1",
+                      title: "text-[15px] font-bold uppercase text-[#191C1E]",
+                      description: "text-[14px] font-normal text-[#494949]",
+                    }}
+                  />
+                </button>
+              }
             />
           </CarouselItem>
         ))}

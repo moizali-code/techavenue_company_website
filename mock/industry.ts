@@ -36,31 +36,31 @@ export const industries: Industry[] = [
         "Modernizing essential services under strict procurement, accessibility, and data sovereignty obligations, without interrupting the programs citizens depend on.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Legacy Case Systems",
           description:
             "Decades-old records platforms that resist integration with modern digital services.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Data Sovereignty Rules",
           description:
             "Citizen data that must remain within national borders and approved facilities.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Accessibility Mandates",
           description:
             "Services required to work for every citizen, on every device and assistive technology.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Interagency Silos",
           description:
             "Departments holding the same citizen record in incompatible, unshared systems.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Procurement Timelines",
           description:
             "Multi-year approval cycles that outlast the technology they were written for.",
@@ -73,25 +73,25 @@ export const industries: Industry[] = [
         "An integrated government delivery stack that unifies citizen identity, departmental data, and service workflows behind accessible interfaces and a fully auditable trail.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Unified Citizen Identity",
           description:
             "One verified identity that carries across every department and service.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Interagency Data Exchange",
           description:
             "Governed sharing between departments without duplicating records.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Accessible Service Design",
           description:
             "Interfaces tested against accessibility standards on every release.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Sovereign Cloud Hosting",
           description:
             "Workloads deployed inside approved national infrastructure.",
@@ -133,31 +133,31 @@ export const industries: Industry[] = [
         "Sustaining release velocity and platform reliability while managing technical debt, cloud spend, and an engineering market that never stops moving.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Accumulated Technical Debt",
           description:
             "Shortcuts taken during early growth now slowing every new feature.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Cloud Cost Sprawl",
           description:
             "Infrastructure spend growing faster than the workloads that justify it.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Release Bottlenecks",
           description:
             "Manual approval gates holding finished work back from production.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Talent Retention",
           description:
             "Competing for experienced engineers against every other firm in the market.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Toolchain Fragmentation",
           description:
             "Teams solving the same problem with incompatible tooling and standards.",
@@ -170,25 +170,25 @@ export const industries: Industry[] = [
         "A platform engineering practice that standardizes delivery, observability, and infrastructure so product teams spend their time on product rather than plumbing.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Automated Delivery Pipelines",
           description:
             "Every commit tested, built, and released without manual gates.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Unified Observability",
           description:
             "Logs, metrics, and traces from every service in a single view.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Infrastructure as Code",
           description:
             "Environments reproduced identically from one versioned source.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Cloud Cost Governance",
           description:
             "Spend attributed to teams and reviewed before it compounds.",
@@ -230,31 +230,31 @@ export const industries: Industry[] = [
         "Rolling out next-generation services across aging infrastructure while defending margins, subscriber loyalty, and the uptime commitments written into contracts.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Legacy Support Systems",
           description:
             "Provisioning and billing platforms that predate the services they now carry.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Network Spend Pressure",
           description:
             "Infrastructure investment rising faster than revenue per subscriber.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Subscriber Churn",
           description:
             "Customers switching on price and a single poor service experience.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Rollout Complexity",
           description:
             "New network generations layered on top of everything already deployed.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Assurance Blind Spots",
           description:
             "Faults reaching customers before they ever surface in monitoring.",
@@ -267,25 +267,25 @@ export const industries: Industry[] = [
         "A modernized operations layer connecting network telemetry, service provisioning, and customer experience, so faults are found and fixed before subscribers notice them.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Real-Time Network Assurance",
           description:
             "Live telemetry from every node correlated into one fault view.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Automated Provisioning",
           description:
             "Services activated end to end without manual handoffs between teams.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Converged Billing",
           description:
             "One rating and charging engine across every product line.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Predictive Maintenance",
           description:
             "Degradation scheduled out before it becomes a reportable outage.",
@@ -327,31 +327,31 @@ export const industries: Industry[] = [
         "Modernizing core systems and payment rails while satisfying regulators, defending against automated fraud, and meeting expectations set by digital-native competitors.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Aging Core Systems",
           description:
             "Mainframe cores that every new digital channel must still be wired into.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Regulatory Reporting Load",
           description:
             "Evidence demands that grow with every new compliance framework.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Automated Fraud Attacks",
           description:
             "Attempts running at machine speed across every customer channel.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Real-Time Payment Demands",
           description:
             "Settlement expectations measured in seconds, around the clock.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Fragmented Customer Data",
           description:
             "Records scattered across decades of acquisitions and product silos.",
@@ -364,25 +364,25 @@ export const industries: Industry[] = [
         "A regulated-grade platform combining real-time risk scoring, resilient payment processing, and continuous control evidence across every channel a customer can reach.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Real-Time Fraud Scoring",
           description:
             "Every transaction risk-scored before it reaches settlement.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Core Integration Layer",
           description:
             "Modern channels connected to the core without replacing it.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Continuous Compliance Evidence",
           description:
             "Controls captured as they run, ready for inspection at any time.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Resilient Payment Processing",
           description:
             "Failover paths that keep settlement moving through infrastructure outages.",
@@ -425,31 +425,31 @@ export const industries: Industry[] = [
         "Delivering connected, safe care across fragmented clinical systems while protecting patient privacy and keeping services running through every hour of demand.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Fragmented Patient Records",
           description:
             "One patient held as several incomplete records across separate systems.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Privacy Regulation",
           description:
             "Strict rules governing how health data is stored, shared, and retained.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Clinical System Downtime",
           description:
             "Outages that reach directly into the delivery of patient care.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Interoperability Gaps",
           description:
             "Devices and systems unable to exchange a usable clinical record.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Administrative Load",
           description:
             "Documentation demands taking clinician time away from patients.",
@@ -462,25 +462,25 @@ export const industries: Industry[] = [
         "An integrated clinical platform that unifies the patient record, secures every access to it, and gives care teams what they need without adding to their administrative load.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Unified Patient Record",
           description:
             "One longitudinal record assembled from every source system.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Standards-Based Interoperability",
           description:
             "Clinical exchange between systems and devices on open standards.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Access Auditing",
           description:
             "Every record view attributed, logged, and available for review.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Resilient Clinical Hosting",
           description:
             "Care systems that stay available through infrastructure failure.",
@@ -522,31 +522,31 @@ export const industries: Industry[] = [
         "Widening participation and demonstrating learning outcomes while working within fixed institutional budgets and safeguarding the data of a largely young user base.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Uneven Digital Access",
           description:
             "Learners working from shared devices and unreliable connections.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Learner Data Protection",
           description:
             "Safeguarding obligations that come with a largely young user base.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Disconnected Systems",
           description:
             "Enrollment, delivery, and assessment held in separate tools.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Completion Rates",
           description:
             "Learners starting programs far more often than they finish them.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Constrained Budgets",
           description:
             "Platform decisions made against fixed and scrutinized public funding.",
@@ -559,25 +559,25 @@ export const industries: Industry[] = [
         "A connected learning platform that carries a learner from enrollment to credential, keeps working when connections fail, and reports outcomes institutions can stand behind.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Low-Bandwidth Delivery",
           description:
             "Course content that loads and works over weak connections.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Unified Learner Journey",
           description:
             "Enrollment, delivery, and assessment held in one learner record.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Outcome Analytics",
           description:
             "Completion and attainment measured across every cohort.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Verifiable Credentials",
           description:
             "Qualifications employers can check without contacting the institution.",
@@ -619,31 +619,31 @@ export const industries: Industry[] = [
         "Delivering complex projects on program and on budget while coordinating dispersed contractors, connected building systems, and the safety obligations that sit over all of it.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Fragmented Project Data",
           description:
             "Drawings, schedules, and costs held separately by each contractor.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Program Overruns",
           description:
             "Delays identified long after they became unavoidable on site.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Site Safety Oversight",
           description:
             "Compliance evidenced on paper, after the work has been done.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Disconnected Building Systems",
           description:
             "Plant and controls that each report only to their own console.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Asset Handover Gaps",
           description:
             "Operations teams inheriting finished buildings without usable data.",
@@ -656,25 +656,25 @@ export const industries: Industry[] = [
         "A connected delivery and operations platform bringing site telemetry, project records, and building systems together from groundworks through to facilities management.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Live Site Telemetry",
           description:
             "Plant, materials, and progress reported from the site itself.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Single Project Record",
           description:
             "One source of truth shared across every contractor on the job.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Integrated Building Management",
           description:
             "Every building system monitored and controlled from one console.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Digital Asset Handover",
           description:
             "Complete, structured asset data passed to operations on day one.",
@@ -716,31 +716,31 @@ export const industries: Industry[] = [
         "Raising yield against volatile weather and input costs while meeting the traceability and sustainability evidence that buyers and regulators increasingly require.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Weather Volatility",
           description:
             "Growing conditions shifting faster than planting plans allow for.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Input Cost Pressure",
           description:
             "Fertilizer, fuel, and water applied without precise field feedback.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Connectivity Gaps",
           description:
             "Fields sitting well outside reliable mobile network coverage.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Traceability Requirements",
           description:
             "Buyers asking for provenance the existing paperwork cannot prove.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Post-Harvest Loss",
           description:
             "Yield lost in storage and transit between the field and the buyer.",
@@ -753,25 +753,25 @@ export const industries: Industry[] = [
         "A precision agriculture platform that gathers field data even without connectivity, turns it into irrigation and input decisions, and carries provenance through to the buyer.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Field Sensor Networks",
           description:
             "Soil and moisture readings collected across every managed plot.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Offline-First Collection",
           description:
             "Data captured in the field and synced when coverage returns.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Input Optimization",
           description:
             "Water and fertilizer applied to measured need rather than schedule.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Farm-to-Buyer Traceability",
           description:
             "Every batch traceable back to the plot and season it came from.",
@@ -813,31 +813,31 @@ export const industries: Industry[] = [
         "Balancing increasingly distributed generation and demand while maintaining supply reliability, meeting regulatory obligations, and protecting critical national infrastructure.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Distributed Generation",
           description:
             "Supply entering the grid from thousands of small, variable sources.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Aging Grid Assets",
           description:
             "Infrastructure still operating well beyond its original design life.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Demand Volatility",
           description:
             "Consumption peaks that shift with weather, tariffs, and behaviour.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Infrastructure Threats",
           description:
             "Operational technology exposed to targeted and persistent attack.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Metering Data Volume",
           description:
             "Interval readings arriving faster than billing systems can settle them.",
@@ -850,25 +850,25 @@ export const industries: Industry[] = [
         "An operational platform that ingests grid and meter telemetry at volume, forecasts demand against it, and gets crews to faults before customers pick up the phone.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Smart Metering at Scale",
           description:
             "Interval readings ingested and settled without a growing backlog.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Demand Forecasting",
           description:
             "Load predicted against weather, tariff, and historical usage.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Automated Fault Location",
           description:
             "Outages pinpointed on the network and dispatched immediately.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Operational Security Monitoring",
           description:
             "Control networks watched separately from corporate systems.",
@@ -910,31 +910,31 @@ export const industries: Industry[] = [
         "Running remote, hazardous, capital-intensive operations safely while meeting environmental obligations and holding down cost through volatile commodity cycles.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Remote Asset Isolation",
           description:
             "Critical equipment sited far from any engineer who can inspect it.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Equipment Integrity",
           description:
             "Corrosion and wear developing between scheduled inspection intervals.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Safety Compliance Evidence",
           description:
             "Permits and checks recorded manually and inconsistently across shifts.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Emissions Reporting",
           description:
             "Environmental obligations measured across widely dispersed sites.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Price Volatility",
           description:
             "Operating cost decisions made against unstable commodity revenue.",
@@ -947,25 +947,25 @@ export const industries: Industry[] = [
         "A remote operations platform streaming asset telemetry to the control room, flagging integrity risk before it becomes failure, and capturing safety evidence as work happens.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Remote Telemetry",
           description:
             "Wells, pipelines, and plant streaming into one control room.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Predictive Integrity",
           description:
             "Corrosion and wear trends flagged well ahead of equipment failure.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "Digital Permit to Work",
           description:
             "Safety approvals captured, enforced, and evidenced on site.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Emissions Monitoring",
           description:
             "Environmental data measured and reported per site and asset.",
@@ -1007,31 +1007,31 @@ export const industries: Industry[] = [
         "Holding output and quality steady against unplanned downtime, supply chain disruption, and production data locked inside machines never designed to share it.",
       items: [
         {
-          icon: "/icons/evolving-cyber-threats.svg",
+          image: "/icons/evolving-cyber-threats.svg",
           title: "Unplanned Downtime",
           description:
             "Machines failing between scheduled maintenance windows.",
         },
         {
-          icon: "/icons/regulatory-compliance.svg",
+          image: "/icons/regulatory-compliance.svg",
           title: "Disconnected Machinery",
           description:
             "Equipment from different eras and vendors that cannot report together.",
         },
         {
-          icon: "/icons/legacy-infrastructure.svg",
+          image: "/icons/legacy-infrastructure.svg",
           title: "Supply Chain Disruption",
           description:
             "Component shortages surfacing only once the line has stopped.",
         },
         {
-          icon: "/icons/customer-expectations.svg",
+          image: "/icons/customer-expectations.svg",
           title: "Quality Variance",
           description:
             "Defects identified after a batch has already been completed.",
         },
         {
-          icon: "/icons/data-management.svg",
+          image: "/icons/data-management.svg",
           title: "Manual Production Reporting",
           description:
             "Output recorded on paper and keyed into systems a shift later.",
@@ -1044,25 +1044,25 @@ export const industries: Industry[] = [
         "An industrial data platform that connects machinery of any vintage, turns its telemetry into maintenance and quality decisions, and keeps production planned against real capacity.",
       items: [
         {
-          icon: "/icons/real-time-monitoring.svg",
+          image: "/icons/real-time-monitoring.svg",
           title: "Machine Connectivity",
           description:
             "Legacy and modern equipment reporting into one platform.",
         },
         {
-          icon: "/icons/centralized-intelligence.svg",
+          image: "/icons/centralized-intelligence.svg",
           title: "Predictive Maintenance",
           description:
             "Interventions scheduled from machine condition, not the calendar.",
         },
         {
-          icon: "/icons/ai-based-analysis.svg",
+          image: "/icons/ai-based-analysis.svg",
           title: "In-Line Quality Analytics",
           description:
             "Defect trends caught during the run rather than after it.",
         },
         {
-          icon: "/icons/automated-response.svg",
+          image: "/icons/automated-response.svg",
           title: "Supply Chain Visibility",
           description:
             "Component availability tracked against live production plans.",

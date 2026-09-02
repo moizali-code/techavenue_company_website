@@ -11,11 +11,19 @@ import { ValidatedTextInput } from "@/components/shared/validated-text-input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import { industries } from "@/mock/industry";
+import { serviceDetails } from "@/mock/services";
 import type { ContactFormProps } from "@/types/features/contact";
 import {
   contactFormSchema,
   type ContactFormValues,
 } from "@/validations/features/contact.zod";
+
+const successStoriesHref = "/success-stories";
+
+const industryOptions = industries.map((industry) => industry.title);
+
+const serviceOptions = serviceDetails.map((service) => service.title);
 
 const fieldClassNames = {
   label: "text-[13px] font-medium text-[#191C1E]",
@@ -23,14 +31,7 @@ const fieldClassNames = {
     "h-11 rounded-[6px] border-transparent bg-[#F5F6F8] px-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]",
 };
 
-function ContactForm({
-  title,
-  description,
-  industries,
-  services,
-  successStoriesHref,
-  className,
-}: ContactFormProps) {
+function ContactForm({ title, description, className }: ContactFormProps) {
   const {
     control,
     handleSubmit,
@@ -138,7 +139,7 @@ function ContactForm({
                 <SelectField
                   value={field.value || null}
                   onValueChange={(value) => field.onChange(value ?? "")}
-                  options={industries}
+                  options={industryOptions}
                   placeholder="Select industry"
                   ariaLabel="Industry"
                   classNames={{ trigger: fieldClassNames.input }}
@@ -159,12 +160,14 @@ function ContactForm({
           control={control}
           render={({ field, fieldState }) => (
             <div className="flex w-full flex-col gap-1.5">
-              <label className={fieldClassNames.label}>Service of Interest</label>
+              <label className={fieldClassNames.label}>
+                Service of Interest
+              </label>
 
               <SelectField
                 value={field.value || null}
                 onValueChange={(value) => field.onChange(value ?? "")}
-                options={services}
+                options={serviceOptions}
                 placeholder="Select a service"
                 ariaLabel="Service of Interest"
                 classNames={{ trigger: fieldClassNames.input }}
@@ -235,8 +238,8 @@ function ContactForm({
                   className="text-[13px] leading-relaxed text-[#444651]"
                 >
                   I agree to be contacted by Tech Avenue regarding my inquiry
-                  and understand that my information will be processed
-                  according to the company&apos;s privacy policy.
+                  and understand that my information will be processed according
+                  to the company&apos;s privacy policy.
                 </label>
               </div>
 

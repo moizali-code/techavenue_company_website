@@ -14,7 +14,7 @@ export type HomeStatsProps = {
 export type HomeAboutHighlight = {
   uuid: string;
   label: string;
-  icon: string;
+  image: string;
 };
 
 export type HomeAboutProps = {
@@ -30,7 +30,7 @@ export type HomeMissionVisionItem = {
   uuid: string;
   title: string;
   description: string;
-  icon: string;
+  image: string;
 };
 
 export type HomeMissionVisionProps = {

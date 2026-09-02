@@ -32,7 +32,7 @@ function ServiceDetails({ details, className }: ServiceDetailsProps) {
                         className="flex items-center gap-2 text-[13px] text-[#494949]"
                       >
                         <Image
-                          src={feature.icon}
+                          src={feature.image}
                           alt=""
                           width={16}
                           height={16}

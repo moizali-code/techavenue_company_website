@@ -39,8 +39,8 @@ function FollowUs({ title, description, links, className }: FollowUsProps) {
             <span
               aria-hidden="true"
               style={{
-                maskImage: `url(${link.icon})`,
-                WebkitMaskImage: `url(${link.icon})`,
+                maskImage: `url(${link.image})`,
+                WebkitMaskImage: `url(${link.image})`,
               }}
               className="size-6 bg-[#1E3C8C] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
             />

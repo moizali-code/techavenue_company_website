@@ -7,6 +7,7 @@ import type {
 export const contactSection: {
   header: Omit<ContactHeaderProps, "className">;
   details: Omit<ContactDetailsProps, "className">;
+  form: Omit<ContactFormProps, "className">;
 } = {
   header: {
     eyebrow: "Contact Us",
@@ -32,38 +33,9 @@ export const contactSection: {
     directionsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=Evacuee+Trust+Complex,+F-5/1,+Islamabad",
   },
-};
-
-export const contactForm: Omit<ContactFormProps, "className"> = {
-  title: "Send Us a Message",
-  description:
-    "Have a question or want to discuss your project? Fill out the form below and our team will get back to you as soon as possible.",
-  industries: [
-    "Government & Public Sector",
-    "Information Technology",
-    "Telecommunications",
-    "Banking & Financial Services",
-    "Healthcare",
-    "Education & Skill Development",
-    "Construction & Smart Infrastructure",
-    "Agriculture",
-    "Energy & Utilities",
-    "Oil & Gas",
-    "Manufacturing",
-    "Other",
-  ],
-  services: [
-    "Artificial Intelligence & Machine Learning",
-    "Cybersecurity & Compliance",
-    "Consulting Services",
-    "Enterprise Software & Digital Engineering",
-    "Construction & Smart Infrastructure",
-    "Digital Government",
-    "Telecommunications",
-    "Human Capital Management",
-    "Agriculture Technology",
-    "Energy & Climate",
-    "Other Services",
-  ],
-  successStoriesHref: "/news",
+  form: {
+    title: "Send Us a Message",
+    description:
+      "Have a question or want to discuss your project? Fill out the form below and our team will get back to you as soon as possible.",
+  },
 };

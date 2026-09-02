@@ -1,8 +1,10 @@
 import type { CardProps } from "@/types/features/card";
 
-export type CoreService = Omit<CardProps, "icon"> & {
+export type CoreService = Omit<CardProps, "title"> & {
   id: number;
-  icon: string;
+  uuid: string;
+  image: string;
+  title: string;
 };
 
 export type CoreServicesSection = {
@@ -27,7 +29,7 @@ export type ServicesPageContent = {
 };
 
 export type ServiceFeature = {
-  icon: string;
+  image: string;
   title: string;
 };
 

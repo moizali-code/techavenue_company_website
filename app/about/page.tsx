@@ -8,75 +8,42 @@ import { TrustedPartners } from "@/components/shared/trusted-partners";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
 
-import {
-  companyValues,
-  companyValuesHeading,
-  companyValuesImage,
-} from "@/mock/company-values";
-import { trustedPartners } from "@/mock/partners";
-import { teamDescription, teamHeading, teamMembers } from "@/mock/team";
+import { aboutPageContent } from "@/mock/about";
 
 const page = () => {
   const router = useRouter();
+  const { header, companyValues, partners, team, cta } = aboutPageContent;
 
   return (
     <div>
       <Jumbotron
-        title={"ABOUT US"}
+        title={header.title}
         classNames={{
           title: "text-white !text-[48px] font-times",
           description: "text-white text-[18px]",
           mainWrapper: "h-[400px] lg:h-[600px] items-end",
         }}
-        description={`We combine innovation, engineering excellence, and global partnerships to deliver intelligent, secure, and future-ready technology solutions across industries.`}
+        description={header.description}
         eyebrow={
           <Button variant={"tab"} className={"rounded-full "}>
-            Company
+            {header.eyebrow}
           </Button>
         }
-        backgroundImage="/about_image.png"
+        backgroundImage={header.image}
       />
 
-      <CompanyValues
-        heading={companyValuesHeading}
-        image={companyValuesImage}
-        values={companyValues}
+      <CompanyValues {...companyValues} />
+
+      <TrustedPartners
+        heading={partners.heading}
+        partners={partners.partners}
       />
 
-      <TrustedPartners heading="Trusted Partners" partners={trustedPartners} />
-
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-10">
-        {caseStudies.map(({ id, ...caseStudy }) => (
-          <div key={id} className="w-[300px]">
-            <Card {...caseStudy} className="h-full max-w-none" />
-          </div>
-        ))}
-      </div> */}
-
-      {/* <section className="w-full px-4 py-14 lg:px-10 ">
-        <Carousel>
-          {caseStudies.map(({ id, ...caseStudy }) => (
-            <CarouselItem
-              key={id}
-              className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-            >
-              <Card {...caseStudy} className="h-full max-w-none" />
-            </CarouselItem>
-          ))}
-        </Carousel>
-      </section> */}
-
-      <TeamCarousel
-        heading={teamHeading}
-        description={teamDescription}
-        members={teamMembers}
-      />
+      <TeamCarousel {...team} />
 
       <Jumbotron
-        title={"Let's Build the Future Together"}
-        description={
-          "Ready to transform your organizational challenges into strategic technological advantages?"
-        }
+        title={cta.title}
+        description={cta.description}
         classNames={{
           mainWrapper: "py-14 lg:py-16",
           content:
