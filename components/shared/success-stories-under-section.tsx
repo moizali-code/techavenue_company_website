@@ -6,7 +6,7 @@ import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import type { IndustrySuccessStoriesProps } from "@/types/features/industry";
+import type { SuccessStoriesUnderSectionProps } from "@/types/shared/success-stories-under-section";
 
 const VISIBLE_STORIES_COUNT = 3;
 const SUCCESS_STORIES_ACTION_LABEL = "View all Success Stories";
@@ -14,10 +14,10 @@ const SUCCESS_STORIES_ACTION_HREF = "/success-stories";
 const TAG_BADGE_CLASSNAME =
   "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase";
 
-function IndustrySuccessStories({
+function SuccessStoriesUnderSection({
   successStories,
   className,
-}: IndustrySuccessStoriesProps) {
+}: SuccessStoriesUnderSectionProps) {
   const { title, description, items } = successStories;
   const visibleStories = items.slice(0, VISIBLE_STORIES_COUNT);
 
@@ -35,7 +35,7 @@ function IndustrySuccessStories({
           description={description}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0 w-fit",
-            content: "max-w-md gap-3 ",
+            content: " gap-3 ",
             title:
               "font-poppins text-[28px] font-bold text-[#191C1E] md:text-[26px] lg:text-[28px]",
             description: "text-[16px] leading-relaxed text-[#444651]",
@@ -85,4 +85,4 @@ function IndustrySuccessStories({
   );
 }
 
-export { IndustrySuccessStories };
+export { SuccessStoriesUnderSection };

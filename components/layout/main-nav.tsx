@@ -35,6 +35,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import { industries } from "@/mock/industry";
+import { solutions } from "@/mock/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
   NavigationMenu,
@@ -64,6 +65,26 @@ const industryNavLinks: NavLink[] = industries.map((industry) => ({
   description: industry.description,
   href: `/industry/${industry.uuid}`,
   icon: industryIcons[industry.uuid] ?? Building2,
+}));
+
+const solutionIcons: Record<string, LucideIcon> = {
+  "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a": ShieldCheck,
+  "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85": Briefcase,
+  "e94d0a76-1f52-4b83-8c25-6a710e4bd93f": Building2,
+  "2c68b3f0-7d41-49ea-95b7-08f3c6d21a54": GraduationCap,
+  "84f1d5c9-3a07-4e62-b18d-5c92074fe3b6": Sprout,
+  "d306a2e8-6b95-4137-a4f0-91e58c7d206b": BrainCircuit,
+  "71bc4f83-0e26-45d9-8a73-b4c62f019d75": Landmark,
+  "3e57c810-4d9b-42f6-b085-7a13e9c46082": RadioTower,
+  "c0942b6f-8e15-4370-91da-6b48f2071e93": Users,
+  "6fa85d31-b207-4c94-8e63-0d29a7f51c48": Leaf,
+};
+
+const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
+  title: solution.title,
+  description: solution.description,
+  href: `/solutions/${solution.uuid}`,
+  icon: solutionIcons[solution.uuid] ?? Building2,
 }));
 
 const navigationItems: NavItem[] = [
@@ -99,71 +120,7 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Solutions",
-    items: [
-      {
-        title: "Network Security",
-        description:
-          "Comprehensive protection for perimeter, endpoint, and cloud.",
-        href: "/solutions/network-security",
-        icon: ShieldCheck,
-      },
-      {
-        title: "Business Consulting Services",
-        description:
-          "Strategic advisory to align operations with growth targets.",
-        href: "/solutions/business-consulting",
-        icon: Briefcase,
-      },
-      {
-        title: "Smart Infrastructure Solutions",
-        description: "Intelligent building and campus systems built to scale.",
-        href: "/solutions/smart-infrastructure",
-        icon: Building2,
-      },
-      {
-        title: "Learning Management System",
-        description:
-          "Deliver, track, and measure training across your workforce.",
-        href: "/solutions/learning-management",
-        icon: GraduationCap,
-      },
-      {
-        title: "Smart Agriculture Platform",
-        description: "Sensor-driven insight for higher yield and lower waste.",
-        href: "/solutions/smart-agriculture",
-        icon: Sprout,
-      },
-      {
-        title: "AI & Software Solutions",
-        description: "Custom platforms and models tailored to your workflows.",
-        href: "/solutions/ai-software",
-        icon: BrainCircuit,
-      },
-      {
-        title: "E-Government Solutions",
-        description: "Digital citizen services that are secure and accessible.",
-        href: "/solutions/e-government",
-        icon: Landmark,
-      },
-      {
-        title: "Telecom Intelligence Solutions",
-        description: "Network analytics that turn traffic data into decisions.",
-        href: "/solutions/telecom-intelligence",
-        icon: RadioTower,
-      },
-      {
-        title: "Human Capital Management",
-        description: "Hiring, payroll, and performance in a single system.",
-        href: "/solutions/human-capital",
-        icon: Users,
-      },
-      {
-        title: "Energy & Climate Solutions",
-        description: "Monitor consumption and meet sustainability commitments.",
-        href: "/solutions/energy-climate",
-        icon: Leaf,
-      },
-    ],
+    items: solutionNavLinks,
   },
   {
     label: "Services",

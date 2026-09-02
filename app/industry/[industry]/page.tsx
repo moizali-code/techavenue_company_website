@@ -1,16 +1,15 @@
 "use client";
-import { IndustrySuccessStories } from "@/components/features/industry/industry-success-stories";
-import { IndustryTabs } from "@/components/features/industry/industry-tabs";
 import { Challenges } from "@/components/shared/challenges";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { ProvidedSolutions } from "@/components/shared/provided-solutions";
 import { SplitSection } from "@/components/shared/split-section";
+import { TabGroup } from "@/components/shared/tab-group";
+import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
 import { Button } from "@/components/ui/button";
 import { industries, industrySuccessStories } from "@/mock/industry";
 import { Lightbulb, UserRoundCheck, type LucideIcon } from "lucide-react";
 import { notFound, useParams } from "next/navigation";
-import React from "react";
 
 const highlightIcons: LucideIcon[] = [UserRoundCheck, Lightbulb];
 
@@ -41,7 +40,13 @@ const page = () => {
         backgroundImage={header.backgroundImage}
       />
 
-      <IndustryTabs tabs={industries} activeUuid={activeIndustry.uuid} />
+      <Container classNames={{ mainWrapper: "py-8 lg:py-10" }}>
+        <TabGroup
+          tabs={industries}
+          activeUuid={activeIndustry.uuid}
+          hrefPrefix="/industry"
+        />
+      </Container>
 
       <Container>
         <SplitSection
@@ -90,7 +95,7 @@ const page = () => {
 
       <ProvidedSolutions providedSolutions={providedSolutions} />
 
-      <IndustrySuccessStories successStories={industrySuccessStories} />
+      <SuccessStoriesUnderSection successStories={industrySuccessStories} />
     </>
   );
 };

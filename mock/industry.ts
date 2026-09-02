@@ -1,7 +1,5 @@
-import type {
-  Industry,
-  IndustrySuccessStories,
-} from "@/types/features/industry";
+import type { Industry } from "@/types/features/industry";
+import type { SuccessStoriesUnderSection } from "@/types/shared/success-stories-under-section";
 
 export const industries: Industry[] = [
   {
@@ -1063,7 +1061,7 @@ export const industries: Industry[] = [
   },
 ];
 
-export const industrySuccessStories: IndustrySuccessStories = {
+export const industrySuccessStories: SuccessStoriesUnderSection = {
   title: "Success Stories in this Industry",
   description:
     "Proven outcomes delivered across global financial, healthcare, and technology infrastructures.",

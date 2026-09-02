@@ -1,18 +1,11 @@
 import type { ProvidedSolutions } from "@/types/features/provided-solutions";
 import type { Challenges } from "@/types/shared/challenges";
-import type { SuccessStoryTag } from "@/types/shared/tag";
 
 export type IndustryTab = {
   id: number;
   uuid: string;
   title: string;
   description: string;
-};
-
-export type IndustryTabsProps = {
-  tabs: IndustryTab[];
-  activeUuid?: string;
-  className?: string;
 };
 
 export type IndustryHeader = {
@@ -38,25 +31,4 @@ export type Industry = IndustryTab & {
   overview: IndustryOverview;
   challenges: Challenges;
   providedSolutions: ProvidedSolutions;
-};
-
-export type IndustrySuccessStory = {
-  id: number;
-  uuid: string;
-  image: string;
-  industry: SuccessStoryTag;
-  solution: SuccessStoryTag;
-  title: string;
-  description: string;
-};
-
-export type IndustrySuccessStories = {
-  title: string;
-  description: string;
-  items: IndustrySuccessStory[];
-};
-
-export type IndustrySuccessStoriesProps = {
-  successStories: IndustrySuccessStories;
-  className?: string;
 };
