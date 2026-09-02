@@ -45,6 +45,7 @@ export type SolutionSummary = {
   id: number;
   uuid: string;
   title: string;
+  image: string;
   description: string;
 };
 

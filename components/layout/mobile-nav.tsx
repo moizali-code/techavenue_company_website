@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ChevronDown, Menu, X } from "lucide-react"
@@ -73,17 +74,29 @@ function MobileNav({ className }: { className?: string }) {
                         id={`mobile-nav-${item.label}`}
                         className="mt-1 flex flex-col gap-0.5 border-l border-border pl-3"
                       >
-                        {item.items.map(({ title, href, icon: Icon }) => (
+                        {item.items.map(({ title, href, icon: Icon, image }) => (
                           <li key={title}>
                             <Link
                               href={href}
                               onClick={close}
                               className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                             >
-                              <Icon
-                                className="size-4 shrink-0"
-                                aria-hidden="true"
-                              />
+                              {image ? (
+                                <Image
+                                  src={image}
+                                  alt=""
+                                  width={16}
+                                  height={16}
+                                  className="size-4 shrink-0 object-contain"
+                                />
+                              ) : (
+                                Icon && (
+                                  <Icon
+                                    className="size-4 shrink-0"
+                                    aria-hidden="true"
+                                  />
+                                )
+                              )}
                               {title}
                             </Link>
                           </li>

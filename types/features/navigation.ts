@@ -4,7 +4,8 @@ export type NavLink = {
   title: string
   description: string
   href: string
-  icon: LucideIcon
+  icon?: LucideIcon
+  image?: string
 }
 
 export type NavItem =

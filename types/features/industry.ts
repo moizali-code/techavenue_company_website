@@ -1,10 +1,11 @@
 import type { ProvidedSolutions } from "@/types/features/provided-solutions";
 import type { Challenges } from "@/types/shared/challenges";
 
-export type IndustryTab = {
+export type IndustrySummary = {
   id: number;
   uuid: string;
   title: string;
+  image: string;
   description: string;
 };
 
@@ -26,7 +27,7 @@ export type IndustryOverview = {
   highlights: IndustryHighlight[];
 };
 
-export type Industry = IndustryTab & {
+export type Industry = IndustrySummary & {
   header: IndustryHeader;
   overview: IndustryOverview;
   challenges: Challenges;

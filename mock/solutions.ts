@@ -6,6 +6,7 @@ export const solutions: Solution[] = [
     id: 1,
     uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
     title: "Network Security",
+    image: "/icons/solutions/network-security.svg",
     description: "Comprehensive protection for perimeter, endpoint, and cloud.",
     header: {
       id: 1,
@@ -71,6 +72,7 @@ export const solutions: Solution[] = [
     id: 2,
     uuid: "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85",
     title: "Business Consulting Services",
+    image: "/icons/solutions/business-consulting-services.svg",
     description: "Strategic advisory to align operations with growth targets.",
     header: {
       id: 2,
@@ -136,6 +138,7 @@ export const solutions: Solution[] = [
     id: 3,
     uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
     title: "Smart Infrastructure Solutions",
+    image: "/icons/solutions/smart-infrastructure-solutions.svg",
     description: "Intelligent building and campus systems built to scale.",
     header: {
       id: 3,
@@ -201,6 +204,7 @@ export const solutions: Solution[] = [
     id: 4,
     uuid: "2c68b3f0-7d41-49ea-95b7-08f3c6d21a54",
     title: "Learning Management System",
+    image: "/icons/solutions/learning-management-system.svg",
     description: "Deliver, track, and measure training across your workforce.",
     header: {
       id: 4,
@@ -266,6 +270,7 @@ export const solutions: Solution[] = [
     id: 5,
     uuid: "84f1d5c9-3a07-4e62-b18d-5c92074fe3b6",
     title: "Smart Agriculture Platform",
+    image: "/icons/solutions/smart-agriculture-platform.svg",
     description: "Sensor-driven insight for higher yield and lower waste.",
     header: {
       id: 5,
@@ -331,6 +336,7 @@ export const solutions: Solution[] = [
     id: 6,
     uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
     title: "AI & Software Solutions",
+    image: "/icons/solutions/ai-software-solutions.svg",
     description: "Custom platforms and models tailored to your workflows.",
     header: {
       id: 6,
@@ -396,6 +402,7 @@ export const solutions: Solution[] = [
     id: 7,
     uuid: "71bc4f83-0e26-45d9-8a73-b4c62f019d75",
     title: "E-Government Solutions",
+    image: "/icons/solutions/e-government-solutions.svg",
     description: "Digital citizen services that are secure and accessible.",
     header: {
       id: 7,
@@ -461,6 +468,7 @@ export const solutions: Solution[] = [
     id: 8,
     uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
     title: "Telecom Intelligence Solutions",
+    image: "/icons/solutions/telecom-intelligence-solutions.svg",
     description: "Network analytics that turn traffic data into decisions.",
     header: {
       id: 8,
@@ -526,6 +534,7 @@ export const solutions: Solution[] = [
     id: 9,
     uuid: "c0942b6f-8e15-4370-91da-6b48f2071e93",
     title: "Human Capital Management",
+    image: "/icons/solutions/human-capital-management.svg",
     description: "Hiring, payroll, and performance in a single system.",
     header: {
       id: 9,
@@ -591,6 +600,7 @@ export const solutions: Solution[] = [
     id: 10,
     uuid: "6fa85d31-b207-4c94-8e63-0d29a7f51c48",
     title: "Energy & Climate Solutions",
+    image: "/icons/solutions/energy-climate-solutions.svg",
     description: "Monitor consumption and meet sustainability commitments.",
     header: {
       id: 10,

@@ -1,37 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Banknote,
-  BrainCircuit,
-  Briefcase,
-  Building2,
-  ChartColumn,
-  CircleHelp,
-  ClipboardList,
-  Cloud,
-  Cpu,
-  Factory,
-  Fuel,
-  GraduationCap,
-  HardHat,
-  Headset,
-  HeartPulse,
-  Info,
-  Landmark,
-  Leaf,
-  Lightbulb,
-  Newspaper,
-  RadioTower,
-  Rocket,
-  ShieldCheck,
-  Sprout,
-  Users,
-  Workflow,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { industries } from "@/mock/industry";
@@ -46,45 +18,18 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-const industryIcons: Record<string, LucideIcon> = {
-  "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901": Landmark,
-  "8c74b1d9-2e35-4af6-9d10-6b83f7a2c542": Cpu,
-  "5d92e0a7-6c81-4b23-97ef-2a14d8b60c73": RadioTower,
-  "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64": Banknote,
-  "e4718b53-0d6a-49c7-b218-3c9f6a5d7e20": HeartPulse,
-  "27ac95f1-4b60-4d83-a5e9-8d012f7b6c34": GraduationCap,
-  "9b53d7c0-8e14-42f6-b073-5a6c1e8f4d29": HardHat,
-  "1e60f4b8-53a9-4c07-8d62-7b94e0a3c518": Sprout,
-  "6a2d81e4-b703-4f59-9c48-0e35d7b1a962": Zap,
-  "c85b0937-1a4e-4620-b7d3-2f16c9e08a45": Fuel,
-  "4d19a7f2-6c58-4b31-90ae-8e27b5d3f016": Factory,
-};
-
 const industryNavLinks: NavLink[] = industries.map((industry) => ({
   title: industry.title,
   description: industry.description,
   href: `/industry/${industry.uuid}`,
-  icon: industryIcons[industry.uuid] ?? Building2,
+  image: industry.image,
 }));
-
-const solutionIcons: Record<string, LucideIcon> = {
-  "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a": ShieldCheck,
-  "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85": Briefcase,
-  "e94d0a76-1f52-4b83-8c25-6a710e4bd93f": Building2,
-  "2c68b3f0-7d41-49ea-95b7-08f3c6d21a54": GraduationCap,
-  "84f1d5c9-3a07-4e62-b18d-5c92074fe3b6": Sprout,
-  "d306a2e8-6b95-4137-a4f0-91e58c7d206b": BrainCircuit,
-  "71bc4f83-0e26-45d9-8a73-b4c62f019d75": Landmark,
-  "3e57c810-4d9b-42f6-b085-7a13e9c46082": RadioTower,
-  "c0942b6f-8e15-4370-91da-6b48f2071e93": Users,
-  "6fa85d31-b207-4c94-8e63-0d29a7f51c48": Leaf,
-};
 
 const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
   title: solution.title,
   description: solution.description,
   href: `/solutions/${solution.uuid}`,
-  icon: solutionIcons[solution.uuid] ?? Building2,
+  image: solution.image,
 }));
 
 const navigationItems: NavItem[] = [
@@ -235,7 +180,7 @@ function MainNav({ className }: { className?: string }) {
                 </p>
                 <ul className="flex max-h-[350px] h-fit flex-col flex-wrap gap-x-2 ">
                   {item.items.map(
-                    ({ title, description, href, icon: Icon }) => (
+                    ({ title, description, href, icon: Icon, image }) => (
                       <li key={title} className=" w-[300px]">
                         <NavigationMenuLink
                           render={<Link href={href} />}
@@ -243,7 +188,17 @@ function MainNav({ className }: { className?: string }) {
                           className="items-start gap-3 rounded-md p-3 hover:bg-muted/60"
                         >
                           <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full  text-muted-foreground">
-                            <Icon className="size-4" aria-hidden="true" />
+                            {image ? (
+                              <Image
+                                src={image}
+                                alt=""
+                                width={16}
+                                height={16}
+                                className="size-4 object-contain"
+                              />
+                            ) : (
+                              Icon && <Icon className="size-4" aria-hidden="true" />
+                            )}
                           </span>
                           <span className="flex flex-col gap-0.5">
                             <span className="text-sm font-semibold text-foreground">

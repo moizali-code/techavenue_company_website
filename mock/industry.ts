@@ -6,6 +6,7 @@ export const industries: Industry[] = [
     id: 1,
     uuid: "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901",
     title: "Government & Public Sector",
+    image: "/icons/industries/government-public-sector.svg",
     description: "Citizen services built for scale, security, and compliance.",
     header: {
       title: "Government and Public Sector Digital Transformation",
@@ -102,6 +103,7 @@ export const industries: Industry[] = [
     id: 2,
     uuid: "8c74b1d9-2e35-4af6-9d10-6b83f7a2c542",
     title: "Information Technology",
+    image: "/icons/industries/information-technology.svg",
     description: "Platform and product engineering for technology firms.",
     header: {
       title: "Information Technology and Digital Innovation",
@@ -198,6 +200,7 @@ export const industries: Industry[] = [
     id: 3,
     uuid: "5d92e0a7-6c81-4b23-97ef-2a14d8b60c73",
     title: "Telecommunications",
+    image: "/icons/industries/telecommunications.svg",
     description: "Operator-grade tooling for networks under constant load.",
     header: {
       title: "Telecommunications and Network Modernization",
@@ -294,6 +297,7 @@ export const industries: Industry[] = [
     id: 4,
     uuid: "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64",
     title: "Banking & Financial Services",
+    image: "/icons/industries/banking-financial-services.svg",
     description: "Secure systems for regulated financial institutions.",
     header: {
       title: "Banking and Financial Services Technology",
@@ -390,6 +394,7 @@ export const industries: Industry[] = [
     id: 5,
     uuid: "e4718b53-0d6a-49c7-b218-3c9f6a5d7e20",
     title: "Healthcare",
+    image: "/icons/industries/healthcare.svg",
     description: "Patient-centred technology that protects sensitive data.",
     header: {
       title: "Healthcare Technology and Patient Data Security",
@@ -487,6 +492,7 @@ export const industries: Industry[] = [
     id: 6,
     uuid: "27ac95f1-4b60-4d83-a5e9-8d012f7b6c34",
     title: "Education & Skill Development",
+    image: "/icons/industries/education-skill-development.svg",
     description: "Learning platforms that widen access and track outcomes.",
     header: {
       title: "Education and Skill Development Platforms",
@@ -583,6 +589,7 @@ export const industries: Industry[] = [
     id: 7,
     uuid: "9b53d7c0-8e14-42f6-b073-5a6c1e8f4d29",
     title: "Construction & Smart Infrastructure",
+    image: "/icons/industries/construction-smart-infrastructure.svg",
     description: "Connected sites and buildings managed from one place.",
     header: {
       title: "Construction and Smart Infrastructure",
@@ -679,6 +686,7 @@ export const industries: Industry[] = [
     id: 8,
     uuid: "1e60f4b8-53a9-4c07-8d62-7b94e0a3c518",
     title: "Agriculture",
+    image: "/icons/industries/agriculture.svg",
     description: "Sensor-driven insight for higher yield and lower waste.",
     header: {
       title: "Agriculture and Precision Farming Technology",
@@ -775,6 +783,7 @@ export const industries: Industry[] = [
     id: 9,
     uuid: "6a2d81e4-b703-4f59-9c48-0e35d7b1a962",
     title: "Energy & Utilities",
+    image: "/icons/industries/energy-utilities.svg",
     description: "Grid, metering, and distribution visibility in real time.",
     header: {
       title: "Energy and Utilities Digital Operations",
@@ -871,6 +880,7 @@ export const industries: Industry[] = [
     id: 10,
     uuid: "c85b0937-1a4e-4620-b7d3-2f16c9e08a45",
     title: "Oil & Gas",
+    image: "/icons/industries/oil-gas.svg",
     description: "Upstream and downstream operations with safer oversight.",
     header: {
       title: "Oil and Gas Operations Technology",
@@ -967,6 +977,7 @@ export const industries: Industry[] = [
     id: 11,
     uuid: "4d19a7f2-6c58-4b31-90ae-8e27b5d3f016",
     title: "Manufacturing",
+    image: "/icons/industries/manufacturing.svg",
     description: "Connected production floors with real-time visibility.",
     header: {
       title: "Manufacturing and Industrial Automation",
