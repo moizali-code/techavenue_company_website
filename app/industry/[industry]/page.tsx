@@ -30,6 +30,7 @@ const page = () => {
           title: "text-white !text-[48px] font-times w-full max-w-full",
           description: "text-white text-[18px]",
           content: "w-full max-w-full ",
+          mainWrapper: "h-[400px] lg:h-[600px]",
         }}
         description={header.description}
         eyebrow={

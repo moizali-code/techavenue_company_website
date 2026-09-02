@@ -20,7 +20,7 @@ function Jumbotron({
   return (
     <section
       className={cn(
-        "w-full px-4 py-14 lg:px-10 lg:py-24",
+        "w-full px-4 py-14 lg:px-10 lg:py-24 flex items-end",
         hasBackgroundImage && "relative isolate overflow-hidden",
         classNames?.mainWrapper,
       )}

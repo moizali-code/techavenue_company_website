@@ -17,6 +17,7 @@ const page = () => {
         classNames={{
           title: "text-white !text-[48px] font-times",
           description: "text-white text-[18px]",
+          mainWrapper: "h-[400px] lg:h-[600px]",
         }}
         description={`Precision-engineered solutions designed to scale your operations, secure your assets, and accelerate your digital evolution through advanced institutional innovation.`}
         eyebrow={
