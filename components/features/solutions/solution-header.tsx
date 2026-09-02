@@ -41,7 +41,7 @@ function SolutionHeader({ eyebrow, header, classNames }: SolutionHeaderProps) {
               ))}
             </dl>
 
-            <div className="flex w-full flex-col gap-4 md:w-auto md:flex-row md:items-center">
+            <div className="flex w-full flex-col gap-4 md:w-auto lg:flex-row lg:items-center">
               <Button
                 size="lg"
                 variant="brand"

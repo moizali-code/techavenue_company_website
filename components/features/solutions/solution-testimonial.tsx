@@ -44,7 +44,7 @@ function SolutionTestimonial({
         }
         classNames={{
           mainWrapper:
-            "mx-auto h-fit max-w-2xl w-[896px] rounded-[20px] border-[rgba(165,165,165,0.4)] shadow-[0_10px_30px_#0000000A] px-[15px] py-[18px]",
+            "mx-auto h-fit max-w-2xl  lg:w-[896px] rounded-[20px] border-[rgba(165,165,165,0.4)] shadow-[0_10px_30px_#0000000A] px-[15px] py-[18px]",
           content: "gap-6 p-8 lg:p-10",
           description:
             "text-[18px] leading-relaxed font-normal text-[#444651] md:text-[30px] lg:text-[30px]",
