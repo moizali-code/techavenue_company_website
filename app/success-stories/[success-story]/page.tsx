@@ -35,7 +35,7 @@ const page = () => {
             "font-times text-[30px] font-bold text-white md:text-[40px] lg:text-[48px]",
           description:
             "max-w-2xl text-[15px] leading-relaxed text-white/90 lg:text-[18px]",
-          mainWrapper: "h-[400px] lg:h-[600px]",
+          mainWrapper: "h-[400px] lg:h-[600px] items-end",
         }}
       />
 
