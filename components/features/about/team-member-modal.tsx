@@ -21,7 +21,7 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
       classNames={{
         trigger: "block w-full text-left",
         content:
-          "max-h-[calc(100dvh-2rem)] max-w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-[12px] p-0 md:max-h-[calc(100dvh-4rem)] md:max-w-[900px]",
+          "max-h-[calc(100dvh-2rem)] max-w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-[12px] p-0 md:max-h-[calc(100dvh-4rem)] md:max-w-[700px] lg:max-w-[900px]",
       }}
     >
       <div className="grid min-h-0 grid-cols-1 overflow-y-auto md:max-h-[calc(100dvh-4rem)] md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:overflow-hidden">
