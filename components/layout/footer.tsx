@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ScrollTop } from "@/components/layout/scroll-top";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -190,6 +191,8 @@ function Footer() {
           </ul>
         </div>
       </div>
+
+      <ScrollTop />
     </footer>
   );
 }

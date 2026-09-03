@@ -37,7 +37,7 @@ function SuccessStoryImpact({ impact, classNames }: SuccessStoryImpactProps) {
         }}
       />
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12 justify-items-center">
         {items.map((item) => (
           <Card
             key={item.uuid}
@@ -46,10 +46,13 @@ function SuccessStoryImpact({ impact, classNames }: SuccessStoryImpactProps) {
             title={item.title}
             description={item.description}
             classNames={{
-              mainWrapper: cn("max-w-none", classNames?.card?.mainWrapper),
+              mainWrapper: cn(
+                "max-w-none justify-self-center",
+                classNames?.card?.mainWrapper,
+              ),
               content: cn("gap-1 px-0 pt-0 pb-0", classNames?.card?.content),
               eyebrow: cn(
-                "font-poppins text-[34px] font-normal text-[#1E3C8C] md:text-[40px] lg:text-[44px]",
+                "font-poppins text-[34px] font-medium text-[#1E3C8C] md:text-[40px] lg:text-[44px]",
                 classNames?.card?.eyebrow,
               ),
               title: cn(
