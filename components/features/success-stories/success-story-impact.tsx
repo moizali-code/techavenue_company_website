@@ -9,7 +9,7 @@ function SuccessStoryImpact({ impact, classNames }: SuccessStoryImpactProps) {
 
   return (
     <Container>
-      <div className="flex flex-col gap-10 bg-[#FAFAFA] lg:gap-14">
+      <div className="flex flex-col gap-10 bg-[#FAFAFA] lg:gap-14 p-10">
         <Jumbotron
           title={title}
           description={description}
