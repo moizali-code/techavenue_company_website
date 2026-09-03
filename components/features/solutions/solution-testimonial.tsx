@@ -15,7 +15,7 @@ function SolutionTestimonial({ testimonial }: SolutionTestimonialProps) {
         <Card
           eyebrow={
             <Quote
-              className="size-9 rotate-180 fill-[#E5E9F2] text-[#E5E9F2]"
+              className="size-9 rotate-180 fill-[#E5E9F2] text-[#1E3C8C]"
               aria-hidden
             />
           }

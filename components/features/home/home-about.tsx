@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/shared/container";
@@ -6,6 +5,7 @@ import { SplitSection } from "@/components/shared/split-section";
 import { Button } from "@/components/ui/button";
 import type { HomeAboutProps } from "@/types/features/home";
 import { FadeIn } from "@/components/shared/fade-in";
+import { Icon } from "@/components/shared/icon";
 
 function HomeAbout({
   eyebrow,
@@ -31,12 +31,9 @@ function HomeAbout({
                     key={uuid}
                     className="flex items-center gap-3 text-[14px] font-semibold text-[#2D2D2D] lg:text-[14px]"
                   >
-                    <Image
+                    <Icon
                       src={highlightImage}
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="size-5 shrink-0"
+                      className="size-5 !text-[#2D2D2D]"
                     />
                     {label}
                   </li>

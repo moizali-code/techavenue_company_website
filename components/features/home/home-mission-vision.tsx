@@ -1,9 +1,8 @@
-import Image from "next/image";
-
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import type { HomeMissionVisionProps } from "@/types/features/home";
 import { FadeIn } from "@/components/shared/fade-in";
+import { Icon } from "@/components/shared/icon";
 
 function HomeMissionVision({ items }: HomeMissionVisionProps) {
   return (
@@ -15,13 +14,7 @@ function HomeMissionVision({ items }: HomeMissionVisionProps) {
               key={uuid}
               eyebrow={
                 <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#EEF2FB]">
-                  <Image
-                    src={image}
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="size-6"
-                  />
+                  <Icon src={image} className="size-6" />
                 </span>
               }
               title={title}

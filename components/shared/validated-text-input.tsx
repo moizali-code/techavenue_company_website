@@ -103,9 +103,12 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
                 className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
               >
                 {isPasswordVisible ? (
-                  <EyeOff className="size-4" aria-hidden="true" />
+                  <EyeOff
+                    className="size-4 text-[#1E3C8C]"
+                    aria-hidden="true"
+                  />
                 ) : (
-                  <Eye className="size-4" aria-hidden="true" />
+                  <Eye className="size-4 text-[#1E3C8C]" aria-hidden="true" />
                 )}
               </button>
             )}

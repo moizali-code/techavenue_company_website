@@ -1,10 +1,9 @@
-import Image from "next/image";
-
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { cn } from "@/lib/utils";
 import type { HiringProcessProps } from "@/types/features/career";
+import { Icon } from "@/components/shared/icon";
 
 function HiringProcess({ title, description, steps }: HiringProcessProps) {
   return (
@@ -41,15 +40,9 @@ function HiringProcess({ title, description, steps }: HiringProcessProps) {
                         : "bg-white shadow-[0px_6px_18px_0px_rgba(0,0,0,0.08)]",
                     )}
                   >
-                    <Image
+                    <Icon
                       src={step.image}
-                      alt=""
-                      width={24}
-                      height={24}
-                      className={cn(
-                        "size-6",
-                        isFinalStep && "brightness-0 invert",
-                      )}
+                      className={cn("size-6", isFinalStep && "text-white")}
                     />
                   </span>
                 }

@@ -63,7 +63,7 @@ function Button({
       {...props}
     >
       {children}
-      {arrow && <ArrowRight />}
+      {arrow && <ArrowRight className="text-[#1E3C8C]" />}
     </ButtonPrimitive>
   );
 }

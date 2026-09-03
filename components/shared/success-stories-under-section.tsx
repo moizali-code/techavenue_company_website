@@ -42,7 +42,10 @@ function SuccessStoriesUnderSection({
             className="inline-flex shrink-0 items-center gap-2 text-[15px] font-bold text-[#1E3C8C] transition-opacity hover:opacity-80 lg:text-[16px]"
           >
             {SUCCESS_STORIES_ACTION_LABEL}
-            <CircleArrowRight className="size-5" strokeWidth={1.5} />
+            <CircleArrowRight
+              className="size-5 text-[#1E3C8C]"
+              strokeWidth={1.5}
+            />
           </Link>
         </div>
 

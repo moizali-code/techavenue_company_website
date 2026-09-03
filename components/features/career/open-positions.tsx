@@ -103,7 +103,7 @@ function OpenPositions({
         >
           <div className="relative w-full md:min-w-[260px] md:flex-1">
             <Search
-              className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-[#8A8A8A]"
+              className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-[#1E3C8C]"
               strokeWidth={1.5}
             />
             <Input
@@ -177,12 +177,15 @@ function OpenPositions({
                     <div className="flex flex-col gap-2 text-[14px] font-bold text-[#444651]">
                       <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                         <span className="flex items-center gap-1.5">
-                          <MapPin className="size-4" strokeWidth={1.5} />
+                          <MapPin
+                            className="size-4 text-[#1E3C8C]"
+                            strokeWidth={1.5}
+                          />
                           {job.location}
                         </span>
                         <span className="flex items-center gap-1.5">
                           <BriefcaseBusiness
-                            className="size-4"
+                            className="size-4 text-[#1E3C8C]"
                             strokeWidth={1.5}
                           />
                           {job.employmentType}
@@ -190,7 +193,10 @@ function OpenPositions({
                       </div>
 
                       <span className="flex items-center gap-1.5">
-                        <Clock className="size-4" strokeWidth={1.5} />
+                        <Clock
+                          className="size-4 text-[#1E3C8C]"
+                          strokeWidth={1.5}
+                        />
                         {job.experience}
                       </span>
                     </div>

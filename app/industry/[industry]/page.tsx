@@ -65,7 +65,12 @@ const page = () => {
                     className="flex items-start gap-3 text-left"
                   >
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#1E3C8C]/10 text-[#1E3C8C]">
-                      {Icon && <Icon className="size-5" strokeWidth={1.5} />}
+                      {Icon && (
+                        <Icon
+                          className="size-5 text-[#1E3C8C]"
+                          strokeWidth={1.5}
+                        />
+                      )}
                     </span>
                     <span className="flex flex-col gap-0.5">
                       <span className="text-[15px] font-bold text-[#191C1E]">

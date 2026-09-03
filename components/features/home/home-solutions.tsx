@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { CarouselItem } from "@/components/ui/carousel";
 import type { HomeSolutionsProps } from "@/types/features/home";
 import { FadeIn } from "@/components/shared/fade-in";
+import { Icon } from "@/components/shared/icon";
 
 function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
   return (
@@ -32,13 +33,7 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
               <FadeIn direction="right">
                 <div className="flex flex-col gap-3">
                   <span className=" flex size-12 items-center justify-center rounded-full bg-[rgba(26,42,74,0.08)]">
-                    <Image
-                      src={image}
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="size-6"
-                    />
+                    <Icon src={image} className="size-6" />
                   </span>
 
                   <h3 className="font-poppins text-[22px] font-semibold text-[#191818] lg:text-[24px]">
@@ -55,13 +50,7 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
                         key={highlight.uuid}
                         className="flex items-center gap-3 text-[12px] font-normal text-[#191818]"
                       >
-                        <Image
-                          src={highlight.image}
-                          alt=""
-                          width={20}
-                          height={20}
-                          className="size-5 shrink-0"
-                        />
+                        <Icon src={highlight.image} className="size-5" />
                         {highlight.label}
                       </li>
                     ))}

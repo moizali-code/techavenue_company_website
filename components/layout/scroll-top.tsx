@@ -28,7 +28,7 @@ function ScrollTop() {
       onClick={() => window.scrollTo({ top: 0 })}
       className="cursor-pointer fixed right-4 bottom-4 z-50 flex size-11 items-center justify-center rounded-full border border-brand bg-white text-brand shadow-lg transition-colors hover:bg-brand hover:text-white lg:right-8 lg:bottom-8 lg:size-12"
     >
-      <ArrowUp className="size-5" aria-hidden="true" />
+      <ArrowUp className="size-5 text-[#1E3C8C]" aria-hidden="true" />
     </button>
   );
 }

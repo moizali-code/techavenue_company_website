@@ -46,7 +46,10 @@ function EventsCarousel({ events }: EventsCarouselProps) {
                   }
                   footer={
                     <>
-                      <MapPin className="size-3.5 shrink-0" strokeWidth={1.5} />
+                      <MapPin
+                        className="size-3.5 shrink-0 text-[#1E3C8C]"
+                        strokeWidth={1.5}
+                      />
                       <span>{event.location}</span>
                     </>
                   }

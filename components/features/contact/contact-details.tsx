@@ -46,7 +46,7 @@ function ContactDetails({
             <div className="flex flex-col gap-6 rounded-[12px] border border-[#E6E6E6] bg-white p-6 lg:p-8">
               <div className="flex flex-col gap-2">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
-                  <MapPin className="size-4" />
+                  <MapPin className="size-4 text-[#1E3C8C]" />
                   Head Office
                 </span>
                 <p className="text-[16px] leading-relaxed font-medium text-[#191C1E]">
@@ -56,7 +56,7 @@ function ContactDetails({
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
                   <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
-                    <Phone className="size-4" />
+                    <Phone className="size-4 text-[#1E3C8C]" />
                     Phone
                   </span>
                   <Link
@@ -68,7 +68,7 @@ function ContactDetails({
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
-                    <Mail className="size-4" />
+                    <Mail className="size-4 text-[#1E3C8C]" />
                     Email
                   </span>
                   <Link
@@ -81,7 +81,7 @@ function ContactDetails({
               </div>
               <div className="flex flex-col gap-2">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
-                  <Globe className="size-4" />
+                  <Globe className="size-4 text-[#1E3C8C]" />
                   Website
                 </span>
                 <Link
@@ -95,7 +95,7 @@ function ContactDetails({
               </div>
               <div className="flex flex-col gap-2 border-t border-[#E6E6E6] pt-6">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
-                  <Clock className="size-4" />
+                  <Clock className="size-4 text-[#1E3C8C]" />
                   Business Hours
                 </span>
                 <p className="text-[16px] text-[#191C1E]">{businessHours}</p>
@@ -128,7 +128,7 @@ function ContactDetails({
                 className="h-12 w-full gap-2 rounded-none text-[15px] font-medium tracking-normal"
               >
                 Get Directions
-                <ExternalLink className="size-4" />
+                <ExternalLink className="size-4 text-[#1E3C8C]" />
               </Button>
             </FadeIn>
           </div>

@@ -42,12 +42,12 @@ function AccordionTrigger({
         <PlusIcon
           data-slot="accordion-trigger-icon"
           strokeWidth={1.5}
-          className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
+          className="pointer-events-none shrink-0 text-[#1E3C8C] group-aria-expanded/accordion-trigger:hidden"
         />
         <MinusIcon
           data-slot="accordion-trigger-icon"
           strokeWidth={1.5}
-          className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:block"
+          className="pointer-events-none hidden shrink-0 text-[#1E3C8C] group-aria-expanded/accordion-trigger:block"
         />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

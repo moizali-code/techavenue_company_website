@@ -67,7 +67,10 @@ function NewsGrid({ stories }: NewsGridProps) {
                 description={story.description}
                 footer={
                   <>
-                    <Clock className="size-4" strokeWidth={1.5} />
+                    <Clock
+                      className="size-4 text-[#1E3C8C]"
+                      strokeWidth={1.5}
+                    />
                     <span>{formatDay(story.publishedAt)}</span>
                   </>
                 }

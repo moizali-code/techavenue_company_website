@@ -24,7 +24,7 @@ function HomeStats({ stats, className }: HomeStatsProps) {
             title={value}
             description={
               <span className="flex items-center gap-2">
-                <Icon className="size-4 shrink-0 lg:size-5" aria-hidden />
+                <Icon className="size-4 shrink-0 lg:size-5 " aria-hidden />
                 {label}
               </span>
             }

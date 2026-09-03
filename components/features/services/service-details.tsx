@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
 import type { ServiceDetailsProps } from "@/types/features/services";
+import { Icon } from "@/components/shared/icon";
 
 function ServiceDetails({ details }: ServiceDetailsProps) {
   return (
@@ -27,13 +26,7 @@ function ServiceDetails({ details }: ServiceDetailsProps) {
                           key={feature.title}
                           className="flex items-center gap-2 text-[13px] text-[#494949]"
                         >
-                          <Image
-                            src={feature.image}
-                            alt=""
-                            width={16}
-                            height={16}
-                            className="size-4 shrink-0"
-                          />
+                          <Icon src={feature.image} className="size-4" />
                           {feature.title}
                         </li>
                       ))}

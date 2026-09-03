@@ -35,7 +35,7 @@ const page = () => {
         }
         action={
           <span className="flex items-center gap-2 text-[14px] font-semibold tracking-[0.08em] text-white uppercase">
-            <MapPin className="size-4" strokeWidth={1.5} />
+            <MapPin className="size-4 text-[#1E3C8C]" strokeWidth={1.5} />
             {location}
           </span>
         }

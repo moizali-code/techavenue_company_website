@@ -8,7 +8,7 @@ import { DialogClose, DialogTitle } from "@/components/ui/dialog";
 import type { TeamMemberModalProps } from "@/types/features/about";
 
 function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
-  const { name, image, description } = member;
+  const { name, role, image, description } = member;
 
   const achievements = description
     .split(",")
@@ -18,48 +18,52 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
   return (
     <Modal
       trigger={trigger}
-      showCloseButton={false}
       classNames={{
         trigger: "block w-full text-left",
         content:
-          "max-w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-[12px] p-0 md:max-w-[900px]",
+          "max-h-[calc(100dvh-2rem)] max-w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-[12px] p-0 md:max-h-[calc(100dvh-4rem)] md:max-w-[900px]",
       }}
     >
-      <div className="grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <div className="relative aspect-[3/4] w-full bg-[#F8F8F8] md:aspect-auto md:min-h-[460px] lg:min-h-[460px]">
+      <div className="grid min-h-0 grid-cols-1 overflow-y-auto md:max-h-[calc(100dvh-4rem)] md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:overflow-hidden">
+        <div className="relative hidden w-full bg-[#F8F8F8] md:block md:min-h-[420px]">
           <Image
             src={image}
             alt={name}
             fill
-            sizes="(min-width: 768px) 40vw, 100vw"
+            sizes="(min-width: 768px) 40vw, 1px"
             className="object-cover object-top"
           />
         </div>
 
-        <div className="flex flex-col gap-6 p-6 lg:p-8">
-          <DialogTitle className="font-poppins text-[22px] font-semibold text-[#000000] lg:text-[24px]">
-            About {name}
-          </DialogTitle>
+        <div className="flex min-h-0 flex-col gap-4 p-5 md:gap-5 md:overflow-y-auto md:p-6 lg:gap-6 lg:p-8">
+          <div className="flex flex-col gap-1 pr-8">
+            <DialogTitle className="font-poppins text-[18px] font-semibold text-[#000000] md:text-[22px] lg:text-[24px]">
+              About {name}
+            </DialogTitle>
+            <p className="text-[13px] font-normal text-[#494949] lg:text-[14px]">
+              {role}
+            </p>
+          </div>
 
           <ul className="flex flex-col gap-3">
             {achievements.map((achievement) => (
               <li
                 key={achievement}
-                className="flex gap-2 text-[14px] font-normal text-[#2D2D2D] lg:text-[16px]"
+                className="flex gap-2 text-[14px] font-normal break-words text-[#2D2D2D] lg:text-[16px]"
               >
                 <span aria-hidden="true">&bull;</span>
-                <span>{achievement}</span>
+                <span className="min-w-0">{achievement}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-auto flex justify-end">
+          <div className="mt-auto flex justify-end pt-2">
             <DialogClose
               render={
                 <Button
                   variant="outline"
                   size="lg"
-                  className="min-w-[140px] text-[#1E3C8C]"
+                  className="w-full text-[#1E3C8C] md:w-auto md:min-w-[140px]"
                 />
               }
             >

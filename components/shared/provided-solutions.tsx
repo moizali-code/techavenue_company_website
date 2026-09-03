@@ -1,10 +1,9 @@
-import Image from "next/image";
-
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { cn } from "@/lib/utils";
 import type { ProvidedSolutionsProps } from "@/types/features/provided-solutions";
+import { Icon } from "@/components/shared/icon";
 
 function ProvidedSolutions({
   providedSolutions,
@@ -39,15 +38,7 @@ function ProvidedSolutions({
               eyebrowPosition="inline"
               title={item.title}
               description={item.description}
-              eyebrow={
-                <Image
-                  src={item.image}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="size-5"
-                />
-              }
+              eyebrow={<Icon src={item.image} className="size-5" />}
               classNames={{
                 mainWrapper: cn(
                   "h-full max-w-none rounded-[12px] bg-white shadow-none py-2",

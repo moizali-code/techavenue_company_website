@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { Icon } from "@/components/shared/icon";
 import { industries } from "@/mock/industry";
 import { serviceDetails } from "@/mock/services";
 import { solutions } from "@/mock/solutions";
@@ -123,7 +123,7 @@ function MainNav({ className }: { className?: string }) {
                 </p>
                 <ul className="flex max-h-[350px] h-fit flex-col flex-wrap gap-x-2 ">
                   {item.items.map(
-                    ({ title, description, href, icon: Icon, image }) => (
+                    ({ title, description, href, icon: NavIcon, image }) => (
                       <li key={title} className=" w-[300px]">
                         <NavigationMenuLink
                           render={<Link href={href} />}
@@ -132,16 +132,16 @@ function MainNav({ className }: { className?: string }) {
                         >
                           <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full  text-muted-foreground">
                             {image ? (
-                              <Image
+                              <Icon
                                 src={image}
-                                alt=""
-                                width={16}
-                                height={16}
-                                className="size-4 object-contain"
+                                className="size-4 text-[#8C8C8C]"
                               />
                             ) : (
-                              Icon && (
-                                <Icon className="size-4" aria-hidden="true" />
+                              NavIcon && (
+                                <NavIcon
+                                  className="size-4 text-[#8C8C8C]"
+                                  aria-hidden="true"
+                                />
                               )
                             )}
                           </span>

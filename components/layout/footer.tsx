@@ -64,7 +64,7 @@ function Footer() {
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label={label}
-                    className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+                    className="shadow-sm flex size-9 items-center justify-center rounded-full text-[#6C6C6C] transition-colors hover:border-brand hover:text-brand"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ function Footer() {
             <ul className="mt-5 flex flex-col gap-4 text-sm text-foreground/80">
               <li className="flex gap-3">
                 <MapPin
-                  className="mt-0.5 size-4 shrink-0 text-brand"
+                  className="mt-0.5 size-4 shrink-0 text-[#1E3C8C]"
                   aria-hidden="true"
                 />
                 <address className="not-italic leading-relaxed">
@@ -115,7 +115,7 @@ function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone
-                  className="size-4 shrink-0 text-brand"
+                  className="size-4 shrink-0 text-[#1E3C8C]"
                   aria-hidden="true"
                 />
                 <a
@@ -127,7 +127,7 @@ function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail
-                  className="size-4 shrink-0 text-brand"
+                  className="size-4 shrink-0 text-[#1E3C8C]"
                   aria-hidden="true"
                 />
                 <a

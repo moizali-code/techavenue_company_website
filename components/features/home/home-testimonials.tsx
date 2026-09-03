@@ -69,7 +69,7 @@ function HomeTestimonials({
                           <Star
                             key={index}
                             className={cn(
-                              "size-3.5",
+                              "size-3.5 text-[#1E3C8C]",
                               index < rating
                                 ? "fill-[#F5A623] text-[#F5A623]"
                                 : "fill-transparent text-[#D8D8D8]",
