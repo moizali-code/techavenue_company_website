@@ -23,15 +23,15 @@ function ContactHeader({
             className="flex items-center justify-center gap-4 md:gap-6"
           >
             <span className="flex size-14 items-center justify-center rounded-full border border-white/30 md:size-16 lg:size-20">
-              <Phone className="size-6 text-[#1E3C8C] lg:size-8" />
+              <Phone className="size-6 text-white/30 lg:size-8" />
             </span>
 
             <span className="flex size-[72px] items-center justify-center rounded-full border border-white/30 md:size-20 lg:size-28">
-              <Mail className="size-8 text-[#1E3C8C] lg:size-11" />
+              <Mail className="size-8 text-white/30 lg:size-11" />
             </span>
 
             <span className="flex size-14 items-center justify-center rounded-full border border-white/30 md:size-16 lg:size-20">
-              <AtSign className="size-6 text-[#1E3C8C] lg:size-8" />
+              <AtSign className="size-6 text-white/30 lg:size-8" />
             </span>
           </div>
 

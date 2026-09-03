@@ -5,7 +5,7 @@ import type { ContainerProps } from "@/types/features/container";
 const containerVariants = cva("w-full px-4 lg:px-10", {
   variants: {
     variant: {
-      default: "py-12 lg:py-16",
+      default: "py-12 lg:py-12",
       bare: "",
     },
   },
