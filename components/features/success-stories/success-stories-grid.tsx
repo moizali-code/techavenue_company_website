@@ -113,7 +113,7 @@ function SuccessStoriesGrid({ stories }: SuccessStoriesGridProps) {
         <Container>
           <div
             ref={gridRef}
-            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 pb-6"
           >
             {visibleStories.map((story) => (
               <Card

@@ -25,7 +25,7 @@ const legalLinks = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/people/Tech-Avenue-Pvt-Ltd/100064156050542/#",
     path: "M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.29-.04-1.27-.12-2.41-.12-2.39 0-4.02 1.46-4.02 4.13V9.9H7.55V13h2.72v8h3.23Z",
   },
   {
