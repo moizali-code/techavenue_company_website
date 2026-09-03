@@ -36,7 +36,7 @@ const industryTabs: TabGroupItem[] = [
   ...industries.map(({ id, uuid, title }) => ({ id, uuid, title })),
 ];
 
-function SuccessStoriesGrid({ stories, className }: SuccessStoriesGridProps) {
+function SuccessStoriesGrid({ stories }: SuccessStoriesGridProps) {
   const [solutionUuid, setSolutionUuid] = useState(ALL_FILTER_UUID);
   const [industryUuid, setIndustryUuid] = useState(ALL_FILTER_UUID);
   const [page, setPage] = useState(1);
@@ -78,32 +78,31 @@ function SuccessStoriesGrid({ stories, className }: SuccessStoriesGridProps) {
   };
 
   return (
-    <Container
-      classNames={{
-        mainWrapper: cn("bg-[#FAFAFA]  py-18", className),
-        container: "flex flex-col gap-8 lg:gap-10",
-      }}
-    >
-      <div className="flex flex-col gap-5  rounded-[12px]  p-5 lg:p-6">
-        <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
-          <span className={FILTER_LABEL_CLASSNAME}>Solutions:</span>
+    <div className="flex flex-col gap-8  lg:gap-10">
+      <div className="bg-[#FAFAFA]">
+        <Container>
+          <div className="flex flex-col gap-5 rounded-[12px] ">
+            <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
+              <span className={FILTER_LABEL_CLASSNAME}>Solutions:</span>
 
-          <TabGroup
-            tabs={solutionTabs}
-            activeUuid={solutionUuid}
-            onSelect={selectSolution}
-          />
-        </div>
+              <TabGroup
+                tabs={solutionTabs}
+                activeUuid={solutionUuid}
+                onSelect={selectSolution}
+              />
+            </div>
 
-        <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
-          <span className={FILTER_LABEL_CLASSNAME}>Industry:</span>
+            <div className="mt-2 flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
+              <span className={FILTER_LABEL_CLASSNAME}>Industry:</span>
 
-          <TabGroup
-            tabs={industryTabs}
-            activeUuid={industryUuid}
-            onSelect={selectIndustry}
-          />
-        </div>
+              <TabGroup
+                tabs={industryTabs}
+                activeUuid={industryUuid}
+                onSelect={selectIndustry}
+              />
+            </div>
+          </div>
+        </Container>
       </div>
 
       {visibleStories.length === 0 ? (
@@ -111,7 +110,7 @@ function SuccessStoriesGrid({ stories, className }: SuccessStoriesGridProps) {
           No success stories match the selected filters yet.
         </p>
       ) : (
-        <>
+        <Container>
           <div
             ref={gridRef}
             className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
@@ -147,9 +146,9 @@ function SuccessStoriesGrid({ stories, className }: SuccessStoriesGridProps) {
           </div>
 
           <Paginator page={page} totalPages={totalPages} setPage={setPage} />
-        </>
+        </Container>
       )}
-    </Container>
+    </div>
   );
 }
 

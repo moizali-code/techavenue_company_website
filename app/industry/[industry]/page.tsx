@@ -40,7 +40,7 @@ const page = () => {
         backgroundImage={header.backgroundImage}
       />
 
-      <Container classNames={{ mainWrapper: "py-8 lg:py-10" }}>
+      <Container>
         <TabGroup
           tabs={industries}
           activeUuid={activeIndustry.uuid}

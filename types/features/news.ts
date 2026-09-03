@@ -12,10 +12,8 @@ export type NewsStory = {
 export type NewsHeroProps = {
   featuredStory: NewsStory;
   stories: NewsStory[];
-  className?: string;
 };
 
 export type NewsGridProps = {
   stories: NewsStory[];
-  className?: string;
 };

@@ -1,19 +1,25 @@
-import { cn } from "@/lib/utils";
+import { cva } from "class-variance-authority";
+
 import type { ContainerProps } from "@/types/features/container";
 
-function Container({ children, classNames }: ContainerProps) {
+const containerVariants = cva("w-full px-4 lg:px-10", {
+  variants: {
+    variant: {
+      default: "py-12 lg:py-16",
+      bare: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+function Container({ children, variant }: ContainerProps) {
   return (
-    <section
-      className={cn(
-        "w-full px-4 py-12 lg:px-10 lg:py-16",
-        classNames?.mainWrapper,
-      )}
-    >
-      <div className={cn("mx-auto w-full max-w-6xl", classNames?.container)}>
-        {children}
-      </div>
+    <section className={containerVariants({ variant })}>
+      <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>
   );
 }
 
-export { Container };
+export { Container, containerVariants };

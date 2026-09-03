@@ -17,7 +17,7 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
         navPosition="top-right"
         className="px-0 py-0"
         header={
-          <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+          <div className=" flex flex-col items-center gap-4 text-center md:items-start md:text-left">
             <Sparkles className="size-8 text-[#1E3C8C]" strokeWidth={1.5} />
 
             <h2 className="max-w-xl font-times text-[25px] font-bold text-[#2D2D2D] md:text-[30px] lg:text-[34px]">

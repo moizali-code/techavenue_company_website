@@ -17,8 +17,8 @@ function HomeTestimonials({
   testimonials,
 }: HomeTestimonialsProps) {
   return (
-    <Container classNames={{ mainWrapper: "bg-[#F8F8F8]" }}>
-      <FadeIn>
+    <Container>
+      <FadeIn className="bg-[#F8F8F8] py-10 px-8">
         <Carousel
           align="start"
           className="px-0 py-0"

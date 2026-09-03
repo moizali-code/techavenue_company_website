@@ -1,16 +1,12 @@
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
-import { cn } from "@/lib/utils";
 import type { SolutionExperienceProps } from "@/types/features/solutions";
 
-function SolutionExperience({
-  experience,
-  classNames,
-}: SolutionExperienceProps) {
+function SolutionExperience({ experience }: SolutionExperienceProps) {
   const { title, description, image, items } = experience;
 
   return (
-    <Container classNames={{ mainWrapper: cn(classNames?.mainWrapper) }}>
+    <Container>
       <SplitSection
         image={image}
         imageAlt={title}

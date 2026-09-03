@@ -41,11 +41,7 @@ export function Carousel({
         align,
         ...(startIndex !== undefined ? { startIndex } : {}),
       }}
-      className={cn(
-        "w-full px-8 lg:px-10",
-        isTopRight ? "py-10" : "py-20",
-        className,
-      )}
+      className={cn("w-full ", isTopRight ? "py-10" : "py-20", className)}
     >
       {isTopRight ? (
         <div className="mb-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:gap-10 md:text-left">

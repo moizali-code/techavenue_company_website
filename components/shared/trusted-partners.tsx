@@ -75,25 +75,24 @@ function TrustedPartners({
   }
 
   return (
-    <Container
-      classNames={{
-        mainWrapper: classNames?.mainWrapper,
-        container: cn(
+    <Container>
+      <div
+        className={cn(
           "flex flex-col items-center gap-6 lg:gap-8",
           classNames?.container,
-        ),
-      }}
-    >
-      {headingContent}
-
-      <ul
-        className={cn(
-          "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12 lg:gap-x-14",
-          classNames?.list,
         )}
       >
-        {partners.map(renderPartner)}
-      </ul>
+        {headingContent}
+
+        <ul
+          className={cn(
+            "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12 lg:gap-x-14",
+            classNames?.list,
+          )}
+        >
+          {partners.map(renderPartner)}
+        </ul>
+      </div>
     </Container>
   );
 }

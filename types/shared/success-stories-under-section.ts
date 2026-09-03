@@ -18,5 +18,4 @@ export type SuccessStoriesUnderSection = {
 
 export type SuccessStoriesUnderSectionProps = {
   successStories: SuccessStoriesUnderSection;
-  className?: string;
 };

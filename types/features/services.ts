@@ -13,9 +13,7 @@ export type CoreServicesSection = {
   services: CoreService[];
 };
 
-export type CoreServicesProps = CoreServicesSection & {
-  className?: string;
-};
+export type CoreServicesProps = CoreServicesSection;
 
 export type ServicesHeader = {
   title: string;
@@ -46,5 +44,4 @@ export type ServiceDetail = {
 
 export type ServiceDetailsProps = {
   details: ServiceDetail[];
-  className?: string;
 };

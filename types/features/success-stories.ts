@@ -1,5 +1,4 @@
 import type { CardProps } from "@/types/features/card";
-import type { ContainerProps } from "@/types/features/container";
 import type { JumbotronProps } from "@/types/features/jumbotron";
 import type { ProvidedSolutions } from "@/types/features/provided-solutions";
 import type { Challenges } from "@/types/shared/challenges";
@@ -41,7 +40,6 @@ export type SuccessStoryDetail = {
 export type SuccessStoryImpactProps = {
   impact: SuccessStoryImpact;
   classNames?: {
-    container?: ContainerProps["classNames"];
     jumbotron?: JumbotronProps["classNames"];
     card?: CardProps["classNames"];
   };
@@ -71,5 +69,4 @@ export type SuccessStoriesHeaderProps = {
 
 export type SuccessStoriesGridProps = {
   stories: SuccessStory[];
-  className?: string;
 };

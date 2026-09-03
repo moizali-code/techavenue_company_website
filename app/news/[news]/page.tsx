@@ -46,7 +46,7 @@ const page = () => {
         backgroundImage={image}
       />
 
-      <Container classNames={{ container: "max-w-4xl" }}>
+      <Container>
         <RichText html={html} />
       </Container>
 

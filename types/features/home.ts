@@ -35,7 +35,6 @@ export type HomeMissionVisionItem = {
 
 export type HomeMissionVisionProps = {
   items: HomeMissionVisionItem[];
-  className?: string;
 };
 
 export type HomeTestimonial = {

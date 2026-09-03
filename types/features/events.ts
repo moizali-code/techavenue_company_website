@@ -10,5 +10,4 @@ export type EventItem = {
 
 export type EventsCarouselProps = {
   events: EventItem[];
-  className?: string;
 };

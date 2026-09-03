@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollTop } from "@/components/layout/scroll-top";
@@ -42,7 +43,7 @@ const socialLinks = [
 function Footer() {
   return (
     <footer className="w-full bg-[#FAFAFA]">
-      <div className="mx-auto w-full max-w-360 px-4 py-14 lg:px-10">
+      <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr] lg:gap-12">
           <div>
             <p className="font-serif text-base font-bold text-foreground">
@@ -190,7 +191,7 @@ function Footer() {
             ))}
           </ul>
         </div>
-      </div>
+      </Container>
 
       <ScrollTop />
     </footer>

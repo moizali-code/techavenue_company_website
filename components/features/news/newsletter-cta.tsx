@@ -3,9 +3,9 @@ import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-function NewsletterCta({ className }: { className?: string }) {
+function NewsletterCta() {
   return (
-    <Container classNames={{ mainWrapper: className }}>
+    <Container>
       <Jumbotron
         align="left"
         title="Never Miss an Update"

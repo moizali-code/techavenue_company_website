@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ChevronDown, Menu, X } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { isNavGroup, navigationItems } from "@/components/layout/main-nav"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { isNavGroup, navigationItems } from "@/components/layout/main-nav";
 
 function MobileNav({ className }: { className?: string }) {
-  const [open, setOpen] = useState(false)
-  const [openSection, setOpenSection] = useState<string | null>(null)
-  const pathname = usePathname()
+  const [open, setOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const close = () => {
-    setOpen(false)
-    setOpenSection(null)
-  }
+    setOpen(false);
+    setOpenSection(null);
+  };
 
   const toggleSection = (label: string) =>
-    setOpenSection((current) => (current === label ? null : label))
+    setOpenSection((current) => (current === label ? null : label));
 
   return (
     <div className={className}>
@@ -46,7 +46,7 @@ function MobileNav({ className }: { className?: string }) {
                     onClick={close}
                     className={cn(
                       "block rounded-md px-3 py-2.5 text-sm font-medium hover:bg-muted",
-                      pathname === item.href && "text-brand-link"
+                      pathname === item.href && "text-brand-link",
                     )}
                   >
                     {item.label}
@@ -64,7 +64,7 @@ function MobileNav({ className }: { className?: string }) {
                       <ChevronDown
                         className={cn(
                           "size-4 transition-transform",
-                          openSection === item.label && "rotate-180"
+                          openSection === item.label && "rotate-180",
                         )}
                         aria-hidden="true"
                       />
@@ -74,33 +74,35 @@ function MobileNav({ className }: { className?: string }) {
                         id={`mobile-nav-${item.label}`}
                         className="mt-1 flex flex-col gap-0.5 border-l border-border pl-3"
                       >
-                        {item.items.map(({ title, href, icon: Icon, image }) => (
-                          <li key={title}>
-                            <Link
-                              href={href}
-                              onClick={close}
-                              className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
-                            >
-                              {image ? (
-                                <Image
-                                  src={image}
-                                  alt=""
-                                  width={16}
-                                  height={16}
-                                  className="size-4 shrink-0 object-contain"
-                                />
-                              ) : (
-                                Icon && (
-                                  <Icon
-                                    className="size-4 shrink-0"
-                                    aria-hidden="true"
+                        {item.items.map(
+                          ({ title, href, icon: Icon, image }) => (
+                            <li key={title}>
+                              <Link
+                                href={href}
+                                onClick={close}
+                                className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                              >
+                                {image ? (
+                                  <Image
+                                    src={image}
+                                    alt=""
+                                    width={16}
+                                    height={16}
+                                    className="size-4 shrink-0 object-contain"
                                   />
-                                )
-                              )}
-                              {title}
-                            </Link>
-                          </li>
-                        ))}
+                                ) : (
+                                  Icon && (
+                                    <Icon
+                                      className="size-4 shrink-0"
+                                      aria-hidden="true"
+                                    />
+                                  )
+                                )}
+                                {title}
+                              </Link>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     )}
                   </>
@@ -120,7 +122,7 @@ function MobileNav({ className }: { className?: string }) {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export { MobileNav }
+export { MobileNav };

@@ -3,18 +3,14 @@ import { Quote } from "lucide-react";
 
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
-import { cn } from "@/lib/utils";
 import type { SolutionTestimonialProps } from "@/types/features/solutions";
 import { FadeIn } from "@/components/shared/fade-in";
 
-function SolutionTestimonial({
-  testimonial,
-  classNames,
-}: SolutionTestimonialProps) {
+function SolutionTestimonial({ testimonial }: SolutionTestimonialProps) {
   const { quote, name, role, avatar } = testimonial;
 
   return (
-    <Container classNames={{ mainWrapper: cn(classNames?.mainWrapper) }}>
+    <Container>
       <FadeIn>
         <Card
           eyebrow={

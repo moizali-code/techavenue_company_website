@@ -42,7 +42,6 @@ const page = () => {
       <Challenges
         challenges={detail.challenges}
         classNames={{
-          container: { mainWrapper: "bg-white" },
           jumbotron: {
             title: "font-poppins text-[#191C1E]",
             description: "text-[16px]",
@@ -59,12 +58,7 @@ const page = () => {
 
       <ProvidedSolutions providedSolutions={detail.providedSolutions} />
 
-      <SuccessStoryImpact
-        impact={detail.impact}
-        classNames={{
-          container: { mainWrapper: "w-[95%] mx-auto rounded-[12px]" },
-        }}
-      />
+      <SuccessStoryImpact impact={detail.impact} />
     </>
   );
 };

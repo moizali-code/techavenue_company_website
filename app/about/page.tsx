@@ -9,6 +9,7 @@ import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
 
 import { aboutPageContent } from "@/mock/about";
+import { Container } from "@/components/shared/container";
 
 const page = () => {
   const router = useRouter();
@@ -42,41 +43,43 @@ const page = () => {
 
       <TeamCarousel {...team} />
 
-      <Jumbotron
-        title={cta.title}
-        description={cta.description}
-        classNames={{
-          mainWrapper: "py-14 lg:py-16",
-          content:
-            "w-[90%] max-w-full rounded-[12px] bg-[#F5F7F9] px-6 py-14 lg:px-10 lg:py-20",
-          title:
-            "font-poppins text-[28px] font-bold text-[#191C1E] md:text-[36px] lg:text-[42px]",
-          description:
-            "text-[15px] font-normal text-[#494949] lg:text-[16px] max-w-full",
-        }}
-        action={
-          <>
-            <Button
-              variant="brand"
-              size="lg"
-              onClick={() => router.push("/contact")}
-              className="h-12 rounded-[4px] px-8 text-[16px] font-medium tracking-normal"
-            >
-              Contact Us Now
-            </Button>
+      <Container>
+        <Jumbotron
+          title={cta.title}
+          description={cta.description}
+          classNames={{
+            mainWrapper: " px-0 py-14 lg:px-0 lg:py-16",
+            content:
+              "w-full max-w-full rounded-[12px] bg-[#F5F7F9] px-6 py-14 lg:px-10 lg:py-20",
+            title:
+              "font-poppins text-[28px] font-bold text-[#191C1E] md:text-[36px] lg:text-[42px]",
+            description:
+              "text-[15px] font-normal text-[#494949] lg:text-[16px] max-w-full",
+          }}
+          action={
+            <>
+              <Button
+                variant="brand"
+                size="lg"
+                onClick={() => router.push("/contact")}
+                className="h-12 rounded-[4px] px-8 text-[16px] font-medium tracking-normal"
+              >
+                Contact Us Now
+              </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              arrow
-              onClick={() => router.push("/solutions")}
-              className="h-12 px-8 text-[16px] font-medium"
-            >
-              View Solutions
-            </Button>
-          </>
-        }
-      />
+              <Button
+                variant="outline"
+                size="lg"
+                arrow
+                onClick={() => router.push("/solutions")}
+                className="h-12 px-8 text-[16px] font-medium"
+              >
+                View Solutions
+              </Button>
+            </>
+          }
+        />
+      </Container>
     </div>
   );
 };

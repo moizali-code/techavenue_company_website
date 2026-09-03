@@ -140,7 +140,9 @@ function MainNav({ className }: { className?: string }) {
                                 className="size-4 object-contain"
                               />
                             ) : (
-                              Icon && <Icon className="size-4" aria-hidden="true" />
+                              Icon && (
+                                <Icon className="size-4" aria-hidden="true" />
+                              )
                             )}
                           </span>
                           <span className="flex flex-col gap-0.5">

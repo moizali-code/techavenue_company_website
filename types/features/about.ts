@@ -40,9 +40,7 @@ export type CompanyValuesSection = {
   values: CompanyValue[];
 };
 
-export type CompanyValuesProps = CompanyValuesSection & {
-  className?: string;
-};
+export type CompanyValuesProps = CompanyValuesSection;
 
 export type PartnersSection = {
   heading: string;

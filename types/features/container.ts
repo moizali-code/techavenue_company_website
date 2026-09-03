@@ -1,9 +1,8 @@
 import type { ReactNode } from "react";
 
+export type ContainerVariant = "default" | "bare";
+
 export type ContainerProps = {
   children: ReactNode;
-  classNames?: {
-    mainWrapper?: string;
-    container?: string;
-  };
+  variant?: ContainerVariant;
 };

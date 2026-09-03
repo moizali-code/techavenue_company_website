@@ -3,25 +3,17 @@ import { Card } from "@/components/shared/card";
 import { Carousel } from "@/components/shared/carousel";
 import { Container } from "@/components/shared/container";
 import { CarouselItem } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 import type { TeamSection } from "@/types/features/about";
 
-type TeamCarouselProps = TeamSection & {
-  className?: string;
-};
+type TeamCarouselProps = TeamSection;
 
-function TeamCarousel({
-  heading,
-  description,
-  members,
-  className,
-}: TeamCarouselProps) {
+function TeamCarousel({ heading, description, members }: TeamCarouselProps) {
   return (
-    <Container classNames={{ mainWrapper: cn("px-0 lg:py-12", className) }}>
+    <Container>
       <Carousel
         align="start"
         navPosition="top-right"
-        className="px-4 py-0"
+        className="px-0 py-0 "
         header={
           <div className="flex max-w-2xl flex-col gap-3">
             <h2 className="font-poppins text-[25px] font-bold text-[#191C1E] md:text-[32px] lg:text-[36px]">

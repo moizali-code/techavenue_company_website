@@ -21,11 +21,7 @@ const page = () => {
 
   return (
     <>
-      <Container
-        classNames={{
-          mainWrapper: "pb-0 lg:pb-0",
-        }}
-      >
+      <Container>
         <TabGroup
           tabs={solutions}
           activeUuid={activeSolution.uuid}

@@ -3,19 +3,16 @@ import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import type { SolutionHeaderProps } from "@/types/features/solutions";
 
 const PRIMARY_ACTION_LABEL = "Request a Demo";
 const SECONDARY_ACTION_LABEL = "Watch the Demo";
 
-function SolutionHeader({ eyebrow, header, classNames }: SolutionHeaderProps) {
+function SolutionHeader({ eyebrow, header }: SolutionHeaderProps) {
   const { title, description, image, items } = header;
 
   return (
-    <Container
-      classNames={{ mainWrapper: cn("pt-8 lg:pt-10", classNames?.mainWrapper) }}
-    >
+    <Container>
       <SplitSection
         reversed
         image={image}

@@ -19,8 +19,10 @@ import { Eye, EyeOff } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-interface ValidatedTextInputProps<T extends FieldValues>
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "name" | "defaultValue"> {
+interface ValidatedTextInputProps<T extends FieldValues> extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "name" | "defaultValue"
+> {
   id?: string;
   label?: string;
   containerClassName?: string;
@@ -70,10 +72,7 @@ export function ValidatedTextInput<T extends FieldValues = FieldValues>({
       {label && (
         <label
           htmlFor={inputId}
-          className={cn(
-            "text-sm font-medium text-foreground",
-            labelClassName,
-          )}
+          className={cn("text-sm font-medium text-foreground", labelClassName)}
         >
           {label}
         </label>
