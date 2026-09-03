@@ -1,4 +1,34 @@
-import type { HomeData } from "@/types/features/home";
+import type { HomeData, HomeTestimonial } from "@/types/features/home";
+
+export const testimonials: HomeTestimonial[] = [
+  {
+    uuid: "a5e2c760-3b18-4d94-9f0a-7c6d1e4b8352",
+    quote:
+      "Their cybersecurity frameworks and threat intelligence solutions significantly improved our operational resilience and compliance readiness.",
+    name: "David Reynolds",
+    role: "Director of Security Operations, Nexa Defense Systems",
+    avatar: "/testimonials/david-reynolds.png",
+    rating: 5,
+  },
+  {
+    uuid: "d63b9142-7a05-4c8e-b371-2f5e0a9c6d84",
+    quote:
+      "Tech Avenue delivered scalable smart infrastructure solutions that enhanced efficiency and accelerated our innovation initiatives.",
+    name: "Ayesha Khan",
+    role: "Head of Digital Transformation, SmartCity Connect",
+    avatar: "/testimonials/ayesha-khan.png",
+    rating: 5,
+  },
+  {
+    uuid: "41f7e0c9-58d3-4a26-9b84-6c2a3d7f1e05",
+    quote:
+      "Their engineering team provided outstanding support and delivered high performance systems beyond expectations.",
+    name: "Michael Chen",
+    role: "Enterprise Solutions Manager, Horizon Telecom",
+    avatar: "/testimonials/michael-chen.png",
+    rating: 5,
+  },
+];
 
 export const homeData: HomeData = {
   intro: {
@@ -122,35 +152,6 @@ export const homeData: HomeData = {
     heading: "Trusted by Visionary Organizations worldwide",
     description:
       "Delivering innovation, security, and measurable transformation through long-term strategic partnerships.",
-    testimonials: [
-      {
-        uuid: "a5e2c760-3b18-4d94-9f0a-7c6d1e4b8352",
-        quote:
-          "Their cybersecurity frameworks and threat intelligence solutions significantly improved our operational resilience and compliance readiness.",
-        name: "David Reynolds",
-        role: "Director of Security Operations, Nexa Defense Systems",
-        avatar: "/testimonials/david-reynolds.png",
-        rating: 5,
-      },
-      {
-        uuid: "d63b9142-7a05-4c8e-b371-2f5e0a9c6d84",
-        quote:
-          "Tech Avenue delivered scalable smart infrastructure solutions that enhanced efficiency and accelerated our innovation initiatives.",
-        name: "Ayesha Khan",
-        role: "Head of Digital Transformation, SmartCity Connect",
-        avatar: "/testimonials/ayesha-khan.png",
-        rating: 5,
-      },
-      {
-        uuid: "41f7e0c9-58d3-4a26-9b84-6c2a3d7f1e05",
-        quote:
-          "Their engineering team provided outstanding support and delivered high performance systems beyond expectations.",
-        name: "Michael Chen",
-        role: "Enterprise Solutions Manager, Horizon Telecom",
-        avatar: "/testimonials/michael-chen.png",
-        rating: 5,
-      },
-    ],
   },
   faqs: {
     heading: "Common Questions We Answer",

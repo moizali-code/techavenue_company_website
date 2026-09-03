@@ -5,9 +5,9 @@ import type {
 } from "@/types/features/contact";
 
 export const contactSection: {
-  header: Omit<ContactHeaderProps, "className">;
-  details: Omit<ContactDetailsProps, "className">;
-  form: Omit<ContactFormProps, "className">;
+  header: ContactHeaderProps;
+  details: ContactDetailsProps;
+  form: ContactFormProps;
 } = {
   header: {
     eyebrow: "Contact Us",

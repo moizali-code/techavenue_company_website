@@ -9,9 +9,9 @@ import {
 import { Container } from "@/components/shared/container";
 import type { HomeFaqsProps } from "@/types/features/home";
 
-function HomeFaqs({ heading, faqs, className }: HomeFaqsProps) {
+function HomeFaqs({ heading, faqs }: HomeFaqsProps) {
   return (
-    <Container classNames={{ mainWrapper: className }}>
+    <Container>
       <div id="faqs" className="scroll-mt-28" />
 
       <h2 className="mb-8 text-center font-poppins text-[25px] font-bold text-[#191C1E] md:text-[30px] lg:mb-12 lg:text-[34px]">

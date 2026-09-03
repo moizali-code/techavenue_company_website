@@ -5,6 +5,7 @@ export type EventItem = {
   location: string;
   startsAt: string;
   image: string;
+  html: string;
 };
 
 export type EventsCarouselProps = {

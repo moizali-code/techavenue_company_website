@@ -4,11 +4,10 @@ import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import type { FollowUsProps } from "@/types/features/career";
 
-function FollowUs({ title, description, links, className }: FollowUsProps) {
+function FollowUs({ title, description, links }: FollowUsProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container:
           "font-poppins flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16",
       }}

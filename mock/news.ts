@@ -11,6 +11,20 @@ export const featuredStory: NewsStory = {
     "A transformative alliance aimed at revolutionizing urban connectivity and digital resilience across continents through advanced neural networks.",
   publishedAt: "2026-08-26T09:15:00.000Z",
   image: "/about_image.png",
+  html: `
+    <p>Tech Avenue has entered a multi-year alliance with a consortium of global infrastructure operators to bring adaptive AI models into the systems that move people, power, and data every day.</p>
+    <h2>What the partnership covers</h2>
+    <p>The agreement pairs our neural forecasting stack with operational telemetry from transit networks, energy grids, and metropolitan fibre estates across three continents. Joint teams will run shared pilots before any capability reaches general release.</p>
+    <ul>
+      <li>Shared model development for demand and load forecasting</li>
+      <li>Co-funded resilience research on critical distribution assets</li>
+      <li>A common integration layer for partner operations centres</li>
+    </ul>
+    <h2>Why it matters</h2>
+    <p>Operators have no shortage of sensor data — what they lack is a way to turn it into decisions fast enough to matter. This partnership puts the modelling work next to the people who run the assets, rather than several handoffs away.</p>
+    <blockquote>We are not selling a dashboard. We are shortening the distance between a signal and a repair crew.</blockquote>
+    <p>First joint deployments begin next quarter, with findings published as the pilots close.</p>
+  `,
 };
 
 export const newsStories: NewsStory[] = [
@@ -23,6 +37,18 @@ export const newsStories: NewsStory[] = [
       "A unified controls baseline built with regional regulators to help banks detect and contain threats faster.",
     publishedAt: "2026-08-28T10:20:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Working alongside regional regulators, Tech Avenue has published a unified controls baseline that gives banks a single reference for detection, containment, and disclosure.</p>
+      <h2>Inside the framework</h2>
+      <p>The baseline maps existing supervisory expectations onto a common set of technical controls, so an institution operating in several jurisdictions can prove compliance once instead of five times.</p>
+      <ul>
+        <li>Tiered detection requirements scaled to institution size</li>
+        <li>Containment playbooks for account takeover and lateral movement</li>
+        <li>A shared disclosure timeline agreed with participating regulators</li>
+      </ul>
+      <h2>Adoption</h2>
+      <p>Eleven institutions took part in the drafting group, and early adopters report meaningfully shorter triage cycles during simulated incidents.</p>
+    `,
   },
   {
     id: 3,
@@ -33,6 +59,18 @@ export const newsStories: NewsStory[] = [
       "Sensor networks and real-time passenger analytics roll out across the city's busiest interchange stations.",
     publishedAt: "2026-08-28T09:05:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A city-wide programme is bringing live passenger analytics to Mumbai's busiest interchanges, starting with the stations that carry the heaviest peak-hour load.</p>
+      <h2>The rollout</h2>
+      <p>Platform-level sensors feed crowding estimates into the control centre, letting staff adjust gate flow and train dispatch before congestion builds rather than after it clears.</p>
+      <ul>
+        <li>Anonymous crowd density measurement at platform and concourse level</li>
+        <li>Predictive dwell-time estimates for dispatch planning</li>
+        <li>Public-facing crowding indicators on station displays</li>
+      </ul>
+      <h2>Next phases</h2>
+      <p>Twelve further stations join the programme over the coming year, with the same instrumentation extended to feeder bus interchanges.</p>
+    `,
   },
   {
     id: 4,
@@ -43,6 +81,17 @@ export const newsStories: NewsStory[] = [
       "Our executives joined global policy panels on responsible AI adoption and digital public infrastructure.",
     publishedAt: "2026-08-28T07:05:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Members of our executive team joined policy discussions on responsible AI adoption and the future of digital public infrastructure.</p>
+      <h2>Panels and themes</h2>
+      <p>Conversations centred on how public institutions can adopt capable models without surrendering oversight, and on the procurement patterns that make that possible.</p>
+      <ul>
+        <li>Governance models for public sector AI deployment</li>
+        <li>Interoperability standards for national digital identity</li>
+        <li>Funding structures for long-horizon infrastructure programmes</li>
+      </ul>
+      <p>Session summaries and the accompanying position paper are available to partners on request.</p>
+    `,
   },
   {
     id: 5,
@@ -53,6 +102,18 @@ export const newsStories: NewsStory[] = [
       "Renewable deployments across four regions delivered ahead of schedule and under projected carbon budgets.",
     publishedAt: "2026-08-28T05:05:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Renewable deployments across four regions closed the quarter ahead of schedule and below their projected carbon budgets.</p>
+      <h2>Where the gains came from</h2>
+      <p>Most of the schedule advantage came from standardised site designs, which cut the engineering review cycle for each new installation from weeks to days.</p>
+      <ul>
+        <li>Repeatable site templates across all four regions</li>
+        <li>Earlier grid connection scheduling with local operators</li>
+        <li>Lower embodied carbon through consolidated logistics</li>
+      </ul>
+      <h2>Outlook</h2>
+      <p>The same template approach carries into next quarter's builds, where the constraint shifts from engineering capacity to grid connection queues.</p>
+    `,
   },
   {
     id: 6,
@@ -63,6 +124,18 @@ export const newsStories: NewsStory[] = [
       "Our research team unveils a breakthrough in lattice-based cryptography for institutional clients.",
     publishedAt: "2026-08-24T09:30:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Our cryptography group has published results on a lattice-based scheme designed for the transaction volumes institutional clients actually run.</p>
+      <h2>The result</h2>
+      <p>The work reduces signature verification cost enough to make post-quantum protection practical inside existing settlement windows, rather than something deferred to a future migration.</p>
+      <ul>
+        <li>Verification overhead within current settlement timing budgets</li>
+        <li>Drop-in compatibility with existing key management systems</li>
+        <li>A staged migration path that runs classical and lattice schemes side by side</li>
+      </ul>
+      <h2>Availability</h2>
+      <p>A reference implementation is in limited preview with institutional partners, with wider availability following independent review.</p>
+    `,
   },
   {
     id: 7,
@@ -73,6 +146,18 @@ export const newsStories: NewsStory[] = [
       "Analyzing the impact of AI-driven traffic management on commuter satisfaction and carbon footprint.",
     publishedAt: "2026-08-21T14:10:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Twelve months after the first signals came online, we looked at what AI-driven traffic management actually changed for commuters and for emissions.</p>
+      <h2>What we measured</h2>
+      <p>The study paired corridor travel times with survey responses, so the numbers could be read against how the journey felt to the people making it.</p>
+      <ul>
+        <li>Median corridor travel time across peak and off-peak windows</li>
+        <li>Idle time at signalised intersections</li>
+        <li>Commuter satisfaction scores collected quarterly</li>
+      </ul>
+      <h2>What we learned</h2>
+      <p>Reliability moved satisfaction more than raw speed did. Commuters valued a predictable journey over a marginally faster one, which reshaped how the optimisation targets are now set.</p>
+    `,
   },
   {
     id: 8,
@@ -83,6 +168,17 @@ export const newsStories: NewsStory[] = [
       "Key takeaways from our CEO's keynote on the democratization of enterprise AI solutions.",
     publishedAt: "2026-08-18T08:45:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Our keynote argued that enterprise AI stops being a pilot exercise only when the people closest to the work can change how it behaves.</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Capability without accessibility produces demos, not outcomes</li>
+        <li>Domain experts should be able to adjust models without a data science queue</li>
+        <li>Procurement cycles, not model quality, are the usual bottleneck</li>
+      </ul>
+      <blockquote>The organisations getting value are not the ones with the largest models. They are the ones with the shortest feedback loop.</blockquote>
+      <p>The full transcript and slides are available to attendees.</p>
+    `,
   },
   {
     id: 9,
@@ -93,6 +189,18 @@ export const newsStories: NewsStory[] = [
       "Behavioural models now flag lateral movement across hybrid estates within seconds of first contact.",
     publishedAt: "2026-08-14T11:20:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Adaptive Threat Detection is now generally available, bringing behavioural modelling to hybrid estates where signature-based tooling has historically struggled.</p>
+      <h2>How it works</h2>
+      <p>The system learns normal service-to-service behaviour per environment, then flags deviations that resemble lateral movement — usually within seconds of first contact.</p>
+      <ul>
+        <li>Per-environment behavioural baselines with no manual tuning</li>
+        <li>Correlation across cloud, on-premise, and edge segments</li>
+        <li>Analyst-facing explanations attached to every alert</li>
+      </ul>
+      <h2>Rollout</h2>
+      <p>Existing customers can enable it from the platform console; new deployments include it by default.</p>
+    `,
   },
   {
     id: 10,
@@ -103,6 +211,18 @@ export const newsStories: NewsStory[] = [
       "A twelve-month deployment across three campuses shows where predictive maintenance pays for itself.",
     publishedAt: "2026-08-11T15:05:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A twelve-month digital twin pilot across three campuses reduced unplanned downtime by roughly a third, with the savings concentrated in a small number of asset classes.</p>
+      <h2>Where the value landed</h2>
+      <p>Predictive maintenance paid for itself on rotating equipment and chillers. On lower-cost assets, the instrumentation cost more than the failures it prevented.</p>
+      <ul>
+        <li>Rotating equipment: strong return, early warning of bearing wear</li>
+        <li>Cooling plant: fewer emergency callouts and shorter repair windows</li>
+        <li>Low-value assets: run to failure remains the better economics</li>
+      </ul>
+      <h2>What happens next</h2>
+      <p>The programme expands to six more campuses, instrumenting only the asset classes the pilot proved out.</p>
+    `,
   },
   {
     id: 11,
@@ -113,6 +233,17 @@ export const newsStories: NewsStory[] = [
       "Ministries and municipal teams gathered to compare notes on citizen identity and service delivery.",
     publishedAt: "2026-08-07T10:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Ministries and municipal delivery teams spent two days comparing what has worked — and what has quietly failed — in citizen identity and service delivery programmes.</p>
+      <h2>Session themes</h2>
+      <ul>
+        <li>Identity systems that degrade gracefully when connectivity does not</li>
+        <li>Service design for residents without smartphones</li>
+        <li>Shared registries across departments that never intended to share</li>
+      </ul>
+      <h2>Outcome</h2>
+      <p>Participants agreed to a working group that will publish a common interoperability profile before the next summit.</p>
+    `,
   },
   {
     id: 12,
@@ -123,6 +254,17 @@ export const newsStories: NewsStory[] = [
       "The scheduler behind our analytics practice is now available for teams to run on their own infrastructure.",
     publishedAt: "2026-08-03T13:40:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>The scheduler that has run our analytics practice for the past four years is now open source, available for teams to run on their own infrastructure.</p>
+      <h2>What is included</h2>
+      <ul>
+        <li>The core scheduler and dependency resolver</li>
+        <li>Backfill tooling with partition-aware reruns</li>
+        <li>Adapters for the storage and warehouse engines we use in production</li>
+      </ul>
+      <h2>Why release it</h2>
+      <p>The hard parts of orchestration are not novel, and every team rebuilding them is time not spent on the data itself. Contributions and issues are welcome in the public repository.</p>
+    `,
   },
   {
     id: 13,
@@ -133,6 +275,18 @@ export const newsStories: NewsStory[] = [
       "Simulating storm load on ageing distribution assets to prioritise which upgrades happen first.",
     publishedAt: "2026-07-29T09:15:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Coastal distribution assets face storm loads their original designs never anticipated. Our modelling work helps operators decide which substations to reinforce first.</p>
+      <h2>The approach</h2>
+      <p>Historical storm records are combined with asset condition data to produce a failure probability per substation, then ranked by the number of customers each one serves.</p>
+      <ul>
+        <li>Storm surge and wind load simulation against as-built conditions</li>
+        <li>Asset age and maintenance history as model inputs</li>
+        <li>Customer impact weighting for prioritisation</li>
+      </ul>
+      <h2>Result</h2>
+      <p>Operators using the model have redirected capital toward a smaller set of substations than their previous schedules assumed.</p>
+    `,
   },
   {
     id: 14,
@@ -143,6 +297,17 @@ export const newsStories: NewsStory[] = [
       "Two hundred students toured our labs and sat in on live architecture reviews with the platform team.",
     publishedAt: "2026-07-24T16:30:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Two hundred students joined our engineering open house, the largest turnout the programme has seen.</p>
+      <h2>The day</h2>
+      <p>Rather than a scripted tour, attendees sat in on live architecture reviews and watched the platform team argue through real design decisions.</p>
+      <ul>
+        <li>Lab tours across hardware, networking, and security teams</li>
+        <li>An unedited architecture review session</li>
+        <li>Open office hours with engineers from every discipline</li>
+      </ul>
+      <p>Applications for the next internship cohort open shortly after the event series concludes.</p>
+    `,
   },
   {
     id: 15,
@@ -153,6 +318,17 @@ export const newsStories: NewsStory[] = [
       "Residents can now query permits, payments, and case status in four languages from one interface.",
     publishedAt: "2026-07-20T12:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>The citizen assistant is now in public beta, letting residents ask about permits, payments, and case status in four languages from a single interface.</p>
+      <h2>What it handles</h2>
+      <ul>
+        <li>Permit application status and outstanding requirements</li>
+        <li>Payment history and upcoming obligations</li>
+        <li>Case routing to the correct department without a phone queue</li>
+      </ul>
+      <h2>Beta scope</h2>
+      <p>The assistant answers from official records only and hands off to a human when confidence is low. Feedback from the beta shapes which services join next.</p>
+    `,
   },
   {
     id: 16,
@@ -163,6 +339,17 @@ export const newsStories: NewsStory[] = [
       "A milestone in the programme connecting underserved districts to full-capacity backhaul.",
     publishedAt: "2026-07-15T07:50:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>The rural fibre programme has connected its two hundredth exchange, bringing full-capacity backhaul to districts that previously relied on constrained microwave links.</p>
+      <h2>The programme so far</h2>
+      <ul>
+        <li>Two hundred exchanges connected across the target regions</li>
+        <li>Shared trenching agreements with regional utilities</li>
+        <li>Local contractor training in every district served</li>
+      </ul>
+      <h2>Remaining work</h2>
+      <p>The final phase covers the most geographically difficult sites, where route surveys rather than construction set the pace.</p>
+    `,
   },
   {
     id: 17,
@@ -173,6 +360,17 @@ export const newsStories: NewsStory[] = [
       "Six institutions ran a simulated ransomware incident end to end, from detection through disclosure.",
     publishedAt: "2026-07-09T14:25:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Six institutions ran a simulated ransomware incident end to end, from first detection through regulatory disclosure, with no advance warning of the scenario.</p>
+      <h2>Exercise structure</h2>
+      <ul>
+        <li>Injected detection signals across three separate systems</li>
+        <li>Live coordination between security, legal, and communications teams</li>
+        <li>A disclosure decision under realistic time pressure</li>
+      </ul>
+      <h2>Findings</h2>
+      <p>Technical containment was rarely the constraint. Decision authority — who could approve what, and how quickly — accounted for most of the delay in every run.</p>
+    `,
   },
   {
     id: 18,
@@ -183,6 +381,18 @@ export const newsStories: NewsStory[] = [
       "Field trials show irrigation savings without measurable yield loss across three crop types.",
     publishedAt: "2026-07-02T11:35:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Soil moisture forecasting is now part of the precision agriculture suite, letting growers schedule irrigation against predicted rather than measured conditions.</p>
+      <h2>Field trial results</h2>
+      <p>Across three crop types, trial plots used measurably less water than control plots with no detectable yield difference.</p>
+      <ul>
+        <li>Forecast horizon of seven days at field-block resolution</li>
+        <li>Inputs from soil probes, local weather, and satellite imagery</li>
+        <li>Irrigation recommendations delivered ahead of scheduling decisions</li>
+      </ul>
+      <h2>Availability</h2>
+      <p>The capability ships to existing customers in the current release.</p>
+    `,
   },
   {
     id: 19,
@@ -193,6 +403,18 @@ export const newsStories: NewsStory[] = [
       "On-site generation and load shifting combined to offset every kilowatt-hour drawn from the grid.",
     publishedAt: "2026-06-26T08:20:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A campus running our energy platform closed its first net-zero quarter, offsetting every kilowatt-hour drawn from the grid with on-site generation.</p>
+      <h2>How it was achieved</h2>
+      <p>Generation capacity alone would not have been enough. Load shifting moved flexible demand into surplus periods, which closed the remaining gap.</p>
+      <ul>
+        <li>On-site solar with battery buffering</li>
+        <li>Automated load shifting for HVAC and laboratory equipment</li>
+        <li>Export scheduling aligned to grid demand signals</li>
+      </ul>
+      <h2>Repeatability</h2>
+      <p>The same configuration is being modelled for two further campuses with comparable load profiles.</p>
+    `,
   },
   {
     id: 20,
@@ -203,6 +425,17 @@ export const newsStories: NewsStory[] = [
       "Integration partners previewed the platform changes landing across the next three releases.",
     publishedAt: "2026-06-19T15:45:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Integration partners gathered for an early look at the platform changes landing across the next three releases, with time set aside for the parts they disagreed with.</p>
+      <h2>Roadmap highlights</h2>
+      <ul>
+        <li>A stable public API surface with a published deprecation policy</li>
+        <li>Partner-facing observability into shared integrations</li>
+        <li>Faster certification turnaround for new connectors</li>
+      </ul>
+      <h2>Partner feedback</h2>
+      <p>The deprecation policy drew the most discussion, and the timelines were extended in response before the roadmap was finalised.</p>
+    `,
   },
 ];
 
@@ -214,6 +447,16 @@ export const events: EventItem[] = [
     location: "Singapore",
     startsAt: "2026-06-15T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Two days on the practical end of security operations, built for the teams who carry the pager rather than the ones who write the policy.</p>
+      <h2>Programme</h2>
+      <ul>
+        <li>Live incident response walkthroughs from regional operators</li>
+        <li>Threat intelligence sharing across financial and public sector teams</li>
+        <li>Hands-on containment labs running against real telemetry</li>
+      </ul>
+      <p>Registration is open to security practitioners and their vendors.</p>
+    `,
   },
   {
     id: 2,
@@ -222,6 +465,16 @@ export const events: EventItem[] = [
     location: "San Francisco",
     startsAt: "2026-07-22T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A working showcase of applied AI, weighted toward systems already running in production rather than research previews.</p>
+      <h2>What to expect</h2>
+      <ul>
+        <li>Deployment case studies with published cost and accuracy figures</li>
+        <li>Evaluation and monitoring practices for models in production</li>
+        <li>Open technical clinics with our engineering team</li>
+      </ul>
+      <p>Our platform team will be present across all three days.</p>
+    `,
   },
   {
     id: 3,
@@ -230,6 +483,16 @@ export const events: EventItem[] = [
     location: "London",
     startsAt: "2026-08-05T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Our annual customer gathering, where roadmap decisions are discussed with the people who have to live with them.</p>
+      <h2>Agenda</h2>
+      <ul>
+        <li>Product roadmap review with open questions</li>
+        <li>Customer-led sessions on deployments in the field</li>
+        <li>Direct time with the engineering and support teams</li>
+      </ul>
+      <p>Invitations go to existing customers and their implementation partners.</p>
+    `,
   },
   {
     id: 4,
@@ -238,6 +501,16 @@ export const events: EventItem[] = [
     location: "Berlin",
     startsAt: "2026-09-12T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A forum for the measurement side of sustainability work — what gets counted, how it gets verified, and what remains genuinely hard to quantify.</p>
+      <h2>Topics</h2>
+      <ul>
+        <li>Emissions accounting across complex supply chains</li>
+        <li>Energy platform deployments and their measured outcomes</li>
+        <li>Reporting frameworks and where they diverge in practice</li>
+      </ul>
+      <p>Sessions run in English with simultaneous translation.</p>
+    `,
   },
   {
     id: 5,
@@ -246,6 +519,16 @@ export const events: EventItem[] = [
     location: "Dubai",
     startsAt: "2026-10-03T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A full week covering the instrumentation, modelling, and operations behind modern infrastructure programmes.</p>
+      <h2>Tracks</h2>
+      <ul>
+        <li>Digital twins and predictive maintenance economics</li>
+        <li>Transit and mobility analytics at city scale</li>
+        <li>Grid resilience under changing climate load</li>
+      </ul>
+      <p>Site visits to active deployments run alongside the main programme.</p>
+    `,
   },
   {
     id: 6,
@@ -254,6 +537,16 @@ export const events: EventItem[] = [
     location: "Toronto",
     startsAt: "2026-10-28T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>Government delivery teams meet to compare notes on digital identity, service design, and the procurement patterns that shape both.</p>
+      <h2>Focus areas</h2>
+      <ul>
+        <li>Citizen identity systems and their failure modes</li>
+        <li>Service delivery for residents with limited digital access</li>
+        <li>Procurement structures that survive multi-year programmes</li>
+      </ul>
+      <p>Attendance is open to public sector staff and accredited suppliers.</p>
+    `,
   },
   {
     id: 7,
@@ -262,6 +555,16 @@ export const events: EventItem[] = [
     location: "Amsterdam",
     startsAt: "2026-11-17T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>An architecture-heavy conference for teams running hybrid estates, with an emphasis on migrations that did not go to plan.</p>
+      <h2>Sessions</h2>
+      <ul>
+        <li>Hybrid and multi-cloud architecture patterns</li>
+        <li>Cost governance without blocking delivery teams</li>
+        <li>Migration retrospectives, including the failed ones</li>
+      </ul>
+      <p>Technical depth is assumed; sessions are not introductory.</p>
+    `,
   },
   {
     id: 8,
@@ -270,5 +573,15 @@ export const events: EventItem[] = [
     location: "Tokyo",
     startsAt: "2026-12-09T09:00:00.000Z",
     image: "/about_image.png",
+    html: `
+      <p>A focused forum on network intelligence, covering the analytics operators use to plan capacity and diagnose faults.</p>
+      <h2>Programme</h2>
+      <ul>
+        <li>Capacity planning against changing traffic patterns</li>
+        <li>Automated fault localisation in large access networks</li>
+        <li>Backhaul economics for rural and underserved coverage</li>
+      </ul>
+      <p>Operator-only sessions run on the closing afternoon.</p>
+    `,
   },
 ];

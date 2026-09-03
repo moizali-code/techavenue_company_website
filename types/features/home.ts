@@ -23,7 +23,6 @@ export type HomeAboutProps = {
   description: string;
   image: string;
   highlights: HomeAboutHighlight[];
-  className?: string;
 };
 
 export type HomeMissionVisionItem = {
@@ -47,11 +46,13 @@ export type HomeTestimonial = {
   rating: number;
 };
 
-export type HomeTestimonialsProps = {
+export type HomeTestimonialsContent = {
   heading: string;
   description: string;
+};
+
+export type HomeTestimonialsProps = HomeTestimonialsContent & {
   testimonials: HomeTestimonial[];
-  className?: string;
 };
 
 export type HomeFaq = {
@@ -63,7 +64,6 @@ export type HomeFaq = {
 export type HomeFaqsProps = {
   heading: string;
   faqs: HomeFaq[];
-  className?: string;
 };
 
 export type HomePartner = {
@@ -77,10 +77,12 @@ export type HomePartnersProps = {
   className?: string;
 };
 
-export type HomeSolutionsProps = {
+export type HomeSolutionsContent = {
   heading: string;
+};
+
+export type HomeSolutionsProps = HomeSolutionsContent & {
   solutions: Solution[];
-  className?: string;
 };
 
 export type HomeIntroProps = {
@@ -91,16 +93,15 @@ export type HomeIntroProps = {
   experienceLabel: string;
   experienceValue: string;
   description: string;
-  className?: string;
 };
 
 export type HomeData = {
-  intro: Omit<HomeIntroProps, "className">;
+  intro: HomeIntroProps;
   stats: HomeStat[];
   partners: HomePartner[];
-  about: Omit<HomeAboutProps, "className">;
+  about: HomeAboutProps;
   missionVision: HomeMissionVisionItem[];
-  solutions: Omit<HomeSolutionsProps, "className" | "solutions">;
-  testimonials: Omit<HomeTestimonialsProps, "className">;
-  faqs: Omit<HomeFaqsProps, "className">;
+  solutions: HomeSolutionsContent;
+  testimonials: HomeTestimonialsContent;
+  faqs: HomeFaqsProps;
 };

@@ -12,10 +12,9 @@ function HomeAbout({
   description,
   image,
   highlights,
-  className,
 }: HomeAboutProps) {
   return (
-    <Container classNames={{ mainWrapper: className }}>
+    <Container>
       <SplitSection
         image={image}
         imageAlt="Tech Avenue consultants collaborating with a client team"

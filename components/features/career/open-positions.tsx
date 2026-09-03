@@ -31,7 +31,6 @@ function OpenPositions({
   departments,
   employmentTypes,
   jobs,
-  className,
 }: OpenPositionsProps) {
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState<string | null>(null);
@@ -98,7 +97,6 @@ function OpenPositions({
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container: "font-poppins flex flex-col gap-8",
       }}
     >

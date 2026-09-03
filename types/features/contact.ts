@@ -3,7 +3,6 @@ export type ContactHeaderProps = {
   title: string;
   description: string;
   image: string;
-  className?: string;
 };
 
 export type ContactDetailsProps = {
@@ -18,11 +17,9 @@ export type ContactDetailsProps = {
   weekendHours: string;
   mapEmbedUrl: string;
   directionsUrl: string;
-  className?: string;
 };
 
 export type ContactFormProps = {
   title: string;
   description: string;
-  className?: string;
 };

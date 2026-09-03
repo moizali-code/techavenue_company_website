@@ -18,12 +18,10 @@ function ContactDetails({
   weekendHours,
   mapEmbedUrl,
   directionsUrl,
-  className,
 }: ContactDetailsProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container: "font-poppins flex flex-col gap-10",
       }}
     >

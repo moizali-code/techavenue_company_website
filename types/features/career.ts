@@ -4,7 +4,6 @@ export type CareerHeaderProps = {
   description: string;
   image: string;
   badgeLabel: string;
-  className?: string;
 };
 
 export type JobWorkplace = "onsite" | "remote";
@@ -20,13 +19,15 @@ export type JobOpening = {
   workplace: JobWorkplace;
 };
 
-export type OpenPositionsProps = {
+export type OpenPositionsContent = {
   title: string;
   description: string;
   departments: string[];
   employmentTypes: string[];
+};
+
+export type OpenPositionsProps = OpenPositionsContent & {
   jobs: JobOpening[];
-  className?: string;
 };
 
 export type CultureHighlight = {
@@ -49,7 +50,6 @@ export type HiringProcessProps = {
   title: string;
   description: string;
   steps: HiringStep[];
-  className?: string;
 };
 
 export type LifeAtTechAvenueProps = {
@@ -57,7 +57,6 @@ export type LifeAtTechAvenueProps = {
   title: string;
   description: string;
   highlights: CultureHighlight[];
-  className?: string;
 };
 
 export type SocialLink = {
@@ -72,5 +71,11 @@ export type FollowUsProps = {
   title: string;
   description: string;
   links: SocialLink[];
-  className?: string;
+};
+
+export type CareerData = {
+  header: CareerHeaderProps;
+  openPositions: OpenPositionsContent;
+  hiringProcess: HiringProcessProps;
+  followUs: FollowUsProps;
 };

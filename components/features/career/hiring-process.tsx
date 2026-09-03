@@ -6,16 +6,10 @@ import { Jumbotron } from "@/components/shared/jumbotron";
 import { cn } from "@/lib/utils";
 import type { HiringProcessProps } from "@/types/features/career";
 
-function HiringProcess({
-  title,
-  description,
-  steps,
-  className,
-}: HiringProcessProps) {
+function HiringProcess({ title, description, steps }: HiringProcessProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container: "font-poppins flex flex-col gap-12",
       }}
     >

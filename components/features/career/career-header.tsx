@@ -12,10 +12,9 @@ function CareerHeader({
   description,
   image,
   badgeLabel,
-  className,
 }: CareerHeaderProps) {
   return (
-    <Container classNames={{ mainWrapper: className }}>
+    <Container>
       <SplitSection
         reversed
         image={image}

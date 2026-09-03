@@ -1,5 +1,26 @@
-import type { TeamSection } from "@/types/features/about-team";
+import type { ReactNode } from "react";
+
 import type { CardProps } from "@/types/features/card";
+
+export type TeamMember = {
+  id: number;
+  uuid: string;
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+};
+
+export type TeamMemberModalProps = {
+  member: TeamMember;
+  trigger: ReactNode;
+};
+
+export type TeamSection = {
+  heading: string;
+  description: string;
+  members: TeamMember[];
+};
 
 export type AboutHeader = {
   eyebrow: string;

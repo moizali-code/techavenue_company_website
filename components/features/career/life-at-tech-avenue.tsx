@@ -24,7 +24,6 @@ function LifeAtTechAvenue({
   title,
   description,
   highlights,
-  className,
 }: LifeAtTechAvenueProps) {
   const [page, setPage] = useState(1);
 
@@ -41,7 +40,6 @@ function LifeAtTechAvenue({
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container: "font-poppins flex flex-col gap-10",
       }}
     >

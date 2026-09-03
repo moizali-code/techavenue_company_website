@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Modal } from "@/components/shared/modal";
 import { Button } from "@/components/ui/button";
 import { DialogClose, DialogTitle } from "@/components/ui/dialog";
-import type { TeamMemberModalProps } from "@/types/features/about-team";
+import type { TeamMemberModalProps } from "@/types/features/about";
 
 function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
   const { name, image, description } = member;

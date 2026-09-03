@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { CarouselItem } from "@/components/ui/carousel";
 import type { HomeSolutionsProps } from "@/types/features/home";
 
-function HomeSolutions({ heading, solutions, className }: HomeSolutionsProps) {
+function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
   return (
-    <Container classNames={{ mainWrapper: className }}>
+    <Container>
       <Carousel
         align="start"
         navPosition="top-right"

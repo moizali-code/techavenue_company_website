@@ -9,7 +9,6 @@ function ContactHeader({
   title,
   description,
   image,
-  className,
 }: ContactHeaderProps) {
   return (
     <Jumbotron
@@ -42,14 +41,12 @@ function ContactHeader({
         </div>
       }
       classNames={{
-        mainWrapper: className,
         overlay: "bg-[rgba(0,0,0,0.6)]",
         content: "gap-4",
         eyebrow: "justify-center",
         title:
           "font-times text-[32px] font-bold text-white md:text-[42px] lg:text-[48px]",
-        description:
-          "text-[15px] leading-relaxed text-white/80 lg:text-[18px]",
+        description: "text-[15px] leading-relaxed text-white/80 lg:text-[18px]",
       }}
     />
   );

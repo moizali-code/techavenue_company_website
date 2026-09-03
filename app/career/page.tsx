@@ -3,22 +3,16 @@ import { FollowUs } from "@/components/features/career/follow-us";
 import { HiringProcess } from "@/components/features/career/hiring-process";
 import { LifeAtTechAvenue } from "@/components/features/career/life-at-tech-avenue";
 import { OpenPositions } from "@/components/features/career/open-positions";
-import {
-  careerHeader,
-  followUs,
-  hiringProcess,
-  lifeAtTechAvenue,
-  openPositions,
-} from "@/mock/career";
+import { careerData, jobs, lifeAtTechAvenue } from "@/mock/career";
 
 export default function page() {
   return (
     <>
-      <CareerHeader {...careerHeader} />
-      <OpenPositions {...openPositions} />
+      <CareerHeader {...careerData.header} />
+      <OpenPositions {...careerData.openPositions} jobs={jobs} />
       <LifeAtTechAvenue {...lifeAtTechAvenue} />
-      <HiringProcess {...hiringProcess} />
-      <FollowUs {...followUs} />
+      <HiringProcess {...careerData.hiringProcess} />
+      <FollowUs {...careerData.followUs} />
     </>
   );
 }

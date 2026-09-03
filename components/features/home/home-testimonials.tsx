@@ -14,12 +14,9 @@ function HomeTestimonials({
   heading,
   description,
   testimonials,
-  className,
 }: HomeTestimonialsProps) {
   return (
-    <Container
-      classNames={{ mainWrapper: cn("bg-[#F8F8F8]", className) }}
-    >
+    <Container classNames={{ mainWrapper: "bg-[#F8F8F8]" }}>
       <Carousel
         align="start"
         className="px-0 py-0"

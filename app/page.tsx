@@ -9,7 +9,7 @@ import { HomeSolutions } from "@/components/features/home/home-solutions";
 import { HomeStats } from "@/components/features/home/home-stats";
 import { HomeTestimonials } from "@/components/features/home/home-testimonials";
 import { Container } from "@/components/shared/container";
-import { homeData } from "@/mock/home";
+import { homeData, testimonials } from "@/mock/home";
 import { solutions } from "@/mock/solutions";
 
 export default function Home() {
@@ -49,7 +49,10 @@ export default function Home() {
 
       <HomeSolutions {...homeData.solutions} solutions={solutions} />
 
-      <HomeTestimonials {...homeData.testimonials} />
+      <HomeTestimonials
+        {...homeData.testimonials}
+        testimonials={testimonials}
+      />
 
       <HomeFaqs {...homeData.faqs} />
     </>

@@ -6,6 +6,7 @@ export type NewsStory = {
   description: string;
   publishedAt: string;
   image: string;
+  html: string;
 };
 
 export type NewsHeroProps = {

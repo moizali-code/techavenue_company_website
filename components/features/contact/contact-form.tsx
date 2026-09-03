@@ -31,7 +31,7 @@ const fieldClassNames = {
     "h-11 rounded-[6px] border-transparent bg-[#F5F6F8] px-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]",
 };
 
-function ContactForm({ title, description, className }: ContactFormProps) {
+function ContactForm({ title, description }: ContactFormProps) {
   const {
     control,
     handleSubmit,
@@ -60,7 +60,6 @@ function ContactForm({ title, description, className }: ContactFormProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container: "font-poppins flex max-w-4xl flex-col gap-8",
       }}
     >

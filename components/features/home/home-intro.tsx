@@ -9,19 +9,18 @@ function HomeIntro({
   experienceLabel,
   experienceValue,
   description,
-  className,
 }: HomeIntroProps) {
   return (
     <Container
       classNames={{
-        mainWrapper: className,
         container:
           "grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-center lg:gap-14",
       }}
     >
       <h1 className="font-times text-[32px] leading-[1.15] text-[#191C1E] md:text-[44px] lg:text-[56px] xl:text-[64px]">
         <span className="block">
-          {headingStart} <span className="text-[#1E3C8C]">{headingHighlight}</span>{" "}
+          {headingStart}{" "}
+          <span className="text-[#1E3C8C]">{headingHighlight}</span>{" "}
           {headingEnd}
         </span>
 

@@ -4,7 +4,7 @@ import { Carousel } from "@/components/shared/carousel";
 import { Container } from "@/components/shared/container";
 import { CarouselItem } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import type { TeamSection } from "@/types/features/about-team";
+import type { TeamSection } from "@/types/features/about";
 
 type TeamCarouselProps = TeamSection & {
   className?: string;
