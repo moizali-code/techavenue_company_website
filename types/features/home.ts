@@ -1,4 +1,5 @@
 import type { Solution } from "@/types/features/solutions";
+import type { TrustedPartnerLogo } from "@/types/shared/trusted-partners";
 
 export type HomeStat = {
   uuid: string;
@@ -66,17 +67,6 @@ export type HomeFaqsProps = {
   faqs: HomeFaq[];
 };
 
-export type HomePartner = {
-  id: number;
-  uuid: string;
-  image: string;
-};
-
-export type HomePartnersProps = {
-  partners: HomePartner[];
-  className?: string;
-};
-
 export type HomeSolutionsContent = {
   heading: string;
 };
@@ -98,7 +88,7 @@ export type HomeIntroProps = {
 export type HomeData = {
   intro: HomeIntroProps;
   stats: HomeStat[];
-  partners: HomePartner[];
+  partners: TrustedPartnerLogo[];
   about: HomeAboutProps;
   missionVision: HomeMissionVisionItem[];
   solutions: HomeSolutionsContent;

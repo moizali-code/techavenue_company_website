@@ -37,6 +37,7 @@ const page = () => {
       <TrustedPartners
         heading={partners.heading}
         partners={partners.partners}
+        marquee
       />
 
       <TeamCarousel {...team} />

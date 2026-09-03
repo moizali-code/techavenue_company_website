@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import type { JumbotronProps } from "@/types/features/jumbotron";
+import { FadeIn } from "./fade-in";
 
 function Jumbotron({
   title,
@@ -49,54 +50,61 @@ function Jumbotron({
 
       <div
         className={cn(
-          "mx-auto flex w-full max-w-3xl flex-col gap-5",
-          isCentered ? "items-center text-center" : "items-start text-left",
+          "mx-auto w-full max-w-3xl",
+          isCentered ? "text-center" : "text-left",
           classNames?.content,
         )}
       >
-        {eyebrow && (
-          <div
-            className={cn(
-              "flex w-full",
-              isCentered ? "justify-center" : "justify-start",
-              classNames?.eyebrow,
-            )}
-          >
-            {eyebrow}
-          </div>
-        )}
-
-        <h1
+        <FadeIn
           className={cn(
-            "text-3xl font-bold tracking-tight text-balance lg:text-5xl",
-            classNames?.title,
+            "flex flex-col gap-5",
+            isCentered ? "items-center" : "items-start",
           )}
         >
-          {title}
-        </h1>
+          {eyebrow && (
+            <div
+              className={cn(
+                "flex w-full",
+                isCentered ? "justify-center" : "justify-start",
+                classNames?.eyebrow,
+              )}
+            >
+              {eyebrow}
+            </div>
+          )}
 
-        {description && (
-          <p
+          <h1
             className={cn(
-              "max-w-2xl text-base leading-relaxed text-muted-foreground ",
-              classNames?.description,
+              "text-3xl font-bold tracking-tight text-balance lg:text-5xl",
+              classNames?.title,
             )}
           >
-            {description}
-          </p>
-        )}
+            {title}
+          </h1>
 
-        {action && (
-          <div
-            className={cn(
-              "mt-2 flex flex-wrap items-center gap-3",
-              isCentered ? "justify-center" : "justify-start",
-              classNames?.action,
-            )}
-          >
-            {action}
-          </div>
-        )}
+          {description && (
+            <p
+              className={cn(
+                "max-w-2xl text-base leading-relaxed text-muted-foreground ",
+                classNames?.description,
+              )}
+            >
+              {description}
+            </p>
+          )}
+
+          {action && (
+            <div
+              className={cn(
+                "mt-2 flex flex-wrap items-center gap-3",
+                isCentered ? "justify-center" : "justify-start",
+                classNames?.action,
+              )}
+            >
+              {action}
+            </div>
+          )}
+        </FadeIn>
       </div>
     </section>
   );

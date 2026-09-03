@@ -1,5 +1,6 @@
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
+import { FadeIn } from "@/components/shared/fade-in";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -45,53 +46,55 @@ function SolutionOverview({
         }}
       />
 
-      <Card
-        title={keyInfo.title}
-        footer={
-          <div className="flex flex-col">
-            <dl className="flex flex-col">
-              {rows.map(([label, value]) => (
-                <div
-                  key={label}
-                  className="flex items-center justify-between gap-4 border-b border-[#C5C6D3] py-3.5"
-                >
-                  <dt className="text-[16px] text-[#444651]">{label}</dt>
-                  <dd className="text-right text-[16px] font-normal text-[#1E3C8C]">
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+      <FadeIn direction="left">
+        <Card
+          title={keyInfo.title}
+          footer={
+            <div className="flex flex-col">
+              <dl className="flex flex-col">
+                {rows.map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-between gap-4 border-b border-[#C5C6D3] py-3.5"
+                  >
+                    <dt className="text-[16px] text-[#444651]">{label}</dt>
+                    <dd className="text-right text-[16px] font-normal text-[#1E3C8C]">
+                      {value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
 
-            {techStackEntry && (
-              <div className="flex flex-col gap-3 pt-5">
-                <span className="text-[16px] text-[#444651]">
-                  {techStackEntry.at(0)}
-                </span>
+              {techStackEntry && (
+                <div className="flex flex-col gap-3 pt-5">
+                  <span className="text-[16px] text-[#444651]">
+                    {techStackEntry.at(0)}
+                  </span>
 
-                <div className="flex flex-wrap gap-2">
-                  {techStack.map((item) => (
-                    <Badge
-                      key={item}
-                      variant="outline"
-                      className="h-auto rounded-full bg-[#F7F9FB] border-[#C5C6D3] px-3 py-1 text-[12px] font-normal text-[#191C1E]"
-                    >
-                      {item}
-                    </Badge>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {techStack.map((item) => (
+                      <Badge
+                        key={item}
+                        variant="outline"
+                        className="h-auto rounded-full bg-[#F7F9FB] border-[#C5C6D3] px-3 py-1 text-[12px] font-normal text-[#191C1E]"
+                      >
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        }
-        classNames={{
-          mainWrapper:
-            "h-fit max-w-none rounded-[12px] border-transparent bg-white shadow-[0_4px_20px_#0000000F]",
-          content: "gap-4 p-6 lg:p-7",
-          title: "font-times text-[24px] font-bold text-[#1E3C8C]",
-          footer: "mt-0",
-        }}
-      />
+              )}
+            </div>
+          }
+          classNames={{
+            mainWrapper:
+              "h-fit max-w-none rounded-[12px] border-transparent bg-white shadow-[0_4px_20px_#0000000F]",
+            content: "gap-4 p-6 lg:p-7",
+            title: "font-times text-[24px] font-bold text-[#1E3C8C]",
+            footer: "mt-0",
+          }}
+        />
+      </FadeIn>
     </Container>
   );
 }
