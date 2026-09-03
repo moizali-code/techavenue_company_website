@@ -24,7 +24,7 @@ function SplitSection({
     >
       <div
         className={cn(
-          "relative aspect-[4/3] w-full overflow-hidden rounded-[12px]",
+          "relative aspect-[4/3] w-full overflow-hidden !rounded-[12px]",
           reversed && "md:order-2",
           classNames?.media,
         )}
@@ -34,7 +34,7 @@ function SplitSection({
           alt={imageAlt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className={cn("object-cover", classNames?.image)}
+          className={cn("object-cover !rounded-[12px]", classNames?.image)}
         />
 
         {mediaOverlay && (

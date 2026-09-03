@@ -36,7 +36,7 @@ export const solutions: Solution[] = [
       title: "Network Security Platform",
       description:
         "Defending distributed enterprise networks through layered detection, zero-trust access, and continuous monitoring built for organizations that cannot afford an open door.",
-      image: "/about_image.png",
+      image: "/industry/netword_security.png",
       items: [
         { title: "24/7", description: "Monitoring" },
         { title: "99.9%", description: "Threat Coverage" },
@@ -63,7 +63,7 @@ export const solutions: Solution[] = [
       title: "Defense in Depth",
       description:
         "Security controls layered so that no single failure exposes the network, with visibility at every tier.",
-      image: "/about_image.png",
+      image: "/industry/netword_security.png",
       items: [
         {
           title: "Zero-Trust Access",
@@ -124,7 +124,7 @@ export const solutions: Solution[] = [
       title: "Business Consulting Services",
       description:
         "Turning strategy into an operating model that holds, through technology assessments, enterprise architecture, and transformation roadmaps organizations can actually execute.",
-      image: "/about_image.png",
+      image: "/industry/consulting_services.png",
       items: [
         { title: "200+", description: "Engagements" },
         { title: "94%", description: "Client Retention" },
@@ -151,7 +151,7 @@ export const solutions: Solution[] = [
       title: "Advisory That Sticks",
       description:
         "Recommendations delivered with the sequencing, ownership, and measurement needed to survive contact with the business.",
-      image: "/about_image.png",
+      image: "/industry/consulting_services.png",
       items: [
         {
           title: "Evidence-Based Assessment",
@@ -212,7 +212,7 @@ export const solutions: Solution[] = [
       title: "Smart Infrastructure Platform",
       description:
         "Connecting building systems, digital twins, and asset records into one operating picture, so campuses are run from live conditions rather than last month's report.",
-      image: "/about_image.png",
+      image: "/services/intelligent_infrastructure.png",
       items: [
         { title: "40+", description: "Connected Sites" },
         { title: "35%", description: "Energy Saved" },
@@ -239,7 +239,7 @@ export const solutions: Solution[] = [
       title: "Buildings That Report Themselves",
       description:
         "Operational data surfaced where decisions are made, with the context needed to act on it immediately.",
-      image: "/about_image.png",
+      image: "/services/intelligent_infrastructure.png",
       items: [
         {
           title: "Unified Building Console",
@@ -300,7 +300,7 @@ export const solutions: Solution[] = [
       title: "Learning Management System (LMS)",
       description:
         "Empowering the next generation of digital education through a scalable, AI-driven platform designed for enterprise workforce development and global academic excellence.",
-      image: "/about_image.png",
+      image: "/industry/education.png",
       items: [
         { title: "100k+", description: "Learners" },
         { title: "99.9%", description: "Availability" },
@@ -327,7 +327,7 @@ export const solutions: Solution[] = [
       title: "Human-Centric Experience",
       description:
         "Designing intuitive experiences that prioritize clarity, accessibility, usability, and user engagement.",
-      image: "/about_image.png",
+      image: "/industry/education.png",
       items: [
         {
           title: "Simplified Navigation",
@@ -388,7 +388,7 @@ export const solutions: Solution[] = [
       title: "Smart Agriculture Platform",
       description:
         "Bringing field sensors, machinery, and supply chain records into one system so growers act on current conditions and can prove exactly how their produce was grown.",
-      image: "/about_image.png",
+      image: "/services/smart_africulture.png",
       items: [
         { title: "25%", description: "Yield Increase" },
         { title: "40%", description: "Water Saved" },
@@ -415,7 +415,7 @@ export const solutions: Solution[] = [
       title: "Built for the Field",
       description:
         "Tools designed for the conditions farms actually work in, not the conditions software is usually demonstrated in.",
-      image: "/about_image.png",
+      image: "/services/smart_africulture.png",
       items: [
         {
           title: "Offline-First Capture",
@@ -476,7 +476,7 @@ export const solutions: Solution[] = [
       title: "AI & Software Solutions",
       description:
         "Designing and shipping intelligent systems that automate the work worth automating, from generative assistants and predictive models to the platforms that keep them running in production.",
-      image: "/about_image.png",
+      image: "/services/ai_and_machine_learning.png",
       items: [
         { title: "150+", description: "Models Deployed" },
         { title: "60%", description: "Process Automated" },
@@ -503,7 +503,7 @@ export const solutions: Solution[] = [
       title: "Intelligence in Production",
       description:
         "Models built to be operated, monitored, and corrected, not just demonstrated once and handed over.",
-      image: "/about_image.png",
+      image: "/services/ai_and_machine_learning.png",
       items: [
         {
           title: "Human-in-the-Loop Review",
@@ -564,7 +564,7 @@ export const solutions: Solution[] = [
       title: "E-Government Solutions",
       description:
         "Delivering citizen services that are secure, accessible, and auditable, from single-identity portals through to the case management systems working behind them.",
-      image: "/about_image.png",
+      image: "/services/e_government_services.png",
       items: [
         { title: "2M+", description: "Citizens Served" },
         { title: "AA", description: "WCAG Rating" },
@@ -591,7 +591,7 @@ export const solutions: Solution[] = [
       title: "Services for Every Citizen",
       description:
         "Public services designed to work for the whole population, on the devices and connections people actually have.",
-      image: "/about_image.png",
+      image: "/services/e_government_services.png",
       items: [
         {
           title: "One Verified Identity",
@@ -652,7 +652,7 @@ export const solutions: Solution[] = [
       title: "Telecom Intelligence Solutions",
       description:
         "Giving operators a live picture of network, service, and subscriber health, so faults are found and fixed before customers ever pick up the phone.",
-      image: "/about_image.png",
+      image: "/services/telecom_intelligence.png",
       items: [
         { title: "50M+", description: "Events Per Hour" },
         { title: "45%", description: "Fewer Outages" },
@@ -679,7 +679,7 @@ export const solutions: Solution[] = [
       title: "Assurance Before Complaint",
       description:
         "Network conditions surfaced early enough that the operator acts first and the subscriber never has to.",
-      image: "/about_image.png",
+      image: "/services/telecom_intelligence.png",
       items: [
         {
           title: "Correlated Fault View",
@@ -740,7 +740,7 @@ export const solutions: Solution[] = [
       title: "Human Capital Management",
       description:
         "Bringing recruitment, payroll, performance, and development into one record, so people teams spend their time on people rather than on reconciling systems.",
-      image: "/about_image.png",
+      image: "/industry/human_capital_management.png",
       items: [
         { title: "30k+", description: "Employees Managed" },
         { title: "50%", description: "Faster Hiring" },
@@ -767,7 +767,7 @@ export const solutions: Solution[] = [
       title: "One Record Per Person",
       description:
         "An employee lifecycle held in a single system, so every team is working from the same facts.",
-      image: "/about_image.png",
+      image: "/industry/human_capital_management.png",
       items: [
         {
           title: "Unified Employee Record",
@@ -828,7 +828,7 @@ export const solutions: Solution[] = [
       title: "Energy & Climate Solutions",
       description:
         "Measuring consumption, emissions, and generation across dispersed operations, so sustainability commitments are managed with the same rigour as financial ones.",
-      image: "/about_image.png",
+      image: "/services/sustainable_energy.png",
       items: [
         { title: "1.2M", description: "Meters Ingested" },
         { title: "28%", description: "Emissions Cut" },
@@ -855,7 +855,7 @@ export const solutions: Solution[] = [
       title: "Measured, Not Estimated",
       description:
         "Environmental performance tracked from metered reality rather than reconstructed once a year.",
-      image: "/about_image.png",
+      image: "/services/sustainable_energy.png",
       items: [
         {
           title: "Interval Data at Scale",
@@ -892,7 +892,7 @@ export const solutionSuccessStories: SuccessStoriesUnderSection = {
     {
       id: 1,
       uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
-      image: "/about_image.png",
+      image: "/industry/netword_security.png",
       industry: {
         id: 1,
         uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
@@ -910,7 +910,7 @@ export const solutionSuccessStories: SuccessStoriesUnderSection = {
     {
       id: 2,
       uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
-      image: "/about_image.png",
+      image: "/industry/telecommunications.png",
       industry: {
         id: 2,
         uuid: "e6924c31-8b57-4d02-a719-3c0f5d86b471",
@@ -928,7 +928,7 @@ export const solutionSuccessStories: SuccessStoriesUnderSection = {
     {
       id: 3,
       uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
-      image: "/about_image.png",
+      image: "/industry/e_government.png",
       industry: {
         id: 3,
         uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",

@@ -186,7 +186,7 @@ export const careerData: CareerData = {
     title: "Build the Future Through Innovation",
     description:
       "Join a team of innovators, engineers, designers, strategists, and technology experts working to solve complex challenges.",
-    image: "/about_image.png",
+    image: "/career/career_header.png",
     badgeLabel: "Join 500+ Innovators",
   },
   openPositions: {

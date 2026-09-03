@@ -8,7 +8,7 @@ export const servicesPageContent: ServicesPageContent = {
     title: "Future-Ready Enterprise Services",
     description:
       "Precision-engineered solutions designed to scale your operations, secure your assets, and accelerate your digital evolution through advanced institutional innovation.",
-    image: "/about_image.png",
+    image: "/services/services_header.png",
   },
   coreServices: {
     heading: "Our Core Services",
@@ -113,7 +113,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Predictive Analytics & Computer Vision",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/ai_and_machine_learning.png",
     iconImage: "/icons/artificial-intelligence.svg",
   },
   {
@@ -137,7 +137,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Governance, Risk & Compliance",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/enterprice_cybersecurity.png",
     iconImage: "/icons/cybersecurity.svg",
   },
   {
@@ -161,7 +161,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Innovation & Business Advisory",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/technology_consulting.png",
     iconImage: "/icons/technology-consulting.svg",
   },
   {
@@ -185,7 +185,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Scalable Digital Applications",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/enterprise_software.png",
     iconImage: "/icons/enterprise-software.svg",
   },
   {
@@ -209,7 +209,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Intelligent Asset Management",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/intelligent_infrastructure.png",
     iconImage: "/icons/intelligent-infrastructure.svg",
   },
   {
@@ -233,7 +233,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Secure E-Government Platforms",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/e_government_services.png",
     iconImage: "/icons/e-government-services.svg",
   },
   {
@@ -257,7 +257,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Next-Generation Connectivity",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/telecom_intelligence.png",
     iconImage: "/icons/telecom-intelligence.svg",
   },
   {
@@ -281,7 +281,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Performance Management Platforms",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/workforce_solutions.png",
     iconImage: "/icons/workforce-solutions.svg",
   },
   {
@@ -305,7 +305,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "IoT Agricultural Monitoring",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/smart_africulture.png",
     iconImage: "/icons/smart-agriculture.svg",
   },
   {
@@ -329,7 +329,7 @@ export const serviceDetails: ServiceDetail[] = [
         title: "Climate Technology Consulting",
       },
     ],
-    image: "/about_image.png",
+    image: "/services/sustainable_energy.png",
     iconImage: "/icons/sustainable-energy.svg",
   },
 ];

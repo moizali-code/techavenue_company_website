@@ -12,13 +12,13 @@ export const industries: Industry[] = [
       title: "Government and Public Sector Digital Transformation",
       description:
         "Helping ministries, agencies, and municipalities deliver citizen services that are secure, accessible, and resilient, while meeting the transparency and compliance standards public institutions are held to.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/e_government.png",
     },
     overview: {
       title: "Citizen Services Built for Scale and Trust",
       description:
         "Public institutions carry rising service expectations and shrinking delivery windows at the same time. Tech Avenue modernizes government platforms end to end, from citizen-facing portals to the case management systems behind them, so agencies can serve more people, protect their data, and evidence every decision they make.",
-      image: "/about_image.png",
+      image: "/industry/e_government.png",
       highlights: [
         {
           title: "Secure Citizen Portals",
@@ -109,13 +109,13 @@ export const industries: Industry[] = [
       title: "Information Technology and Digital Innovation",
       description:
         "Empowering enterprises, technology companies, and public organizations with intelligent digital solutions that accelerate innovation, strengthen operations, and enable continuous business transformation.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/information_technology.png",
     },
     overview: {
       title: "Platform Engineering That Ships Faster",
       description:
         "Technology firms compete on release velocity, and velocity comes from the platform underneath the product. Tech Avenue builds the delivery pipelines, service architectures, and developer tooling that let engineering teams move from idea to production without trading away reliability.",
-      image: "/about_image.png",
+      image: "/industry/information_technology.png",
       highlights: [
         {
           title: "Developer Velocity",
@@ -206,13 +206,13 @@ export const industries: Industry[] = [
       title: "Telecommunications and Network Modernization",
       description:
         "Supporting operators and service providers with network, operations, and customer platforms engineered for constant load, rapid rollout, and the reliability subscribers expect.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/telecommunications.png",
     },
     overview: {
       title: "Operator-Grade Systems Under Constant Load",
       description:
         "Networks are judged in milliseconds and measured by the outages that never happened. Tech Avenue modernizes the operational and business support systems around the network, covering provisioning, assurance, billing, and customer care, so operators can launch services quickly and keep them running at carrier scale.",
-      image: "/about_image.png",
+      image: "/industry/telecommunications_overview.png",
       highlights: [
         {
           title: "Carrier-Scale Reliability",
@@ -498,13 +498,13 @@ export const industries: Industry[] = [
       title: "Education and Skill Development Platforms",
       description:
         "Helping institutions, training providers, and education ministries widen access to learning and prove the outcomes their programs actually deliver.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/education.png",
     },
     overview: {
       title: "Learning Platforms That Widen Access",
       description:
         "Education technology succeeds when it reaches the learners who are hardest to reach. Tech Avenue builds platforms that work on modest devices and unreliable connections, keep learner data safe, and give institutions honest evidence of what their programs achieve.",
-      image: "/about_image.png",
+      image: "/industry/education.png",
       highlights: [
         {
           title: "Inclusive Access",
@@ -595,13 +595,13 @@ export const industries: Industry[] = [
       title: "Construction and Smart Infrastructure",
       description:
         "Connecting sites, assets, and building systems so projects are delivered on program and the infrastructure that results is operated from a single place.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/construction.png",
     },
     overview: {
       title: "Connected Sites and Buildings, Managed Centrally",
       description:
         "Construction runs on information that usually arrives late: a delay noticed at the weekly meeting, a clash found on site. Tech Avenue connects site telemetry, project data, and building management systems so decisions are made against what is happening now rather than what was reported last week.",
-      image: "/about_image.png",
+      image: "/industry/construction.png",
       highlights: [
         {
           title: "Live Site Visibility",
@@ -692,13 +692,13 @@ export const industries: Industry[] = [
       title: "Agriculture and Precision Farming Technology",
       description:
         "Bringing sensor data, field operations, and supply chain records together so growers can raise yield, reduce waste, and prove the provenance buyers now ask for.",
-      backgroundImage: "/about_image.png",
+      backgroundImage: "/industry/agriculture.png",
     },
     overview: {
       title: "Sensor-Driven Insight for Higher Yield",
       description:
         "Agricultural decisions are made against weather, soil, and market conditions that all change faster than the reporting around them. Tech Avenue connects field sensors, machinery, and supply chain systems so growers can act on current conditions and evidence exactly how their produce was grown.",
-      image: "/about_image.png",
+      image: "/industry/agriculture.png",
       highlights: [
         {
           title: "Field-Level Insight",
@@ -1080,7 +1080,7 @@ export const industrySuccessStories: SuccessStoriesUnderSection = {
     {
       id: 1,
       uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
-      image: "/about_image.png",
+      image: "/industry/netword_security.png",
       industry: {
         id: 1,
         uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
@@ -1098,7 +1098,7 @@ export const industrySuccessStories: SuccessStoriesUnderSection = {
     {
       id: 2,
       uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
-      image: "/about_image.png",
+      image: "/industry/telecommunications.png",
       industry: {
         id: 2,
         uuid: "e6924c31-8b57-4d02-a719-3c0f5d86b471",
@@ -1116,7 +1116,7 @@ export const industrySuccessStories: SuccessStoriesUnderSection = {
     {
       id: 3,
       uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
-      image: "/about_image.png",
+      image: "/industry/e_government.png",
       industry: {
         id: 3,
         uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",

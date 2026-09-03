@@ -41,7 +41,8 @@ function TeamCarousel({ heading, description, members }: TeamCarouselProps) {
                     title={member.name}
                     description={member.role}
                     classNames={{
-                      imageWrapper: "aspect-[8/9] rounded-[4px]",
+                      imageWrapper: "aspect-[3/4] rounded-[4px] h-[400px]",
+                      image: "object-top",
                       content: "gap-1",
                       title: "text-[15px] font-bold uppercase text-[#191C1E]",
                       description: "text-[14px] font-normal text-[#494949]",

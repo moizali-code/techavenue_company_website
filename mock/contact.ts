@@ -14,7 +14,7 @@ export const contactSection: {
     title: "Connect with Our Team",
     description:
       "Whether you're planning a new initiative, seeking expert guidance, or exploring partnership opportunities, we're here to help you find the right solution.",
-    image: "/about_image.png",
+    image: "/contact/contact_header.png",
   },
   details: {
     eyebrow: "Get In Touch",

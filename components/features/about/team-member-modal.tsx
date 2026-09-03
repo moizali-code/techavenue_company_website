@@ -26,13 +26,13 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
       }}
     >
       <div className="grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <div className="relative aspect-[4/3] w-full bg-[#F8F8F8] md:aspect-auto md:min-h-[340px]">
+        <div className="relative aspect-[3/4] w-full bg-[#F8F8F8] md:aspect-auto md:min-h-[460px] lg:min-h-[460px]">
           <Image
             src={image}
             alt={name}
             fill
             sizes="(min-width: 768px) 40vw, 100vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
 

@@ -22,7 +22,7 @@ export default function Home() {
           <div className="relative h-[240px] w-full md:h-[360px] lg:h-[480px]">
             <Image
               alt="home_image"
-              src="/about_image.png"
+              src="/home/home_header.jpg"
               fill
               priority
               sizes="(min-width: 1024px) 1152px, 100vw"

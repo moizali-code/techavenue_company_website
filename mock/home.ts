@@ -7,7 +7,7 @@ export const testimonials: HomeTestimonial[] = [
       "Their cybersecurity frameworks and threat intelligence solutions significantly improved our operational resilience and compliance readiness.",
     name: "David Reynolds",
     role: "Director of Security Operations, Nexa Defense Systems",
-    avatar: "/testimonials/david-reynolds.png",
+    avatar: "/home/home_avatar_david.jpg",
     rating: 5,
   },
   {
@@ -16,7 +16,7 @@ export const testimonials: HomeTestimonial[] = [
       "Tech Avenue delivered scalable smart infrastructure solutions that enhanced efficiency and accelerated our innovation initiatives.",
     name: "Ayesha Khan",
     role: "Head of Digital Transformation, SmartCity Connect",
-    avatar: "/testimonials/ayesha-khan.png",
+    avatar: "/home/home_avatar_ayesha.jpg",
     rating: 5,
   },
   {
@@ -25,7 +25,7 @@ export const testimonials: HomeTestimonial[] = [
       "Their engineering team provided outstanding support and delivered high performance systems beyond expectations.",
     name: "Michael Chen",
     role: "Enterprise Solutions Manager, Horizon Telecom",
-    avatar: "/testimonials/michael-chen.png",
+    avatar: "/home/home_avatar_michael.jpg",
     rating: 5,
   },
 ];
@@ -105,7 +105,7 @@ export const homeData: HomeData = {
     title: "Leading the Innovation Drive",
     description:
       "We deliver integrated technology, AI, and digital transformation solutions tailored to enterprise needs. Through innovation, strategic partnerships, and industry expertise, we help organizations build secure, intelligent, and future-ready digital ecosystems.",
-    image: "/about_image.png",
+    image: "/home/home_about.png",
     highlights: [
       {
         uuid: "3e6c1a94-8d25-4b71-9f38-0c7a5e2d6b19",

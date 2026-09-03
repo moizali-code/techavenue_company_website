@@ -8,7 +8,7 @@ export const successStoriesContent: SuccessStoriesContent = {
     title: "Success Stories From Companies Like Yours",
     description:
       "Discover how Tech Avenue empowers enterprises and governments through intelligent technology, innovation, and scalable digital transformation solutions.",
-    backgroundImage: "/about_image.png",
+    backgroundImage: "/success-stories/success_stories_header.png",
   },
   intro: {
     titleStart: "Transforming",
@@ -23,7 +23,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 1,
     uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
-    image: "/about_image.png",
+    image: "/industry/netword_security.png",
     solution: {
       id: 1,
       uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
@@ -154,7 +154,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 2,
     uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
-    image: "/about_image.png",
+    image: "/services/intelligent_infrastructure.png",
     solution: {
       id: 3,
       uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
@@ -289,7 +289,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 3,
     uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
-    image: "/about_image.png",
+    image: "/services/e_government_services.png",
     solution: {
       id: 7,
       uuid: "71bc4f83-0e26-45d9-8a73-b4c62f019d75",
@@ -424,7 +424,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 4,
     uuid: "6d70a382-4f19-4c25-9b08-e35a1c72f4b6",
-    image: "/about_image.png",
+    image: "/services/ai_and_machine_learning.png",
     solution: {
       id: 6,
       uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
@@ -558,7 +558,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 5,
     uuid: "b52f8c19-0a63-4d74-8e21-47c9b6d035fa",
-    image: "/about_image.png",
+    image: "/services/telecom_intelligence.png",
     solution: {
       id: 8,
       uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
@@ -690,7 +690,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 6,
     uuid: "1a7c3e05-9d84-4b62-8f31-06e5c2a94db7",
-    image: "/about_image.png",
+    image: "/industry/netword_security.png",
     solution: {
       id: 1,
       uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
@@ -821,7 +821,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 7,
     uuid: "e0b46d91-2f57-4a38-95c0-7d13b8a6e425",
-    image: "/about_image.png",
+    image: "/industry/netword_security.png",
     solution: {
       id: 1,
       uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
@@ -955,7 +955,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 8,
     uuid: "74f8c250-b613-4e09-a72d-9c58e1067b3a",
-    image: "/about_image.png",
+    image: "/services/ai_and_machine_learning.png",
     solution: {
       id: 6,
       uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
@@ -1088,7 +1088,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 9,
     uuid: "2d905b7e-4c18-46fa-b039-8e17c6d24509",
-    image: "/about_image.png",
+    image: "/services/intelligent_infrastructure.png",
     solution: {
       id: 3,
       uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
@@ -1220,7 +1220,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 10,
     uuid: "8c31f6a4-0e29-4d75-91b8-53a0d7c26e14",
-    image: "/about_image.png",
+    image: "/industry/netword_security.png",
     solution: {
       id: 1,
       uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
@@ -1351,7 +1351,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 11,
     uuid: "5b027e93-a4d8-4c61-b295-0f38e7a1c6d2",
-    image: "/about_image.png",
+    image: "/services/telecom_intelligence.png",
     solution: {
       id: 8,
       uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
@@ -1483,7 +1483,7 @@ export const successStories: SuccessStory[] = [
   {
     id: 12,
     uuid: "f4a610c8-73b2-4d59-8e07-b1c9257ad430",
-    image: "/about_image.png",
+    image: "/industry/consulting_services.png",
     solution: {
       id: 2,
       uuid: "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85",
