@@ -39,7 +39,7 @@ function HomeTestimonials({
           {testimonials.map(({ uuid, quote, name, role, avatar, rating }) => (
             <CarouselItem
               key={uuid}
-              className="basis-full md:basis-1/2 lg:basis-1/3"
+              className="basis-full md:basis-1/2 lg:basis-1/3 "
             >
               <div className="relative h-full pt-9">
                 <span className="absolute top-0 left-1/2 z-10 size-18 -translate-x-1/2 overflow-hidden rounded-full border-4 border-white">
