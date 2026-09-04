@@ -75,7 +75,7 @@ function Jumbotron({
 
           <h1
             className={cn(
-              "text-3xl font-bold tracking-tight text-balance lg:text-5xl",
+              "font-bold tracking-tight text-balance text-[36px] md:text-[40px] lg:text-[48px]",
               classNames?.title,
             )}
           >

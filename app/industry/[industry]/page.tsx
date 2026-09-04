@@ -26,8 +26,9 @@ const page = () => {
       <Jumbotron
         title={header.title}
         classNames={{
-          title: "text-white !text-[48px] font-times w-full max-w-full",
-          description: "text-white text-[18px]",
+          title:
+            "text-white text-[30px] md:text-[38px] lg:text-[48px] font-times w-full max-w-full",
+          description: "text-white text-[14px] md:text-[18px]",
           content: "w-full max-w-full ",
           mainWrapper: "h-[400px] lg:h-[600px] items-end",
         }}
