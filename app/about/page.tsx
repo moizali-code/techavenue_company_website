@@ -41,9 +41,9 @@ const page = () => {
         marquee
       />
 
-      <TeamCarousel {...team} />
-
       <Container>
+        <TeamCarousel {...team} />
+
         <Jumbotron
           title={cta.title}
           description={cta.description}
