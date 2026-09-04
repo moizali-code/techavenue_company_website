@@ -156,26 +156,26 @@ export const lifeAtTechAvenue: LifeAtTechAvenueProps = {
     {
       id: 1,
       uuid: "b1f7a942-05c8-4d63-9e10-7a4c2f8b3d56",
-      title: "A Day at Tech Avenue",
+      title: "Mango Day at Tech Avenue",
       description:
-        "Behind-the-scenes workplace look at our daily rhythms and creative flow.",
-      media: "/about_image.png",
+        "Our annual Mango Day celebration, where teams and families gather for the king of fruits.",
+      media: "/career/mango.jpg",
     },
     {
       id: 2,
       uuid: "4e0c86d1-2b95-4a37-8f62-c31d079ea485",
-      title: "Innovation in Action",
+      title: "Independence Day Celebration",
       description:
-        "Team collaboration on cutting-edge tech solutions for global impact.",
-      media: "/about_image.png",
+        "The whole team coming together to mark Pakistan Independence Day at the office.",
+      media: "/career/independence.jpg",
     },
     {
       id: 3,
       uuid: "9a63f10b-7d48-4c25-b0e9-582af4c176d3",
-      title: "Learning & Growth",
+      title: "MoU Signing Ceremony",
       description:
-        "Inside our continuous learning workshops and executive mentorship programs.",
-      media: "/about_image.png",
+        "Formalising our partnership with the Balochistan Rural Support Programme.",
+      media: "/career/mou_signing.jpg",
     },
   ],
 };

@@ -10,7 +10,7 @@ export const featuredStory: NewsStory = {
   description:
     "A transformative alliance aimed at revolutionizing urban connectivity and digital resilience across continents through advanced neural networks.",
   publishedAt: "2026-08-26T09:15:00.000Z",
-  image: "/news/news.png",
+  image: "/news/ai-infrastructure-partnership.jpg",
   html: `
     <p>Tech Avenue has entered a multi-year alliance with a consortium of global infrastructure operators to bring adaptive AI models into the systems that move people, power, and data every day.</p>
     <h2>What the partnership covers</h2>
@@ -36,7 +36,7 @@ export const newsStories: NewsStory[] = [
     description:
       "A unified controls baseline built with regional regulators to help banks detect and contain threats faster.",
     publishedAt: "2026-08-28T10:20:00.000Z",
-    image: "/news/news.png",
+    image: "/news/banking-cybersecurity-framework.jpg",
     html: `
       <p>Working alongside regional regulators, Tech Avenue has published a unified controls baseline that gives banks a single reference for detection, containment, and disclosure.</p>
       <h2>Inside the framework</h2>
@@ -58,7 +58,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Sensor networks and real-time passenger analytics roll out across the city's busiest interchange stations.",
     publishedAt: "2026-08-28T09:05:00.000Z",
-    image: "/news/news.png",
+    image: "/news/mumbai-transit-modernization.jpg",
     html: `
       <p>A city-wide programme is bringing live passenger analytics to Mumbai's busiest interchanges, starting with the stations that carry the heaviest peak-hour load.</p>
       <h2>The rollout</h2>
@@ -80,7 +80,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Our executives joined global policy panels on responsible AI adoption and digital public infrastructure.",
     publishedAt: "2026-08-28T07:05:00.000Z",
-    image: "/news/news.png",
+    image: "/news/world-economic-forum-leadership.jpg",
     html: `
       <p>Members of our executive team joined policy discussions on responsible AI adoption and the future of digital public infrastructure.</p>
       <h2>Panels and themes</h2>
@@ -101,7 +101,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Renewable deployments across four regions delivered ahead of schedule and under projected carbon budgets.",
     publishedAt: "2026-08-28T05:05:00.000Z",
-    image: "/news/news.png",
+    image: "/news/sustainable-energy-milestones.jpg",
     html: `
       <p>Renewable deployments across four regions closed the quarter ahead of schedule and below their projected carbon budgets.</p>
       <h2>Where the gains came from</h2>
@@ -123,7 +123,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Our research team unveils a breakthrough in lattice-based cryptography for institutional clients.",
     publishedAt: "2026-08-24T09:30:00.000Z",
-    image: "/news/news.png",
+    image: "/news/quantum-encryption-research.jpg",
     html: `
       <p>Our cryptography group has published results on a lattice-based scheme designed for the transaction volumes institutional clients actually run.</p>
       <h2>The result</h2>
@@ -145,7 +145,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Analyzing the impact of AI-driven traffic management on commuter satisfaction and carbon footprint.",
     publishedAt: "2026-08-21T14:10:00.000Z",
-    image: "/news/news.png",
+    image: "/news/mumbai-smart-transit-case-study.jpg",
     html: `
       <p>Twelve months after the first signals came online, we looked at what AI-driven traffic management actually changed for commuters and for emissions.</p>
       <h2>What we measured</h2>
@@ -167,7 +167,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Key takeaways from our CEO's keynote on the democratization of enterprise AI solutions.",
     publishedAt: "2026-08-18T08:45:00.000Z",
-    image: "/news/news.png",
+    image: "/news/world-economic-forum-recap.jpg",
     html: `
       <p>Our keynote argued that enterprise AI stops being a pilot exercise only when the people closest to the work can change how it behaves.</p>
       <h2>Key takeaways</h2>
@@ -188,7 +188,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Behavioural models now flag lateral movement across hybrid estates within seconds of first contact.",
     publishedAt: "2026-08-14T11:20:00.000Z",
-    image: "/news/news.png",
+    image: "/news/adaptive-threat-detection.jpg",
     html: `
       <p>Adaptive Threat Detection is now generally available, bringing behavioural modelling to hybrid estates where signature-based tooling has historically struggled.</p>
       <h2>How it works</h2>
@@ -210,7 +210,7 @@ export const newsStories: NewsStory[] = [
     description:
       "A twelve-month deployment across three campuses shows where predictive maintenance pays for itself.",
     publishedAt: "2026-08-11T15:05:00.000Z",
-    image: "/news/news.png",
+    image: "/news/digital-twin-facility-pilot.jpg",
     html: `
       <p>A twelve-month digital twin pilot across three campuses reduced unplanned downtime by roughly a third, with the savings concentrated in a small number of asset classes.</p>
       <h2>Where the value landed</h2>
@@ -232,7 +232,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Ministries and municipal teams gathered to compare notes on citizen identity and service delivery.",
     publishedAt: "2026-08-07T10:00:00.000Z",
-    image: "/news/news.png",
+    image: "/news/public-sector-innovation-summit.jpg",
     html: `
       <p>Ministries and municipal delivery teams spent two days comparing what has worked — and what has quietly failed — in citizen identity and service delivery programmes.</p>
       <h2>Session themes</h2>
@@ -253,7 +253,7 @@ export const newsStories: NewsStory[] = [
     description:
       "The scheduler behind our analytics practice is now available for teams to run on their own infrastructure.",
     publishedAt: "2026-08-03T13:40:00.000Z",
-    image: "/news/news.png",
+    image: "/news/open-source-orchestration.jpg",
     html: `
       <p>The scheduler that has run our analytics practice for the past four years is now open source, available for teams to run on their own infrastructure.</p>
       <h2>What is included</h2>
@@ -274,7 +274,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Simulating storm load on ageing distribution assets to prioritise which upgrades happen first.",
     publishedAt: "2026-07-29T09:15:00.000Z",
-    image: "/news/news.png",
+    image: "/news/coastal-grid-resilience.jpg",
     html: `
       <p>Coastal distribution assets face storm loads their original designs never anticipated. Our modelling work helps operators decide which substations to reinforce first.</p>
       <h2>The approach</h2>
@@ -296,7 +296,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Two hundred students toured our labs and sat in on live architecture reviews with the platform team.",
     publishedAt: "2026-07-24T16:30:00.000Z",
-    image: "/news/news.png",
+    image: "/news/engineering-open-house.jpg",
     html: `
       <p>Two hundred students joined our engineering open house, the largest turnout the programme has seen.</p>
       <h2>The day</h2>
@@ -317,7 +317,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Residents can now query permits, payments, and case status in four languages from one interface.",
     publishedAt: "2026-07-20T12:00:00.000Z",
-    image: "/news/news.png",
+    image: "/news/multilingual-citizen-assistant.jpg",
     html: `
       <p>The citizen assistant is now in public beta, letting residents ask about permits, payments, and case status in four languages from a single interface.</p>
       <h2>What it handles</h2>
@@ -338,7 +338,7 @@ export const newsStories: NewsStory[] = [
     description:
       "A milestone in the programme connecting underserved districts to full-capacity backhaul.",
     publishedAt: "2026-07-15T07:50:00.000Z",
-    image: "/news/news.png",
+    image: "/news/rural-fibre-rollout.jpg",
     html: `
       <p>The rural fibre programme has connected its two hundredth exchange, bringing full-capacity backhaul to districts that previously relied on constrained microwave links.</p>
       <h2>The programme so far</h2>
@@ -359,7 +359,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Six institutions ran a simulated ransomware incident end to end, from detection through disclosure.",
     publishedAt: "2026-07-09T14:25:00.000Z",
-    image: "/news/news.png",
+    image: "/news/banking-tabletop-exercise.jpg",
     html: `
       <p>Six institutions ran a simulated ransomware incident end to end, from first detection through regulatory disclosure, with no advance warning of the scenario.</p>
       <h2>Exercise structure</h2>
@@ -380,7 +380,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Field trials show irrigation savings without measurable yield loss across three crop types.",
     publishedAt: "2026-07-02T11:35:00.000Z",
-    image: "/news/news.png",
+    image: "/news/precision-agriculture-forecast.jpg",
     html: `
       <p>Soil moisture forecasting is now part of the precision agriculture suite, letting growers schedule irrigation against predicted rather than measured conditions.</p>
       <h2>Field trial results</h2>
@@ -402,7 +402,7 @@ export const newsStories: NewsStory[] = [
     description:
       "On-site generation and load shifting combined to offset every kilowatt-hour drawn from the grid.",
     publishedAt: "2026-06-26T08:20:00.000Z",
-    image: "/news/news.png",
+    image: "/news/campus-net-zero-energy.jpg",
     html: `
       <p>A campus running our energy platform closed its first net-zero quarter, offsetting every kilowatt-hour drawn from the grid with on-site generation.</p>
       <h2>How it was achieved</h2>
@@ -424,7 +424,7 @@ export const newsStories: NewsStory[] = [
     description:
       "Integration partners previewed the platform changes landing across the next three releases.",
     publishedAt: "2026-06-19T15:45:00.000Z",
-    image: "/news/news.png",
+    image: "/news/annual-partner-summit.jpg",
     html: `
       <p>Integration partners gathered for an early look at the platform changes landing across the next three releases, with time set aside for the parts they disagreed with.</p>
       <h2>Roadmap highlights</h2>
@@ -446,7 +446,7 @@ export const events: EventItem[] = [
     title: "Cyber Security Summit",
     location: "Singapore",
     startsAt: "2026-06-15T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/cyber-security-summit-singapore.jpg",
     html: `
       <p>Two days on the practical end of security operations, built for the teams who carry the pager rather than the ones who write the policy.</p>
       <h2>Programme</h2>
@@ -464,7 +464,7 @@ export const events: EventItem[] = [
     title: "AI Innovation Expo",
     location: "San Francisco",
     startsAt: "2026-07-22T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/ai-innovation-expo-san-francisco.jpg",
     html: `
       <p>A working showcase of applied AI, weighted toward systems already running in production rather than research previews.</p>
       <h2>What to expect</h2>
@@ -482,7 +482,7 @@ export const events: EventItem[] = [
     title: "Tech Avenue Connect",
     location: "London",
     startsAt: "2026-08-05T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/tech-avenue-connect-london.jpg",
     html: `
       <p>Our annual customer gathering, where roadmap decisions are discussed with the people who have to live with them.</p>
       <h2>Agenda</h2>
@@ -500,7 +500,7 @@ export const events: EventItem[] = [
     title: "Sustainability Forum",
     location: "Berlin",
     startsAt: "2026-09-12T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/sustainability-forum-berlin.jpg",
     html: `
       <p>A forum for the measurement side of sustainability work — what gets counted, how it gets verified, and what remains genuinely hard to quantify.</p>
       <h2>Topics</h2>
@@ -518,7 +518,7 @@ export const events: EventItem[] = [
     title: "Smart Infrastructure Week",
     location: "Dubai",
     startsAt: "2026-10-03T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/smart-infrastructure-week-dubai.jpg",
     html: `
       <p>A full week covering the instrumentation, modelling, and operations behind modern infrastructure programmes.</p>
       <h2>Tracks</h2>
@@ -536,7 +536,7 @@ export const events: EventItem[] = [
     title: "Public Sector Digital Congress",
     location: "Toronto",
     startsAt: "2026-10-28T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/public-sector-congress-toronto.jpg",
     html: `
       <p>Government delivery teams meet to compare notes on digital identity, service design, and the procurement patterns that shape both.</p>
       <h2>Focus areas</h2>
@@ -554,7 +554,7 @@ export const events: EventItem[] = [
     title: "Enterprise Cloud Conference",
     location: "Amsterdam",
     startsAt: "2026-11-17T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/enterprise-cloud-conference-amsterdam.jpg",
     html: `
       <p>An architecture-heavy conference for teams running hybrid estates, with an emphasis on migrations that did not go to plan.</p>
       <h2>Sessions</h2>
@@ -572,7 +572,7 @@ export const events: EventItem[] = [
     title: "Telecom Intelligence Forum",
     location: "Tokyo",
     startsAt: "2026-12-09T09:00:00.000Z",
-    image: "/events/events.png",
+    image: "/events/telecom-intelligence-forum-tokyo.jpg",
     html: `
       <p>A focused forum on network intelligence, covering the analytics operators use to plan capacity and diagnose faults.</p>
       <h2>Programme</h2>
