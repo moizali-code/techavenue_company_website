@@ -199,7 +199,7 @@ function CarouselPrevious({
       }}
       {...props}
     >
-      <ArrowLeftIcon className="size-5 text-[#1E3C8C]" />
+      <ArrowLeftIcon className="size-5 " />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -248,7 +248,7 @@ function CarouselNext({
       {isFetchingData ? (
         <Loader2 className="size-5 animate-spin text-[#1E3C8C]" />
       ) : (
-        <ArrowRightIcon className="size-5 text-[#1E3C8C]" />
+        <ArrowRightIcon className="size-5 " />
       )}
       <span className="sr-only">Next slide</span>
     </Button>

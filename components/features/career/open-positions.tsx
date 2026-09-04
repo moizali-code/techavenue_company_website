@@ -228,7 +228,7 @@ function OpenPositions({
             ref={gridRef}
             className="rounded-[10px] border border-dashed border-[#E4E4E4] px-6 py-14 text-center text-[15px] text-[#444651]"
           >
-            No positions match your filters right now.
+            No positions avaliable.
           </div>
         )}
 
