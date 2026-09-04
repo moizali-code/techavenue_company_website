@@ -71,10 +71,10 @@ const page = () => {
                 variant="outline"
                 size="lg"
                 arrow
-                onClick={() => router.push("/solutions")}
+                onClick={() => router.push("/success-stories")}
                 className="h-12 px-8 text-[16px] font-medium"
               >
-                View Solutions
+                View Success Stories
               </Button>
             </>
           }
