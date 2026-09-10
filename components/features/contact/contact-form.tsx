@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { industries } from "@/mock/industry";
-import { serviceDetails } from "@/mock/services";
+import { allVerticlesPageContent } from "@/mock/verticles";
 import type { ContactFormProps } from "@/types/features/contact";
 import {
   contactFormSchema,
@@ -23,7 +23,9 @@ const successStoriesHref = "/success-stories";
 
 const industryOptions = industries.map((industry) => industry.title);
 
-const serviceOptions = serviceDetails.map((service) => service.title);
+const verticleOptions = allVerticlesPageContent.allVerticlesArticles.map(
+  (verticle) => verticle.title,
+);
 
 const fieldClassNames = {
   label: "text-[13px] font-medium text-[#191C1E]",
@@ -46,7 +48,7 @@ function ContactForm({ title, description }: ContactFormProps) {
       contactNumber: "",
       organization: "",
       industry: "",
-      serviceOfInterest: "",
+      verticleOfInterest: "",
       subject: "",
       message: "",
       consent: false,
@@ -144,19 +146,19 @@ function ContactForm({ title, description }: ContactFormProps) {
               />
             </div>
             <Controller
-              name="serviceOfInterest"
+              name="verticleOfInterest"
               control={control}
               render={({ field, fieldState }) => (
                 <div className="flex w-full flex-col gap-1.5">
                   <label className={fieldClassNames.label}>
-                    Service of Interest
+                    Verticle of Interest
                   </label>
                   <SelectField
                     value={field.value || null}
                     onValueChange={(value) => field.onChange(value ?? "")}
-                    options={serviceOptions}
-                    placeholder="Select a service"
-                    ariaLabel="Service of Interest"
+                    options={verticleOptions}
+                    placeholder="Select a verticle"
+                    ariaLabel="Verticle of Interest"
                     classNames={{ trigger: fieldClassNames.input }}
                   />
                   {fieldState.error?.message && (

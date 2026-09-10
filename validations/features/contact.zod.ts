@@ -11,7 +11,7 @@ export const contactFormSchema = z.object({
     .regex(/^[+\d][\d\s-]{6,}$/, "Enter a valid contact number"),
   organization: z.string().trim().min(1, "Organization is required"),
   industry: z.string().trim().optional(),
-  serviceOfInterest: z.string().trim().optional(),
+  verticleOfInterest: z.string().trim().optional(),
   subject: z.string().trim().min(1, "Subject is required"),
   message: z.string().trim().min(20, "Message must be at least 20 characters"),
   consent: z

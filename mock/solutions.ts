@@ -212,7 +212,7 @@ export const solutions: Solution[] = [
       title: "Smart Infrastructure Platform",
       description:
         "Connecting building systems, digital twins, and asset records into one operating picture, so campuses are run from live conditions rather than last month's report.",
-      image: "/services/intelligent_infrastructure.png",
+      image: "/verticles/intelligent_infrastructure.png",
       items: [
         { title: "40+", description: "Connected Sites" },
         { title: "35%", description: "Energy Saved" },
@@ -239,7 +239,7 @@ export const solutions: Solution[] = [
       title: "Buildings That Report Themselves",
       description:
         "Operational data surfaced where decisions are made, with the context needed to act on it immediately.",
-      image: "/services/intelligent_infrastructure.png",
+      image: "/verticles/intelligent_infrastructure.png",
       items: [
         {
           title: "Unified Building Console",
@@ -388,7 +388,7 @@ export const solutions: Solution[] = [
       title: "Smart Agriculture Platform",
       description:
         "Bringing field sensors, machinery, and supply chain records into one system so growers act on current conditions and can prove exactly how their produce was grown.",
-      image: "/services/smart_africulture.png",
+      image: "/verticles/smart_africulture.png",
       items: [
         { title: "25%", description: "Yield Increase" },
         { title: "40%", description: "Water Saved" },
@@ -415,7 +415,7 @@ export const solutions: Solution[] = [
       title: "Built for the Field",
       description:
         "Tools designed for the conditions farms actually work in, not the conditions software is usually demonstrated in.",
-      image: "/services/smart_africulture.png",
+      image: "/verticles/smart_africulture.png",
       items: [
         {
           title: "Offline-First Capture",
@@ -476,7 +476,7 @@ export const solutions: Solution[] = [
       title: "AI & Software Solutions",
       description:
         "Designing and shipping intelligent systems that automate the work worth automating, from generative assistants and predictive models to the platforms that keep them running in production.",
-      image: "/services/ai_and_machine_learning.png",
+      image: "/verticles/ai_and_machine_learning.png",
       items: [
         { title: "150+", description: "Models Deployed" },
         { title: "60%", description: "Process Automated" },
@@ -503,7 +503,7 @@ export const solutions: Solution[] = [
       title: "Intelligence in Production",
       description:
         "Models built to be operated, monitored, and corrected, not just demonstrated once and handed over.",
-      image: "/services/ai_and_machine_learning.png",
+      image: "/verticles/ai_and_machine_learning.png",
       items: [
         {
           title: "Human-in-the-Loop Review",
@@ -564,7 +564,7 @@ export const solutions: Solution[] = [
       title: "E-Government Solutions",
       description:
         "Delivering citizen services that are secure, accessible, and auditable, from single-identity portals through to the case management systems working behind them.",
-      image: "/services/e_government_services.png",
+      image: "/verticles/e_government_services.png",
       items: [
         { title: "2M+", description: "Citizens Served" },
         { title: "AA", description: "WCAG Rating" },
@@ -591,7 +591,7 @@ export const solutions: Solution[] = [
       title: "Services for Every Citizen",
       description:
         "Public services designed to work for the whole population, on the devices and connections people actually have.",
-      image: "/services/e_government_services.png",
+      image: "/verticles/e_government_services.png",
       items: [
         {
           title: "One Verified Identity",
@@ -652,7 +652,7 @@ export const solutions: Solution[] = [
       title: "Telecom Intelligence Solutions",
       description:
         "Giving operators a live picture of network, service, and subscriber health, so faults are found and fixed before customers ever pick up the phone.",
-      image: "/services/telecom_intelligence.png",
+      image: "/verticles/telecom_intelligence.png",
       items: [
         { title: "50M+", description: "Events Per Hour" },
         { title: "45%", description: "Fewer Outages" },
@@ -679,7 +679,7 @@ export const solutions: Solution[] = [
       title: "Assurance Before Complaint",
       description:
         "Network conditions surfaced early enough that the operator acts first and the subscriber never has to.",
-      image: "/services/telecom_intelligence.png",
+      image: "/verticles/telecom_intelligence.png",
       items: [
         {
           title: "Correlated Fault View",
@@ -828,7 +828,7 @@ export const solutions: Solution[] = [
       title: "Energy & Climate Solutions",
       description:
         "Measuring consumption, emissions, and generation across dispersed operations, so sustainability commitments are managed with the same rigour as financial ones.",
-      image: "/services/sustainable_energy.png",
+      image: "/verticles/sustainable_energy.png",
       items: [
         { title: "1.2M", description: "Meters Ingested" },
         { title: "28%", description: "Emissions Cut" },
@@ -855,7 +855,7 @@ export const solutions: Solution[] = [
       title: "Measured, Not Estimated",
       description:
         "Environmental performance tracked from metered reality rather than reconstructed once a year.",
-      image: "/services/sustainable_energy.png",
+      image: "/verticles/sustainable_energy.png",
       items: [
         {
           title: "Interval Data at Scale",

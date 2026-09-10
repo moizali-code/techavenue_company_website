@@ -62,7 +62,7 @@ const page = () => {
                 variant="brand"
                 size="lg"
                 onClick={() => router.push("/contact")}
-                className="h-12 rounded-[4px] px-8 text-[16px] font-medium tracking-normal"
+                className="h-12 w-full rounded-[4px] px-8 text-[16px] font-medium tracking-normal md:w-auto"
               >
                 Contact Us Now
               </Button>
@@ -72,7 +72,7 @@ const page = () => {
                 size="lg"
                 arrow
                 onClick={() => router.push("/success-stories")}
-                className="h-12 px-8 text-[16px] font-medium"
+                className="h-12 w-full px-8 text-[16px] font-medium md:w-auto"
               >
                 View Success Stories
               </Button>

@@ -7,7 +7,7 @@ import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import { industries } from "@/mock/industry";
-import { serviceDetails } from "@/mock/services";
+import { allVerticlesPageContent } from "@/mock/verticles";
 import { solutions } from "@/mock/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
@@ -33,11 +33,13 @@ const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
   image: solution.image,
 }));
 
-const serviceNavLinks: NavLink[] = serviceDetails.map((service) => ({
-  title: service.title,
-  description: service.description,
-  href: `/services#${service.uuid}`,
-  image: service.iconImage,
+const { coreVerticles } = allVerticlesPageContent;
+
+const verticleNavLinks: NavLink[] = coreVerticles.verticles.map((verticle) => ({
+  title: verticle.title,
+  description: verticle.description,
+  href: `/verticles/${verticle.uuid}`,
+  image: verticle.image,
 }));
 
 const navigationItems: NavItem[] = [
@@ -76,8 +78,8 @@ const navigationItems: NavItem[] = [
     items: solutionNavLinks,
   },
   {
-    label: "Services",
-    items: serviceNavLinks,
+    label: "Verticles",
+    items: verticleNavLinks,
   },
   {
     label: "Industries",

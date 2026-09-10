@@ -9,7 +9,7 @@ import { ScrollTop } from "@/components/layout/scroll-top";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "Verticles", href: "/verticles" },
   { label: "Solutions", href: "/solutions" },
   { label: "Industries", href: "/industries" },
   { label: "Partners", href: "/partners" },

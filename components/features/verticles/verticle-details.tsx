@@ -1,9 +1,9 @@
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
-import type { ServiceDetailsProps } from "@/types/features/services";
+import type { VerticleDetailsProps } from "@/types/features/verticles";
 import { Icon } from "@/components/shared/icon";
 
-function ServiceDetails({ details }: ServiceDetailsProps) {
+function VerticleDetails({ details }: VerticleDetailsProps) {
   return (
     <Container>
       <div className="flex flex-col gap-12 lg:gap-16">
@@ -52,4 +52,4 @@ function ServiceDetails({ details }: ServiceDetailsProps) {
   );
 }
 
-export { ServiceDetails };
+export { VerticleDetails };
