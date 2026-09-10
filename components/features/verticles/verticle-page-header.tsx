@@ -20,7 +20,7 @@ function VerticlePageHeader({
           description={description}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0",
-            content: "max-w-4xl gap-4",
+            content: "max-w-4xl gap-2",
             eyebrow:
               "text-[13px] font-bold tracking-[0.14em] text-[#1E3C8C] uppercase lg:text-[14px]",
             title:

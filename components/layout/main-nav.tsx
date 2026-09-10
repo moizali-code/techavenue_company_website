@@ -79,6 +79,7 @@ const navigationItems: NavItem[] = [
   },
   {
     label: "Verticles",
+    href: "/verticles",
     items: verticleNavLinks,
   },
   {
@@ -116,7 +117,17 @@ function MainNav({ className }: { className?: string }) {
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem key={item.label}>
-              <NavigationMenuTrigger className="cursor-pointer text-foreground/80 hover:bg-transparent hover:text-brand-link focus:bg-transparent data-popup-open:bg-transparent data-popup-open:text-brand-link">
+              <NavigationMenuTrigger
+                render={item.href ? <Link href={item.href} /> : undefined}
+                nativeButton={!item.href}
+                role={item.href ? "link" : undefined}
+                className={cn(
+                  "cursor-pointer text-foreground/80 hover:bg-transparent hover:text-brand-link focus:bg-transparent data-popup-open:bg-transparent data-popup-open:text-brand-link",
+                  item.href &&
+                    isActive(item.href) &&
+                    "font-semibold text-brand-link",
+                )}
+              >
                 {item.label}
               </NavigationMenuTrigger>
               <NavigationMenuContent className="p-6">

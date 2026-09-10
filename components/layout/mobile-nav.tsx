@@ -57,22 +57,53 @@ function MobileNav({ className }: { className?: string }) {
                   </Link>
                 ) : (
                   <>
-                    <button
-                      type="button"
-                      onClick={() => toggleSection(item.label)}
-                      aria-expanded={openSection === item.label}
-                      aria-controls={`mobile-nav-${item.label}`}
-                      className="flex w-full cursor-pointer items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium hover:bg-muted"
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={cn(
-                          "size-4 transition-transform text-[#1E3C8C]",
-                          openSection === item.label && "rotate-180",
-                        )}
-                        aria-hidden="true"
-                      />
-                    </button>
+                    {item.href ? (
+                      <div className="flex items-center gap-1">
+                        <Link
+                          href={item.href}
+                          onClick={close}
+                          className={cn(
+                            "flex-1 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-muted",
+                            pathname === item.href && "text-brand-link",
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => toggleSection(item.label)}
+                          aria-expanded={openSection === item.label}
+                          aria-controls={`mobile-nav-${item.label}`}
+                          aria-label={`Toggle ${item.label} menu`}
+                          className="cursor-pointer rounded-md px-3 py-2.5 hover:bg-muted"
+                        >
+                          <ChevronDown
+                            className={cn(
+                              "size-4 transition-transform text-[#1E3C8C]",
+                              openSection === item.label && "rotate-180",
+                            )}
+                            aria-hidden="true"
+                          />
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => toggleSection(item.label)}
+                        aria-expanded={openSection === item.label}
+                        aria-controls={`mobile-nav-${item.label}`}
+                        className="flex w-full cursor-pointer items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium hover:bg-muted"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={cn(
+                            "size-4 transition-transform text-[#1E3C8C]",
+                            openSection === item.label && "rotate-180",
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    )}
                     {openSection === item.label && (
                       <ul
                         id={`mobile-nav-${item.label}`}

@@ -50,7 +50,7 @@ function Jumbotron({
 
       <div
         className={cn(
-          " w-full max-w-3xl",
+          "mx-auto w-full max-w-3xl",
           isCentered ? "text-center" : "text-left",
           classNames?.content,
         )}

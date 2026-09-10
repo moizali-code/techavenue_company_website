@@ -4,7 +4,7 @@ import type { VerticlePhasesProps } from "@/types/features/verticles";
 function VerticlePhases({ phases }: VerticlePhasesProps) {
   return (
     <Container>
-      <div className="grid md:grid-cols-3">
+      <div className="grid md:grid-cols-3 border-y border-[#E5E5E5] py-10">
         {phases.map(({ uuid, title, focus, description }, index) => (
           <div
             key={uuid}
