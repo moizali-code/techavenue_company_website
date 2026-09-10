@@ -16,7 +16,7 @@ function VerticleSolutions({
           description={description}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0 ",
-            content: "max-w-3xl gap-3",
+            content: "max-w-full gap-3",
             title:
               "font-be-vietnam text-[26px] font-bold text-[#191C1E] md:text-[30px] lg:text-[34px]",
             description:

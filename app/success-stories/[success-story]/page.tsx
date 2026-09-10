@@ -47,8 +47,8 @@ const page = () => {
             description: "text-[16px]",
           },
           card: {
-            title: "font-bold text-[24px]",
-            description: "text-[16px]",
+            title: "font-bold text-[20px]",
+            description: "text-[14px]",
             mainWrapper:
               "py-[10px] px-[14px] border border-[rgba(169,169,169,0.4)] shadow-sm",
             eyebrow: "bg-[rgba(44,92,175,0.08)] p-4 w-fit rounded-[12px]",

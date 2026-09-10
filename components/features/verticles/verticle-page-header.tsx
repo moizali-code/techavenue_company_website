@@ -20,7 +20,7 @@ function VerticlePageHeader({
           description={description}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0",
-            content: "max-w-4xl gap-2",
+            content: "max-w-full gap-2",
             eyebrow:
               "text-[13px] font-bold tracking-[0.14em] text-[#1E3C8C] uppercase lg:text-[14px]",
             title:
@@ -31,14 +31,14 @@ function VerticlePageHeader({
         />
 
         {image && (
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[12px] md:aspect-[16/8] lg:aspect-[21/8]">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[4px] md:aspect-[16/8] lg:aspect-[21/8]">
             <Image
               src={image}
               alt={heading}
               fill
               priority
               sizes="(min-width: 1024px) 72rem, 100vw"
-              className="rounded-[12px] object-cover"
+              className="rounded-[4px] object-cover"
             />
           </div>
         )}
