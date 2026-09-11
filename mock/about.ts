@@ -71,15 +71,7 @@ export const aboutPageContent: AboutPageContent = {
         description:
           "Directs financial planning and governance across all business units, Delivered sustained double-digit revenue growth, Established enterprise-grade compliance and risk frameworks, Champions transparent and sustainable business practices",
       },
-      {
-        id: 4,
-        uuid: "2a95d7e0-6c31-48b7-9d04-7f83a1c5e692",
-        name: "Ali Abbas Hussain",
-        role: "Head of Product",
-        image: "/about/ali_abbas.png",
-        description:
-          "Leads product vision across AI and cloud platform offerings, Launched multiple enterprise products from concept to scale, Built and mentors a cross-functional product and design team, Drives customer-centric roadmap and delivery practices",
-      },
+
       {
         id: 5,
         uuid: "2a95d7e0-6c31-48b7-9d04-7f83a1c5e908",

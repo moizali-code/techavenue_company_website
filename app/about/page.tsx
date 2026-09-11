@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { CompanyValues } from "@/components/features/about/company-values";
-import { TeamCarousel } from "@/components/features/about/team-carousel";
+import { TeamGrid } from "@/components/features/about/team-grid";
 import { TrustedPartners } from "@/components/shared/trusted-partners";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
@@ -42,7 +42,7 @@ const page = () => {
       />
 
       <Container>
-        <TeamCarousel {...team} />
+        <TeamGrid {...team} />
 
         <Jumbotron
           title={cta.title}
