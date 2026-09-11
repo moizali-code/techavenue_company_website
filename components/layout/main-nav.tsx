@@ -74,14 +74,15 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
-    label: "Solutions",
-    items: solutionNavLinks,
-  },
-  {
     label: "Verticles",
     href: "/verticles",
     items: verticleNavLinks,
   },
+  {
+    label: "Solutions",
+    items: solutionNavLinks,
+  },
+
   {
     label: "Industries",
     items: industryNavLinks,
