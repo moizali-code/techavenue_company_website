@@ -63,14 +63,6 @@ export const allVerticlesPageContent: VerticlesPageContent = {
         description:
           "Connecting enterprise systems for seamless workflows and operational efficiency.",
       },
-      {
-        id: 7,
-        uuid: "a3c26e15-70b9-4d84-8215-cf9e30b7a6d2",
-        image: "/icons/solutions/energy-climate-solutions.svg",
-        title: "Energy & Climate",
-        description:
-          "Smart energy, climate intelligence, and resource optimization solutions enabling sustainable and efficient operations.",
-      },
     ],
   },
   allVerticlesArticles: [
@@ -745,85 +737,6 @@ export const verticlePages: VerticlePage[] = [
         focus: "Secure Public Systems",
         description:
           "E-payments, asset management, track and trace, and cybersecurity solutions designed to support secure and reliable public services.",
-      },
-    ],
-  },
-  {
-    id: 6,
-    uuid: "a3c26e15-70b9-4d84-8215-cf9e30b7a6d2",
-    title: "Energy & Climate",
-    verticleHeader: {
-      heading: "Building Smarter, Connected Resources",
-      description:
-        "Technology-driven solutions that help organizations monitor, manage, optimize, and sustain energy and natural resources through digital platforms, IoT, and analytics.",
-    },
-    image: "/verticles/verticle/energy & climate.png",
-    solutions: {
-      heading: "Energy & Climate Solutions",
-      description:
-        "Our energy solutions combine smart utilities, climate intelligence, connected monitoring, and real-time analytics to improve efficiency, sustainability, resource management, and environmental performance.",
-      items: [
-        {
-          id: 1,
-          uuid: "d1074b9e-6532-48ac-b790-1f6e83c02d45",
-          title: "Smart Utilities",
-          description:
-            "Connected utility solutions for monitoring consumption, managing resources, and improving operational efficiency across energy systems.",
-        },
-        {
-          id: 2,
-          uuid: "492ea7c0-b158-4d63-8e21-70f594a3bd6c",
-          title: "Climate Intelligence",
-          description:
-            "Data-driven climate and weather solutions for forecasting conditions, identifying trends, and supporting informed operational decisions.",
-        },
-        {
-          id: 3,
-          uuid: "0f36d81b-59e4-42a7-95c8-6d13b70ae824",
-          title: "Resource Optimization",
-          description:
-            "Intelligent solutions for optimizing energy and resource consumption while reducing waste, operational costs, and environmental impact.",
-        },
-        {
-          id: 4,
-          uuid: "a7c58e30-14b6-4f92-8d05-e36174b9052a",
-          title: "Energy Monitoring",
-          description:
-            "Real-time monitoring solutions providing visibility into energy consumption, operational performance, and resource usage.",
-        },
-        {
-          id: 5,
-          uuid: "68b90f2d-c743-4e15-a6b8-27051d94e63f",
-          title: "Sustainability Reporting",
-          description:
-            "Data-driven reporting solutions for tracking consumption, emissions, costs, and sustainability performance across operations.",
-        },
-      ],
-    },
-    phases: [
-      {
-        id: 1,
-        uuid: "35da70c8-9e16-4b43-87f2-c0d61e548b39",
-        title: "Monitor Smarter",
-        focus: "Energy & Utilities",
-        description:
-          "Connected monitoring systems provide real-time visibility into energy consumption, utility performance, resource usage, and operational conditions.",
-      },
-      {
-        id: 2,
-        uuid: "e6417b52-08fa-49d6-b3c1-7a2059e4c86d",
-        title: "Predict Smarter",
-        focus: "Climate Intelligence",
-        description:
-          "IoT monitoring, climate data, and forecasting models provide actionable insights into weather conditions, environmental trends, and potential risks.",
-      },
-      {
-        id: 3,
-        uuid: "1c8305fe-b492-4a7d-96e0-583d1c7f0a64",
-        title: "Optimize Smarter",
-        focus: "Sustainable Resources",
-        description:
-          "Intelligent analytics optimize energy and resource consumption while providing reporting on costs, efficiency, emissions, and sustainability outcomes.",
       },
     ],
   },
