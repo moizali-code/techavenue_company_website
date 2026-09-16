@@ -7,7 +7,6 @@ import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import { industries } from "@/mock/industry";
-import { allVerticlesPageContent } from "@/mock/verticles";
 import { solutions } from "@/mock/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
@@ -31,15 +30,6 @@ const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
   description: solution.description,
   href: `/solutions/${solution.uuid}`,
   image: solution.image,
-}));
-
-const { coreVerticles } = allVerticlesPageContent;
-
-const verticleNavLinks: NavLink[] = coreVerticles.verticles.map((verticle) => ({
-  title: verticle.title,
-  description: verticle.description,
-  href: `/verticles/${verticle.uuid}`,
-  image: verticle.image,
 }));
 
 const navigationItems: NavItem[] = [
@@ -72,11 +62,6 @@ const navigationItems: NavItem[] = [
         icon: Newspaper,
       },
     ],
-  },
-  {
-    label: "Verticles",
-    href: "/verticles",
-    items: verticleNavLinks,
   },
   {
     label: "Solutions",
