@@ -9,7 +9,7 @@ import { TabGroup } from "@/components/shared/tab-group";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { industries } from "@/mock/industry";
-import { solutions } from "@/mock/solutions";
+import { solutionPages } from "@/mock/solutions";
 import type { SuccessStoriesGridProps } from "@/types/features/success-stories";
 import type { TabGroupItem } from "@/types/shared/tab-group";
 
@@ -28,7 +28,7 @@ const allFilterTab: TabGroupItem = {
 
 const solutionTabs: TabGroupItem[] = [
   allFilterTab,
-  ...solutions.map(({ id, uuid, title }) => ({ id, uuid, title })),
+  ...solutionPages.map(({ id, uuid, title }) => ({ id, uuid, title })),
 ];
 
 const industryTabs: TabGroupItem[] = [

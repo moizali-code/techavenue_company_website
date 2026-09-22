@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { industries } from "@/mock/industry";
-import { allVerticlesPageContent } from "@/mock/verticles";
+import { allServicesPageContent } from "@/mock/services";
 import type { ContactFormProps } from "@/types/features/contact";
 import {
   contactFormSchema,
@@ -23,7 +23,7 @@ const successStoriesHref = "/success-stories";
 
 const industryOptions = industries.map((industry) => industry.title);
 
-const verticleOptions = allVerticlesPageContent.allVerticlesArticles.map(
+const verticleOptions = allServicesPageContent.allServicesArticles.map(
   (verticle) => verticle.title,
 );
 

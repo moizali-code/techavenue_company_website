@@ -2,17 +2,17 @@ import Image from "next/image";
 
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
-import type { VerticlePageHeaderProps } from "@/types/features/verticles";
+import type { SolutionPageHeaderProps } from "@/types/features/solutions";
 
-function VerticlePageHeader({
+function SolutionPageHeader({
   eyebrow,
   heading,
   description,
   image,
-}: VerticlePageHeaderProps) {
+}: SolutionPageHeaderProps) {
   return (
-    <Container>
-      <div className="flex flex-col gap-8 lg:gap-12">
+    <Container className="py-6 lg:py-6">
+      <div className="flex flex-col gap-6 lg:gap-8">
         <Jumbotron
           align="left"
           eyebrow={<span>{eyebrow}</span>}
@@ -20,11 +20,12 @@ function VerticlePageHeader({
           description={description}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0",
-            content: "max-w-full gap-2",
+            content: "max-w-full",
+            body: "gap-2",
             eyebrow:
               "text-[13px] font-bold tracking-[0.14em] text-[#1E3C8C] uppercase lg:text-[14px]",
             title:
-              "font-be-vietnam text-[30px] leading-[1.15] font-bold text-balance text-[#191C1E] md:text-[38px] lg:text-[44px]",
+              "max-w-4xl font-be-vietnam text-[30px] leading-[1.15] font-bold text-balance text-[#191C1E] md:text-[38px] lg:text-[38px] ",
             description:
               "max-w-3xl text-[15px] leading-relaxed text-[#494949] lg:text-[17px]",
           }}
@@ -47,4 +48,4 @@ function VerticlePageHeader({
   );
 }
 
-export { VerticlePageHeader };
+export { SolutionPageHeader };

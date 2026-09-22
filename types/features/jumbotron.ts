@@ -15,6 +15,7 @@ export type JumbotronProps = {
     backgroundImage?: string;
     overlay?: string;
     content?: string;
+    body?: string;
     eyebrow?: string;
     title?: string;
     description?: string;

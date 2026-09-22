@@ -1,43 +1,43 @@
 "use client";
 
-import { SolutionExperience } from "@/components/features/solutions/solution-experience";
-import { SolutionHeader } from "@/components/features/solutions/solution-header";
-import { SolutionOverview } from "@/components/features/solutions/solution-overview";
-import { SolutionTestimonial } from "@/components/features/solutions/solution-testimonial";
-import { Container } from "@/components/shared/container";
-import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
-import { TabGroup } from "@/components/shared/tab-group";
-import { solutions, solutionSuccessStories } from "@/mock/solutions";
 import { notFound, useParams } from "next/navigation";
+
+import { SolutionOfferings } from "@/components/features/solutions/solution-offerings";
+import { SolutionPageHeader } from "@/components/features/solutions/solution-page-header";
+import { SolutionPhases } from "@/components/features/solutions/solution-phases";
+import { Container } from "@/components/shared/container";
+import { TabGroup } from "@/components/shared/tab-group";
+import { solutionPages } from "@/mock/solutions";
 
 const page = () => {
   const { solution } = useParams<{ solution: string }>();
-  const activeSolution = solutions.find((item) => item.uuid === solution);
+  const solutionPage = solutionPages.find((item) => item.uuid === solution);
 
-  if (!activeSolution) notFound();
-
-  const { title, header, overview, keyInfo, experience, testimonial } =
-    activeSolution;
+  if (!solutionPage) notFound();
 
   return (
     <>
-      <Container>
-        <TabGroup
-          tabs={solutions}
-          activeUuid={activeSolution.uuid}
-          hrefPrefix="/solutions"
-        />
+      <Container variant="bare">
+        <div className="pt-6 pb-3 lg:pt-8 lg:pb-4">
+          <TabGroup
+            tabs={solutionPages}
+            activeUuid={solutionPage.uuid}
+            hrefPrefix="/solutions"
+            classNames={{ list: "gap-2 lg:gap-3" }}
+          />
+        </div>
       </Container>
 
-      <SolutionHeader eyebrow={title} header={header} />
+      <SolutionPageHeader
+        eyebrow={solutionPage.title}
+        heading={solutionPage.solutionHeader.heading}
+        description={solutionPage.solutionHeader.description}
+        image={solutionPage.image}
+      />
 
-      <SolutionOverview overview={overview} keyInfo={keyInfo} />
+      <SolutionOfferings {...solutionPage.solutions} />
 
-      <SolutionExperience experience={experience} />
-
-      <SuccessStoriesUnderSection successStories={solutionSuccessStories} />
-
-      <SolutionTestimonial testimonial={testimonial} />
+      <SolutionPhases phases={solutionPage.phases} />
     </>
   );
 };

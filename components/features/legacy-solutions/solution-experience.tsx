@@ -1,6 +1,6 @@
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
-import type { SolutionExperienceProps } from "@/types/features/solutions";
+import type { SolutionExperienceProps } from "@/types/features/legacy-solutions";
 
 function SolutionExperience({ experience }: SolutionExperienceProps) {
   const { title, description, image, items } = experience;

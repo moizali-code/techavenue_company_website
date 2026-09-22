@@ -59,6 +59,7 @@ function Jumbotron({
           className={cn(
             "flex flex-col gap-5",
             isCentered ? "items-center" : "items-start",
+            classNames?.body,
           )}
         >
           {eyebrow && (

@@ -1,10 +1,10 @@
 import { Container } from "@/components/shared/container";
-import type { VerticlePhasesProps } from "@/types/features/verticles";
+import type { SolutionPhasesProps } from "@/types/features/solutions";
 
-function VerticlePhases({ phases }: VerticlePhasesProps) {
+function SolutionPhases({ phases }: SolutionPhasesProps) {
   return (
-    <Container>
-      <div className="grid md:grid-cols-3 border-y border-[#E5E5E5] py-10">
+    <Container className="pt-6 lg:pt-6">
+      <div className="grid md:grid-cols-3 border-y border-[#E5E5E5] py-5">
         {phases.map(({ uuid, title, focus, description }, index) => (
           <div
             key={uuid}
@@ -30,4 +30,4 @@ function VerticlePhases({ phases }: VerticlePhasesProps) {
   );
 }
 
-export { VerticlePhases };
+export { SolutionPhases };

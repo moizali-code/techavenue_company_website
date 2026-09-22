@@ -13,7 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { requestDemo } from "@/mock/request-demo";
-import { solutions } from "@/mock/solutions";
+import { solutions } from "@/mock/legacy-solutions";
 import type { RequestDemoModalProps } from "@/types/features/request-demo";
 import {
   requestDemoSchema,

@@ -1,4 +1,4 @@
-import type { Solution } from "@/types/features/solutions";
+import type { Solution } from "@/types/features/legacy-solutions";
 import type { TrustedPartnerLogo } from "@/types/shared/trusted-partners";
 
 export type HomeStat = {

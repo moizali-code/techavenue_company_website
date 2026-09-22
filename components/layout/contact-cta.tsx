@@ -15,7 +15,7 @@ function ContactCta() {
     <Container>
       <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:gap-12">
         <div>
-          <h2 className="font-be-vietnam text-[32px] font-semibold tracking-tight text-balance text-[#191C1E] md:text-[40px] lg:text-[48px]">
+          <h2 className="font-be-vietnam text-[32px] font-semibold tracking-tight text-balance text-[#191C1E] md:text-[40px] lg:text-[38px]">
             Ready to Accelerate Your Digital Future?
           </h2>
 
@@ -24,7 +24,7 @@ function ContactCta() {
             size="lg"
             nativeButton={false}
             render={<Link href="/contact" />}
-            className="mt-8 h-12 w-full px-10 text-[14px] font-medium tracking-[0.08em] uppercase  md:min-w-[380px] md:w-[380px]"
+            className="mt-8 h-10 w-full px-10 text-[14px] font-medium tracking-[0.08em] uppercase  md:min-w-[380px] md:w-[380px]"
           >
             Contact Us
           </Button>

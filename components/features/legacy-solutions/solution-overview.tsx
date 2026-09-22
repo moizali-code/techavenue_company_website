@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/shared/fade-in";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import type { SolutionOverviewProps } from "@/types/features/solutions";
+import type { SolutionOverviewProps } from "@/types/features/legacy-solutions";
 
 function SolutionOverview({ overview, keyInfo }: SolutionOverviewProps) {
   const paragraphs = overview.description.split("\n\n");

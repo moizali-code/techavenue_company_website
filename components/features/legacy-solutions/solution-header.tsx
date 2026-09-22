@@ -1,9 +1,9 @@
-import { RequestDemoModal } from "@/components/features/solutions/request-demo-modal";
+import { RequestDemoModal } from "@/components/features/legacy-solutions/request-demo-modal";
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { SolutionHeaderProps } from "@/types/features/solutions";
+import type { SolutionHeaderProps } from "@/types/features/legacy-solutions";
 
 const PRIMARY_ACTION_LABEL = "Request a Demo";
 const SECONDARY_ACTION_LABEL = "Watch the Demo";

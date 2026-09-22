@@ -1,983 +1,759 @@
-import type { Solution } from "@/types/features/solutions";
-import type { SuccessStoriesUnderSection } from "@/types/shared/success-stories-under-section";
+import type { SolutionPage } from "@/types/features/solutions";
 
-export const solutions: Solution[] = [
+export const solutionPages: SolutionPage[] = [
   {
     id: 1,
-    uuid: "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
-    title: "Network Security",
-    image: "/icons/solutions/network-security.svg",
-    description: "Comprehensive protection for perimeter, endpoint, and cloud.",
-    highlights: [
+    uuid: "b7e41c92-58af-4d16-9c73-0e5a2d84f6b1",
+    title: "Construction",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Infrastructure",
+      description:
+        "Technology-driven solutions that help organizations plan, build, monitor, and manage smarter infrastructure through digital technologies, AI, and IoT.",
+    },
+    image: "/verticles/verticle/constuction.png",
+    icon: "/icons/solutions/construction.svg",
+    solutions: {
+      heading: "Construction Solutions",
+      description:
+        "Our construction solutions combine digital modelling, intelligent infrastructure, connected systems, and real-time monitoring to improve efficiency, safety, and asset performance.",
+      items: [
+        {
+          id: 1,
+          uuid: "d1f6a930-5c27-4e88-b043-91a7e5c26d10",
+          title: "Smart Infrastructure",
+          description:
+            "Connected infrastructure solutions for smarter urban development and efficient operations.",
+        },
+        {
+          id: 2,
+          uuid: "8c30b5e4-27fa-4d91-a6c8-30bf147e29d5",
+          title: "Smart Mobility",
+          description:
+            "Intelligent mobility technologies for connected and efficient transportation systems.",
+        },
+        {
+          id: 3,
+          uuid: "6b47d182-a5e9-4370-bc16-2d94f7051ea3",
+          title: "Smart Utilities",
+          description:
+            "Digital solutions for monitoring and managing essential urban utilities.",
+        },
+        {
+          id: 4,
+          uuid: "0e59c374-8ab1-42d6-95f0-7c3e18b6a49d",
+          title: "Public Safety",
+          description:
+            "Technology-enabled systems that improve safety, monitoring, and emergency response.",
+        },
+        {
+          id: 5,
+          uuid: "b28f6013-d54c-49a7-83e1-6f0d92a45c37",
+          title: "BIM",
+          description:
+            "Building Information Modelling for better planning, design, and project management.",
+        },
+        {
+          id: 6,
+          uuid: "4d0a7e91-3f68-4c25-90bd-e17c58236fa4",
+          title: "Digital Twin",
+          description:
+            "Digital representations of physical assets for real-time monitoring and analysis.",
+        },
+        {
+          id: 7,
+          uuid: "97e1c485-6b23-4a70-8d59-f2036ca7b1e8",
+          title: "Asset Management",
+          description:
+            "Tools for tracking, monitoring, and optimizing infrastructure and physical assets.",
+        },
+        {
+          id: 8,
+          uuid: "1a63f827-90de-4b54-a2c7-58e30dbf174c",
+          title: "Facility Monitoring",
+          description:
+            "IoT-enabled monitoring of facilities, equipment, and operational conditions.",
+        },
+        {
+          id: 9,
+          uuid: "5f92d0b6-71c4-4a83-b59e-04f7c8a1d326",
+          title: "AI-Driven Construction",
+          description:
+            "AI-powered insights for better decision-making, risk reduction, and construction efficiency.",
+        },
+        {
+          id: 10,
+          uuid: "3c81b7a5-4629-4de0-91f8-06ad25c93b7e",
+          title: "IoT",
+          description:
+            "Connected sensors and devices for real-time data collection and infrastructure monitoring.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "f1d8a35c-0b76-4e29-9a41-63c07e2b5d84",
-        label: "Zero-Trust Access & Identity Control",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "e70a15c3-8d42-4b96-a3f1-2c85d09b647a",
+        title: "Plan Smarter",
+        focus: "BIM & Digital Twin",
+        description:
+          "Multi-layered parametric modeling and simulated asset behavior to preempt field discrepancies before ground break.",
       },
       {
-        uuid: "4a92c7e0-5d13-48b6-b70f-91e4a836c25d",
-        label: "24/7 Threat Monitoring & Detection",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "2b95f7d0-4c63-41ea-9b28-73d015af6c94",
+        title: "Monitor Smarter",
+        focus: "IoT & Facility Monitoring",
+        description:
+          "Distributed environmental sensors, load diagnostics, and telemetry continuously streamed to edge nodes.",
       },
       {
-        uuid: "8c05f6b3-7e41-4290-85da-2f6b9c0d374e",
-        label: "Endpoint & Cloud Workload Protection",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "b63e0947-1c58-4a3d-92f0-7d81e5a4c063",
-        label: "Automated Incident Containment & Response",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "af38c261-90b7-4e15-82d4-5c70b1f9a638",
+        title: "Build Smarter",
+        focus: "AI & Smart Infrastructure",
+        description:
+          "Predictive sequencing, automated resource scheduling, and real-time risk mitigation algorithms on-site.",
       },
     ],
-    header: {
-      id: 1,
-      uuid: "0b4e7c25-9f18-4a63-8d07-2e51b93c4a70",
-      title: "Network Security Platform",
-      description:
-        "Defending distributed enterprise networks through layered detection, zero-trust access, and continuous monitoring built for organizations that cannot afford an open door.",
-      image: "/industry/netword_security.png",
-      items: [
-        { title: "24/7", description: "Monitoring" },
-        { title: "99.9%", description: "Threat Coverage" },
-        { title: "85%", description: "Faster Response" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a multinational financial group, operated a perimeter security model that no longer matched how their people actually worked. Remote staff, third-party contractors, and cloud workloads had all grown well beyond the boundary the original architecture was designed to defend.\n\nWe replaced that boundary with a zero-trust architecture in which every request is authenticated and authorized on its own merits. Detection, response, and access control now run from a single console, and the security team sees the whole estate rather than one segment of it.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Financial Services",
-        Solution: "Cybersecurity",
-        Deployment: "Hybrid (On-Prem + Cloud)",
-        Platform: "Web & Desktop",
-        Duration: "8 Months",
-        "Tech Stack": "Go, Python, Kubernetes, Elastic",
-      },
-    },
-    experience: {
-      title: "Defense in Depth",
-      description:
-        "Security controls layered so that no single failure exposes the network, with visibility at every tier.",
-      image: "/industry/netword_security.png",
-      items: [
-        {
-          title: "Zero-Trust Access",
-          description:
-            "Every request authenticated and authorized regardless of where it originates.",
-        },
-        {
-          title: "Continuous Threat Detection",
-          description:
-            "Behavioural analytics that surface intrusions the signature rules miss.",
-        },
-        {
-          title: "Automated Containment",
-          description:
-            "Compromised endpoints isolated from the network within seconds of detection.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Tech Avenue didn't just build us a portal; they transformed our entire educational philosophy into a digital experience. The AI recommendations alone have increased student engagement by nearly 50%.",
-      name: "Amina Hassan",
-      role: "Chief Information Security Officer, Meridian Financial",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 2,
-    uuid: "5b21e8d4-9c73-4a1f-b60e-27d4f9a31c85",
-    title: "Business Consulting Services",
-    image: "/icons/solutions/business-consulting-services.svg",
-    description: "Strategic advisory to align operations with growth targets.",
-    highlights: [
+    uuid: "4a90d3e7-2c68-4b51-8f04-71d6b95ac238",
+    title: "Education",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Learning",
+      description:
+        "Technology-driven solutions that help organizations deliver, manage, personalize, and improve learning through digital platforms, AI, and analytics.",
+    },
+    image: "/verticles/verticle/education.png",
+    icon: "/icons/solutions/education.svg",
+    solutions: {
+      heading: "Learning & Development Solutions",
+      description:
+        "Our education solutions combine digital learning, intelligent career guidance, connected platforms, and real-time assessment to improve engagement, outcomes, and skill development.",
+      items: [
+        {
+          id: 1,
+          uuid: "e5a19c74-30d8-4b62-9f17-6c04a83be215",
+          title: "Learn Anywhere",
+          description:
+            "Flexible learning environments supporting blended, self-paced, and gamified course delivery across learners and organizations.",
+        },
+        {
+          id: 2,
+          uuid: "7b26d0f3-84ca-4e19-b350-1f9d7c60a48e",
+          title: "Develop Talent",
+          description:
+            "Intelligent talent solutions for identifying skills, supporting career development, and connecting people with relevant opportunities.",
+        },
+        {
+          id: 3,
+          uuid: "c30f8b57-6291-4da4-8e6b-95a02f14d763",
+          title: "Guide Careers",
+          description:
+            "AI-powered career advisory for candidate screening, resume shortlisting, talent matching, and personalized career pathways.",
+        },
+        {
+          id: 4,
+          uuid: "96d5e128-4b70-42fc-a917-3d80c65ef421",
+          title: "Manage Learning",
+          description:
+            "Learning management platforms for structured courses, learner engagement, progress tracking, and centralized educational delivery.",
+        },
+        {
+          id: 5,
+          uuid: "2f4a7c90-d135-48eb-b6c2-07e91d5a83b6",
+          title: "Measure Progress",
+          description:
+            "Assessment and evaluation solutions for behavioural testing, performance measurement, and data-driven learning insights.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "27b4d9f1-3a60-4c85-b19e-5f70c286a4d3",
-        label: "Technology Assessments & Estate Reviews",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "8d0b3e46-1a97-4c25-93f8-b25e6740ca19",
+        title: "Learn Smarter",
+        focus: "Digital Learning",
+        description:
+          "Personalized learning environments with structured courses, self-paced content, gamification, and learner progress tracking.",
       },
       {
-        uuid: "9e10c5a8-72b6-4f03-91d4-8a35e0c7b26f",
-        label: "Enterprise Architecture Design",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "45c9f271-6e03-4a8d-81b6-9f37d0e52c84",
+        title: "Grow Smarter",
+        focus: "Career & Talent",
+        description:
+          "AI-powered candidate screening, resume matching, talent identification, and data-driven career development across organizations.",
       },
       {
-        uuid: "6d3f81a5-4e07-42b9-8c16-0b95e7d3f2c8",
-        label: "Transformation Roadmaps & Sequencing",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "c58a2607-9b34-4df1-a075-3e62b8c1904f",
-        label: "Operating Model & Change Enablement",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "b17e46d3-92c5-40fa-a72e-58d0361bf9e7",
+        title: "Measure Smarter",
+        focus: "Assessment & Insights",
+        description:
+          "Behavioural assessments, performance analytics, and real-time learning insights designed to improve outcomes and identify development opportunities.",
       },
     ],
-    header: {
-      id: 2,
-      uuid: "f83a0d67-4b12-49e5-a370-6c94e2b1d508",
-      title: "Business Consulting Services",
-      description:
-        "Turning strategy into an operating model that holds, through technology assessments, enterprise architecture, and transformation roadmaps organizations can actually execute.",
-      image: "/industry/consulting_services.png",
-      items: [
-        { title: "200+", description: "Engagements" },
-        { title: "94%", description: "Client Retention" },
-        { title: "30%", description: "Cost Reduction" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a regional conglomerate spanning five business units, had ambitious growth targets and no shared view of the technology needed to reach them. Each unit was buying its own systems, and the duplication was expensive and invisible.\n\nWe ran a full estate assessment, built a common enterprise architecture, and produced a three-year roadmap sequenced by business value rather than by vendor renewal date. The group now makes technology decisions once, centrally, against a plan everyone has signed.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Diversified Holdings",
-        Solution: "Technology Consulting",
-        Deployment: "Advisory Engagement",
-        Platform: "Enterprise-Wide",
-        Duration: "5 Months",
-        "Tech Stack": "ServiceNow, Power BI, Jira, Confluence",
-      },
-    },
-    experience: {
-      title: "Advisory That Sticks",
-      description:
-        "Recommendations delivered with the sequencing, ownership, and measurement needed to survive contact with the business.",
-      image: "/industry/consulting_services.png",
-      items: [
-        {
-          title: "Evidence-Based Assessment",
-          description:
-            "Current-state findings grounded in system data, not stakeholder impressions.",
-        },
-        {
-          title: "Sequenced Roadmaps",
-          description:
-            "Initiatives ordered by dependency and value so early wins fund later phases.",
-        },
-        {
-          title: "Embedded Handover",
-          description:
-            "Internal teams trained to own the plan before the engagement closes.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Most consultants hand you a deck and leave. Tech Avenue handed us a roadmap our own teams could run, and stayed until they were running it.",
-      name: "Daniel Okafor",
-      role: "Group Chief Operating Officer, Harbour Industries",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 3,
-    uuid: "e94d0a76-1f52-4b83-8c25-6a710e4bd93f",
-    title: "Smart Infrastructure Solutions",
-    image: "/icons/solutions/smart-infrastructure-solutions.svg",
-    description: "Intelligent building and campus systems built to scale.",
-    highlights: [
+    uuid: "e2158fb4-6d07-49c3-a5b8-3c94e70d1a65",
+    title: "Telecom & Intelligence",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Networks",
+      description:
+        "Technology-driven solutions that help organizations connect, monitor, analyze, and manage smarter networks through 5G, AI, IoT, and edge computing.",
+    },
+    image: "/verticles/verticle/telecom.png",
+    icon: "/icons/solutions/telecom-intelligence.svg",
+    solutions: {
+      heading: "Telecom Solutions",
+      description:
+        "Our telecom solutions combine smart networks, intelligent connectivity, predictive analytics, and real-time monitoring to improve performance, security, and service delivery.",
+      items: [
+        {
+          id: 1,
+          uuid: "3a72e9c1-5d84-4f60-b13e-c705d928f461",
+          title: "Smart Networks",
+          description:
+            "Advanced 5G and network infrastructure solutions designed for scalable, connected, and efficient communication systems.",
+        },
+        {
+          id: 2,
+          uuid: "d84f0b53-27ae-4691-8c05-3b16e7d40a92",
+          title: "Network Intelligence",
+          description:
+            "AI-powered intelligence solutions for predictive analytics, network optimization, and data-driven operational decisions.",
+        },
+        {
+          id: 3,
+          uuid: "60e1c9a7-4b38-42d5-97f1-8e26b0453cd7",
+          title: "Connected Operations",
+          description:
+            "IoT connectivity and edge computing solutions supporting distributed systems, real-time communication, and intelligent services.",
+        },
+        {
+          id: 4,
+          uuid: "f592d0a8-6c17-4e39-b048-25a7913ce6b4",
+          title: "Network Performance",
+          description:
+            "Real-time monitoring solutions that provide visibility into network health, performance, capacity, and service availability.",
+        },
+        {
+          id: 5,
+          uuid: "17b64e0d-83f2-4a56-9d71-c40e582ba793",
+          title: "Service Assurance",
+          description:
+            "Integrated OSS/BSS and service assurance solutions for secure connectivity and reliable network operations.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "3f7c0b92-8d45-41e6-a2b7-59e04c8d1736",
-        label: "Unified Building Management Console",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "9c05a73f-2b61-48de-84a9-6e13d70f5c28",
+        title: "Connect Smarter",
+        focus: "5G & Smart Networks",
+        description:
+          "Advanced network infrastructure with scalable connectivity, intelligent communication, and next-generation technologies designed for connected operations.",
       },
       {
-        uuid: "a04e6d18-2f93-45c7-b830-7c15e9a26d40",
-        label: "Digital Twin Modelling & Simulation",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "4e83b1d6-70fa-4295-a3c7-159e6b04d872",
+        title: "Monitor Smarter",
+        focus: "Network Intelligence",
+        description:
+          "AI-powered predictive analytics, performance monitoring, and network insights designed to identify issues and optimize network operations.",
       },
       {
-        uuid: "5b81f4c7-6a20-49d3-8e15-0f37b6c24e9a",
-        label: "IoT Sensor Networks & Energy Monitoring",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "e2960c5b-4d78-4103-97af-6b48d105e372",
-        label: "Predictive Maintenance & Asset Lifecycle",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "b2609f4a-c583-471e-90d6-8a4713ef6205",
+        title: "Operate Smarter",
+        focus: "Service Assurance",
+        description:
+          "Secure connectivity, OSS/BSS integration, and real-time service monitoring designed to maintain reliable network performance.",
       },
     ],
-    header: {
-      id: 3,
-      uuid: "c1750fe8-2a94-4b36-90d7-4e83b6205c1a",
-      title: "Smart Infrastructure Platform",
-      description:
-        "Connecting building systems, digital twins, and asset records into one operating picture, so campuses are run from live conditions rather than last month's report.",
-      image: "/verticles/intelligent_infrastructure.png",
-      items: [
-        { title: "40+", description: "Connected Sites" },
-        { title: "35%", description: "Energy Saved" },
-        { title: "60%", description: "Fewer Callouts" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a property group operating a mixed portfolio of offices and retail sites, had building management systems from four different eras. Each console reported only to itself, and facilities staff were physically walking sites to establish what was running.\n\nWe integrated every plant and control system behind a common data layer, added a digital twin of each property, and built the dashboards that let one team operate the whole portfolio. Faults are now detected centrally and dispatched with the asset history already attached.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Real Estate",
-        Solution: "Smart Infrastructure",
-        Deployment: "Cloud (AWS)",
-        Platform: "Web & Mobile",
-        Duration: "10 Months",
-        "Tech Stack": "React, .NET, InfluxDB, IoT Hub",
-      },
-    },
-    experience: {
-      title: "Buildings That Report Themselves",
-      description:
-        "Operational data surfaced where decisions are made, with the context needed to act on it immediately.",
-      image: "/verticles/intelligent_infrastructure.png",
-      items: [
-        {
-          title: "Unified Building Console",
-          description:
-            "Every plant and control system monitored from a single portfolio view.",
-        },
-        {
-          title: "Digital Twin Modelling",
-          description:
-            "Live models that let teams test changes before touching the real asset.",
-        },
-        {
-          title: "Predictive Maintenance",
-          description:
-            "Interventions scheduled from equipment condition rather than the calendar.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "We used to send engineers across the city to find out whether a chiller was running. Now we know before they leave the office, and usually before it fails.",
-      name: "Claire Devereux",
-      role: "Director of Facilities, Northgate Properties",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 4,
-    uuid: "2c68b3f0-7d41-49ea-95b7-08f3c6d21a54",
-    title: "Learning Management System",
-    image: "/icons/solutions/learning-management-system.svg",
-    description: "Deliver, track, and measure training across your workforce.",
-    highlights: [
+    uuid: "9c63a084-1e5b-4f27-b9d0-8a24f61c73e5",
+    title: "Human Capital Management",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Workforce",
+      description:
+        "Technology-driven solutions that help organizations manage, develop, monitor, and optimize their workforce through digital platforms, AI, and data.",
+    },
+    image: "/verticles/verticle/human capital managment.png",
+    icon: "/icons/solutions/human-capital-management.svg",
+    solutions: {
+      heading: "Human Capital Solutions",
+      description:
+        "Our workforce solutions combine performance management, intelligent recruitment, connected HR platforms, and real-time analytics to improve productivity, engagement, and talent development.",
+      items: [
+        {
+          id: 1,
+          uuid: "5d19b8e2-7f34-4c06-a951-2e70c38df164",
+          title: "Performance Management",
+          description:
+            "Digital performance solutions for setting goals, tracking progress, evaluating employees, and improving workforce performance.",
+        },
+        {
+          id: 2,
+          uuid: "a06f37c5-1d92-4b8e-8340-7c15b9e026fa",
+          title: "Intelligent Recruitment",
+          description:
+            "AI-powered hiring solutions for candidate screening, recruitment workflows, talent matching, and efficient workforce planning.",
+        },
+        {
+          id: 3,
+          uuid: "38e5c704-9b16-4fd3-a2e8-06947c15b3d0",
+          title: "Workforce Management",
+          description:
+            "Connected systems for managing attendance, leave, employee activities, assets, and everyday workforce operations.",
+        },
+        {
+          id: 4,
+          uuid: "c714a952-0e63-4d87-b1f5-4930e678ac25",
+          title: "Learning & Development",
+          description:
+            "Integrated learning platforms for delivering courses, developing skills, tracking progress, and supporting employee growth.",
+        },
+        {
+          id: 5,
+          uuid: "6bf203d9-58c4-41a7-93e0-b158d24f70c6",
+          title: "Talent Management",
+          description:
+            "Data-driven talent solutions for identifying capabilities, planning career progression, and developing high-performing teams.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "7c3b95e0-1a64-4d28-b0f9-46e28c517b3d",
-        label: "Online Learning & Course Management",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "e390c716-4a58-42bd-8f03-71d6e04a9c53",
+        title: "Manage Smarter",
+        focus: "Workforce Operations",
+        description:
+          "Connected platforms for attendance, leave, assets, and employee operations, providing centralized visibility across the workforce.",
       },
       {
-        uuid: "1e58d0a4-9c37-4b61-85e2-30f7b9c6d148",
-        label: "Progress Tracking & Certifications",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "7154db08-3e96-4c2a-b7d5-08f31a6e59b4",
+        title: "Hire Smarter",
+        focus: "Recruitment & Talent",
+        description:
+          "AI-powered recruitment, candidate matching, talent identification, and data-driven workforce planning designed to build stronger teams.",
       },
       {
-        uuid: "b90427fc-5e18-4a73-96d0-2c81f4e7053b",
-        label: "Virtual Classrooms & Mobile Learning",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "48f1c6a2-0d95-4e37-81b6-5a70e3d92c48",
-        label: "AI-Powered Skills Assessment & Analytics",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "0a68f5c3-b271-49e6-84d1-3e9057c6ba28",
+        title: "Grow Smarter",
+        focus: "Learning & Performance",
+        description:
+          "Learning platforms, performance analytics, and career development tools designed to improve employee capabilities and organizational outcomes.",
       },
     ],
-    header: {
-      id: 4,
-      uuid: "9d4b1a03-6e57-42c8-b019-7f36a5c94e2d",
-      title: "Learning Management System (LMS)",
-      description:
-        "Empowering the next generation of digital education through a scalable, AI-driven platform designed for enterprise workforce development and global academic excellence.",
-      image: "/industry/education.png",
-      items: [
-        { title: "100k+", description: "Learners" },
-        { title: "99.9%", description: "Availability" },
-        { title: "70%", description: "Admin Reduction" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a leading multinational education provider, faced significant hurdles with their legacy learning infrastructure. We were tasked with building a modern, cloud-native LMS that could scale globally while providing a personalized experience through artificial intelligence.\n\nThe objective was to replace fragmented systems with a unified ecosystem that automates administrative tasks, provides real-time analytics for stakeholders, and delivers a seamless learning journey across all devices.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "EdTech",
-        Solution: "Software Development",
-        Deployment: "Cloud (Azure)",
-        Platform: "Web & Mobile",
-        Duration: "6 Months",
-        "Tech Stack": "React, Node.js, PostgreSQL, AI/ML",
-      },
-    },
-    experience: {
-      title: "Human-Centric Experience",
-      description:
-        "Designing intuitive experiences that prioritize clarity, accessibility, usability, and user engagement.",
-      image: "/industry/education.png",
-      items: [
-        {
-          title: "Simplified Navigation",
-          description:
-            "Reduced cognitive load by limiting top-level menu items and using a contextual sidebar.",
-        },
-        {
-          title: "WCAG 2.1 Compliance",
-          description:
-            "Ensuring learning is accessible to all students, including those with visual or motor impairments.",
-        },
-        {
-          title: "Personalized Journeys",
-          description:
-            "Adaptive interfaces that change based on user roles—admin, instructor, or learner.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Tech Avenue didn't just build us a portal; they transformed our entire educational philosophy into a digital experience. The AI recommendations alone have increased student engagement by nearly 50%.",
-      name: "Dr. Robert Chen",
-      role: "Chief Learning Officer, Global EduCorp",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 5,
-    uuid: "84f1d5c9-3a07-4e62-b18d-5c92074fe3b6",
-    title: "Smart Agriculture Platform",
-    image: "/icons/solutions/smart-agriculture-platform.svg",
-    description: "Sensor-driven insight for higher yield and lower waste.",
-    highlights: [
+    uuid: "17d4be59-8a32-4c60-95f7-2b0e8d36c491",
+    title: "E-Government & Public Systems",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Public Services",
+      description:
+        "Technology-driven solutions that help governments deliver, manage, monitor, and improve public services through digital platforms, automation, and secure systems.",
+    },
+    image: "/verticles/verticle/e government.png",
+    icon: "/icons/solutions/e-government-public-systems.svg",
+    solutions: {
+      heading: "Government Solutions",
+      description:
+        "Our government solutions combine digital services, intelligent workflows, citizen platforms, and real-time monitoring to improve accessibility, transparency, efficiency, and service delivery.",
+      items: [
+        {
+          id: 1,
+          uuid: "b58e0721-96d4-43ca-8e17-5f20c39b7d64",
+          title: "Citizen Services",
+          description:
+            "Digital self-service platforms for online requests, applications, registrations, and convenient access to public services.",
+        },
+        {
+          id: 2,
+          uuid: "2c917f4e-05b3-4869-a1d7-e6408b537c92",
+          title: "Case Management",
+          description:
+            "Connected systems for registering complaints, tracking cases, managing workflows, and monitoring resolution progress.",
+        },
+        {
+          id: 3,
+          uuid: "84d3e6a0-7c15-4b92-9f68-31e07d5ca4b6",
+          title: "Digital Applications",
+          description:
+            "Online platforms that simplify applications, requests, submissions, and service interactions for citizens and organizations.",
+        },
+        {
+          id: 4,
+          uuid: "f0629b5d-4e87-41c3-b05a-9d7134e6082f",
+          title: "Service Tracking",
+          description:
+            "Real-time tracking solutions providing visibility into requests, applications, cases, and government service progress.",
+        },
+        {
+          id: 5,
+          uuid: "3e75c194-a860-42fd-97b2-6c05e831da47",
+          title: "Secure Government",
+          description:
+            "Integrated solutions for e-payments, asset management, track and trace, and cybersecurity across public systems.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "0a67e3d5-8b14-42f9-a3c7-61d95b027e4a",
-        label: "Field Sensor Networks & Offline Capture",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "c8410de6-32b7-4f95-8a03-71e5d69cb420",
+        title: "Serve Smarter",
+        focus: "Citizen Services",
+        description:
+          "Digital self-service platforms with online requests, applications, service access, and real-time tracking designed to improve citizen experiences.",
       },
       {
-        uuid: "d5c81f43-2079-4b6e-95a0-8e13c7f4062b",
-        label: "Plot-Level Soil & Moisture Insight",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "961bf5a3-0d47-4e28-b6c9-3812e70da5f4",
+        title: "Process Smarter",
+        focus: "Case & Workflow Management",
+        description:
+          "Automated workflows, complaint registration, case tracking, and resolution monitoring designed to improve government operational efficiency.",
       },
       {
-        uuid: "62e094a7-b358-41cd-807f-4a29d6b13e50",
-        label: "Irrigation & Input Optimization",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "9f4a72b6-0e51-4837-b6d2-73c08e5a1f96",
-        label: "Farm-to-Buyer Traceability",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "57e2039c-8b64-41da-a3f7-0e96d15b8c37",
+        title: "Govern Smarter",
+        focus: "Secure Public Systems",
+        description:
+          "E-payments, asset management, track and trace, and cybersecurity solutions designed to support secure and reliable public services.",
       },
     ],
-    header: {
-      id: 5,
-      uuid: "7e206c48-b3d9-4157-8a62-19f4e0b73c85",
-      title: "Smart Agriculture Platform",
-      description:
-        "Bringing field sensors, machinery, and supply chain records into one system so growers act on current conditions and can prove exactly how their produce was grown.",
-      image: "/verticles/smart_africulture.png",
-      items: [
-        { title: "25%", description: "Yield Increase" },
-        { title: "40%", description: "Water Saved" },
-        { title: "12k", description: "Hectares Managed" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, an agricultural cooperative representing several hundred growers, was making irrigation and input decisions from weekly paper reports. By the time the data reached anyone who could act on it, the growing conditions it described had already changed.\n\nWe deployed a field sensor network with offline-first collection, so readings are captured even where there is no mobile coverage and synced when it returns. Growers now receive irrigation and fertilizer guidance based on measured need, and every batch is traceable back to the plot and season it came from.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Agriculture",
-        Solution: "IoT & Analytics",
-        Deployment: "Cloud (AWS) + Edge",
-        Platform: "Mobile & Web",
-        Duration: "7 Months",
-        "Tech Stack": "React Native, Python, TimescaleDB, LoRaWAN",
-      },
-    },
-    experience: {
-      title: "Built for the Field",
-      description:
-        "Tools designed for the conditions farms actually work in, not the conditions software is usually demonstrated in.",
-      image: "/verticles/smart_africulture.png",
-      items: [
-        {
-          title: "Offline-First Capture",
-          description:
-            "Readings recorded without coverage and synced automatically when it returns.",
-        },
-        {
-          title: "Plot-Level Insight",
-          description:
-            "Soil, moisture, and crop data resolved to individual plots rather than whole farms.",
-        },
-        {
-          title: "Farm-to-Buyer Traceability",
-          description:
-            "Provenance carried through the supply chain without additional paperwork.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Our growers were sceptical of anything that needed a signal. Tech Avenue built something that works in the field first and syncs later, and that is why they actually use it.",
-      name: "Mateo Alvarez",
-      role: "Operations Director, Valle Verde Cooperative",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 6,
-    uuid: "d306a2e8-6b95-4137-a4f0-91e58c7d206b",
-    title: "AI & Software Solutions",
-    image: "/icons/solutions/ai-software-solutions.svg",
-    description: "Custom platforms and models tailored to your workflows.",
-    highlights: [
+    uuid: "42302613-796e-4195-969b-203985ae66e4",
+    title: "Energy & Climate",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Resources",
+      description:
+        "Technology-driven solutions that help organizations monitor, manage, optimize, and sustain energy and natural resources through digital platforms, IoT, and analytics.",
+    },
+    image: "/verticles/verticle/energy & climate.png",
+    icon: "/icons/solutions/energy-climate.svg",
+    solutions: {
+      heading: "Energy & Climate Solutions",
+      description:
+        "Our energy solutions combine smart utilities, climate intelligence, connected monitoring, and real-time analytics to improve efficiency, sustainability, resource management, and environmental performance.",
+      items: [
+        {
+          id: 1,
+          uuid: "d9ec2311-d3fc-4b3b-9c0f-a5c5fc14cb0b",
+          title: "Smart Utilities",
+          description:
+            "Connected utility solutions for monitoring consumption, managing resources, and improving operational efficiency across energy systems.",
+        },
+        {
+          id: 2,
+          uuid: "6ace276a-c5b2-4055-ac4e-fa629e722c83",
+          title: "Climate Intelligence",
+          description:
+            "Data-driven climate and weather solutions for forecasting conditions, identifying trends, and supporting informed operational decisions.",
+        },
+        {
+          id: 3,
+          uuid: "8b68b995-ed83-4c13-8a16-4a4af3be00c3",
+          title: "Resource Optimization",
+          description:
+            "Intelligent solutions for optimizing energy and resource consumption while reducing waste, operational costs, and environmental impact.",
+        },
+        {
+          id: 4,
+          uuid: "0c42407a-67f8-4ac8-8183-eb2661dae33d",
+          title: "Energy Monitoring",
+          description:
+            "Real-time monitoring solutions providing visibility into energy consumption, operational performance, costs, and resource usage.",
+        },
+        {
+          id: 5,
+          uuid: "511e83e2-edf2-43f5-8663-ec23f5a6726a",
+          title: "Sustainability Reporting",
+          description:
+            "Data-driven reporting solutions for tracking consumption, emissions, costs, and sustainability performance across operations.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "3d90b5e7-4c26-4f18-a97b-05e14c8d267a",
-        label: "Generative AI & Intelligent Assistants",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "54d2ae6f-550a-4941-aabf-2033c85a34bc",
+        title: "Monitor Smarter",
+        focus: "Energy & Utilities",
+        description:
+          "Connected monitoring systems provide real-time visibility into energy consumption, utility performance, resource usage, and operational conditions.",
       },
       {
-        uuid: "c47e81a0-9b52-4d36-80f1-6a93e5c74b28",
-        label: "Predictive Models & Computer Vision",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "fb9c6985-58a4-4419-a34c-fc2f05904f8a",
+        title: "Predict Smarter",
+        focus: "Climate Intelligence",
+        description:
+          "IoT monitoring, climate data, and forecasting models provide actionable insights into weather conditions, environmental trends, and potential risks.",
       },
       {
-        uuid: "80b26f34-1e07-49a5-b6c8-2d54a9e03f61",
-        label: "Human-in-the-Loop Review Workflows",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "e51c3a89-7d40-42b6-95e3-1f68b0c4a75d",
-        label: "Continuous Evaluation & Explainability",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "a762cad3-409e-4ac1-bd82-f55280f92b08",
+        title: "Optimize Smarter",
+        focus: "Sustainable Resources",
+        description:
+          "Intelligent analytics optimize energy and resource consumption while providing reporting on costs, efficiency, emissions, and sustainability outcomes.",
       },
     ],
-    header: {
-      id: 6,
-      uuid: "b52ce794-08a1-463f-9d84-3a67e1c05b29",
-      title: "AI & Software Solutions",
-      description:
-        "Designing and shipping intelligent systems that automate the work worth automating, from generative assistants and predictive models to the platforms that keep them running in production.",
-      image: "/verticles/ai_and_machine_learning.png",
-      items: [
-        { title: "150+", description: "Models Deployed" },
-        { title: "60%", description: "Process Automated" },
-        { title: "4x", description: "Faster Delivery" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a logistics operator handling millions of shipments a year, had a document-heavy exceptions process that consumed an entire back-office team. Every delayed or mismatched consignment was resolved by a human reading scanned paperwork.\n\nWe built a document understanding pipeline that classifies and extracts the relevant fields, routes clear cases automatically, and escalates only genuine ambiguity to a person. The back-office team now handles the exceptions that need judgement and nothing else.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Logistics",
-        Solution: "Artificial Intelligence",
-        Deployment: "Cloud (GCP)",
-        Platform: "Web & API",
-        Duration: "9 Months",
-        "Tech Stack": "Python, PyTorch, FastAPI, BigQuery",
-      },
-    },
-    experience: {
-      title: "Intelligence in Production",
-      description:
-        "Models built to be operated, monitored, and corrected, not just demonstrated once and handed over.",
-      image: "/verticles/ai_and_machine_learning.png",
-      items: [
-        {
-          title: "Human-in-the-Loop Review",
-          description:
-            "Low-confidence predictions routed to people instead of guessed at.",
-        },
-        {
-          title: "Continuous Evaluation",
-          description:
-            "Model accuracy tracked against live outcomes and retrained on drift.",
-        },
-        {
-          title: "Explainable Decisions",
-          description:
-            "Every automated outcome traceable to the evidence that produced it.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "They were the first partner who talked to us about what happens when the model is wrong. That is the reason it is still running two years later.",
-      name: "Priya Raghunathan",
-      role: "VP of Operations, Continental Freight",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 7,
-    uuid: "71bc4f83-0e26-45d9-8a73-b4c62f019d75",
-    title: "E-Government Solutions",
-    image: "/icons/solutions/e-government-solutions.svg",
-    description: "Digital citizen services that are secure and accessible.",
-    highlights: [
+    uuid: "a1a38a97-c27b-4308-b521-bfeb3aee1417",
+    title: "Information Technology",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Technology",
+      description:
+        "Technology-driven solutions that help organizations develop, integrate, automate, and optimize digital systems through AI, data, cloud, and modern software technologies.",
+    },
+    image: "/verticles/verticle/information technology.png",
+    icon: "/icons/solutions/information-technology.svg",
+    solutions: {
+      heading: "Technology Solutions",
+      description:
+        "Our technology solutions combine artificial intelligence, advanced analytics, system integration, DevOps, and automation to improve efficiency, scalability, performance, and digital operations.",
+      items: [
+        {
+          id: 1,
+          uuid: "6f6f0ff9-a7d4-4f35-9125-bca85906bb5b",
+          title: "Artificial Intelligence",
+          description:
+            "Intelligent AI solutions for automation, decision-making, predictive insights, and transforming complex business processes.",
+        },
+        {
+          id: 2,
+          uuid: "01770fe4-ee01-4b83-813e-9081b5bab2bb",
+          title: "Machine Learning",
+          description:
+            "Custom machine learning models designed to analyze data, identify patterns, generate predictions, and support intelligent decisions.",
+        },
+        {
+          id: 3,
+          uuid: "0f730b33-6d68-49cc-a038-31706d0b6e1d",
+          title: "Data Intelligence",
+          description:
+            "Advanced analytics solutions that transform organizational data into actionable insights for better planning and operational decisions.",
+        },
+        {
+          id: 4,
+          uuid: "5ccc04d2-9571-4e69-9805-b0d8f8965253",
+          title: "System Integration",
+          description:
+            "Integrated technology solutions connecting applications, platforms, systems, and data across complex digital environments.",
+        },
+        {
+          id: 5,
+          uuid: "6ad6b923-f906-412b-86b3-496630f167a5",
+          title: "Digital Operations",
+          description:
+            "DevOps, automation, and virtualization solutions designed to improve software delivery, scalability, infrastructure, and operational efficiency.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "16f8c073-5a29-4e84-b1d6-70a35e9c2b41",
-        label: "Single Verified Citizen Identity",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "114a5ae1-01e7-464d-8e58-7c56e18e210e",
+        title: "Build Smarter",
+        focus: "AI & Machine Learning",
+        description:
+          "Custom AI and machine learning models trained on organizational data to automate processes, generate insights, and support intelligent decision-making.",
       },
       {
-        uuid: "72d05b9e-3c61-478f-a0b4-59e17c8d3620",
-        label: "Cross-Department Case Management",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "0fa3208f-c5be-450c-97e5-4105d2a555ae",
+        title: "Connect Smarter",
+        focus: "System Integration",
+        description:
+          "Integrated digital systems connect applications, platforms, and data while enabling scalable and efficient technology operations.",
       },
       {
-        uuid: "af31e6c8-0d75-4923-86b1-4c60f9a25e73",
-        label: "WCAG-Compliant Accessible Services",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "5c907e21-8b46-4d0a-93f7-2e68b1c05a94",
-        label: "Complete Audit Trail & Oversight Reporting",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "8392197a-d6e2-44d8-9625-e2ce15471c00",
+        title: "Operate Smarter",
+        focus: "DevOps & Automation",
+        description:
+          "Modern DevOps, automation, and virtualization technologies streamline software delivery, infrastructure management, scalability, and operational performance.",
       },
     ],
-    header: {
-      id: 7,
-      uuid: "3af8b160-5c27-4e93-b70a-8d21f4c6903e",
-      title: "E-Government Solutions",
-      description:
-        "Delivering citizen services that are secure, accessible, and auditable, from single-identity portals through to the case management systems working behind them.",
-      image: "/verticles/e_government_services.png",
-      items: [
-        { title: "2M+", description: "Citizens Served" },
-        { title: "AA", description: "WCAG Rating" },
-        { title: "75%", description: "Less Paperwork" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a national ministry responsible for several public-facing services, required citizens to register separately with each department. The same person existed as four unconnected records, and each service had its own queue, form, and evidence requirements.\n\nWe delivered a single verified identity that carries across departments, along with a shared case management layer behind it. Citizens complete one registration, departments exchange records under governed rules, and every access is logged for oversight reporting.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Public Sector",
-        Solution: "Digital Government",
-        Deployment: "Sovereign Cloud",
-        Platform: "Web & Mobile",
-        Duration: "14 Months",
-        "Tech Stack": "Angular, Java, PostgreSQL, Keycloak",
-      },
-    },
-    experience: {
-      title: "Services for Every Citizen",
-      description:
-        "Public services designed to work for the whole population, on the devices and connections people actually have.",
-      image: "/verticles/e_government_services.png",
-      items: [
-        {
-          title: "One Verified Identity",
-          description:
-            "A single citizen record recognised across every participating department.",
-        },
-        {
-          title: "Accessibility by Default",
-          description:
-            "Every release tested against assistive technology before it ships.",
-        },
-        {
-          title: "Complete Audit Trail",
-          description:
-            "Each transaction and record access attributed and retained for oversight.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "The measure of this project is that citizens stopped calling us to ask which department they needed. The platform simply knows.",
-      name: "Hana Al-Rashid",
-      role: "Director of Digital Services, Ministry of Public Administration",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 8,
-    uuid: "3e57c810-4d9b-42f6-b085-7a13e9c46082",
-    title: "Telecom Intelligence Solutions",
-    image: "/icons/solutions/telecom-intelligence-solutions.svg",
-    description: "Network analytics that turn traffic data into decisions.",
-    highlights: [
+    uuid: "6915aabe-b101-476e-8f29-917d3d889ad8",
+    title: "Cyber Security",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Security",
+      description:
+        "Technology-driven solutions that help organizations protect, monitor, detect, and manage digital environments through advanced security technologies, intelligence, and monitoring.",
+    },
+    image: "/verticles/verticle/cyber security.png",
+    icon: "/icons/solutions/cyber-security.svg",
+    solutions: {
+      heading: "Cyber Security Solutions",
+      description:
+        "Our cybersecurity solutions combine network protection, endpoint security, identity management, application security, and real-time monitoring to strengthen resilience, visibility, and organizational security.",
+      items: [
+        {
+          id: 1,
+          uuid: "5e05d99f-f130-4301-85eb-ccc66133916e",
+          title: "Network Security",
+          description:
+            "Advanced protection for networks and connected environments against threats, unauthorized access, vulnerabilities, and security risks.",
+        },
+        {
+          id: 2,
+          uuid: "8d95baf8-fb70-4322-be19-d0f279ac9ac2",
+          title: "Endpoint Security",
+          description:
+            "Security solutions that protect devices, systems, and endpoints from malware, unauthorized activity, and evolving cyber threats.",
+        },
+        {
+          id: 3,
+          uuid: "7761dbf2-5d31-4e2d-8574-89aa74190060",
+          title: "Identity Security",
+          description:
+            "Identity and access solutions designed to protect users, accounts, privileged access, and sensitive organizational resources.",
+        },
+        {
+          id: 4,
+          uuid: "7dc4a84f-9f35-46dc-a829-0e688d82988a",
+          title: "Application Security",
+          description:
+            "Security measures for applications and digital platforms that help identify vulnerabilities and protect critical systems.",
+        },
+        {
+          id: 5,
+          uuid: "4af4d89b-bee4-4ba1-b44b-8ec7d2feaeb2",
+          title: "Security Intelligence",
+          description:
+            "SIEM-based monitoring, cybersecurity training, and security intelligence designed to improve threat detection and organizational awareness.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "24b8e0f6-7c31-45a9-b073-8e51d6c92a30",
-        label: "Correlated Network Fault View",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "55704cdb-40ed-40c9-a10f-4f69368c78ba",
+        title: "Protect Smarter",
+        focus: "Network & Endpoint Security",
+        description:
+          "Integrated security technologies protect networks, devices, and connected systems while reducing exposure to evolving cyber threats.",
       },
       {
-        uuid: "9013a7cd-5e28-4b64-82f1-6c04b9e73d15",
-        label: "Subscriber Impact Mapping",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "728729b4-f604-4e1e-bed8-ca352f72d001",
+        title: "Monitor Smarter",
+        focus: "Security Intelligence",
+        description:
+          "SIEM-led monitoring and security analytics provide greater visibility into threats, suspicious activity, vulnerabilities, and potential security incidents.",
       },
       {
-        uuid: "6ea45c02-1b97-483d-95c6-0f72a8d31b64",
-        label: "Real-Time Service Quality Analytics",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "b7d31e58-4a06-42f7-8b09-3e64c1a05f27",
-        label: "Predictive Maintenance & Outage Prevention",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "8dbf3d9d-2af9-4594-ab25-749329796f79",
+        title: "Respond Smarter",
+        focus: "Identity & Application Security",
+        description:
+          "Identity protection, privileged access, application security, and cybersecurity awareness strengthen organizational resilience against digital threats.",
       },
     ],
-    header: {
-      id: 8,
-      uuid: "6c0d94a7-1b38-4e5e-8a26-05e73b1cf942",
-      title: "Telecom Intelligence Solutions",
-      description:
-        "Giving operators a live picture of network, service, and subscriber health, so faults are found and fixed before customers ever pick up the phone.",
-      image: "/verticles/telecom_intelligence.png",
-      items: [
-        { title: "50M+", description: "Events Per Hour" },
-        { title: "45%", description: "Fewer Outages" },
-        { title: "3min", description: "Fault Detection" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a national mobile operator, ran network assurance and customer care as separate disciplines with separate tooling. Faults were routinely reported by subscribers before they appeared in monitoring, which meant every incident began with a complaint.\n\nWe correlated telemetry from every node into a single fault view and connected it to the care platform. Degradation is now identified from the network itself, linked to the customers it affects, and dispatched with that context already attached.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Telecommunications",
-        Solution: "Network Analytics",
-        Deployment: "Hybrid (On-Prem + Cloud)",
-        Platform: "Web & API",
-        Duration: "11 Months",
-        "Tech Stack": "Kafka, Flink, ClickHouse, Grafana",
-      },
-    },
-    experience: {
-      title: "Assurance Before Complaint",
-      description:
-        "Network conditions surfaced early enough that the operator acts first and the subscriber never has to.",
-      image: "/verticles/telecom_intelligence.png",
-      items: [
-        {
-          title: "Correlated Fault View",
-          description:
-            "Telemetry from every node resolved into one incident rather than hundreds of alarms.",
-        },
-        {
-          title: "Subscriber Impact Mapping",
-          description:
-            "Each fault linked to the customers and services it actually degrades.",
-        },
-        {
-          title: "Predictive Maintenance",
-          description:
-            "Degradation scheduled out before it becomes a reportable outage.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Our care team used to learn about outages from Twitter. Now they get a briefing from the network before the first call lands.",
-      name: "Tomas Lindqvist",
-      role: "Head of Network Operations, Nordvik Telecom",
-      avatar: "/about_image.png",
-    },
   },
   {
     id: 9,
-    uuid: "c0942b6f-8e15-4370-91da-6b48f2071e93",
-    title: "Human Capital Management",
-    image: "/icons/solutions/human-capital-management.svg",
-    description: "Hiring, payroll, and performance in a single system.",
-    highlights: [
+    uuid: "e578004a-8018-41d9-b74e-4eca25f26b61",
+    title: "Agriculture",
+    solutionHeader: {
+      heading: "Building Smarter, Connected Farming",
+      description:
+        "Technology-driven solutions that help organizations monitor, manage, optimize, and improve agricultural operations through digital technologies, AI, IoT, and analytics.",
+    },
+    image: "/verticles/verticle/agriculture.png",
+    icon: "/icons/solutions/agriculture.svg",
+    solutions: {
+      heading: "Agriculture Solutions",
+      description:
+        "Our agriculture solutions combine precision farming, intelligent monitoring, connected sensors, and real-time analytics to improve productivity, resource efficiency, crop health, and farm management.",
+      items: [
+        {
+          id: 1,
+          uuid: "a1a2a581-872a-43d0-8021-e366bdc2599c",
+          title: "Precision Agriculture",
+          description:
+            "Smart solutions for optimizing crop applications, field operations, resources, and agricultural productivity through data-driven insights.",
+        },
+        {
+          id: 2,
+          uuid: "3c611f88-0244-40a0-b1b0-e1864a344979",
+          title: "Farm Intelligence",
+          description:
+            "AI-powered solutions for crop analysis, yield forecasting, pest detection, and informed agricultural decision-making.",
+        },
+        {
+          id: 3,
+          uuid: "711e3289-39f8-44f5-8eb5-01955eb85668",
+          title: "Crop Monitoring",
+          description:
+            "Drone, satellite, GIS, and IoT technologies for monitoring crop health, soil conditions, and field environments in real time.",
+        },
+        {
+          id: 4,
+          uuid: "f7d20d45-d868-45e2-a488-f9817dcf8894",
+          title: "Smart Irrigation",
+          description:
+            "Intelligent irrigation solutions for managing water usage, monitoring field conditions, and improving agricultural resource efficiency.",
+        },
+        {
+          id: 5,
+          uuid: "0164d7b6-d3b7-464d-a9ee-40984c23ff48",
+          title: "Sustainable Farming",
+          description:
+            "Data-driven solutions for optimizing fertilizers, seeds, water, and resources while supporting sustainable agricultural practices.",
+        },
+      ],
+    },
+    phases: [
       {
-        uuid: "0f52c81b-6d34-4907-a2e5-84b17c60d3f9",
-        label: "Unified Employee Record",
-        image: "/icons/check.svg",
+        id: 1,
+        uuid: "f70e465e-23ea-4904-9676-ea41c8b370fd",
+        title: "Grow Smarter",
+        focus: "Precision Agriculture",
+        description:
+          "Drone, GIS, satellite, and sensor technologies provide detailed field insights for precision applications, crop monitoring, and optimized agricultural operations.",
       },
       {
-        uuid: "83a6d094-2f71-4e58-b06c-5917e3a84d20",
-        label: "Recruitment & Onboarding Workflows",
-        image: "/icons/check.svg",
+        id: 2,
+        uuid: "b7dd3313-d1aa-4224-b2ae-1dfd5329352e",
+        title: "Monitor Smarter",
+        focus: "Farm Intelligence",
+        description:
+          "AI-powered analytics, image processing, and IoT monitoring provide insights into crop health, soil conditions, pests, diseases, and field performance.",
       },
       {
-        uuid: "d419b7e3-8c05-42a6-91f7-60d38b5c27ae",
-        label: "Payroll & Manager Self-Service",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "5e08f3a7-1b96-4c40-87d2-3a71e0c69b58",
-        label: "Performance Reviews & Development Tracking",
-        image: "/icons/check.svg",
+        id: 3,
+        uuid: "5c6d5ec0-f294-4b17-bb09-bc8e4e179cd5",
+        title: "Optimize Smarter",
+        focus: "Sustainable Resources",
+        description:
+          "Yield forecasting, smart irrigation, fertilizer optimization, and resource analytics improve productivity while reducing waste and supporting sustainable farming.",
       },
     ],
-    header: {
-      id: 9,
-      uuid: "d17e3fb5-9042-4a68-b3c1-7e50e92d648f",
-      title: "Human Capital Management",
-      description:
-        "Bringing recruitment, payroll, performance, and development into one record, so people teams spend their time on people rather than on reconciling systems.",
-      image: "/industry/human_capital_management.png",
-      items: [
-        { title: "30k+", description: "Employees Managed" },
-        { title: "50%", description: "Faster Hiring" },
-        { title: "90%", description: "Adoption Rate" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a fast-growing services group, was running recruitment in one tool, payroll in another, and performance reviews in spreadsheets. Every reporting cycle required someone to reconcile three versions of the same headcount by hand.\n\nWe consolidated the full employee lifecycle into a single record, from application through to development plan. Payroll draws from the same source as headcount reporting, and managers see one accurate picture of their team instead of three approximate ones.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Professional Services",
-        Solution: "Workforce Technology",
-        Deployment: "Cloud (Azure)",
-        Platform: "Web & Mobile",
-        Duration: "8 Months",
-        "Tech Stack": "React, .NET, SQL Server, Azure AD",
-      },
-    },
-    experience: {
-      title: "One Record Per Person",
-      description:
-        "An employee lifecycle held in a single system, so every team is working from the same facts.",
-      image: "/industry/human_capital_management.png",
-      items: [
-        {
-          title: "Unified Employee Record",
-          description:
-            "Hiring, payroll, and performance drawn from one authoritative source.",
-        },
-        {
-          title: "Manager Self-Service",
-          description:
-            "Approvals and team data handled directly rather than routed through HR.",
-        },
-        {
-          title: "Development Tracking",
-          description:
-            "Skills and progression measured continuously instead of at review time.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Our monthly headcount reconciliation used to take three days. It now takes nobody any time at all, because there is only one number.",
-      name: "Grace Muteki",
-      role: "Group HR Director, Ardent Services",
-      avatar: "/about_image.png",
-    },
-  },
-  {
-    id: 10,
-    uuid: "6fa85d31-b207-4c94-8e63-0d29a7f51c48",
-    title: "Energy & Climate Solutions",
-    image: "/icons/solutions/energy-climate-solutions.svg",
-    description: "Monitor consumption and meet sustainability commitments.",
-    highlights: [
-      {
-        uuid: "7ab30945-c218-4de6-90b3-2f57e6c14a80",
-        label: "Interval Meter Data Ingestion at Scale",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "c2e75b18-0946-43af-85d0-7e31b9c4602f",
-        label: "Asset-Level Consumption Attribution",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "48910de5-7b62-4c03-9a17-5d0e26b83f74",
-        label: "Emissions Tracking & Target Management",
-        image: "/icons/check.svg",
-      },
-      {
-        uuid: "e6053ca9-3d17-482b-b64f-90a71c58d326",
-        label: "Continuous ESG & Regulatory Disclosure",
-        image: "/icons/check.svg",
-      },
-    ],
-    header: {
-      id: 10,
-      uuid: "2b96e0c4-7d13-458a-9e02-6c41e83b7d50",
-      title: "Energy & Climate Solutions",
-      description:
-        "Measuring consumption, emissions, and generation across dispersed operations, so sustainability commitments are managed with the same rigour as financial ones.",
-      image: "/verticles/sustainable_energy.png",
-      items: [
-        { title: "1.2M", description: "Meters Ingested" },
-        { title: "28%", description: "Emissions Cut" },
-        { title: "Daily", description: "ESG Reporting" },
-      ],
-    },
-    overview: {
-      title: "Solution Overview",
-      description:
-        "Our client, a utility operating across generation and distribution, was reporting emissions annually from data assembled manually across dozens of sites. The figures were defensible but always months out of date, which made them useless for actually reducing anything.\n\nWe built an ingestion layer that takes meter and sensor data at interval resolution, attributes it to sites and assets, and reports continuously. Sustainability targets are now tracked against live consumption, and the annual disclosure is an export rather than a project.",
-    },
-    keyInfo: {
-      title: "Key Info",
-      items: {
-        Industry: "Energy & Utilities",
-        Solution: "Sustainability Technology",
-        Deployment: "Cloud (AWS)",
-        Platform: "Web & API",
-        Duration: "9 Months",
-        "Tech Stack": "Python, Spark, Snowflake, React",
-      },
-    },
-    experience: {
-      title: "Measured, Not Estimated",
-      description:
-        "Environmental performance tracked from metered reality rather than reconstructed once a year.",
-      image: "/verticles/sustainable_energy.png",
-      items: [
-        {
-          title: "Interval Data at Scale",
-          description:
-            "Meter readings ingested and settled without a growing backlog.",
-        },
-        {
-          title: "Asset-Level Attribution",
-          description:
-            "Consumption and emissions assigned to the site and asset producing them.",
-        },
-        {
-          title: "Continuous Disclosure",
-          description:
-            "Regulatory and ESG reporting generated from live data on demand.",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "We stopped arguing about whose estimate was right. The platform measures it, and the conversation moved on to what we were going to do about it.",
-      name: "Eleanor Whitfield",
-      role: "Head of Sustainability, Cascade Energy Group",
-      avatar: "/about_image.png",
-    },
   },
 ];
-
-export const solutionSuccessStories: SuccessStoriesUnderSection = {
-  title: "Success Stories under this Solution",
-  description:
-    "Proven outcomes delivered across global financial, healthcare, and technology infrastructures.",
-  items: [
-    {
-      id: 1,
-      uuid: "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
-      image: "/industry/netword_security.png",
-      industry: {
-        id: 1,
-        uuid: "a41d8f70-2e63-4b95-8c07-53f1e9a6d284",
-        title: "Banking",
-      },
-      solution: {
-        id: 1,
-        uuid: "7b30c592-6a14-4f80-9d23-e85c4b17f036",
-        title: "Cybersecurity",
-      },
-      title: "Enterprise Threat Detection Platform",
-      description:
-        "A multi-layered AI-driven security framework implemented for a global Tier-1 bank to mitigate zero-day vulnerabilities.",
-    },
-    {
-      id: 2,
-      uuid: "c1a94e67-5d38-42b0-8f19-6ab30d7c25e8",
-      image: "/industry/telecommunications.png",
-      industry: {
-        id: 2,
-        uuid: "e6924c31-8b57-4d02-a719-3c0f5d86b471",
-        title: "Telecom",
-      },
-      solution: {
-        id: 2,
-        uuid: "5c81f4a6-0d29-473b-96e8-b247a1c30f95",
-        title: "Smart Cities",
-      },
-      title: "5G Municipal Infrastructure",
-      description:
-        "Deploying next-gen connectivity across 500+ square kilometers for seamless urban IoT integration.",
-    },
-    {
-      id: 3,
-      uuid: "9e26b0f5-7c41-4a83-b52d-18f6c94a7d30",
-      image: "/industry/e_government.png",
-      industry: {
-        id: 3,
-        uuid: "2f57b9d4-3c80-46e1-8a95-7d16c0e4b382",
-        title: "Government",
-      },
-      solution: {
-        id: 3,
-        uuid: "9a4e0c76-1b38-45d9-b072-8f63e2a5147c",
-        title: "AI & Analytics",
-      },
-      title: "Predictive Governance Model",
-      description:
-        "Leveraging deep learning to optimize public resource allocation and emergency response times by 30%.",
-    },
-    {
-      id: 4,
-      uuid: "6d70a382-4f19-4c25-9b08-e35a1c72f4b6",
-      image: "/about_image.png",
-      industry: {
-        id: 4,
-        uuid: "c0f83a15-7d46-49b2-85e0-1a29b7c46d38",
-        title: "Healthcare",
-      },
-      solution: {
-        id: 4,
-        uuid: "48b1d907-5e62-4c37-90af-6d35c821e094",
-        title: "Cloud",
-      },
-      title: "Regional Health Cloud Migration",
-      description:
-        "Migrating patient-critical workloads to a compliant hybrid cloud with zero downtime across 12 hospitals.",
-    },
-    {
-      id: 5,
-      uuid: "b52f8c19-0a63-4d74-8e21-47c9b6d035fa",
-      image: "/about_image.png",
-      industry: {
-        id: 5,
-        uuid: "d739e2b8-4a10-4f65-b83c-05e7a1946cd2",
-        title: "Manufacturing",
-      },
-      solution: {
-        id: 5,
-        uuid: "16ac5f83-9027-4e41-a5d6-83b0c7524fe1",
-        title: "Automation",
-      },
-      title: "Smart Factory Control Suite",
-      description:
-        "Unifying plant floor telemetry into a single control suite that cut unplanned downtime by 42%.",
-    },
-  ],
-};

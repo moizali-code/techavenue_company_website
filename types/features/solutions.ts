@@ -1,95 +1,47 @@
-export type SolutionHeaderItem = {
-  title: string;
-  description: string;
-};
-
-export type SolutionHeader = {
+export type SolutionOffering = {
   id: number;
   uuid: string;
   title: string;
   description: string;
-  image: string;
-  items: SolutionHeaderItem[];
 };
 
-export type SolutionOverview = {
-  title: string;
+export type SolutionOfferingsSection = {
+  heading: string;
   description: string;
+  items: SolutionOffering[];
 };
 
-export type SolutionKeyInfo = {
-  title: string;
-  items: Record<string, string>;
-};
-
-export type SolutionExperienceItem = {
-  title: string;
-  description: string;
-};
-
-export type SolutionExperience = {
-  title: string;
-  description: string;
-  image: string;
-  items: SolutionExperienceItem[];
-};
-
-export type SolutionTestimonial = {
-  quote: string;
-  name: string;
-  role: string;
-  avatar: string;
-};
-
-export type SolutionHighlight = {
-  uuid: string;
-  label: string;
-  image: string;
-};
-
-export type SolutionSummary = {
+export type SolutionPhase = {
   id: number;
   uuid: string;
   title: string;
-  image: string;
+  focus: string;
   description: string;
 };
 
-export type Solution = SolutionSummary & {
-  header: SolutionHeader;
-  highlights: SolutionHighlight[];
-  overview: SolutionOverview;
-  keyInfo: SolutionKeyInfo;
-  experience: SolutionExperience;
-  testimonial: SolutionTestimonial;
+export type SolutionPageHeaderSection = {
+  heading: string;
+  description: string;
 };
 
-export type SolutionHeaderProps = {
+export type SolutionPage = {
+  id: number;
+  uuid: string;
+  title: string;
+  solutionHeader: SolutionPageHeaderSection;
+  image: string;
+  icon: string;
+  solutions: SolutionOfferingsSection;
+  phases: SolutionPhase[];
+};
+
+export type SolutionPageHeaderProps = SolutionPageHeaderSection & {
   eyebrow: string;
-  header: SolutionHeader;
-  classNames?: {
-    mainWrapper?: string;
-  };
+  image?: string;
 };
 
-export type SolutionOverviewProps = {
-  overview: SolutionOverview;
-  keyInfo: SolutionKeyInfo;
-  classNames?: {
-    mainWrapper?: string;
-  };
-};
+export type SolutionOfferingsProps = SolutionOfferingsSection;
 
-export type SolutionExperienceProps = {
-  experience: SolutionExperience;
-  classNames?: {
-    mainWrapper?: string;
-  };
-};
-
-export type SolutionTestimonialProps = {
-  testimonial: SolutionTestimonial;
-  classNames?: {
-    mainWrapper?: string;
-  };
+export type SolutionPhasesProps = {
+  phases: SolutionPhase[];
 };

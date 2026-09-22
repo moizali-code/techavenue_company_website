@@ -1,5 +1,6 @@
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/lib/utils";
 import type { ContainerProps } from "@/types/features/container";
 
 const containerVariants = cva("w-full px-4 lg:px-10", {
@@ -14,9 +15,9 @@ const containerVariants = cva("w-full px-4 lg:px-10", {
   },
 });
 
-function Container({ children, variant }: ContainerProps) {
+function Container({ children, variant, className }: ContainerProps) {
   return (
-    <section className={containerVariants({ variant })}>
+    <section className={cn(containerVariants({ variant }), className)}>
       <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>
   );

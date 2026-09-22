@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
-import type { SolutionTestimonialProps } from "@/types/features/solutions";
+import type { SolutionTestimonialProps } from "@/types/features/legacy-solutions";
 import { FadeIn } from "@/components/shared/fade-in";
 
 function SolutionTestimonial({ testimonial }: SolutionTestimonialProps) {

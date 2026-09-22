@@ -7,7 +7,8 @@ import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import { industries } from "@/mock/industry";
-import { solutions } from "@/mock/solutions";
+import { allServicesPageContent } from "@/mock/services";
+import { solutionPages } from "@/mock/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
   NavigationMenu,
@@ -25,11 +26,11 @@ const industryNavLinks: NavLink[] = industries.map((industry) => ({
   image: industry.image,
 }));
 
-const solutionNavLinks: NavLink[] = solutions.map((solution) => ({
+const solutionNavLinks: NavLink[] = solutionPages.map((solution) => ({
   title: solution.title,
-  description: solution.description,
+  description: solution.solutionHeader.description,
   href: `/solutions/${solution.uuid}`,
-  image: solution.image,
+  image: solution.icon,
 }));
 
 const navigationItems: NavItem[] = [
@@ -67,10 +68,13 @@ const navigationItems: NavItem[] = [
     label: "Solutions",
     items: solutionNavLinks,
   },
-
   {
     label: "Industries",
     items: industryNavLinks,
+  },
+  {
+    label: "Services",
+    href: "/services",
   },
   { label: "Success Stories", href: "/success-stories" },
 ];

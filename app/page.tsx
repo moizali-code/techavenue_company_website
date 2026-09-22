@@ -10,7 +10,7 @@ import { HomeTestimonials } from "@/components/features/home/home-testimonials";
 import { Container } from "@/components/shared/container";
 import { TrustedPartners } from "@/components/shared/trusted-partners";
 import { homeData, testimonials } from "@/mock/home";
-import { solutions } from "@/mock/solutions";
+import { solutions } from "@/mock/legacy-solutions";
 
 export default function Home() {
   return (
