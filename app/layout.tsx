@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type React from "react";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     "Techavenue is a software development company delivering AI solutions, web and mobile development, cross-platform applications, and cybersecurity services.",
 };
 
-export default async function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { details } = await getContactPageData();
 
   return (
