@@ -1,4 +1,3 @@
-"use client";
 import { EventsCarousel } from "@/components/features/events/events-carousel";
 import { NewsletterCta } from "@/components/features/news/newsletter-cta";
 import { Container } from "@/components/shared/container";
@@ -6,20 +5,20 @@ import { Jumbotron } from "@/components/shared/jumbotron";
 import { RichText } from "@/components/shared/rich-text";
 import { Button } from "@/components/ui/button";
 import { formatDay } from "@/lib/formatters/day-formatter";
-import { events, featuredStory, newsStories } from "@/mock/news";
+import { getNewsItem, getNewsPageData } from "@/lib/cms";
 import { Clock } from "lucide-react";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 
-const page = () => {
-  const { news } = useParams<{ news: string }>();
-  const activeStory = [featuredStory, ...newsStories].find(
-    (story) => story.uuid === news,
-  );
+export default async function page({ params }: { params: Promise<{ news: string }> }) {
+  const { news: id } = await params;
+  const [activeStory, { events }] = await Promise.all([
+    getNewsItem(id),
+    getNewsPageData(),
+  ]);
 
   if (!activeStory) notFound();
 
-  const { category, title, description, publishedAt, image, html } =
-    activeStory;
+  const { category, title, description, publishedAt, image, html } = activeStory;
 
   return (
     <>
@@ -55,6 +54,4 @@ const page = () => {
       <NewsletterCta />
     </>
   );
-};
-
-export default page;
+}

@@ -1,17 +1,16 @@
-"use client";
 import { NewsletterCta } from "@/components/features/news/newsletter-cta";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { RichText } from "@/components/shared/rich-text";
 import { Button } from "@/components/ui/button";
 import { formatDay } from "@/lib/formatters/day-formatter";
-import { events } from "@/mock/news";
+import { getEvent } from "@/lib/cms";
 import { MapPin } from "lucide-react";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 
-const page = () => {
-  const { events: eventUuid } = useParams<{ events: string }>();
-  const activeEvent = events.find((event) => event.uuid === eventUuid);
+export default async function page({ params }: { params: Promise<{ events: string }> }) {
+  const { events: id } = await params;
+  const activeEvent = await getEvent(id);
 
   if (!activeEvent) notFound();
 
@@ -49,6 +48,4 @@ const page = () => {
       <NewsletterCta />
     </>
   );
-};
-
-export default page;
+}

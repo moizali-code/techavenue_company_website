@@ -1,5 +1,3 @@
-"use client";
-
 import { SolutionExperience } from "@/components/features/legacy-solutions/solution-experience";
 import { SolutionHeader } from "@/components/features/legacy-solutions/solution-header";
 import { SolutionOverview } from "@/components/features/legacy-solutions/solution-overview";
@@ -7,17 +5,20 @@ import { SolutionTestimonial } from "@/components/features/legacy-solutions/solu
 import { Container } from "@/components/shared/container";
 import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
 import { TabGroup } from "@/components/shared/tab-group";
-import { solutions, solutionSuccessStories } from "@/mock/legacy-solutions";
-import { notFound, useParams } from "next/navigation";
+import { getLegacySolution, getLegacySolutions } from "@/lib/cms";
+import { solutionSuccessStories } from "@/mock/legacy-solutions";
+import { notFound } from "next/navigation";
 
-const page = () => {
-  const { solution } = useParams<{ solution: string }>();
-  const activeSolution = solutions.find((item) => item.uuid === solution);
+export default async function page({ params }: { params: Promise<{ solution: string }> }) {
+  const { solution: id } = await params;
+  const [activeSolution, solutions] = await Promise.all([
+    getLegacySolution(id),
+    getLegacySolutions(),
+  ]);
 
   if (!activeSolution) notFound();
 
-  const { title, header, overview, keyInfo, experience, testimonial } =
-    activeSolution;
+  const { title, header, overview, keyInfo, experience, testimonial } = activeSolution;
 
   return (
     <>
@@ -40,6 +41,4 @@ const page = () => {
       <SolutionTestimonial testimonial={testimonial} />
     </>
   );
-};
-
-export default page;
+}

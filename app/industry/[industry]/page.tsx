@@ -1,4 +1,3 @@
-"use client";
 import { Challenges } from "@/components/shared/challenges";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
@@ -7,15 +6,19 @@ import { SplitSection } from "@/components/shared/split-section";
 import { TabGroup } from "@/components/shared/tab-group";
 import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
 import { Button } from "@/components/ui/button";
-import { industries, industrySuccessStories } from "@/mock/industry";
+import { getIndustries, getIndustry } from "@/lib/cms";
+import { industrySuccessStories } from "@/mock/industry";
 import { Lightbulb, UserRoundCheck, type LucideIcon } from "lucide-react";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const highlightIcons: LucideIcon[] = [UserRoundCheck, Lightbulb];
 
-const page = () => {
-  const { industry } = useParams<{ industry: string }>();
-  const activeIndustry = industries.find((item) => item.uuid === industry);
+export default async function page({ params }: { params: Promise<{ industry: string }> }) {
+  const { industry: id } = await params;
+  const [activeIndustry, industries] = await Promise.all([
+    getIndustry(id),
+    getIndustries(),
+  ]);
 
   if (!activeIndustry) notFound();
 
@@ -26,8 +29,7 @@ const page = () => {
       <Jumbotron
         title={header.title}
         classNames={{
-          title:
-            "text-white text-[30px] md:text-[38px] lg:text-[48px] font-times w-full max-w-full",
+          title: "text-white text-[30px] md:text-[38px] lg:text-[48px] font-times w-full max-w-full",
           description: "text-white text-[14px] md:text-[18px]",
           content: "w-full max-w-full ",
           mainWrapper: "h-[400px] lg:h-[600px] items-end",
@@ -88,10 +90,8 @@ const page = () => {
           }
           classNames={{
             content: "font-poppins",
-            title:
-              "font-poppins text-[24px] font-bold text-[#191C1E] md:text-[28px] lg:text-[32px]",
-            description:
-              "text-[16px] leading-relaxed font-normal text-[#444651]",
+            title: "font-poppins text-[24px] font-bold text-[#191C1E] md:text-[28px] lg:text-[32px]",
+            description: "text-[16px] leading-relaxed font-normal text-[#444651]",
             action: "mt-2 w-full",
           }}
         />
@@ -104,6 +104,4 @@ const page = () => {
       <SuccessStoriesUnderSection successStories={industrySuccessStories} />
     </>
   );
-};
-
-export default page;
+}

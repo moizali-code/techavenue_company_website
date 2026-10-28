@@ -27,13 +27,15 @@ function TrustedPartners({
       </li>
     ) : (
       <li key={partner.uuid} className={cn("shrink-0", classNames?.item)}>
-        <Image
-          src={partner.image}
-          alt=""
-          width={160}
-          height={40}
-          className="h-6 w-auto object-contain md:h-8 lg:h-10"
-        />
+        {partner.image && (
+          <Image
+            src={partner.image}
+            alt=""
+            width={160}
+            height={40}
+            className="h-6 w-auto object-contain md:h-8 lg:h-10"
+          />
+        )}
       </li>
     );
 

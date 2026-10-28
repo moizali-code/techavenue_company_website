@@ -82,6 +82,7 @@ export type HomeIntroProps = {
   experienceLabel: string;
   experienceValue: string;
   description: string;
+  image?: string;
 };
 
 export type HomeData = {

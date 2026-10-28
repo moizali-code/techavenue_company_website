@@ -9,10 +9,14 @@ import { HomeStats } from "@/components/features/home/home-stats";
 import { HomeTestimonials } from "@/components/features/home/home-testimonials";
 import { Container } from "@/components/shared/container";
 import { TrustedPartners } from "@/components/shared/trusted-partners";
-import { homeData, testimonials } from "@/mock/home";
-import { solutions } from "@/mock/legacy-solutions";
+import { getHomePageData, getLegacySolutions } from "@/lib/cms";
 
-export default function Home() {
+export default async function Home() {
+  const [{ homeData, testimonials }, solutions] = await Promise.all([
+    getHomePageData(),
+    getLegacySolutions(),
+  ]);
+
   return (
     <>
       <HomeIntro {...homeData.intro} />
@@ -22,7 +26,7 @@ export default function Home() {
           <div className="relative h-[240px] w-full md:h-[360px] lg:h-[480px]">
             <Image
               alt="home_image"
-              src="/home/home_header.jpg"
+              src={homeData.intro.image || "/home/home_header.jpg"}
               fill
               priority
               sizes="(min-width: 1024px) 1152px, 100vw"

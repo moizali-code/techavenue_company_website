@@ -2,12 +2,11 @@ import { CoreServices } from "@/components/features/services/core-services";
 import { ServiceDetails } from "@/components/features/services/service-details";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
-import { allServicesPageContent } from "@/mock/services";
+import { getServicesPageData } from "@/lib/cms";
 
-const { allServicesHeader, coreServices, allServicesArticles } =
-  allServicesPageContent;
+export default async function page() {
+  const { allServicesHeader, coreServices, allServicesArticles } = await getServicesPageData();
 
-const page = () => {
   return (
     <div>
       <Jumbotron
@@ -31,6 +30,4 @@ const page = () => {
       <ServiceDetails details={allServicesArticles} />
     </div>
   );
-};
-
-export default page;
+}

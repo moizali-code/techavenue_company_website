@@ -1,17 +1,15 @@
 import { SuccessStoriesGrid } from "@/components/features/success-stories/success-stories-grid";
 import { SuccessStoriesHeader } from "@/components/features/success-stories/success-stories-header";
-import { successStories, successStoriesContent } from "@/mock/success-stories";
+import { getSuccessStoriesPageData } from "@/lib/cms";
 
-const page = () => {
-  const { header, intro } = successStoriesContent;
+export default async function page() {
+  const { content, stories } = await getSuccessStoriesPageData();
 
   return (
     <>
-      <SuccessStoriesHeader header={header} intro={intro} />
+      <SuccessStoriesHeader header={content.header} intro={content.intro} />
 
-      <SuccessStoriesGrid stories={successStories} />
+      <SuccessStoriesGrid stories={stories} />
     </>
   );
-};
-
-export default page;
+}

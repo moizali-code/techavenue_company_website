@@ -60,13 +60,15 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
               <FadeIn direction="left">
                 <div className="flex flex-col gap-6 rounded-[12px] bg-[#F8F8F8] p-5 lg:p-8">
                   <div className="relative aspect-[4/3] w-full md:aspect-[16/10]">
-                    <Image
-                      src={header.image}
-                      alt={header.title}
-                      fill
-                      sizes="(min-width: 1024px) 640px, (min-width: 768px) 55vw, 100vw"
-                      className="rounded-[8px] object-cover"
-                    />
+                    {header.image && (
+                      <Image
+                        src={header.image}
+                        alt={header.title}
+                        fill
+                        sizes="(min-width: 1024px) 640px, (min-width: 768px) 55vw, 100vw"
+                        className="rounded-[8px] object-cover"
+                      />
+                    )}
                   </div>
 
                   <Button

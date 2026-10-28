@@ -1,17 +1,18 @@
-"use client";
-
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import { SolutionOfferings } from "@/components/features/solutions/solution-offerings";
 import { SolutionPageHeader } from "@/components/features/solutions/solution-page-header";
 import { SolutionPhases } from "@/components/features/solutions/solution-phases";
 import { Container } from "@/components/shared/container";
 import { TabGroup } from "@/components/shared/tab-group";
-import { solutionPages } from "@/mock/solutions";
+import { getSolutionPage, getSolutionPages } from "@/lib/cms";
 
-const page = () => {
-  const { solution } = useParams<{ solution: string }>();
-  const solutionPage = solutionPages.find((item) => item.uuid === solution);
+export default async function page({ params }: { params: Promise<{ solution: string }> }) {
+  const { solution: id } = await params;
+  const [solutionPage, solutionPages] = await Promise.all([
+    getSolutionPage(id),
+    getSolutionPages(),
+  ]);
 
   if (!solutionPage) notFound();
 
@@ -40,6 +41,4 @@ const page = () => {
       <SolutionPhases phases={solutionPage.phases} />
     </>
   );
-};
-
-export default page;
+}

@@ -29,13 +29,15 @@ function SplitSection({
           classNames?.media,
         )}
       >
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className={cn("object-cover !rounded-[12px]", classNames?.image)}
-        />
+        {image && (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className={cn("object-cover !rounded-[12px]", classNames?.image)}
+          />
+        )}
 
         {mediaOverlay && (
           <div

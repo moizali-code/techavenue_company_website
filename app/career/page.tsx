@@ -3,9 +3,11 @@ import { FollowUs } from "@/components/features/career/follow-us";
 import { HiringProcess } from "@/components/features/career/hiring-process";
 import { LifeAtTechAvenue } from "@/components/features/career/life-at-tech-avenue";
 import { OpenPositions } from "@/components/features/career/open-positions";
-import { careerData, jobs, lifeAtTechAvenue } from "@/mock/career";
+import { getCareerPageData } from "@/lib/cms";
 
-export default function page() {
+export default async function page() {
+  const { careerData, jobs, lifeAtTechAvenue } = await getCareerPageData();
+
   return (
     <>
       <CareerHeader {...careerData.header} />

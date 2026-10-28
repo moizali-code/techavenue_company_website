@@ -26,13 +26,15 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
     >
       <div className="grid min-h-0 grid-cols-1 overflow-y-auto md:max-h-[calc(100dvh-4rem)] md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:overflow-hidden">
         <div className="relative hidden w-full bg-[#F8F8F8] md:block md:min-h-[420px]">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            sizes="(min-width: 768px) 40vw, 1px"
-            className="object-cover object-top"
-          />
+          {image && (
+            <Image
+              src={image}
+              alt={name}
+              fill
+              sizes="(min-width: 768px) 40vw, 1px"
+              className="object-cover object-top"
+            />
+          )}
         </div>
 
         <div className="flex min-h-0 flex-col gap-4 p-5 md:gap-5 md:overflow-y-auto md:p-6 lg:gap-6 lg:p-8">
