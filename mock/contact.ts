@@ -1,13 +1,12 @@
 import type {
   ContactDetailsProps,
-  ContactFormProps,
   ContactHeaderProps,
 } from "@/types/features/contact";
 
 export const contactSection: {
   header: ContactHeaderProps;
   details: ContactDetailsProps;
-  form: ContactFormProps;
+  form: { title: string; description: string };
 } = {
   header: {
     eyebrow: "Contact Us",

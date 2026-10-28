@@ -6,9 +6,8 @@ import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
-import { industries } from "@/mock/industry";
-import { allServicesPageContent } from "@/mock/services";
-import { solutionPages } from "@/mock/solutions";
+import type { Industry } from "@/types/features/industry";
+import type { SolutionPage } from "@/types/features/solutions";
 import type { NavItem, NavLink } from "@/types/features/navigation";
 import {
   NavigationMenu,
@@ -19,71 +18,63 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-const industryNavLinks: NavLink[] = industries.map((industry) => ({
-  title: industry.title,
-  description: industry.description,
-  href: `/industry/${industry.uuid}`,
-  image: industry.image,
-}));
-
-const solutionNavLinks: NavLink[] = solutionPages.map((solution) => ({
-  title: solution.title,
-  description: solution.solutionHeader.description,
-  href: `/solutions/${solution.uuid}`,
-  image: solution.icon,
-}));
-
-const navigationItems: NavItem[] = [
-  { label: "Home", href: "/" },
+const companyItems: NavLink[] = [
   {
-    label: "Company",
-    items: [
-      {
-        title: "About Us",
-        description: "Who we are, what we stand for, and the drive behind it.",
-        href: "/about",
-        icon: Info,
-      },
-      {
-        title: "FAQs",
-        description: "Answers to the questions we hear most often.",
-        href: "/#faqs",
-        icon: CircleHelp,
-      },
-      {
-        title: "Career",
-        description: "Open roles and what it is like to grow with us.",
-        href: "/career",
-        icon: Briefcase,
-      },
-      {
-        title: "News & Media",
-        description: "Announcements, press coverage, and company updates.",
-        href: "/news",
-        icon: Newspaper,
-      },
-    ],
+    title: "About Us",
+    description: "Who we are, what we stand for, and the drive behind it.",
+    href: "/about",
+    icon: Info,
   },
   {
-    label: "Solutions",
-    items: solutionNavLinks,
+    title: "FAQs",
+    description: "Answers to the questions we hear most often.",
+    href: "/#faqs",
+    icon: CircleHelp,
   },
   {
-    label: "Industries",
-    items: industryNavLinks,
+    title: "Career",
+    description: "Open roles and what it is like to grow with us.",
+    href: "/career",
+    icon: Briefcase,
   },
   {
-    label: "Services",
-    href: "/services",
+    title: "News & Media",
+    description: "Announcements, press coverage, and company updates.",
+    href: "/news",
+    icon: Newspaper,
   },
-  { label: "Success Stories", href: "/success-stories" },
 ];
+
+function buildNavItems(industries: Industry[], solutionPages: SolutionPage[]): NavItem[] {
+  const industryNavLinks: NavLink[] = industries.map((industry) => ({
+    title: industry.title,
+    description: industry.description,
+    href: `/industry/${industry.uuid}`,
+    image: industry.image,
+  }));
+
+  const solutionNavLinks: NavLink[] = solutionPages.map((solution) => ({
+    title: solution.title,
+    description: solution.solutionHeader.description,
+    href: `/solutions/${solution.uuid}`,
+    image: solution.icon,
+  }));
+
+  return [
+    { label: "Home", href: "/" },
+    { label: "Company", items: companyItems },
+    { label: "Solutions", items: solutionNavLinks },
+    { label: "Industries", items: industryNavLinks },
+    { label: "Services", href: "/services" },
+    { label: "Success Stories", href: "/success-stories" },
+  ];
+}
 
 type NavGroup = Extract<NavItem, { items: NavLink[] }>;
 
 const isNavGroup = (item: NavItem): item is NavGroup => Boolean(item.items);
 
-function MainNav({ className }: { className?: string }) {
+function MainNav({ className, items }: { className?: string; items: NavItem[] }) {
   const pathname = usePathname();
 
   const isActive = (href: string) =>
@@ -92,7 +83,7 @@ function MainNav({ className }: { className?: string }) {
   return (
     <NavigationMenu className={className} align="center">
       <NavigationMenuList className="gap-1">
-        {navigationItems.map((item) =>
+        {items.map((item) =>
           !isNavGroup(item) ? (
             <NavigationMenuItem key={item.label}>
               <NavigationMenuLink
@@ -170,4 +161,4 @@ function MainNav({ className }: { className?: string }) {
   );
 }
 
-export { MainNav, navigationItems, isNavGroup };
+export { MainNav, buildNavItems, isNavGroup };

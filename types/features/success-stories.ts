@@ -3,6 +3,7 @@ import type { JumbotronProps } from "@/types/features/jumbotron";
 import type { ProvidedSolutions } from "@/types/features/provided-solutions";
 import type { Challenges } from "@/types/shared/challenges";
 import type { SuccessStoryTag } from "@/types/shared/tag";
+import type { TabGroupItem } from "@/types/shared/tab-group";
 
 export type SuccessStoryHeader = {
   title: string;
@@ -69,4 +70,6 @@ export type SuccessStoriesHeaderProps = {
 
 export type SuccessStoriesGridProps = {
   stories: SuccessStory[];
+  solutionTabs: TabGroupItem[];
+  industryTabs: TabGroupItem[];
 };

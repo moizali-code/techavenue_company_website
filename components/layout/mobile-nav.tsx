@@ -8,9 +8,10 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
-import { isNavGroup, navigationItems } from "@/components/layout/main-nav";
+import { isNavGroup } from "@/components/layout/main-nav";
+import type { NavItem } from "@/types/features/navigation";
 
-function MobileNav({ className }: { className?: string }) {
+function MobileNav({ className, items }: { className?: string; items: NavItem[] }) {
   const [open, setOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const pathname = usePathname();
@@ -42,7 +43,7 @@ function MobileNav({ className }: { className?: string }) {
       {open && (
         <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto border-b border-border bg-background px-4 py-4 shadow-lg">
           <ul className="flex flex-col gap-1">
-            {navigationItems.map((item) => (
+            {items.map((item) => (
               <li key={item.label}>
                 {!isNavGroup(item) ? (
                   <Link

@@ -9,4 +9,5 @@ export type RequestDemoContent = {
 
 export type RequestDemoModalProps = {
   trigger: ReactNode;
+  solutionOptions: string[];
 };

@@ -67,6 +67,7 @@ export type Solution = SolutionSummary & {
 export type SolutionHeaderProps = {
   eyebrow: string;
   header: SolutionHeader;
+  solutionOptions: string[];
   classNames?: {
     mainWrapper?: string;
   };

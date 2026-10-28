@@ -8,7 +8,7 @@ import type { SolutionHeaderProps } from "@/types/features/legacy-solutions";
 const PRIMARY_ACTION_LABEL = "Request a Demo";
 const SECONDARY_ACTION_LABEL = "Watch the Demo";
 
-function SolutionHeader({ eyebrow, header }: SolutionHeaderProps) {
+function SolutionHeader({ eyebrow, header, solutionOptions }: SolutionHeaderProps) {
   const { title, description, image, items } = header;
 
   return (
@@ -41,6 +41,7 @@ function SolutionHeader({ eyebrow, header }: SolutionHeaderProps) {
 
             <div className="flex w-full flex-col gap-4 md:w-auto lg:flex-row lg:items-center">
               <RequestDemoModal
+                solutionOptions={solutionOptions}
                 trigger={
                   <Button
                     size="lg"

@@ -11,8 +11,6 @@ import { ValidatedTextInput } from "@/components/shared/validated-text-input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { industries } from "@/mock/industry";
-import { allServicesPageContent } from "@/mock/services";
 import type { ContactFormProps } from "@/types/features/contact";
 import {
   contactFormSchema,
@@ -21,19 +19,13 @@ import {
 
 const successStoriesHref = "/success-stories";
 
-const industryOptions = industries.map((industry) => industry.title);
-
-const verticleOptions = allServicesPageContent.allServicesArticles.map(
-  (verticle) => verticle.title,
-);
-
 const fieldClassNames = {
   label: "text-[13px] font-medium text-[#191C1E]",
   input:
     "h-11 rounded-[6px] border-transparent bg-[#F5F6F8] px-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]",
 };
 
-function ContactForm({ title, description }: ContactFormProps) {
+function ContactForm({ title, description, industryOptions, verticleOptions }: ContactFormProps) {
   const {
     control,
     handleSubmit,

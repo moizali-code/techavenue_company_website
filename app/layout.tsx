@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ContactCta } from "@/components/layout/contact-cta";
+import { getContactPageData } from "@/lib/cms";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -24,7 +25,9 @@ export const metadata: Metadata = {
     "Techavenue is a software development company delivering AI solutions, web and mobile development, cross-platform applications, and cybersecurity services.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const { details } = await getContactPageData();
+
   return (
     <html
       lang="en"
@@ -41,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <ContactCta />
-        <Footer />
+        <Footer address={details.officeAddress} phone={details.phone} email={details.email} />
       </body>
     </html>
   );

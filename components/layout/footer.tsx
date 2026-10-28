@@ -9,17 +9,11 @@ import { ScrollTop } from "@/components/layout/scroll-top";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Verticles", href: "/verticles" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Industries", href: "/industries" },
-  { label: "Partners", href: "/partners" },
+  { label: "Services", href: "/services" },
+  { label: "Success Stories", href: "/success-stories" },
+  { label: "Career", href: "/career" },
+  { label: "News & Media", href: "/news" },
   { label: "Contact Us", href: "/contact" },
-];
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
 const socialLinks = [
@@ -40,7 +34,16 @@ const socialLinks = [
   },
 ];
 
-function Footer() {
+type FooterProps = {
+  address?: string;
+  phone?: string;
+  email?: string;
+};
+
+function Footer({ address, phone, email }: FooterProps = {}) {
+  const displayAddress = address || "Office #409, Fourth Floor, Evacuee Trust Complex, F-5/1, Islamabad, 44000, Pakistan";
+  const displayPhone = phone || "(051) 8844080";
+  const displayEmail = email || "info@techavenue.biz";
   return (
     <footer className="w-full bg-[#FAFAFA]">
       <Container>
@@ -109,8 +112,7 @@ function Footer() {
                   aria-hidden="true"
                 />
                 <address className="not-italic leading-relaxed">
-                  Office #409, Fourth Floor, Evacuee Trust Complex, F-5/1,
-                  Islamabad, 44000, Pakistan
+                  {displayAddress}
                 </address>
               </li>
               <li className="flex gap-3">
@@ -119,10 +121,10 @@ function Footer() {
                   aria-hidden="true"
                 />
                 <a
-                  href="tel:+920518844080"
+                  href={`tel:${displayPhone.replace(/\D/g, "")}`}
                   className="transition-colors hover:text-brand"
                 >
-                  (051) 8844080
+                  {displayPhone}
                 </a>
               </li>
               <li className="flex gap-3">
@@ -131,10 +133,10 @@ function Footer() {
                   aria-hidden="true"
                 />
                 <a
-                  href="mailto:info@techavenue.biz"
+                  href={`mailto:${displayEmail}`}
                   className="transition-colors hover:text-brand"
                 >
-                  info@techavenue.biz
+                  {displayEmail}
                 </a>
               </li>
             </ul>
@@ -174,22 +176,10 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4  pt-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-12 pt-6">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Tech Avenue. All Rights Reserved.
           </p>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-2">
-            {legalLinks.map(({ label, href }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  className="text-sm text-foreground/80 transition-colors hover:text-brand"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </Container>
 

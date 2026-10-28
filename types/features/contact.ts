@@ -22,4 +22,6 @@ export type ContactDetailsProps = {
 export type ContactFormProps = {
   title: string;
   description: string;
+  industryOptions: string[];
+  verticleOptions: string[];
 };

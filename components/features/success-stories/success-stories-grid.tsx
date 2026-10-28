@@ -8,10 +8,7 @@ import { Paginator } from "@/components/shared/paginator";
 import { TabGroup } from "@/components/shared/tab-group";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { industries } from "@/mock/industry";
-import { solutionPages } from "@/mock/solutions";
 import type { SuccessStoriesGridProps } from "@/types/features/success-stories";
-import type { TabGroupItem } from "@/types/shared/tab-group";
 
 const STORIES_PER_PAGE = 9;
 const ALL_FILTER_UUID = "all";
@@ -20,23 +17,7 @@ const TAG_BADGE_CLASSNAME =
 const FILTER_LABEL_CLASSNAME =
   "pt-2 text-[13px] font-semibold text-[#191C1E] md:w-24 md:shrink-0 lg:text-[14px]";
 
-const allFilterTab: TabGroupItem = {
-  id: 0,
-  uuid: ALL_FILTER_UUID,
-  title: "All",
-};
-
-const solutionTabs: TabGroupItem[] = [
-  allFilterTab,
-  ...solutionPages.map(({ id, uuid, title }) => ({ id, uuid, title })),
-];
-
-const industryTabs: TabGroupItem[] = [
-  allFilterTab,
-  ...industries.map(({ id, uuid, title }) => ({ id, uuid, title })),
-];
-
-function SuccessStoriesGrid({ stories }: SuccessStoriesGridProps) {
+function SuccessStoriesGrid({ stories, solutionTabs, industryTabs }: SuccessStoriesGridProps) {
   const [solutionUuid, setSolutionUuid] = useState(ALL_FILTER_UUID);
   const [industryUuid, setIndustryUuid] = useState(ALL_FILTER_UUID);
   const [page, setPage] = useState(1);

@@ -13,14 +13,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { requestDemo } from "@/mock/request-demo";
-import { solutions } from "@/mock/legacy-solutions";
 import type { RequestDemoModalProps } from "@/types/features/request-demo";
 import {
   requestDemoSchema,
   type RequestDemoValues,
 } from "@/validations/features/request-demo.zod";
-
-const solutionOptions = solutions.map((solution) => solution.title);
 
 const fieldClassNames = {
   label: "text-[13px] font-semibold text-[#191C1E]",
@@ -28,7 +25,7 @@ const fieldClassNames = {
     "h-11 rounded-[6px] border-[#E4E6EB] bg-white px-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]",
 };
 
-function RequestDemoModal({ trigger }: RequestDemoModalProps) {
+function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const { eyebrow, title, description, organizationSizes } = requestDemo;
