@@ -1,3 +1,2 @@
-const provider = process.env.CMS_PROVIDER ?? 'payload'
-
-export * from provider === 'cockpit' ? './cockpit' : './payload'
+// Resolved by webpack alias in next.config.ts to cockpit.ts or payload.ts
+export * from './payload'
