@@ -28,12 +28,16 @@ const PLACEHOLDER = "/placeholder.svg";
 
 function cockpitAsset(field: unknown): string {
   if (!field) return PLACEHOLDER;
-  if (typeof field === "string") return field || PLACEHOLDER;
+  if (typeof field === "string") {
+    if (!field) return PLACEHOLDER;
+    return field.startsWith("http") ? field : `${COCKPIT_URL}/storage/uploads/${field}`;
+  }
   if (typeof field === "object" && field !== null) {
     const f = field as Record<string, unknown>;
-    const path = f.path as string | undefined;
+    const path = (f.path ?? f._id ?? f.id) as string | undefined;
     if (!path) return PLACEHOLDER;
-    return path.startsWith("http") ? path : `${COCKPIT_URL}/storage/uploads/${path}`;
+    if (path.startsWith("http")) return path;
+    return `${COCKPIT_URL}/storage/uploads/${path}`;
   }
   return PLACEHOLDER;
 }
@@ -88,50 +92,63 @@ export async function getHomePageData() {
   }
 
   const homeData: HomeData = {
-    intro: { ...raw.intro, image: cockpitAsset(raw.intro?.image) },
-    stats: (raw.stats ?? []).map((s: Raw) => ({ uuid: s._id ?? s.id, value: s.value, label: s.label })),
+    intro: {
+      headingStart:      raw.introHeadingStart      ?? "",
+      headingHighlight:  raw.introHeadingHighlight  ?? "",
+      headingEnd:        raw.introHeadingEnd         ?? "",
+      headingSecondLine: raw.introHeadingSecondLine  ?? "",
+      experienceLabel:   raw.introExperienceLabel    ?? "",
+      experienceValue:   raw.introExperienceValue    ?? "",
+      description:       raw.introDescription        ?? "",
+      image:             cockpitAsset(raw.introImage),
+    },
+    stats: (raw.stats ?? []).map((s: Raw) => ({
+      uuid: s._id ?? s.id,
+      value: s.value,
+      label: s.label,
+    })),
     partners: (raw.partners ?? []).map((p: Raw, i: number): TrustedPartnerLogo => ({
       id: i + 1,
       uuid: p._id ?? p.id ?? String(i),
       image: cockpitAsset(p.image),
     })),
     about: {
-      eyebrow: raw.about?.eyebrow ?? "",
-      title: raw.about?.title ?? "",
-      description: raw.about?.description ?? "",
-      image: cockpitAsset(raw.about?.image),
-      highlights: (raw.about?.highlights ?? []).map((h: Raw) => ({
-        uuid: h._id ?? h.id,
+      eyebrow:     raw.aboutEyebrow     ?? "",
+      title:       raw.aboutTitle       ?? "",
+      description: raw.aboutDescription ?? "",
+      image:       cockpitAsset(raw.aboutImage),
+      highlights:  (raw.aboutHighlights ?? []).map((h: Raw) => ({
+        uuid:  h._id ?? h.id,
         label: h.label,
         image: cockpitAsset(h.image),
       })),
     },
     missionVision: (raw.missionVision ?? []).map((m: Raw) => ({
-      uuid: m._id ?? m.id,
-      title: m.title,
+      uuid:        m._id ?? m.id,
+      title:       m.title,
       description: m.description,
-      image: cockpitAsset(m.image),
+      image:       cockpitAsset(m.image),
     })),
-    solutions: { heading: raw.solutions?.heading ?? "" },
+    solutions: { heading: raw.solutionsHeading ?? "" },
     testimonials: {
-      heading: raw.testimonials?.heading ?? "",
-      description: raw.testimonials?.description ?? "",
+      heading:     raw.testimonialsHeading     ?? "",
+      description: raw.testimonialsDescription ?? "",
     },
     faqs: {
-      heading: raw.faqs?.heading ?? "",
-      faqs: (raw.faqs?.items ?? []).map((f: Raw) => ({
-        uuid: f._id ?? f.id,
+      heading: raw.faqsHeading ?? "",
+      faqs: (raw.faqs ?? []).map((f: Raw) => ({
+        uuid:     f._id ?? f.id,
         question: f.question,
-        answer: f.answer,
+        answer:   f.answer,
       })),
     },
   };
 
-  const testimonials: HomeTestimonial[] = (raw.testimonials?.items ?? []).map((t: Raw) => ({
-    uuid: t._id ?? t.id,
-    quote: t.quote,
-    name: t.name,
-    role: t.role,
+  const testimonials: HomeTestimonial[] = (raw.testimonials ?? []).map((t: Raw) => ({
+    uuid:   t._id ?? t.id,
+    quote:  t.quote,
+    name:   t.name,
+    role:   t.role,
     avatar: cockpitAsset(t.avatar),
     rating: t.rating ?? 5,
   }));
@@ -147,40 +164,40 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
 
   return {
     header: {
-      eyebrow: raw.header?.eyebrow ?? "",
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      image: cockpitAsset(raw.header?.image),
+      eyebrow:     raw.headerEyebrow     ?? "",
+      title:       raw.headerTitle       ?? "",
+      description: raw.headerDescription ?? "",
+      image:       cockpitAsset(raw.headerImage),
     },
     companyValues: {
-      heading: raw.companyValues?.heading ?? "",
-      image: cockpitAsset(raw.companyValues?.image),
-      values: (raw.companyValues?.values ?? []).map((v: Raw, i: number) => ({
-        id: i + 1,
-        uuid: v._id ?? v.id ?? String(i),
-        title: v.title,
+      heading: raw.valuesHeading ?? "",
+      image:   cockpitAsset(raw.valuesImage),
+      values:  (raw.values ?? []).map((v: Raw, i: number) => ({
+        id:          i + 1,
+        uuid:        v._id ?? v.id ?? String(i),
+        title:       v.title,
         description: v.description,
       })),
     },
     partners: {
-      heading: raw.partners?.heading ?? "",
-      partners: (raw.partners?.items ?? []).map((p: Raw) => p.name),
+      heading:  raw.partnersHeading ?? "",
+      partners: (raw.partners ?? []).map((p: Raw) => p.name),
     },
     team: {
-      heading: raw.team?.heading ?? "",
-      description: raw.team?.description ?? "",
-      members: (raw.team?.members ?? []).map((m: Raw, i: number) => ({
-        id: i + 1,
-        uuid: m._id ?? m.id ?? String(i),
-        name: m.name,
-        role: m.role,
-        image: cockpitAsset(m.image),
-        description: m.description,
+      heading:     raw.teamHeading     ?? "",
+      description: raw.teamDescription ?? "",
+      members:     (raw.team ?? []).map((m: Raw, i: number) => ({
+        id:          i + 1,
+        uuid:        m._id ?? m.id ?? String(i),
+        name:        m.name,
+        role:        m.role,
+        image:       cockpitAsset(m.image),
+        description: m.bio ?? m.description ?? "",
       })),
     },
     cta: {
-      title: raw.cta?.title ?? "",
-      description: raw.cta?.description ?? "",
+      title:       raw.ctaTitle       ?? "",
+      description: raw.ctaDescription ?? "",
     },
   };
 }
@@ -193,27 +210,27 @@ export async function getContactPageData() {
 
   return {
     header: {
-      eyebrow: raw.header?.eyebrow ?? "",
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      image: cockpitAsset(raw.header?.image),
+      eyebrow:     raw.headerEyebrow     ?? "",
+      title:       raw.headerTitle       ?? "",
+      description: raw.headerDescription ?? "",
+      image:       cockpitAsset(raw.headerImage),
     },
     details: {
-      eyebrow: raw.details?.eyebrow ?? "",
-      title: raw.details?.title ?? "",
-      description: raw.details?.description ?? "",
-      officeAddress: raw.details?.officeAddress ?? "",
-      phone: raw.details?.phone ?? "",
-      email: raw.details?.email ?? "",
-      website: raw.details?.website ?? "",
-      businessHours: raw.details?.businessHours ?? "",
-      weekendHours: raw.details?.weekendHours ?? "",
-      mapEmbedUrl: raw.details?.mapEmbedUrl ?? "",
-      directionsUrl: raw.details?.directionsUrl ?? "",
+      eyebrow:       raw.detailsEyebrow     ?? "",
+      title:         raw.detailsTitle       ?? "",
+      description:   raw.detailsDescription ?? "",
+      officeAddress: raw.officeAddress      ?? "",
+      phone:         raw.phone              ?? "",
+      email:         raw.email              ?? "",
+      website:       raw.website            ?? "",
+      businessHours: raw.businessHours      ?? "",
+      weekendHours:  raw.weekendHours       ?? "",
+      mapEmbedUrl:   raw.mapEmbedUrl        ?? "",
+      directionsUrl: raw.directionsUrl      ?? "",
     },
     form: {
-      title: raw.form?.title ?? "",
-      description: raw.form?.description ?? "",
+      title:       raw.formTitle       ?? "",
+      description: raw.formDescription ?? "",
     },
   };
 }
@@ -237,64 +254,64 @@ export async function getCareerPageData(): Promise<{
 
   const careerData: CareerData = {
     header: {
-      eyebrow: raw.header?.eyebrow ?? "",
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      image: cockpitAsset(raw.header?.image),
-      badgeLabel: raw.header?.badgeLabel ?? "",
+      eyebrow:     raw.headerEyebrow     ?? "",
+      title:       raw.headerTitle       ?? "",
+      description: raw.headerDescription ?? "",
+      image:       cockpitAsset(raw.headerImage),
+      badgeLabel:  raw.headerBadgeLabel  ?? "",
     },
     openPositions: {
-      title: raw.openPositions?.title ?? "",
-      description: raw.openPositions?.description ?? "",
-      departments: (raw.openPositions?.departments ?? []).map((d: Raw) => d.name),
-      employmentTypes: (raw.openPositions?.employmentTypes ?? []).map((e: Raw) => e.name),
+      title:           raw.positionsTitle       ?? "",
+      description:     raw.positionsDescription ?? "",
+      departments:     (raw.departments     ?? []).map((d: Raw) => d.name),
+      employmentTypes: (raw.employmentTypes ?? []).map((e: Raw) => e.name),
     },
     hiringProcess: {
-      title: raw.hiringProcess?.title ?? "",
-      description: raw.hiringProcess?.description ?? "",
-      steps: (raw.hiringProcess?.steps ?? []).map((s: Raw, i: number) => ({
-        id: i + 1,
-        uuid: s._id ?? s.id ?? String(i),
-        title: s.title,
+      title:       raw.hiringTitle       ?? "",
+      description: raw.hiringDescription ?? "",
+      steps: (raw.hiringSteps ?? []).map((s: Raw, i: number) => ({
+        id:          i + 1,
+        uuid:        s._id ?? s.id ?? String(i),
+        title:       s.title,
         description: s.description,
-        image: cockpitAsset(s.image),
+        image:       cockpitAsset(s.image),
       })),
     },
     followUs: {
-      title: raw.followUs?.title ?? "",
-      description: raw.followUs?.description ?? "",
-      links: (raw.followUs?.links ?? []).map((l: Raw, i: number) => ({
-        id: i + 1,
-        uuid: l._id ?? l.id ?? String(i),
+      title:       raw.followUsTitle       ?? "",
+      description: raw.followUsDescription ?? "",
+      links: (raw.socialLinks ?? []).map((l: Raw, i: number) => ({
+        id:    i + 1,
+        uuid:  l._id ?? l.id ?? String(i),
         label: l.label,
-        href: l.href,
+        href:  l.href,
         image: cockpitAsset(l.image),
       })),
     },
   };
 
   const lifeAtTechAvenue: LifeAtTechAvenueProps = {
-    eyebrow: raw.lifeAtTechAvenue?.eyebrow ?? "",
-    title: raw.lifeAtTechAvenue?.title ?? "",
-    description: raw.lifeAtTechAvenue?.description ?? "",
-    highlights: (raw.lifeAtTechAvenue?.highlights ?? []).map((h: Raw, i: number) => ({
-      id: i + 1,
-      uuid: h._id ?? h.id ?? String(i),
-      title: h.title,
+    eyebrow:     raw.lifeEyebrow     ?? "",
+    title:       raw.lifeTitle       ?? "",
+    description: raw.lifeDescription ?? "",
+    highlights:  (raw.lifeHighlights ?? []).map((h: Raw, i: number) => ({
+      id:          i + 1,
+      uuid:        h._id ?? h.id ?? String(i),
+      title:       h.title,
       description: h.description,
-      media: cockpitAsset(h.media),
+      media:       cockpitAsset(h.media),
     })),
   };
 
   const jobs: JobOpening[] = jobDocs.map((j: Raw, i: number) => ({
-    id: i + 1,
-    uuid: j._id ?? j.id ?? String(i),
-    title: j.title,
-    department: j.department,
-    location: j.location,
+    id:             i + 1,
+    uuid:           j._id ?? j.id ?? String(i),
+    title:          j.title,
+    department:     j.department,
+    location:       j.location,
     employmentType: j.employmentType,
-    experience: j.experience,
-    workplace: j.workplace,
+    experience:     j.experience,
+    workplace:      j.workplace,
   }));
 
   return { careerData, jobs, lifeAtTechAvenue };
@@ -308,34 +325,35 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
 
   return {
     allServicesHeader: {
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      image: cockpitAsset(raw.header?.image),
+      title:       raw.headerTitle       ?? "",
+      description: raw.headerDescription ?? "",
+      image:       cockpitAsset(raw.headerImage),
     },
     coreServices: {
-      heading: raw.coreServices?.heading ?? "",
-      description: raw.coreServices?.description ?? "",
-      services: (raw.coreServices?.services ?? []).map((s: Raw, i: number) => ({
-        id: i + 1,
-        uuid: s._id ?? s.id ?? String(i),
+      heading:     raw.servicesHeading     ?? "",
+      description: raw.servicesDescription ?? "",
+      services: (raw.coreServices ?? []).map((s: Raw, i: number) => ({
+        id:          i + 1,
+        uuid:        s._id ?? s.id ?? String(i),
         articleUuid: s.articleUuid ?? "",
-        image: cockpitAsset(s.image),
-        title: s.title,
+        image:       cockpitAsset(s.icon),
+        title:       s.title,
         description: s.description,
       })),
     },
     allServicesArticles: (raw.articles ?? []).map((a: Raw, i: number) => ({
-      id: i + 1,
-      uuid: a._id ?? a.id ?? String(i),
-      eyebrow: a.eyebrow,
-      title: a.title,
+      id:          i + 1,
+      uuid:        a._id ?? a.id ?? String(i),
+      eyebrow:     a.eyebrow,
+      title:       a.title,
       description: a.description,
-      image: cockpitAsset(a.image),
-      iconImage: cockpitAsset(a.iconImage),
-      features: (a.features ?? []).map((f: Raw) => ({
-        image: cockpitAsset(f.image),
-        title: f.title,
-      })),
+      image:       cockpitAsset(a.image),
+      iconImage:   cockpitAsset(a.iconImage),
+      features:    (a.features ?? "")
+        .split("\n")
+        .map((line: string) => line.trim())
+        .filter(Boolean)
+        .map((title: string) => ({ image: PLACEHOLDER, title })),
     })),
   };
 }
@@ -344,40 +362,40 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
 
 function toIndustry(raw: Raw): Industry {
   return {
-    id: raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
-    title: raw.title,
-    image: cockpitAsset(raw.image),
+    id:          raw._id ?? raw.id,
+    uuid:        raw._id ?? raw.id,
+    title:       raw.title,
+    image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
     header: {
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      backgroundImage: cockpitAsset(raw.header?.backgroundImage),
+      title:           raw.headerTitle       ?? "",
+      description:     raw.headerDescription ?? "",
+      backgroundImage: cockpitAsset(raw.headerBackground),
     },
     overview: {
-      title: raw.overview?.title ?? "",
-      description: raw.overview?.description ?? "",
-      image: cockpitAsset(raw.overview?.image),
-      highlights: (raw.overview?.highlights ?? []).map((h: Raw) => ({
-        title: h.title,
+      title:       raw.overviewTitle       ?? "",
+      description: raw.overviewDescription ?? "",
+      image:       cockpitAsset(raw.overviewImage),
+      highlights:  (raw.overviewHighlights ?? []).map((h: Raw) => ({
+        title:       h.title,
         description: h.description,
       })),
     },
     challenges: {
-      title: raw.challenges?.title ?? "",
-      description: raw.challenges?.description ?? "",
-      items: (raw.challenges?.items ?? []).map((i: Raw) => ({
-        image: cockpitAsset(i.image),
-        title: i.title,
+      title:       raw.challengesTitle       ?? "",
+      description: raw.challengesDescription ?? "",
+      items: (raw.challenges ?? []).map((i: Raw) => ({
+        image:       cockpitAsset(i.icon ?? i.image),
+        title:       i.title,
         description: i.description,
       })),
     },
     providedSolutions: {
-      title: raw.providedSolutions?.title ?? "",
-      description: raw.providedSolutions?.description ?? "",
-      items: (raw.providedSolutions?.items ?? []).map((i: Raw) => ({
-        image: cockpitAsset(i.image),
-        title: i.title,
+      title:       raw.solutionsTitle       ?? "",
+      description: raw.solutionsDescription ?? "",
+      items: (raw.solutions ?? []).map((i: Raw) => ({
+        image:       cockpitAsset(i.icon ?? i.image),
+        title:       i.title,
         description: i.description,
       })),
     },
@@ -400,51 +418,51 @@ export async function getIndustry(id: string): Promise<Industry | null> {
 
 function toLegacySolution(raw: Raw): Solution {
   return {
-    id: raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
-    title: raw.title,
-    image: cockpitAsset(raw.image),
+    id:          raw._id ?? raw.id,
+    uuid:        raw._id ?? raw.id,
+    title:       raw.title,
+    image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
     header: {
-      id: raw._id ?? raw.id,
-      uuid: raw._id ?? raw.id,
-      title: raw.header?.title ?? "",
-      description: raw.header?.description ?? "",
-      image: cockpitAsset(raw.header?.image),
-      items: (raw.header?.items ?? []).map((i: Raw) => ({
-        title: i.title,
-        description: i.description,
+      id:          raw._id ?? raw.id,
+      uuid:        raw._id ?? raw.id,
+      title:       raw.headerTitle       ?? "",
+      description: raw.headerDescription ?? "",
+      image:       cockpitAsset(raw.headerImage),
+      items: (raw.headerStats ?? []).map((i: Raw) => ({
+        title:       i.value,
+        description: i.label,
       })),
     },
     highlights: (raw.highlights ?? []).map((h: Raw) => ({
-      uuid: h._id ?? h.id,
+      uuid:  h._id ?? h.id,
       label: h.label,
-      image: cockpitAsset(h.image),
+      image: cockpitAsset(h.checkIcon ?? h.image),
     })),
     overview: {
-      title: raw.overview?.title ?? "",
-      description: raw.overview?.description ?? "",
+      title:       raw.overviewTitle       ?? "",
+      description: raw.overviewDescription ?? "",
     },
     keyInfo: {
-      title: raw.keyInfo?.title ?? "",
+      title: raw.keyInfoTitle ?? "",
       items: Object.fromEntries(
-        (raw.keyInfo?.items ?? []).map((i: Raw) => [i.key, i.value])
+        (raw.keyInfo ?? []).map((i: Raw) => [i.key, i.value])
       ),
     },
     experience: {
-      title: raw.experience?.title ?? "",
-      description: raw.experience?.description ?? "",
-      image: cockpitAsset(raw.experience?.image),
-      items: (raw.experience?.items ?? []).map((i: Raw) => ({
-        title: i.title,
+      title:       raw.experienceTitle       ?? "",
+      description: raw.experienceDescription ?? "",
+      image:       cockpitAsset(raw.experienceImage),
+      items: (raw.experienceItems ?? []).map((i: Raw) => ({
+        title:       i.title,
         description: i.description,
       })),
     },
     testimonial: {
-      quote: raw.testimonial?.quote ?? "",
-      name: raw.testimonial?.name ?? "",
-      role: raw.testimonial?.role ?? "",
-      avatar: cockpitAsset(raw.testimonial?.avatar),
+      quote:  raw.testimonialQuote  ?? "",
+      name:   raw.testimonialName   ?? "",
+      role:   raw.testimonialRole   ?? "",
+      avatar: cockpitAsset(raw.testimonialAvatar),
     },
   };
 }
@@ -465,30 +483,30 @@ export async function getLegacySolution(id: string): Promise<Solution | null> {
 
 function toSolutionPage(raw: Raw): SolutionPage {
   return {
-    id: raw._id ?? raw.id,
+    id:   raw._id ?? raw.id,
     uuid: raw._id ?? raw.id,
     title: raw.title,
     image: cockpitAsset(raw.image),
-    icon: cockpitAsset(raw.icon),
+    icon:  cockpitAsset(raw.icon),
     solutionHeader: {
-      heading: raw.solutionHeader?.heading ?? "",
-      description: raw.solutionHeader?.description ?? "",
+      heading:     raw.solutionHeading     ?? "",
+      description: raw.solutionDescription ?? "",
     },
     solutions: {
-      heading: raw.solutions?.heading ?? "",
-      description: raw.solutions?.description ?? "",
-      items: (raw.solutions?.items ?? []).map((i: Raw, idx: number) => ({
-        id: idx + 1,
-        uuid: i._id ?? i.id ?? String(idx),
-        title: i.title,
+      heading:     raw.solutionsHeading     ?? "",
+      description: raw.solutionsDescription ?? "",
+      items: (raw.solutionItems ?? []).map((i: Raw, idx: number) => ({
+        id:          idx + 1,
+        uuid:        i._id ?? i.id ?? String(idx),
+        title:       i.title,
         description: i.description,
       })),
     },
     phases: (raw.phases ?? []).map((p: Raw, i: number) => ({
-      id: i + 1,
-      uuid: p._id ?? p.id ?? String(i),
-      title: p.title,
-      focus: p.focus,
+      id:          i + 1,
+      uuid:        p._id ?? p.id ?? String(i),
+      title:       p.title,
+      focus:       p.focus,
       description: p.description,
     })),
   };
@@ -510,14 +528,14 @@ export async function getSolutionPage(id: string): Promise<SolutionPage | null> 
 
 function toNewsStory(raw: Raw): NewsStory {
   return {
-    id: raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
-    category: raw.category ?? "",
-    title: raw.title ?? "",
+    id:          raw._id ?? raw.id,
+    uuid:        raw._id ?? raw.id,
+    category:    raw.category    ?? "",
+    title:       raw.title       ?? "",
     description: raw.description ?? "",
     publishedAt: raw.publishedAt ?? new Date().toISOString(),
-    image: cockpitAsset(raw.image),
-    html: raw.html ?? "",
+    image:       cockpitAsset(raw.image),
+    html:        raw.html ?? "",
   };
 }
 
@@ -540,18 +558,18 @@ export async function getNewsPageData(): Promise<{
   const rest = newsDocs.filter((d: Raw) => (d._id ?? d.id) !== (featured?._id ?? featured?.id));
 
   const events: EventItem[] = eventDocs.map((e: Raw, i: number) => ({
-    id: i + 1,
-    uuid: e._id ?? e.id ?? String(i),
-    title: e.title,
+    id:       i + 1,
+    uuid:     e._id ?? e.id ?? String(i),
+    title:    e.title,
     location: e.location,
     startsAt: e.startsAt,
-    image: cockpitAsset(e.image),
-    html: e.html ?? "",
+    image:    cockpitAsset(e.image),
+    html:     e.html ?? "",
   }));
 
   return {
     featuredStory: toNewsStory(featured),
-    newsStories: rest.map(toNewsStory),
+    newsStories:   rest.map(toNewsStory),
     events,
   };
 }
@@ -566,13 +584,13 @@ export async function getEvent(id: string): Promise<EventItem | null> {
   const raw = await fetchCollectionItem("Events", id);
   if (!raw) return null;
   return {
-    id: raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
-    title: raw.title,
+    id:       raw._id ?? raw.id,
+    uuid:     raw._id ?? raw.id,
+    title:    raw.title,
     location: raw.location,
     startsAt: raw.startsAt,
-    image: cockpitAsset(raw.image),
-    html: raw.html ?? "",
+    image:    cockpitAsset(raw.image),
+    html:     raw.html ?? "",
   };
 }
 
@@ -581,38 +599,38 @@ export async function getEvent(id: string): Promise<EventItem | null> {
 function toSuccessStory(raw: Raw): SuccessStory {
   const itemFields = (arr: Raw[]) =>
     arr.map((i: Raw) => ({
-      image: cockpitAsset(i.image),
-      title: i.title,
+      image:       cockpitAsset(i.icon ?? i.image),
+      title:       i.title,
       description: i.description,
     }));
 
   return {
-    id: raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
-    image: cockpitAsset(raw.image),
-    title: raw.title,
+    id:          raw._id ?? raw.id,
+    uuid:        raw._id ?? raw.id,
+    image:       cockpitAsset(raw.image),
+    title:       raw.title,
     description: raw.description,
-    industry: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.industry?.title ?? "" },
-    solution: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.solution?.title ?? "" },
+    industry: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.industryTitle ?? "" },
+    solution: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.solutionTitle  ?? "" },
     detail: {
       challenges: {
-        title: raw.challenges?.title ?? "",
-        description: raw.challenges?.description ?? "",
-        items: itemFields(raw.challenges?.items ?? []),
+        title:       raw.challengesTitle       ?? "",
+        description: raw.challengesDescription ?? "",
+        items:       itemFields(raw.challenges ?? []),
       },
       providedSolutions: {
-        title: raw.providedSolutions?.title ?? "",
-        description: raw.providedSolutions?.description ?? "",
-        items: itemFields(raw.providedSolutions?.items ?? []),
+        title:       raw.solutionsTitle       ?? "",
+        description: raw.solutionsDescription ?? "",
+        items:       itemFields(raw.solutionItems ?? []),
       },
       impact: {
-        title: raw.impact?.title ?? "",
-        description: raw.impact?.description ?? "",
-        items: (raw.impact?.items ?? []).map((i: Raw, idx: number) => ({
-          id: idx + 1,
-          uuid: i._id ?? i.id ?? String(idx),
-          value: i.value,
-          title: i.title,
+        title:       raw.impactTitle       ?? "",
+        description: raw.impactDescription ?? "",
+        items: (raw.impactItems ?? []).map((i: Raw, idx: number) => ({
+          id:          idx + 1,
+          uuid:        i._id ?? i.id ?? String(idx),
+          value:       i.value,
+          title:       i.title,
           description: i.description,
         })),
       },
@@ -636,15 +654,15 @@ export async function getSuccessStoriesPageData(): Promise<{
 
   const content: SuccessStoriesContent = {
     header: {
-      title: pageRaw?.header?.title ?? "",
-      description: pageRaw?.header?.description ?? "",
-      backgroundImage: cockpitAsset(pageRaw?.header?.backgroundImage),
+      title:           pageRaw?.headerTitle           ?? "",
+      description:     pageRaw?.headerDescription     ?? "",
+      backgroundImage: cockpitAsset(pageRaw?.headerBackgroundImage),
     },
     intro: {
-      titleStart: pageRaw?.intro?.titleStart ?? "",
-      titleHighlight: pageRaw?.intro?.titleHighlight ?? "",
-      titleEnd: pageRaw?.intro?.titleEnd ?? "",
-      description: pageRaw?.intro?.description ?? "",
+      titleStart:     pageRaw?.introTitleStart     ?? "",
+      titleHighlight: pageRaw?.introTitleHighlight ?? "",
+      titleEnd:       pageRaw?.introTitleEnd       ?? "",
+      description:    pageRaw?.introDescription    ?? "",
     },
   };
 
