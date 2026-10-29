@@ -102,8 +102,8 @@ export async function getHomePageData() {
       description:       raw.introDescription        ?? "",
       image:             cockpitAsset(raw.introImage),
     },
-    stats: (raw.stats ?? []).map((s: Raw) => ({
-      uuid: s._id ?? s.id,
+    stats: (raw.stats ?? []).map((s: Raw, i: number) => ({
+      uuid: s._id ?? s.id ?? String(i),
       value: s.value,
       label: s.label,
     })),
@@ -117,14 +117,14 @@ export async function getHomePageData() {
       title:       raw.aboutTitle       ?? "",
       description: raw.aboutDescription ?? "",
       image:       cockpitAsset(raw.aboutImage),
-      highlights:  (raw.aboutHighlights ?? []).map((h: Raw) => ({
-        uuid:  h._id ?? h.id,
+      highlights:  (raw.aboutHighlights ?? []).map((h: Raw, i: number) => ({
+        uuid:  h._id ?? h.id ?? String(i),
         label: h.label,
         image: cockpitAsset(h.image),
       })),
     },
-    missionVision: (raw.missionVision ?? []).map((m: Raw) => ({
-      uuid:        m._id ?? m.id,
+    missionVision: (raw.missionVision ?? []).map((m: Raw, i: number) => ({
+      uuid:        m._id ?? m.id ?? String(i),
       title:       m.title,
       description: m.description,
       image:       cockpitAsset(m.image),
@@ -136,16 +136,16 @@ export async function getHomePageData() {
     },
     faqs: {
       heading: raw.faqsHeading ?? "",
-      faqs: (raw.faqs ?? []).map((f: Raw) => ({
-        uuid:     f._id ?? f.id,
+      faqs: (raw.faqs ?? []).map((f: Raw, i: number) => ({
+        uuid:     f._id ?? f.id ?? String(i),
         question: f.question,
         answer:   f.answer,
       })),
     },
   };
 
-  const testimonials: HomeTestimonial[] = (raw.testimonials ?? []).map((t: Raw) => ({
-    uuid:   t._id ?? t.id,
+  const testimonials: HomeTestimonial[] = (raw.testimonials ?? []).map((t: Raw, i: number) => ({
+    uuid:   t._id ?? t.id ?? String(i),
     quote:  t.quote,
     name:   t.name,
     role:   t.role,
@@ -434,8 +434,8 @@ function toLegacySolution(raw: Raw): Solution {
         description: i.label,
       })),
     },
-    highlights: (raw.highlights ?? []).map((h: Raw) => ({
-      uuid:  h._id ?? h.id,
+    highlights: (raw.highlights ?? []).map((h: Raw, i: number) => ({
+      uuid:  h._id ?? h.id ?? String(i),
       label: h.label,
       image: cockpitAsset(h.checkIcon ?? h.image),
     })),
