@@ -1,0 +1,21 @@
+import { EventsCarousel } from "@/components/features/events/events-carousel";
+import { NewsGrid } from "@/components/features/news/news-grid";
+import { NewsHero } from "@/components/features/news/news-hero";
+import { NewsletterCta } from "@/components/features/news/newsletter-cta";
+import { getNewsPageData } from "@/lib/cms";
+
+export default async function page() {
+  const { featuredStory, newsStories, events } = await getNewsPageData();
+
+  return (
+    <>
+      <NewsHero featuredStory={featuredStory} stories={newsStories} />
+
+      <NewsGrid stories={newsStories} />
+
+      <EventsCarousel events={events} />
+
+      <NewsletterCta />
+    </>
+  );
+}
