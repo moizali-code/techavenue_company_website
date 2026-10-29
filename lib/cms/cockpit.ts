@@ -17,7 +17,7 @@ const COCKPIT_URL = (
 ).replace(/\/$/, "");
 
 const HEADERS: Record<string, string> = {
-  "Cockpit-Token": process.env.COCKPIT_API_KEY ?? "",
+  "api-key": process.env.COCKPIT_API_KEY ?? "",
   "Content-Type": "application/json",
 };
 
@@ -59,7 +59,7 @@ async function fetchCollection(model: string): Promise<Raw[]> {
     });
     if (!res.ok) return [];
     const json = await res.json();
-    return json.data ?? [];
+    return json.data ?? json.value ?? [];
   } catch {
     return [];
   }
