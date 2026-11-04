@@ -13,7 +13,7 @@ import type { TrustedPartnerLogo } from "@/types/shared/trusted-partners";
 const COCKPIT_URL = (
   process.env.COCKPIT_INTERNAL_URL ??
   process.env.NEXT_PUBLIC_COCKPIT_URL ??
-  "http://localhost:8090"
+  "http://localhost:8091"
 ).replace(/\/$/, "");
 
 const HEADERS: Record<string, string> = {
@@ -26,18 +26,22 @@ type Raw = any;
 
 const PLACEHOLDER = "/placeholder.svg";
 
+const ASSETS_URL = (
+  `${process.env.NEXT_PUBLIC_COCKPIT_URL ?? "http://localhost:8091"}/storage/uploads`
+).replace(/\/$/, "");
+
 function cockpitAsset(field: unknown): string {
   if (!field) return PLACEHOLDER;
   if (typeof field === "string") {
     if (!field) return PLACEHOLDER;
-    return field.startsWith("http") ? field : `${COCKPIT_URL}/storage/uploads/${field}`;
+    return field.startsWith("http") ? field : `${ASSETS_URL}/${field.replace(/^\/+/, "")}`;
   }
   if (typeof field === "object" && field !== null) {
     const f = field as Record<string, unknown>;
     const path = (f.path ?? f._id ?? f.id) as string | undefined;
     if (!path) return PLACEHOLDER;
     if (path.startsWith("http")) return path;
-    return `${COCKPIT_URL}/storage/uploads/${path}`;
+    return `${ASSETS_URL}/${path.replace(/^\/+/, "")}`;
   }
   return PLACEHOLDER;
 }
@@ -46,7 +50,7 @@ async function fetchSingleton(model: string): Promise<Raw> {
   try {
     const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}`, {
       headers: HEADERS,
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     if (!res.ok) return null;
     return res.json();
@@ -59,7 +63,7 @@ async function fetchCollection(model: string): Promise<Raw[]> {
   try {
     const res = await fetch(`${COCKPIT_URL}/api/content/items/${model}?limit=100`, {
       headers: HEADERS,
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     if (!res.ok) return [];
     const json = await res.json();
@@ -73,7 +77,7 @@ async function fetchCollectionItem(model: string, id: string): Promise<Raw> {
   try {
     const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}/${id}`, {
       headers: HEADERS,
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     if (!res.ok) return null;
     return res.json();
