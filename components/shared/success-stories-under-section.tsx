@@ -1,3 +1,4 @@
+import { getSiteSettings } from "@/lib/cms";
 import Link from "next/link";
 import { CircleArrowRight } from "lucide-react";
 
@@ -9,15 +10,14 @@ import { cn } from "@/lib/utils";
 import type { SuccessStoriesUnderSectionProps } from "@/types/shared/success-stories-under-section";
 
 const VISIBLE_STORIES_COUNT = 3;
-const SUCCESS_STORIES_ACTION_LABEL = "View all Success Stories";
-const SUCCESS_STORIES_ACTION_HREF = "/success-stories";
 const TAG_BADGE_CLASSNAME =
   "h-6 px-3 text-[10px] font-semibold tracking-[0.08em] text-white uppercase";
 
-function SuccessStoriesUnderSection({
+async function SuccessStoriesUnderSection({
   successStories,
 }: SuccessStoriesUnderSectionProps) {
   const { title, description, items } = successStories;
+  const settings = await getSiteSettings();
   const visibleStories = items.slice(0, VISIBLE_STORIES_COUNT);
 
   return (
@@ -38,10 +38,10 @@ function SuccessStoriesUnderSection({
           />
 
           <Link
-            href={SUCCESS_STORIES_ACTION_HREF}
+            href={settings.storiesActionHref}
             className="inline-flex shrink-0 items-center gap-2 text-[15px] font-bold text-[#1E3C8C] transition-opacity hover:opacity-80 lg:text-[16px]"
           >
-            {SUCCESS_STORIES_ACTION_LABEL}
+            {settings.storiesActionLabel}
             <CircleArrowRight
               className="size-5 text-[#1E3C8C]"
               strokeWidth={1.5}

@@ -6,7 +6,7 @@ import { SplitSection } from "@/components/shared/split-section";
 import { TabGroup } from "@/components/shared/tab-group";
 import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
 import { Button } from "@/components/ui/button";
-import { getIndustries, getIndustry, getSuccessStoriesPageData } from "@/lib/cms";
+import { getIndustries, getIndustry, getSuccessStoriesPageData, getSiteSettings } from "@/lib/cms";
 import { Lightbulb, UserRoundCheck, type LucideIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -14,10 +14,11 @@ const highlightIcons: LucideIcon[] = [UserRoundCheck, Lightbulb];
 
 export default async function page({ params }: { params: Promise<{ industry: string }> }) {
   const { industry: id } = await params;
-  const [activeIndustry, industries, { stories }] = await Promise.all([
+  const [activeIndustry, industries, { stories }, settings] = await Promise.all([
     getIndustry(id),
     getIndustries(),
     getSuccessStoriesPageData(),
+    getSiteSettings(),
   ]);
 
   if (!activeIndustry) notFound();
@@ -104,8 +105,8 @@ export default async function page({ params }: { params: Promise<{ industry: str
       {stories.length > 0 && (
         <SuccessStoriesUnderSection
           successStories={{
-            title: "Success Stories",
-            description: "See how we've helped organisations like yours succeed.",
+            title: settings.industryStoriesTitle,
+            description: settings.industryStoriesDescription,
             items: stories.slice(0, 3),
           }}
         />

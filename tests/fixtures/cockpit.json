@@ -1,0 +1,1125 @@
+{
+  "Home": {
+    "introHeadingStart": "Leading",
+    "introHeadingHighlight": "Intelligent",
+    "introHeadingEnd": "Digital",
+    "introHeadingSecondLine": "Industry Experience",
+    "introExperienceLabel": "Established",
+    "introExperienceValue": "10+ Years",
+    "introDescription": "Delivering enterprise technology solutions that accelerate innovation through intelligence, security, and transformation.",
+    "introImage": null,
+    "stats": [
+      {
+        "uuid": "6f1c9a24-3b7e-4d85-9c11-2a5f8e0d7431",
+        "value": "10+",
+        "label": "Global Regions"
+      },
+      {
+        "uuid": "b83d5f10-9c46-42a7-8e39-71d0c4b6a582",
+        "value": "5",
+        "label": "Industry Verticals"
+      },
+      {
+        "uuid": "1d47e8c3-52ba-4f96-b0d8-3c9a6e21f745",
+        "value": "80+",
+        "label": "Technology Partners"
+      },
+      {
+        "uuid": "9a2f6b58-7e13-4c0d-a684-5f3b1d9c8e26",
+        "value": "30+",
+        "label": "Years of Expertise"
+      }
+    ],
+    "partners": [
+      {
+        "id": 1,
+        "uuid": "d7c40b6e-19a5-4382-b0f7-6e3512a9c847",
+        "image": "techavenue/partners/ibm.svg"
+      },
+      {
+        "id": 2,
+        "uuid": "3b8e51fa-620d-4c97-85b1-0a74e6c23f59",
+        "image": "techavenue/partners/dell.svg"
+      },
+      {
+        "id": 3,
+        "uuid": "a02f7d43-8c16-495e-b738-51d9e0b46c72",
+        "image": "techavenue/partners/lenovo.svg"
+      },
+      {
+        "id": 4,
+        "uuid": "5e91c8b0-4d72-43a6-91e5-70b83c14da96",
+        "image": "techavenue/partners/huawei.svg"
+      },
+      {
+        "id": 5,
+        "uuid": "9146ea75-0b38-4f2c-86d0-2c57b9e41830",
+        "image": "techavenue/partners/forescout.svg"
+      },
+      {
+        "id": 6,
+        "uuid": "c8735b01-6e49-4a2d-93f8-14a0d7c65b23",
+        "image": "techavenue/partners/cisco.svg"
+      },
+      {
+        "id": 7,
+        "uuid": "42d0a986-7f51-4b63-a8c4-903e7b21d5f6",
+        "image": "techavenue/partners/microsoft.svg"
+      }
+    ],
+    "aboutEyebrow": "About Us",
+    "aboutTitle": "Leading the Innovation Drive",
+    "aboutDescription": "We deliver integrated technology, AI, and digital transformation solutions tailored to enterprise needs. Through innovation, strategic partnerships, and industry expertise, we help organizations build secure, intelligent, and future-ready digital ecosystems.",
+    "aboutImage": "techavenue/home/home_about.png",
+    "aboutHighlights": [
+      {
+        "uuid": "3e6c1a94-8d25-4b71-9f38-0c7a5e2d6b19",
+        "label": "AI-powered enterprise solutions",
+        "image": "techavenue/icons/ai-enterprise-solutions.svg"
+      },
+      {
+        "uuid": "c72b4d80-1f5a-4e63-8a97-2d6f0b3c9e51",
+        "label": "Decades of industry expertise",
+        "image": "techavenue/icons/industry-expertise.svg"
+      },
+      {
+        "uuid": "58a0e7f2-6b39-4c1d-b502-9e8c3a7d4f60",
+        "label": "Regional presence, global partnerships",
+        "image": "techavenue/icons/global-partnerships.svg"
+      },
+      {
+        "uuid": "e419d6b7-2c85-4a30-97f1-6b0d8e5a3c72",
+        "label": "End-to-end consulting & delivery",
+        "image": "techavenue/icons/end-to-end-delivery.svg"
+      }
+    ],
+    "missionVision": [
+      {
+        "uuid": "7b3f2e58-0d61-497c-a4e8-1c5b9d6f0a83",
+        "title": "Our Mission",
+        "description": "To empower organizations with integrated technology solutions that accelerate innovation, strengthen security, and enable sustainable digital transformation across industries.",
+        "image": "techavenue/icons/mission.svg"
+      },
+      {
+        "uuid": "0c8d5a13-4f72-4b96-8e05-3a1b7c2d9f64",
+        "title": "Our Vision",
+        "description": "To become a trusted global technology leader recognized for innovation, engineering excellence, and delivering intelligent solutions across enterprise and public sectors.",
+        "image": "techavenue/icons/vision.svg"
+      }
+    ],
+    "solutionsHeading": "Smart Products Powering Digital Transformation",
+    "testimonialsHeading": "Trusted by Visionary Organizations worldwide",
+    "testimonialsDescription": "Delivering innovation, security, and measurable transformation through long-term strategic partnerships.",
+    "testimonials": [
+      {
+        "uuid": "a5e2c760-3b18-4d94-9f0a-7c6d1e4b8352",
+        "quote": "Their cybersecurity frameworks and threat intelligence solutions significantly improved our operational resilience and compliance readiness.",
+        "name": "David Reynolds",
+        "role": "Director of Security Operations, Nexa Defense Systems",
+        "avatar": "techavenue/home/home_avatar_david.jpg",
+        "rating": 5
+      },
+      {
+        "uuid": "d63b9142-7a05-4c8e-b371-2f5e0a9c6d84",
+        "quote": "Tech Avenue delivered scalable smart infrastructure solutions that enhanced efficiency and accelerated our innovation initiatives.",
+        "name": "Ayesha Khan",
+        "role": "Head of Digital Transformation, SmartCity Connect",
+        "avatar": "techavenue/home/home_avatar_ayesha.jpg",
+        "rating": 5
+      },
+      {
+        "uuid": "41f7e0c9-58d3-4a26-9b84-6c2a3d7f1e05",
+        "quote": "Their engineering team provided outstanding support and delivered high performance systems beyond expectations.",
+        "name": "Michael Chen",
+        "role": "Enterprise Solutions Manager, Horizon Telecom",
+        "avatar": "techavenue/home/home_avatar_michael.jpg",
+        "rating": 5
+      }
+    ],
+    "faqsHeading": "Common Questions We Answer",
+    "faqs": [
+      {
+        "uuid": "2b58d0e6-9c41-4738-a5f2-0d7b3e6c1a94",
+        "question": "What Industries Does Tech Avenue Serve?",
+        "answer": "Tech Avenue delivers integrated technology solutions across government, telecommunications, construction, education, agriculture, energy, cybersecurity, and enterprise sectors, helping organizations accelerate secure digital transformation."
+      },
+      {
+        "uuid": "8f0a6c35-1d72-4e59-b8c6-4a9d2b7e5013",
+        "question": "What Services Does Tech Avenue Provide?",
+        "answer": "We provide enterprise IT consulting, smart infrastructure, cloud and data solutions, cybersecurity services, and end-to-end system integration tailored to each organization's operating environment."
+      },
+      {
+        "uuid": "5c1e9d47-6a30-4f82-91d5-7e0b8c4a3d26",
+        "question": "Does Tech Avenue Develop AI Solutions?",
+        "answer": "Yes. We design and deploy AI-powered platforms covering intelligent automation, predictive analytics, and decision support systems built on secure, production-ready architectures."
+      },
+      {
+        "uuid": "9d34b7f1-0e68-4295-8c47-1b5a6d0e3c92",
+        "question": "Can Tech Avenue Deliver End-To-End Digital Transformation Projects?",
+        "answer": "From strategy and architecture through implementation, migration, and long-term support, our teams manage the full transformation lifecycle as a single accountable partner."
+      },
+      {
+        "uuid": "6e70c852-3f19-4b04-a7d6-8c2f5b1e9a37",
+        "question": "Where Does Tech Avenue Operate?",
+        "answer": "We operate across more than ten global regions, combining regional delivery teams with a network of international technology partners."
+      }
+    ]
+  },
+  "About": {
+    "headerEyebrow": "Company",
+    "headerTitle": "ABOUT US",
+    "headerDescription": "We combine innovation, engineering excellence, and global partnerships to deliver intelligent, secure, and future-ready technology solutions across industries.",
+    "headerImage": "techavenue/about/about_header.png",
+    "valuesHeading": "The Values Behind Our Innovation, Driving Impact Through Purpose",
+    "valuesImage": "techavenue/about/about_values.png",
+    "values": [
+      {
+        "id": 1,
+        "uuid": "c48a1f37-5b90-4e62-8d15-7a3c60e29b84",
+        "title": "Why Choose Us",
+        "description": "Organizations choose Tech Avenue for our expertise in AI, cybersecurity, digital transformation, and intelligent technology solutions. Backed by strategic partnerships and decades of industry knowledge, we deliver secure, scalable, and future-ready solutions that empower enterprises and governments to achieve lasting success."
+      },
+      {
+        "id": 2,
+        "uuid": "0e5d7c62-83b1-4a09-9f47-25b6e1c8073a",
+        "title": "Our Mission",
+        "description": "Our mission is to empower organizations with integrated technology solutions that accelerate innovation, strengthen security, and enable sustainable digital transformation. Through engineering excellence, strategic partnerships, and industry expertise, we create measurable value."
+      },
+      {
+        "id": 3,
+        "uuid": "7b92e0a4-1c68-4d35-b70f-98d4a3562ce1",
+        "title": "Our Vision",
+        "description": "Our vision is to become a trusted global technology leader recognized for innovation, engineering excellence, and delivering intelligent solutions across enterprise and government sectors. We strive to help organizations confidently embrace emerging technologies and build a smarter, more connected future."
+      }
+    ],
+    "partnersHeading": "Trusted Partners",
+    "partners": [
+      {
+        "name": "Microsoft"
+      },
+      {
+        "name": "Cisco"
+      },
+      {
+        "name": "NVIDIA"
+      },
+      {
+        "name": "Palo Alto"
+      },
+      {
+        "name": "AWS"
+      },
+      {
+        "name": "Oracle"
+      }
+    ],
+    "teamHeading": "Meet Our Team",
+    "teamDescription": "Behind every successful transformation is a team of visionary leaders committed to innovation, engineering excellence, and delivering intelligent technology solutions that create lasting impact for enterprises and governments worldwide.",
+    "team": [
+      {
+        "id": 1,
+        "uuid": "8d17c3b5-4f02-4a96-b7e1-52c908d436af",
+        "name": "Obaid Ul Haq",
+        "role": "Chief Executive Officer (CEO)",
+        "image": "techavenue/about/obaid.png",
+        "bio": "Over 20 years leading enterprise technology transformation, Scaled Tech Avenue into a regional AI and cybersecurity partner, Built strategic alliances with global technology vendors, Advises government and enterprise leaders on digital strategy"
+      },
+      {
+        "id": 2,
+        "uuid": "41e6b0d9-73a5-4c18-9f20-6b85e2c7134d",
+        "name": "Khuram Rahat",
+        "role": "Chief Strategy Officer (CSO)",
+        "image": "techavenue/about/khuram_rahat.png",
+        "bio": "Shaped long-term growth strategy across enterprise and government sectors, Led expansion into three new regional markets, Architected the company's partner and channel strategy, Frequent speaker on emerging technology adoption"
+      },
+      {
+        "id": 3,
+        "uuid": "b70f2c84-1d59-4e63-a805-93e17b4c0d26",
+        "name": "Lalarukh Saud",
+        "role": "Director & Chief Financial Officer (CFO)",
+        "image": "techavenue/about/lalarukh.png",
+        "bio": "Directs financial planning and governance across all business units, Delivered sustained double-digit revenue growth, Established enterprise-grade compliance and risk frameworks, Champions transparent and sustainable business practices"
+      },
+      {
+        "id": 5,
+        "uuid": "2a95d7e0-6c31-48b7-9d04-7f83a1c5e908",
+        "name": "Bilal Shams",
+        "role": "Financial Controller",
+        "image": "techavenue/about/bilal_shams.png",
+        "bio": "Oversees accounting operations and monthly financial reporting, Strengthened internal controls and audit readiness across business units, Manages cash flow and vendor payment cycles, Partners with delivery teams on project costing and margin analysis"
+      }
+    ],
+    "ctaTitle": "Let's Build the Future Together",
+    "ctaDescription": "Ready to transform your organizational challenges into strategic technological advantages?"
+  },
+  "Contact": {
+    "headerEyebrow": "Contact Us",
+    "headerTitle": "Connect with Our Team",
+    "headerDescription": "Whether you're planning a new initiative, seeking expert guidance, or exploring partnership opportunities, we're here to help you find the right solution.",
+    "headerImage": "techavenue/contact/contact_header.jpg",
+    "detailsEyebrow": "Get In Touch",
+    "detailsTitle": "Let's Start the Conversation",
+    "detailsDescription": "Whether you're exploring digital transformation initiatives, seeking technology solutions, or looking for a strategic partner, our team is ready to help. Reach out to us and we'll connect you with the right experts.",
+    "officeAddress": "Office #409, Fourth Floor, Evacuee Trust Complex, F-5/1, Islamabad, 44000, Pakistan",
+    "phone": "(051) 8844080",
+    "email": "info@techavenue.biz",
+    "website": "www.techavenue.biz",
+    "businessHours": "Monday – Friday 9:00 AM – 6:00 PM",
+    "weekendHours": "Saturday / Sunday: Closed",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.056230091494!2d73.08594127418624!3d33.733362073278684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc1ebcf0378e9%3A0xd55e427cc0603839!2sTech%20Avenue%20Pvt%20Ltd!5e0!3m2!1sen!2s!4v1788522597063!5m2!1sen!2s",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Evacuee+Trust+Complex,+F-5/1,+Islamabad",
+    "formTitle": "Send Us a Message",
+    "formDescription": "Have a question or want to discuss your project? Fill out the form below and our team will get back to you as soon as possible."
+  },
+  "Career": {
+    "headerEyebrow": "Opportunities",
+    "headerTitle": "Build the Future Through Innovation",
+    "headerDescription": "Join a team of innovators, engineers, designers, strategists, and technology experts working to solve complex challenges.",
+    "headerImage": "techavenue/career/career_header.png",
+    "headerBadgeLabel": "Join 500+ Innovators",
+    "positionsTitle": "Open Positions",
+    "positionsDescription": "Find your place in our growing ecosystem.",
+    "departments": [
+      {
+        "name": "Software Development"
+      },
+      {
+        "name": "Cloud & DevOps"
+      },
+      {
+        "name": "Design"
+      },
+      {
+        "name": "Data & AI"
+      },
+      {
+        "name": "Quality Assurance"
+      },
+      {
+        "name": "Project Management"
+      }
+    ],
+    "employmentTypes": [
+      {
+        "name": "Full-Time"
+      },
+      {
+        "name": "Part-Time"
+      },
+      {
+        "name": "Contract"
+      },
+      {
+        "name": "Internship"
+      }
+    ],
+    "hiringTitle": "Our Hiring Process",
+    "hiringDescription": "Simple, transparent, and built to find the best fit.",
+    "hiringSteps": [
+      {
+        "id": 1,
+        "uuid": "e2c94b60-1f83-4d57-a0c6-7b3e51d8f294",
+        "title": "Application",
+        "description": "Submit your profile and resume through our portal.",
+        "image": "techavenue/icons/application.svg"
+      },
+      {
+        "id": 2,
+        "uuid": "7a1d38f5-6094-4b2e-8c71-d5f0a936b1e7",
+        "title": "Initial Review",
+        "description": "Our recruiters match your skills with our needs.",
+        "image": "techavenue/icons/initial-review.svg"
+      },
+      {
+        "id": 3,
+        "uuid": "35b8e7d2-4c16-40a9-b8f3-9e2170c54d61",
+        "title": "Interview",
+        "description": "A series of technical and cultural evaluations.",
+        "image": "techavenue/icons/interview.svg"
+      },
+      {
+        "id": 4,
+        "uuid": "c604a7f1-8d29-4e35-97b0-2a5cf3016e8d",
+        "title": "Final Evaluation",
+        "description": "Reviewing all feedback for a final decision.",
+        "image": "techavenue/icons/final-evaluation.svg"
+      },
+      {
+        "id": 5,
+        "uuid": "981e5c04-3b76-4a18-8f2d-6c40e7b91352",
+        "title": "Offer & Onboarding",
+        "description": "Welcome to the team! We get you settled in.",
+        "image": "techavenue/icons/offer-onboarding.svg"
+      }
+    ],
+    "lifeEyebrow": "Our Culture",
+    "lifeTitle": "Life at Tech Avenue",
+    "lifeDescription": "Discover what it's like to work at Tech Avenue—from collaborative projects and team celebrations to learning opportunities and moments that shape our culture of innovation and growth.",
+    "lifeHighlights": [
+      {
+        "id": 1,
+        "uuid": "b1f7a942-05c8-4d63-9e10-7a4c2f8b3d56",
+        "title": "Mango Day at Tech Avenue",
+        "description": "Our annual Mango Day celebration, where teams and families gather for the king of fruits.",
+        "media": "techavenue/career/mango.jpg"
+      },
+      {
+        "id": 2,
+        "uuid": "4e0c86d1-2b95-4a37-8f62-c31d079ea485",
+        "title": "Independence Day Celebration",
+        "description": "The whole team coming together to mark Pakistan Independence Day at the office.",
+        "media": "techavenue/career/independence.jpg"
+      },
+      {
+        "id": 3,
+        "uuid": "9a63f10b-7d48-4c25-b0e9-582af4c176d3",
+        "title": "MoU Signing Ceremony",
+        "description": "Formalising our partnership with the Balochistan Rural Support Programme.",
+        "media": "techavenue/career/mou_signing.jpg"
+      }
+    ],
+    "followUsTitle": "Follow Us to Stay Updated",
+    "followUsDescription": "Stay connected with Tech Avenue for the latest company news, technology insights, industry trends, event highlights, and innovation updates. Follow our journey as we continue to shape the future through intelligent solutions and transformative technologies.",
+    "socialLinks": [
+      {
+        "id": 1,
+        "uuid": "5c8b2e17-90d4-4a63-b1f7-2e60d43c8a95",
+        "label": "Facebook",
+        "href": "https://www.facebook.com/techavenue",
+        "image": "techavenue/icons/social/facebook.svg"
+      },
+      {
+        "id": 2,
+        "uuid": "a3f16d80-527c-4e94-8b05-c71f9d2a6b48",
+        "label": "Instagram",
+        "href": "https://www.instagram.com/techavenue",
+        "image": "techavenue/icons/social/instagram.svg"
+      },
+      {
+        "id": 3,
+        "uuid": "0d95c6a4-8e31-4b72-9f16-4a08b7e2d513",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/techavenue",
+        "image": "techavenue/icons/social/linkedin.svg"
+      }
+    ]
+  },
+  "Services": {
+    "headerTitle": "Future-Ready Enterprise Services",
+    "headerDescription": "Precision-engineered solutions designed to scale your operations, secure your assets, and accelerate your digital evolution through advanced institutional innovation.",
+    "headerImage": "techavenue/verticles/verticles-articles/verticles_header.png",
+    "servicesHeading": "Our Core Services",
+    "servicesDescription": "Powering enterprises with intelligent, scalable, and secure digital solutions through institutional reliability and forward-thinking innovation.",
+    "coreServices": [
+      {
+        "id": 1,
+        "uuid": "b7e41c92-58af-4d16-9c73-0e5a2d84f6b1",
+        "articleUuid": "c04f8172-6ad9-4b31-85e0-9f27d1c6350b",
+        "icon": "techavenue/icons/industries/construction-smart-infrastructure.svg",
+        "title": "Construction",
+        "description": "Smart infrastructure, BIM, digital twins, and IoT solutions enabling connected, efficient, and resilient urban development."
+      },
+      {
+        "id": 2,
+        "uuid": "4a90d3e7-2c68-4b51-8f04-71d6b95ac238",
+        "articleUuid": "1f4c6448-1545-4539-a4a8-b1a1aa3441ab",
+        "icon": "techavenue/icons/industries/education-skill-development.svg",
+        "title": "Education",
+        "description": "AI-powered learning, talent management, career advisory, and assessment solutions enabling smarter skill development."
+      },
+      {
+        "id": 3,
+        "uuid": "e2158fb4-6d07-49c3-a5b8-3c94e70d1a65",
+        "articleUuid": "8b52c0a7-4e61-49d3-92f8-107c5da6b38f",
+        "icon": "techavenue/icons/solutions/telecom-intelligence.svg",
+        "title": "Telecom & Intelligence",
+        "description": "5G, smart networks, AI-driven intelligence, and predictive analytics optimizing connectivity, performance, and service delivery."
+      },
+      {
+        "id": 4,
+        "uuid": "9c63a084-1e5b-4f27-b9d0-8a24f61c73e5",
+        "articleUuid": "1f9d4386-c25b-4703-8e64-b0a179f3c852",
+        "icon": "techavenue/icons/solutions/human-capital-management.svg",
+        "title": "Human Capital",
+        "description": "Integrated HR solutions for performance, recruitment, attendance, leave, assets, learning, and workforce development."
+      },
+      {
+        "id": 5,
+        "uuid": "17d4be59-8a32-4c60-95f7-2b0e8d36c491",
+        "articleUuid": "3d76e2b9-95f4-4c18-a70d-6b83f0512e94",
+        "icon": "techavenue/icons/solutions/e-government-public-systems.svg",
+        "title": "E-Government",
+        "description": "Digital citizen services, automated workflows, secure payments, and intelligent systems improving public service delivery."
+      },
+      {
+        "id": 6,
+        "uuid": "42302613-796e-4195-969b-203985ae66e4",
+        "articleUuid": "0a4e17c8-b36d-4592-8f21-d95c630a7e48",
+        "icon": "techavenue/icons/solutions/energy-climate.svg",
+        "title": "Energy & Climate",
+        "description": "Smart energy, climate intelligence, and resource optimization solutions enabling sustainable and efficient operations."
+      }
+    ],
+    "articles": [
+      {
+        "id": 1,
+        "uuid": "c04f8172-6ad9-4b31-85e0-9f27d1c6350b",
+        "eyebrow": "Construction",
+        "title": "Smart Infrastructure",
+        "description": "We enable connected urban development with intelligent infrastructure solutions including BIM, digital twins, smart mobility, IoT monitoring, and AI-driven technologies that improve planning, efficiency, safety, and asset performance.",
+        "features": "BIM & Digital Twin Solutions\nSmart Infrastructure & Mobility\nIoT & AI-Driven Asset Management",
+        "image": "techavenue/verticles/verticles-articles/intelligent_infrastructure.png",
+        "iconImage": "/icons/intelligent-infrastructure.svg",
+        "featureIcons": "techavenue/icons/building-information-modeling.svg\ntechavenue/icons/intelligent-infrastructure.svg\ntechavenue/icons/asset-management.svg"
+      }
+    ]
+  },
+  "SuccessStoriesPage": {
+    "headerTitle": "Success Stories From Companies Like Yours",
+    "headerDescription": "Discover how Tech Avenue empowers enterprises and governments through intelligent technology, innovation, and scalable digital transformation solutions.",
+    "headerBackgroundImage": "techavenue/success-stories/success_stories_header.png",
+    "introTitleStart": "Transforming",
+    "introTitleHighlight": "Challenges",
+    "introTitleEnd": "Into Measurable Success",
+    "introDescription": "From critical national systems to citywide smart infrastructure, our success stories showcase real-world impact across industries and global markets."
+  },
+  "Industries": [
+    {
+      "uuid": "3f1a6c2e-9b47-4d18-8a52-71c0d5e4b901",
+      "title": "Government & Public Sector",
+      "icon": "techavenue/icons/industries/government-public-sector.svg",
+      "description": "Citizen services built for scale, security, and compliance.",
+      "headerTitle": "Government and Public Sector Digital Transformation",
+      "headerDescription": "Helping ministries, agencies, and municipalities deliver citizen services that are secure, accessible, and resilient, while meeting the transparency and compliance standards public institutions are held to.",
+      "headerBackground": "techavenue/industry/e_government.png",
+      "overviewTitle": "Citizen Services Built for Scale and Trust",
+      "overviewDescription": "Public institutions carry rising service expectations and shrinking delivery windows at the same time. Tech Avenue modernizes government platforms end to end, from citizen-facing portals to the case management systems behind them, so agencies can serve more people, protect their data, and evidence every decision they make.",
+      "overviewImage": "techavenue/industry/e_government.png",
+      "overviewHighlights": [
+        {
+          "title": "Secure Citizen Portals",
+          "description": "Single verified identity across every department."
+        },
+        {
+          "title": "Auditable by Design",
+          "description": "Every transaction traceable for oversight reporting."
+        }
+      ],
+      "challengesTitle": "Critical Public Sector Challenges",
+      "challengesDescription": "Modernizing essential services under strict procurement, accessibility, and data sovereignty obligations, without interrupting the programs citizens depend on.",
+      "challenges": [
+        {
+          "icon": "techavenue/icons/evolving-cyber-threats.svg",
+          "title": "Legacy Case Systems",
+          "description": "Decades-old records platforms that resist integration with modern digital services."
+        },
+        {
+          "icon": "techavenue/icons/regulatory-compliance.svg",
+          "title": "Data Sovereignty Rules",
+          "description": "Citizen data that must remain within national borders and approved facilities."
+        },
+        {
+          "icon": "techavenue/icons/legacy-infrastructure.svg",
+          "title": "Accessibility Mandates",
+          "description": "Services required to work for every citizen, on every device and assistive technology."
+        },
+        {
+          "icon": "techavenue/icons/customer-expectations.svg",
+          "title": "Interagency Silos",
+          "description": "Departments holding the same citizen record in incompatible, unshared systems."
+        },
+        {
+          "icon": "techavenue/icons/data-management.svg",
+          "title": "Procurement Timelines",
+          "description": "Multi-year approval cycles that outlast the technology they were written for."
+        }
+      ],
+      "solutionsTitle": "Our Public Sector Solutions",
+      "solutionsDescription": "An integrated government delivery stack that unifies citizen identity, departmental data, and service workflows behind accessible interfaces and a fully auditable trail.",
+      "solutions": [
+        {
+          "icon": "techavenue/icons/real-time-monitoring.svg",
+          "title": "Unified Citizen Identity",
+          "description": "One verified identity that carries across every department and service."
+        },
+        {
+          "icon": "techavenue/icons/centralized-intelligence.svg",
+          "title": "Interagency Data Exchange",
+          "description": "Governed sharing between departments without duplicating records."
+        },
+        {
+          "icon": "techavenue/icons/ai-based-analysis.svg",
+          "title": "Accessible Service Design",
+          "description": "Interfaces tested against accessibility standards on every release."
+        },
+        {
+          "icon": "techavenue/icons/automated-response.svg",
+          "title": "Sovereign Cloud Hosting",
+          "description": "Workloads deployed inside approved national infrastructure."
+        }
+      ]
+    }
+  ],
+  "LegacySolutions": [
+    {
+      "uuid": "a7f3c19e-52b8-4d06-9e41-3c8b7d502f6a",
+      "title": "Network Security",
+      "icon": "techavenue/icons/solutions/cyber-security.svg",
+      "description": "Comprehensive protection for perimeter, endpoint, and cloud.",
+      "highlights": [
+        {
+          "uuid": "f1d8a35c-0b76-4e29-9a41-63c07e2b5d84",
+          "label": "Zero-Trust Access & Identity Control",
+          "checkIcon": "techavenue/icons/check.svg"
+        },
+        {
+          "uuid": "4a92c7e0-5d13-48b6-b70f-91e4a836c25d",
+          "label": "24/7 Threat Monitoring & Detection",
+          "checkIcon": "techavenue/icons/check.svg"
+        },
+        {
+          "uuid": "8c05f6b3-7e41-4290-85da-2f6b9c0d374e",
+          "label": "Endpoint & Cloud Workload Protection",
+          "checkIcon": "techavenue/icons/check.svg"
+        },
+        {
+          "uuid": "b63e0947-1c58-4a3d-92f0-7d81e5a4c063",
+          "label": "Automated Incident Containment & Response",
+          "checkIcon": "techavenue/icons/check.svg"
+        }
+      ],
+      "headerTitle": "Network Security Platform",
+      "headerDescription": "Defending distributed enterprise networks through layered detection, zero-trust access, and continuous monitoring built for organizations that cannot afford an open door.",
+      "headerImage": "techavenue/industry/netword_security.png",
+      "headerStats": [
+        {
+          "value": "24/7",
+          "label": "Monitoring"
+        },
+        {
+          "value": "99.9%",
+          "label": "Threat Coverage"
+        },
+        {
+          "value": "85%",
+          "label": "Faster Response"
+        }
+      ],
+      "overviewTitle": "Solution Overview",
+      "overviewDescription": "Our client, a multinational financial group, operated a perimeter security model that no longer matched how their people actually worked. Remote staff, third-party contractors, and cloud workloads had all grown well beyond the boundary the original architecture was designed to defend.\n\nWe replaced that boundary with a zero-trust architecture in which every request is authenticated and authorized on its own merits. Detection, response, and access control now run from a single console, and the security team sees the whole estate rather than one segment of it.",
+      "keyInfoTitle": "Key Info",
+      "keyInfo": [
+        {
+          "key": "Industry",
+          "value": "Financial Services"
+        },
+        {
+          "key": "Solution",
+          "value": "Cybersecurity"
+        },
+        {
+          "key": "Deployment",
+          "value": "Hybrid (On-Prem + Cloud)"
+        },
+        {
+          "key": "Platform",
+          "value": "Web & Desktop"
+        },
+        {
+          "key": "Duration",
+          "value": "8 Months"
+        },
+        {
+          "key": "Tech Stack",
+          "value": "Go, Python, Kubernetes, Elastic"
+        }
+      ],
+      "experienceTitle": "Defense in Depth",
+      "experienceDescription": "Security controls layered so that no single failure exposes the network, with visibility at every tier.",
+      "experienceImage": "techavenue/industry/netword_security.png",
+      "experienceItems": [
+        {
+          "title": "Zero-Trust Access",
+          "description": "Every request authenticated and authorized regardless of where it originates."
+        },
+        {
+          "title": "Continuous Threat Detection",
+          "description": "Behavioural analytics that surface intrusions the signature rules miss."
+        },
+        {
+          "title": "Automated Containment",
+          "description": "Compromised endpoints isolated from the network within seconds of detection."
+        }
+      ],
+      "testimonialQuote": "Tech Avenue didn't just build us a portal; they transformed our entire educational philosophy into a digital experience. The AI recommendations alone have increased student engagement by nearly 50%.",
+      "testimonialName": "Amina Hassan",
+      "testimonialRole": "Chief Information Security Officer, Meridian Financial",
+      "testimonialAvatar": "techavenue/about_image.png"
+    }
+  ],
+  "SolutionPages": [
+    {
+      "uuid": "b7e41c92-58af-4d16-9c73-0e5a2d84f6b1",
+      "title": "Construction",
+      "image": "techavenue/verticles/verticle/constuction.png",
+      "icon": "techavenue/icons/solutions/construction.svg",
+      "solutionHeading": "Building Smarter, Connected Infrastructure",
+      "solutionDescription": "Technology-driven solutions that help organizations plan, build, monitor, and manage smarter infrastructure through digital technologies, AI, and IoT.",
+      "solutionsHeading": "Construction Solutions",
+      "solutionsDescription": "Our construction solutions combine digital modelling, intelligent infrastructure, connected systems, and real-time monitoring to improve efficiency, safety, and asset performance.",
+      "solutionItems": [
+        {
+          "id": 1,
+          "uuid": "d1f6a930-5c27-4e88-b043-91a7e5c26d10",
+          "title": "Smart Infrastructure",
+          "description": "Connected infrastructure solutions for smarter urban development and efficient operations."
+        },
+        {
+          "id": 2,
+          "uuid": "8c30b5e4-27fa-4d91-a6c8-30bf147e29d5",
+          "title": "Smart Mobility",
+          "description": "Intelligent mobility technologies for connected and efficient transportation systems."
+        },
+        {
+          "id": 3,
+          "uuid": "6b47d182-a5e9-4370-bc16-2d94f7051ea3",
+          "title": "Smart Utilities",
+          "description": "Digital solutions for monitoring and managing essential urban utilities."
+        },
+        {
+          "id": 4,
+          "uuid": "0e59c374-8ab1-42d6-95f0-7c3e18b6a49d",
+          "title": "Public Safety",
+          "description": "Technology-enabled systems that improve safety, monitoring, and emergency response."
+        },
+        {
+          "id": 5,
+          "uuid": "b28f6013-d54c-49a7-83e1-6f0d92a45c37",
+          "title": "BIM",
+          "description": "Building Information Modelling for better planning, design, and project management."
+        },
+        {
+          "id": 6,
+          "uuid": "4d0a7e91-3f68-4c25-90bd-e17c58236fa4",
+          "title": "Digital Twin",
+          "description": "Digital representations of physical assets for real-time monitoring and analysis."
+        },
+        {
+          "id": 7,
+          "uuid": "97e1c485-6b23-4a70-8d59-f2036ca7b1e8",
+          "title": "Asset Management",
+          "description": "Tools for tracking, monitoring, and optimizing infrastructure and physical assets."
+        },
+        {
+          "id": 8,
+          "uuid": "1a63f827-90de-4b54-a2c7-58e30dbf174c",
+          "title": "Facility Monitoring",
+          "description": "IoT-enabled monitoring of facilities, equipment, and operational conditions."
+        },
+        {
+          "id": 9,
+          "uuid": "5f92d0b6-71c4-4a83-b59e-04f7c8a1d326",
+          "title": "AI-Driven Construction",
+          "description": "AI-powered insights for better decision-making, risk reduction, and construction efficiency."
+        },
+        {
+          "id": 10,
+          "uuid": "3c81b7a5-4629-4de0-91f8-06ad25c93b7e",
+          "title": "IoT",
+          "description": "Connected sensors and devices for real-time data collection and infrastructure monitoring."
+        }
+      ],
+      "phases": [
+        {
+          "id": 1,
+          "uuid": "e70a15c3-8d42-4b96-a3f1-2c85d09b647a",
+          "title": "Plan Smarter",
+          "focus": "BIM & Digital Twin",
+          "description": "Multi-layered parametric modeling and simulated asset behavior to preempt field discrepancies before ground break."
+        },
+        {
+          "id": 2,
+          "uuid": "2b95f7d0-4c63-41ea-9b28-73d015af6c94",
+          "title": "Monitor Smarter",
+          "focus": "IoT & Facility Monitoring",
+          "description": "Distributed environmental sensors, load diagnostics, and telemetry continuously streamed to edge nodes."
+        },
+        {
+          "id": 3,
+          "uuid": "af38c261-90b7-4e15-82d4-5c70b1f9a638",
+          "title": "Build Smarter",
+          "focus": "AI & Smart Infrastructure",
+          "description": "Predictive sequencing, automated resource scheduling, and real-time risk mitigation algorithms on-site."
+        }
+      ]
+    }
+  ],
+  "NewsItems": [
+    {
+      "id": 1,
+      "uuid": "a7c31f95-4e28-4d60-b1a3-9f0e6c84d215",
+      "category": "Strategic Partnership",
+      "title": "Tech Avenue Announces Strategic AI Partnership with Global Infrastructure Leaders",
+      "description": "A transformative alliance aimed at revolutionizing urban connectivity and digital resilience across continents through advanced neural networks.",
+      "publishedAt": "2026-08-26T09:15:00.000Z",
+      "image": "techavenue/news/ai-infrastructure-partnership.jpg",
+      "html": "\n    <p>Tech Avenue has entered a multi-year alliance with a consortium of global infrastructure operators to bring adaptive AI models into the systems that move people, power, and data every day.</p>\n    <h2>What the partnership covers</h2>\n    <p>The agreement pairs our neural forecasting stack with operational telemetry from transit networks, energy grids, and metropolitan fibre estates across three continents. Joint teams will run shared pilots before any capability reaches general release.</p>\n    <ul>\n      <li>Shared model development for demand and load forecasting</li>\n      <li>Co-funded resilience research on critical distribution assets</li>\n      <li>A common integration layer for partner operations centres</li>\n    </ul>\n    <h2>Why it matters</h2>\n    <p>Operators have no shortage of sensor data — what they lack is a way to turn it into decisions fast enough to matter. This partnership puts the modelling work next to the people who run the assets, rather than several handoffs away.</p>\n    <blockquote>We are not selling a dashboard. We are shortening the distance between a signal and a repair crew.</blockquote>\n    <p>First joint deployments begin next quarter, with findings published as the pilots close.</p>\n  ",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "uuid": "d4b82e10-6f37-4a95-8c21-3e7a5b0d9f14",
+      "category": "Cybersecurity",
+      "title": "New Cybersecurity Framework for Global Banking Launched",
+      "description": "A unified controls baseline built with regional regulators to help banks detect and contain threats faster.",
+      "publishedAt": "2026-08-28T10:20:00.000Z",
+      "image": "techavenue/news/banking-cybersecurity-framework.jpg",
+      "html": "\n      <p>Working alongside regional regulators, Tech Avenue has published a unified controls baseline that gives banks a single reference for detection, containment, and disclosure.</p>\n      <h2>Inside the framework</h2>\n      <p>The baseline maps existing supervisory expectations onto a common set of technical controls, so an institution operating in several jurisdictions can prove compliance once instead of five times.</p>\n      <ul>\n        <li>Tiered detection requirements scaled to institution size</li>\n        <li>Containment playbooks for account takeover and lateral movement</li>\n        <li>A shared disclosure timeline agreed with participating regulators</li>\n      </ul>\n      <h2>Adoption</h2>\n      <p>Eleven institutions took part in the drafting group, and early adopters report meaningfully shorter triage cycles during simulated incidents.</p>\n    ",
+      "featured": false
+    }
+  ],
+  "Events": [
+    {
+      "id": 1,
+      "uuid": "e1a47c30-5b28-4d96-8f01-763ca9b2e5d4",
+      "title": "Cyber Security Summit",
+      "location": "Singapore",
+      "startsAt": "2026-06-15T09:00:00.000Z",
+      "image": "techavenue/events/cyber-security-summit-singapore.jpg",
+      "html": "\n      <p>Two days on the practical end of security operations, built for the teams who carry the pager rather than the ones who write the policy.</p>\n      <h2>Programme</h2>\n      <ul>\n        <li>Live incident response walkthroughs from regional operators</li>\n        <li>Threat intelligence sharing across financial and public sector teams</li>\n        <li>Hands-on containment labs running against real telemetry</li>\n      </ul>\n      <p>Registration is open to security practitioners and their vendors.</p>\n    "
+    }
+  ],
+  "Jobs": [
+    {
+      "uuid": "test-job",
+      "title": "CMS job",
+      "description": "Job description from Cockpit",
+      "applicationUrl": "mailto:jobs@example.com"
+    }
+  ],
+  "SuccessStories": [
+    {
+      "uuid": "3f8c1d24-9b07-4e51-a6d3-72c5e08f9143",
+      "title": "Enterprise Threat Detection Platform",
+      "image": "techavenue/industry/netword_security.png",
+      "description": "A multi-layered AI-driven security framework implemented for a global Tier-1 bank to mitigate zero-day vulnerabilities.",
+      "industryTitle": "Banking & Financial Services",
+      "industryUuid": "b06f3a48-71d2-4e95-8c37-9f5e2b1a0d64",
+      "solutionTitle": "Cyber Security",
+      "solutionUuid": "6915aabe-b101-476e-8f29-917d3d889ad8",
+      "challengesTitle": "The Client Challenge",
+      "challengesDescription": "Complex enterprise environments often suffer from visibility gaps and specialised friction that slow down response times.",
+      "challenges": [
+        {
+          "icon": "techavenue/icons/evolving-cyber-threats.svg",
+          "title": "Evolving Threat Landscape",
+          "description": "Attack techniques changed faster than signature-based tooling could be updated."
+        },
+        {
+          "icon": "techavenue/icons/regulatory-compliance.svg",
+          "title": "Fragmented Infrastructure",
+          "description": "Security telemetry scattered across twelve disconnected monitoring products."
+        },
+        {
+          "icon": "techavenue/icons/legacy-infrastructure.svg",
+          "title": "Delayed Detection",
+          "description": "Intrusions surfacing days after the initial compromise rather than minutes."
+        },
+        {
+          "icon": "techavenue/icons/customer-expectations.svg",
+          "title": "High Volume of Alerts",
+          "description": "Analysts triaging thousands of low-value alerts and missing genuine incidents."
+        }
+      ],
+      "solutionsTitle": "Our Provided Solution",
+      "solutionsDescription": "An AI-driven platform that bridges the gap between signal and action, providing a unified defensive layer for the modern enterprise.",
+      "solutionItems": [
+        {
+          "icon": "techavenue/icons/real-time-monitoring.svg",
+          "title": "Real-Time Monitoring",
+          "description": "Continuous observation of every packet and endpoint across the estate."
+        },
+        {
+          "icon": "techavenue/icons/centralized-intelligence.svg",
+          "title": "Centralized Intelligence",
+          "description": "Aggregating threat feeds from global sensors into a single source of truth."
+        },
+        {
+          "icon": "techavenue/icons/ai-based-analysis.svg",
+          "title": "AI-Based Analysis",
+          "description": "Behavioural models that surface patterns invisible to heuristic rules."
+        },
+        {
+          "icon": "techavenue/icons/automated-response.svg",
+          "title": "Automated Response",
+          "description": "Instant containment playbooks triggered by verified threat detections."
+        }
+      ],
+      "impactTitle": "Impact and Results",
+      "impactDescription": "Proven outcomes delivered across global financial, healthcare, and technology infrastructures.",
+      "impactItems": [
+        {
+          "id": 1,
+          "uuid": "b8903590-399f-420c-8bf7-7e5c81b1f7aa",
+          "value": "65%",
+          "title": "Faster Detection",
+          "description": "Reduction in MTTD through automated AI scanning."
+        },
+        {
+          "id": 2,
+          "uuid": "90304fbb-158f-4430-9284-cb340838e66d",
+          "value": "80%",
+          "title": "Reduction in False Alerts",
+          "description": "Deep noise filtering and contextual verification."
+        },
+        {
+          "id": 3,
+          "uuid": "46ece8eb-f854-4a58-96e4-fb70edeb694f",
+          "value": "24/7",
+          "title": "Real-Time Visibility",
+          "description": "Total coverage across all infrastructure layers."
+        },
+        {
+          "id": 4,
+          "uuid": "0c7438ba-aa31-4972-80ac-b29068e48902",
+          "value": "3x",
+          "title": "Improvement in Accuracy",
+          "description": "ML-enhanced signal classification precision."
+        },
+        {
+          "id": 5,
+          "uuid": "954f9767-8bf5-4960-a8c2-025856dd615a",
+          "value": "100%",
+          "title": "Monitoring Coverage",
+          "description": "Every asset monitored with zero visibility gaps."
+        },
+        {
+          "id": 6,
+          "uuid": "d0fafd09-28c4-46da-85cf-0e6a0924a4cd",
+          "value": "42%",
+          "title": "Improved Efficiency",
+          "description": "SOC team bandwidth reclaimed through automation."
+        }
+      ]
+    }
+  ],
+  "SiteSettings": {
+    "siteName": "Tech Avenue",
+    "siteTitle": "Techavenue | Digital Solutions for a Connected World",
+    "siteDescription": "Techavenue is a software development company delivering AI solutions, web and mobile development, cross-platform applications, and cybersecurity services.",
+    "logo": "techavenue/logo.png",
+    "logoAlt": "Tech Avenue — leading the innovation drive",
+    "homeLabel": "Tech Avenue — home",
+    "contactLabel": "Contact Us",
+    "contactHref": "/contact",
+    "navigation": [
+      {
+        "label": "Home",
+        "href": "/",
+        "group": ""
+      },
+      {
+        "label": "Company",
+        "href": "",
+        "group": "company"
+      },
+      {
+        "label": "Solutions",
+        "href": "",
+        "group": "solutions"
+      },
+      {
+        "label": "Industries",
+        "href": "",
+        "group": "industries"
+      },
+      {
+        "label": "Services",
+        "href": "/services",
+        "group": ""
+      },
+      {
+        "label": "Success Stories",
+        "href": "/success-stories",
+        "group": ""
+      }
+    ],
+    "companyLinks": [
+      {
+        "title": "About Us",
+        "description": "Who we are, what we stand for, and the drive behind it.",
+        "href": "/about",
+        "image": ""
+      },
+      {
+        "title": "FAQs",
+        "description": "Answers to the questions we hear most often.",
+        "href": "/#faqs",
+        "image": ""
+      },
+      {
+        "title": "Career",
+        "description": "Open roles and what it is like to grow with us.",
+        "href": "/career",
+        "image": ""
+      },
+      {
+        "title": "News & Media",
+        "description": "Announcements, press coverage, and company updates.",
+        "href": "/news",
+        "image": ""
+      }
+    ],
+    "footerDescription": "Empowering enterprises and governments with AI-driven technologies, cybersecurity, intelligent infrastructure, and digital transformation solutions that drive sustainable innovation and business growth.",
+    "quickLinksHeading": "Quick Links",
+    "quickLinks": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About Us",
+        "href": "/about"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Success Stories",
+        "href": "/success-stories"
+      },
+      {
+        "label": "Career",
+        "href": "/career"
+      },
+      {
+        "label": "News & Media",
+        "href": "/news"
+      },
+      {
+        "label": "Contact Us",
+        "href": "/contact"
+      }
+    ],
+    "socialLinks": [
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/people/Tech-Avenue-Pvt-Ltd/100064156050542/#",
+        "image": ""
+      },
+      {
+        "label": "Instagram",
+        "href": "https://instagram.com",
+        "image": ""
+      },
+      {
+        "label": "X",
+        "href": "https://x.com",
+        "image": ""
+      }
+    ],
+    "footerNewsletterHeading": "Stay Connected",
+    "footerNewsletterDescription": "Receive insights on emerging technologies, cybersecurity trends, and enterprise innovation.",
+    "emailPlaceholder": "Email Address",
+    "subscribeLabel": "Subscribe",
+    "copyright": "Tech Avenue. All Rights Reserved.",
+    "ctaTitle": "Ready to Accelerate Your Digital Future?",
+    "ctaDescription": "Partner with Tech Avenue to unlock intelligent technologies, secure infrastructure, and scalable digital transformation solutions designed for the future.",
+    "newsEyebrow": "Insight & Innovation",
+    "newsHeading": "Latest Updates",
+    "latestStoriesHeading": "Latest Stories",
+    "readStoryLabel": "Read Full Story",
+    "eventsHeading": "Global Events Calendar",
+    "newsletterHeading": "Never Miss an Update",
+    "newsletterDescription": "Get our curated weekly digest of tech insights, company announcements, and global media features delivered to your inbox.",
+    "newsletterEmailPlaceholder": "Work Email Address",
+    "newsletterButtonLabel": "Subscribe Now",
+    "industryStoriesTitle": "Success Stories in this Industry",
+    "industryStoriesDescription": "See how we've helped organisations like yours succeed.",
+    "solutionStoriesTitle": "Success Stories under this Solution",
+    "solutionStoriesDescription": "See how we've helped organisations like yours succeed.",
+    "storiesActionLabel": "View all Success Stories",
+    "storiesActionHref": "/success-stories",
+    "requestDemoLabel": "Request a Demo",
+    "watchDemoLabel": "Watch the Demo",
+    "demoEyebrow": "Schedule a Demo",
+    "demoTitle": "Request a Personalized Demo",
+    "demoDescription": "Tell us a little about your requirements and our experts will arrange a tailored demonstration of the solution most relevant to your organization.",
+    "organizationSizes": [
+      {
+        "name": "1 - 50 employees"
+      },
+      {
+        "name": "51 - 200 employees"
+      },
+      {
+        "name": "201 - 1000 employees"
+      },
+      {
+        "name": "1001 - 5000 employees"
+      },
+      {
+        "name": "5000+ employees"
+      }
+    ],
+    "teamMemberModalAbout": "About",
+    "teamMemberModalClose": "Close",
+    "careerHeaderExplorePositions": "Explore Positions",
+    "careerHeaderLearnAboutUs": "Learn About Us",
+    "openPositionsApplyNow": "Apply Now",
+    "openPositionsNoPositionsAvaliable": "No positions avaliable.",
+    "contactDetailsHeadOffice": "Head Office",
+    "contactDetailsPhone": "Phone",
+    "contactDetailsEmail": "Email",
+    "contactDetailsWebsite": "Website",
+    "contactDetailsBusinessHours": "Business Hours",
+    "contactDetailsGetDirections": "Get Directions",
+    "contactFormFullName": "Full Name*",
+    "contactFormJohnDoe": "John Doe",
+    "contactFormCompanyName": "Company Name",
+    "contactFormAcmeCorp": "Acme Corp",
+    "contactFormEmailAddress": "Email Address*",
+    "contactFormJohnCompanyCom": "john@company.com",
+    "contactFormContactNumber": "Contact Number*",
+    "contactForm923000000000": "+92 300 0000000",
+    "contactFormOrganization": "Organization*",
+    "contactFormOrganizationType": "Organization Type",
+    "contactFormIndustry": "Industry",
+    "contactFormSelectIndustry": "Select industry",
+    "contactFormVerticleOfInterest": "Verticle of Interest",
+    "contactFormSelectAVerticle": "Select a verticle",
+    "contactFormSubject": "Subject*",
+    "contactFormBriefSubjectOfInquiry": "Brief subject of inquiry",
+    "contactFormMessage": "Message*",
+    "contactFormHowCanWeHelpYou": "How can we help you?",
+    "contactFormIAgreeToBeContactedByTech": "I agree to be contacted by Tech Avenue regarding my inquiry and understand that my information will be processed according to the company's privacy policy.",
+    "contactFormViewSuccessStories": "View Success Stories",
+    "contactFormSendMessage": "Send Message",
+    "homeAboutLearnMore": "Learn More",
+    "homeSolutionsViewSolution": "View Solution",
+    "requestDemoModalFullName": "Full Name",
+    "requestDemoModalJohnDoe": "John Doe",
+    "requestDemoModalContactNumber": "Contact Number",
+    "requestDemoModal15550000000": "+1 (555) 000-0000",
+    "requestDemoModalEmailAddress": "Email Address",
+    "requestDemoModalJohnCompanyCom": "john@company.com",
+    "requestDemoModalSolutionForDemo": "Solution for Demo",
+    "requestDemoModalSelectASolution": "Select a solution",
+    "requestDemoModalCompanyName": "Company Name",
+    "requestDemoModalEnterpriseCorp": "Enterprise Corp",
+    "requestDemoModalCurrentJobTitle": "Current Job Title",
+    "requestDemoModalDirectorOfIT": "Director of IT",
+    "requestDemoModalOrganizationSize": "Organization Size",
+    "requestDemoModalSelectSize": "Select size",
+    "requestDemoModalAskAQuestion": "Ask a Question",
+    "requestDemoModalTellUsMoreAboutYourSpecificNeeds": "Tell us more about your specific needs...",
+    "requestDemoModalIAgreeToBeContactedByTech": "I agree to be contacted by Tech Avenue regarding this request and receive relevant communications. I understand I can unsubscribe at any time.",
+    "requestDemoModalCancel": "Cancel",
+    "requestDemoModalRequestDemo": "Request Demo",
+    "successStoriesGridSolutions": "Solutions:",
+    "successStoriesGridIndustry": "Industry:",
+    "successStoriesGridNoSuccessStoriesMatchTheSelectedFilters": "No success stories match the selected filters yet.",
+    "successStoriesHeaderSuccessStories": "Success Stories"
+  }
+}

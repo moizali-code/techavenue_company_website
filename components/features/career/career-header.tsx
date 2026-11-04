@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import Link from "next/link";
 import { Rocket } from "lucide-react";
 
@@ -39,8 +40,8 @@ function CareerHeader({
               render={<Link href="#positions" />}
               className="h-12 w-full rounded-[4px] px-6 text-[15px] font-medium md:w-auto"
             >
-              Explore Positions
-            </Button>
+<WebsiteText name="careerHeaderExplorePositions" />
+</Button>
 
             <Button
               variant="outline"
@@ -50,8 +51,8 @@ function CareerHeader({
               render={<Link href="/about" />}
               className="h-12 w-full px-6 text-[15px] font-medium md:w-auto"
             >
-              Learn About Us
-            </Button>
+<WebsiteText name="careerHeaderLearnAboutUs" />
+</Button>
           </div>
         }
         classNames={{

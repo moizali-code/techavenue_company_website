@@ -1,3 +1,4 @@
+import { getSiteSettings } from "@/lib/cms";
 import Link from "next/link";
 
 import { Container } from "@/components/shared/container";
@@ -9,7 +10,8 @@ import type { NewsHeroProps } from "@/types/features/news";
 
 const LATEST_STORIES_COUNT = 4;
 
-function NewsHero({ featuredStory, stories }: NewsHeroProps) {
+async function NewsHero({ featuredStory, stories }: NewsHeroProps) {
+  const settings = await getSiteSettings();
   const latestStories = stories.slice(0, LATEST_STORIES_COUNT);
 
   return (
@@ -35,7 +37,7 @@ function NewsHero({ featuredStory, stories }: NewsHeroProps) {
                 render={<Link href={`/news/${featuredStory.uuid}`} />}
                 className="h-12 rounded-[8px] border-transparent bg-white px-6 text-[14px] font-semibold tracking-[0.08em] uppercase"
               >
-                Read Full Story
+                {settings.readStoryLabel}
               </Button>
 
               <span className="text-[14px] font-semibold tracking-[0.08em] text-white uppercase">
@@ -57,7 +59,7 @@ function NewsHero({ featuredStory, stories }: NewsHeroProps) {
 
         <aside className="rounded-[12px] border border-[#E6E6E6] bg-white p-6 shadow-[0px_30px_60px_0px_rgba(0,0,0,0.05)]">
           <h2 className="text-[20px] font-bold text-[#191C1E] lg:text-[22px]">
-            Latest Stories
+            {settings.latestStoriesHeading}
           </h2>
 
           <ul className="mt-5 flex flex-col">

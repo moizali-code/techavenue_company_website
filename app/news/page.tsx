@@ -9,7 +9,7 @@ export default async function page() {
 
   return (
     <>
-      <NewsHero featuredStory={featuredStory} stories={newsStories} />
+      {featuredStory && <NewsHero featuredStory={featuredStory} stories={newsStories} />}
 
       <NewsGrid stories={newsStories} />
 

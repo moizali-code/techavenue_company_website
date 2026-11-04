@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
 import { Button } from "@/components/ui/button";
@@ -16,8 +17,8 @@ function SuccessStoriesHeader({
         backgroundImage={header.backgroundImage}
         eyebrow={
           <Button variant="tab" className="rounded-full px-4 py-1.5">
-            Success Stories
-          </Button>
+<WebsiteText name="successStoriesHeaderSuccessStories" />
+</Button>
         }
         classNames={{
           mainWrapper: `h-[400px] lg:h-[500px] !items-end ${className}`,

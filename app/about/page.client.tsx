@@ -1,5 +1,6 @@
 "use client";
 
+import { WebsiteText } from "@/components/shared/website-text";
 import { useRouter } from "next/navigation";
 
 import { CompanyValues } from "@/components/features/about/company-values";
@@ -63,7 +64,7 @@ export function AboutClient({ data }: { data: AboutPageContent }) {
                 onClick={() => router.push("/contact")}
                 className="h-12 w-full rounded-[4px] px-8 text-[16px] font-medium tracking-normal md:w-auto"
               >
-                Contact Us Now
+                <WebsiteText name="aboutContactLabel" />
               </Button>
 
               <Button
@@ -73,7 +74,7 @@ export function AboutClient({ data }: { data: AboutPageContent }) {
                 onClick={() => router.push("/success-stories")}
                 className="h-12 w-full px-8 text-[16px] font-medium md:w-auto"
               >
-                View Success Stories
+                <WebsiteText name="aboutStoriesLabel" />
               </Button>
             </>
           }

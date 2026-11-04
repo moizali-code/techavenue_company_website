@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ContactCta } from "@/components/layout/contact-cta";
-import { getContactPageData } from "@/lib/cms";
+import { SiteSettingsProvider } from "@/components/layout/site-settings-provider";
+import { getContactPageData, getSiteSettings } from "@/lib/cms";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -20,14 +21,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Techavenue | Digital Solutions for a Connected World",
-  description:
-    "Techavenue is a software development company delivering AI solutions, web and mobile development, cross-platform applications, and cybersecurity services.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
+  return { title: settings.siteTitle, description: settings.siteDescription };
+}
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { details } = await getContactPageData();
+  const [{ details }, settings] = await Promise.all([getContactPageData(), getSiteSettings()]);
 
   return (
     <html
@@ -42,10 +42,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       )}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
+        <SiteSettingsProvider settings={settings}>
+        <Header settings={settings} />
         <main className="flex-1">{children}</main>
         <ContactCta />
-        <Footer address={details.officeAddress} phone={details.phone} email={details.email} />
+        <Footer settings={settings} address={details.officeAddress} phone={details.phone} email={details.email} />
+        </SiteSettingsProvider>
       </body>
     </html>
   );

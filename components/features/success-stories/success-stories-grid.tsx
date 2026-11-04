@@ -1,4 +1,6 @@
 "use client";
+import { WebsiteText } from "@/components/shared/website-text";
+
 
 import { useEffect, useRef, useState } from "react";
 
@@ -65,7 +67,9 @@ function SuccessStoriesGrid({ stories, solutionTabs, industryTabs }: SuccessStor
         <Container>
           <div className="flex flex-col gap-5 rounded-[12px] ">
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
-              <span className={FILTER_LABEL_CLASSNAME}>Solutions:</span>
+              <span className={FILTER_LABEL_CLASSNAME}>
+<WebsiteText name="successStoriesGridSolutions" />
+</span>
 
               <TabGroup
                 tabs={solutionTabs}
@@ -75,7 +79,9 @@ function SuccessStoriesGrid({ stories, solutionTabs, industryTabs }: SuccessStor
             </div>
 
             <div className="mt-2 flex flex-col gap-3 md:flex-row md:items-start md:gap-5">
-              <span className={FILTER_LABEL_CLASSNAME}>Industry:</span>
+              <span className={FILTER_LABEL_CLASSNAME}>
+<WebsiteText name="successStoriesGridIndustry" />
+</span>
 
               <TabGroup
                 tabs={industryTabs}
@@ -90,8 +96,8 @@ function SuccessStoriesGrid({ stories, solutionTabs, industryTabs }: SuccessStor
       <div ref={resultsRef} className="scroll-mt-24">
         {visibleStories.length === 0 ? (
           <p className="py-10 text-center text-[15px] text-[#444651]">
-            No success stories match the selected filters yet.
-          </p>
+<WebsiteText name="successStoriesGridNoSuccessStoriesMatchTheSelectedFilters" />
+</p>
         ) : (
           <Container>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 pb-6">

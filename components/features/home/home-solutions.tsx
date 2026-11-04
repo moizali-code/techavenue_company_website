@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
@@ -79,8 +80,8 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
                     render={<Link href={`/solutions/${uuid}`} />}
                     className="h-12 w-full px-6 text-[15px] font-medium md:w-fit md:self-end"
                   >
-                    View Solution
-                  </Button>
+<WebsiteText name="homeSolutionsViewSolution" />
+</Button>
                 </div>
               </FadeIn>
             </div>

@@ -1,3 +1,4 @@
+import { siteDefaults, type SiteSettings } from "@/lib/site-defaults";
 import type { AboutPageContent } from "@/types/features/about";
 import type { CareerData, JobOpening, LifeAtTechAvenueProps } from "@/types/features/career";
 import type { EventItem } from "@/types/features/events";
@@ -38,7 +39,7 @@ function cockpitAsset(field: unknown): string {
   }
   if (typeof field === "object" && field !== null) {
     const f = field as Record<string, unknown>;
-    const path = (f.path ?? f._id ?? f.id) as string | undefined;
+    const path = (f.path ?? f.uuid ?? f._id ?? f.id) as string | undefined;
     if (!path) return PLACEHOLDER;
     if (path.startsWith("http")) return path;
     return `${ASSETS_URL}/${path.replace(/^\/+/, "")}`;
@@ -46,54 +47,45 @@ function cockpitAsset(field: unknown): string {
   return PLACEHOLDER;
 }
 
+async function cockpitRequest(path: string): Promise<Raw> {
+  const res = await fetch(`${COCKPIT_URL}/api/content/${path}`, { headers: HEADERS, cache: "no-store" });
+  if (!res.ok) throw new Error(`Cockpit content request failed (${res.status}): ${path.split("?")[0]}`);
+  return res.json();
+}
+
 async function fetchSingleton(model: string): Promise<Raw> {
-  try {
-    const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}`, {
-      headers: HEADERS,
-      cache: "no-store",
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+  return cockpitRequest(`item/${model}`);
 }
 
 async function fetchCollection(model: string): Promise<Raw[]> {
-  try {
-    const res = await fetch(`${COCKPIT_URL}/api/content/items/${model}?limit=100`, {
-      headers: HEADERS,
-      cache: "no-store",
-    });
-    if (!res.ok) return [];
-    const json = await res.json();
-    return json.data ?? json.value ?? [];
-  } catch {
-    return [];
+  const items: Raw[] = [];
+  for (let skip = 0; ; skip += 100) {
+    const json = await cockpitRequest(`items/${model}?limit=100&skip=${skip}`);
+    const page = Array.isArray(json) ? json : json.data ?? json.value ?? [];
+    items.push(...page);
+    if (page.length < 100) return items;
   }
 }
 
 async function fetchCollectionItem(model: string, id: string): Promise<Raw> {
-  try {
-    const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}/${id}`, {
-      headers: HEADERS,
-      cache: "no-store",
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+  const filter = encodeURIComponent(JSON.stringify({ $or: [{ uuid: id }, { _id: id }] }));
+  return cockpitRequest(`item/${model}?filter=${filter}`);
+}
+
+export async function getSiteSettings(): Promise<SiteSettings> {
+  const raw = await fetchSingleton("SiteSettings");
+  const settings = Object.fromEntries(Object.entries(siteDefaults).map(([key, value]) => [key, raw?.[key] ?? value])) as SiteSettings;
+  settings.logo = cockpitAsset(settings.logo);
+  settings.companyLinks = settings.companyLinks.map(link => ({ ...link, image: link.image ? cockpitAsset(link.image) : "" }));
+  settings.socialLinks = settings.socialLinks.map(link => ({ ...link, image: link.image ? cockpitAsset(link.image) : "" }));
+  return settings;
 }
 
 // ─── home ─────────────────────────────────────────────────────────────────────
 
 export async function getHomePageData() {
   const raw = await fetchSingleton("Home");
-  if (!raw) {
-    const { homeData, testimonials } = await import("@/mock/home");
-    return { homeData, testimonials };
-  }
+  if (!raw) throw new Error("Publish the Home singleton in Cockpit.");
 
   const homeData: HomeData = {
     intro: {
@@ -107,13 +99,13 @@ export async function getHomePageData() {
       image:             cockpitAsset(raw.introImage),
     },
     stats: (raw.stats ?? []).map((s: Raw, i: number) => ({
-      uuid: s._id ?? s.id ?? String(i),
+      uuid: s.uuid ?? s._id ?? s.id ?? String(i),
       value: s.value,
       label: s.label,
     })),
     partners: (raw.partners ?? []).map((p: Raw, i: number): TrustedPartnerLogo => ({
       id: i + 1,
-      uuid: p._id ?? p.id ?? String(i),
+      uuid: p.uuid ?? p._id ?? p.id ?? String(i),
       image: cockpitAsset(p.image),
     })),
     about: {
@@ -122,13 +114,13 @@ export async function getHomePageData() {
       description: raw.aboutDescription ?? "",
       image:       cockpitAsset(raw.aboutImage),
       highlights:  (raw.aboutHighlights ?? []).map((h: Raw, i: number) => ({
-        uuid:  h._id ?? h.id ?? String(i),
+        uuid:  h.uuid ?? h._id ?? h.id ?? String(i),
         label: h.label,
         image: cockpitAsset(h.image),
       })),
     },
     missionVision: (raw.missionVision ?? []).map((m: Raw, i: number) => ({
-      uuid:        m._id ?? m.id ?? String(i),
+      uuid:        m.uuid ?? m._id ?? m.id ?? String(i),
       title:       m.title,
       description: m.description,
       image:       cockpitAsset(m.image),
@@ -141,7 +133,7 @@ export async function getHomePageData() {
     faqs: {
       heading: raw.faqsHeading ?? "",
       faqs: (raw.faqs ?? []).map((f: Raw, i: number) => ({
-        uuid:     f._id ?? f.id ?? String(i),
+        uuid:     f.uuid ?? f._id ?? f.id ?? String(i),
         question: f.question,
         answer:   f.answer,
       })),
@@ -149,7 +141,7 @@ export async function getHomePageData() {
   };
 
   const testimonials: HomeTestimonial[] = (raw.testimonials ?? []).map((t: Raw, i: number) => ({
-    uuid:   t._id ?? t.id ?? String(i),
+    uuid:   t.uuid ?? t._id ?? t.id ?? String(i),
     quote:  t.quote,
     name:   t.name,
     role:   t.role,
@@ -164,7 +156,7 @@ export async function getHomePageData() {
 
 export async function getAboutPageData(): Promise<AboutPageContent> {
   const raw = await fetchSingleton("About");
-  if (!raw) return (await import("@/mock/about")).aboutPageContent;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     header: {
@@ -178,7 +170,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
       image:   cockpitAsset(raw.valuesImage),
       values:  (raw.values ?? []).map((v: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        v._id ?? v.id ?? String(i),
+        uuid:        v.uuid ?? v._id ?? v.id ?? String(i),
         title:       v.title,
         description: v.description,
       })),
@@ -192,7 +184,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
       description: raw.teamDescription ?? "",
       members:     (raw.team ?? []).map((m: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        m._id ?? m.id ?? String(i),
+        uuid:        m.uuid ?? m._id ?? m.id ?? String(i),
         name:        m.name,
         role:        m.role,
         image:       cockpitAsset(m.image),
@@ -210,7 +202,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
 
 export async function getContactPageData() {
   const raw = await fetchSingleton("Contact");
-  if (!raw) return (await import("@/mock/contact")).contactSection;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     header: {
@@ -251,10 +243,7 @@ export async function getCareerPageData(): Promise<{
     fetchCollection("Jobs"),
   ]);
 
-  if (!raw) {
-    const mock = await import("@/mock/career");
-    return { careerData: mock.careerData, jobs: mock.jobs, lifeAtTechAvenue: mock.lifeAtTechAvenue };
-  }
+  if (!raw) throw new Error("Publish the Career singleton in Cockpit.");
 
   const careerData: CareerData = {
     header: {
@@ -275,7 +264,7 @@ export async function getCareerPageData(): Promise<{
       description: raw.hiringDescription ?? "",
       steps: (raw.hiringSteps ?? []).map((s: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        s._id ?? s.id ?? String(i),
+        uuid:        s.uuid ?? s._id ?? s.id ?? String(i),
         title:       s.title,
         description: s.description,
         image:       cockpitAsset(s.image),
@@ -286,7 +275,7 @@ export async function getCareerPageData(): Promise<{
       description: raw.followUsDescription ?? "",
       links: (raw.socialLinks ?? []).map((l: Raw, i: number) => ({
         id:    i + 1,
-        uuid:  l._id ?? l.id ?? String(i),
+        uuid:  l.uuid ?? l._id ?? l.id ?? String(i),
         label: l.label,
         href:  l.href,
         image: cockpitAsset(l.image),
@@ -300,7 +289,7 @@ export async function getCareerPageData(): Promise<{
     description: raw.lifeDescription ?? "",
     highlights:  (raw.lifeHighlights ?? []).map((h: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        h._id ?? h.id ?? String(i),
+      uuid:        h.uuid ?? h._id ?? h.id ?? String(i),
       title:       h.title,
       description: h.description,
       media:       cockpitAsset(h.media),
@@ -309,7 +298,7 @@ export async function getCareerPageData(): Promise<{
 
   const jobs: JobOpening[] = jobDocs.map((j: Raw, i: number) => ({
     id:             i + 1,
-    uuid:           j._id ?? j.id ?? String(i),
+    uuid:           j.uuid ?? j._id ?? j.id ?? String(i),
     title:          j.title,
     department:     j.department,
     location:       j.location,
@@ -325,7 +314,7 @@ export async function getCareerPageData(): Promise<{
 
 export async function getServicesPageData(): Promise<ServicesPageContent> {
   const raw = await fetchSingleton("Services");
-  if (!raw) return (await import("@/mock/services")).allServicesPageContent;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     allServicesHeader: {
@@ -338,7 +327,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
       description: raw.servicesDescription ?? "",
       services: (raw.coreServices ?? []).map((s: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        s._id ?? s.id ?? String(i),
+        uuid:        s.uuid ?? s._id ?? s.id ?? String(i),
         articleUuid: s.articleUuid ?? "",
         image:       cockpitAsset(s.icon),
         title:       s.title,
@@ -347,7 +336,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
     },
     allServicesArticles: (raw.articles ?? []).map((a: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        a._id ?? a.id ?? String(i),
+      uuid:        a.uuid ?? a._id ?? a.id ?? String(i),
       eyebrow:     a.eyebrow,
       title:       a.title,
       description: a.description,
@@ -357,7 +346,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
         .split("\n")
         .map((line: string) => line.trim())
         .filter(Boolean)
-        .map((title: string) => ({ image: PLACEHOLDER, title })),
+        .map((title: string, index: number) => ({ image: cockpitAsset((a.featureIcons ?? "").split("\n")[index]), title })),
     })),
   };
 }
@@ -366,8 +355,8 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
 
 function toIndustry(raw: Raw): Industry {
   return {
-    id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
@@ -408,7 +397,6 @@ function toIndustry(raw: Raw): Industry {
 
 export async function getIndustries(): Promise<Industry[]> {
   const docs = await fetchCollection("Industries");
-  if (!docs.length) return (await import("@/mock/industry")).industries;
   return docs.map(toIndustry);
 }
 
@@ -422,14 +410,14 @@ export async function getIndustry(id: string): Promise<Industry | null> {
 
 function toLegacySolution(raw: Raw): Solution {
   return {
-    id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
     header: {
-      id:          raw._id ?? raw.id,
-      uuid:        raw._id ?? raw.id,
+      id:          raw.uuid ?? raw._id ?? raw.id,
+      uuid:        raw.uuid ?? raw._id ?? raw.id,
       title:       raw.headerTitle       ?? "",
       description: raw.headerDescription ?? "",
       image:       cockpitAsset(raw.headerImage),
@@ -439,7 +427,7 @@ function toLegacySolution(raw: Raw): Solution {
       })),
     },
     highlights: (raw.highlights ?? []).map((h: Raw, i: number) => ({
-      uuid:  h._id ?? h.id ?? String(i),
+      uuid:  h.uuid ?? h._id ?? h.id ?? String(i),
       label: h.label,
       image: cockpitAsset(h.checkIcon ?? h.image),
     })),
@@ -473,7 +461,6 @@ function toLegacySolution(raw: Raw): Solution {
 
 export async function getLegacySolutions(): Promise<Solution[]> {
   const docs = await fetchCollection("LegacySolutions");
-  if (!docs.length) return (await import("@/mock/legacy-solutions")).solutions;
   return docs.map(toLegacySolution);
 }
 
@@ -487,8 +474,8 @@ export async function getLegacySolution(id: string): Promise<Solution | null> {
 
 function toSolutionPage(raw: Raw): SolutionPage {
   return {
-    id:   raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
+    id:   raw.uuid ?? raw._id ?? raw.id,
+    uuid: raw.uuid ?? raw._id ?? raw.id,
     title: raw.title,
     image: cockpitAsset(raw.image),
     icon:  cockpitAsset(raw.icon),
@@ -501,14 +488,14 @@ function toSolutionPage(raw: Raw): SolutionPage {
       description: raw.solutionsDescription ?? "",
       items: (raw.solutionItems ?? []).map((i: Raw, idx: number) => ({
         id:          idx + 1,
-        uuid:        i._id ?? i.id ?? String(idx),
+        uuid:        i.uuid ?? i._id ?? i.id ?? String(idx),
         title:       i.title,
         description: i.description,
       })),
     },
     phases: (raw.phases ?? []).map((p: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        p._id ?? p.id ?? String(i),
+      uuid:        p.uuid ?? p._id ?? p.id ?? String(i),
       title:       p.title,
       focus:       p.focus,
       description: p.description,
@@ -518,7 +505,6 @@ function toSolutionPage(raw: Raw): SolutionPage {
 
 export async function getSolutionPages(): Promise<SolutionPage[]> {
   const docs = await fetchCollection("SolutionPages");
-  if (!docs.length) return (await import("@/mock/solutions")).solutionPages;
   return docs.map(toSolutionPage);
 }
 
@@ -532,8 +518,8 @@ export async function getSolutionPage(id: string): Promise<SolutionPage | null> 
 
 function toNewsStory(raw: Raw): NewsStory {
   return {
-    id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     category:    raw.category    ?? "",
     title:       raw.title       ?? "",
     description: raw.description ?? "",
@@ -544,7 +530,7 @@ function toNewsStory(raw: Raw): NewsStory {
 }
 
 export async function getNewsPageData(): Promise<{
-  featuredStory: NewsStory;
+  featuredStory: NewsStory | null;
   newsStories: NewsStory[];
   events: EventItem[];
 }> {
@@ -553,17 +539,13 @@ export async function getNewsPageData(): Promise<{
     fetchCollection("Events"),
   ]);
 
-  if (!newsDocs.length) {
-    const mock = await import("@/mock/news");
-    return { featuredStory: mock.featuredStory, newsStories: mock.newsStories, events: mock.events };
-  }
 
   const featured = newsDocs.find((d: Raw) => d.featured) ?? newsDocs[0];
-  const rest = newsDocs.filter((d: Raw) => (d._id ?? d.id) !== (featured?._id ?? featured?.id));
+  const rest = newsDocs.filter((d: Raw) => (d.uuid ?? d._id ?? d.id) !== (featured?.uuid ?? featured?._id ?? featured?.id));
 
   const events: EventItem[] = eventDocs.map((e: Raw, i: number) => ({
     id:       i + 1,
-    uuid:     e._id ?? e.id ?? String(i),
+    uuid:     e.uuid ?? e._id ?? e.id ?? String(i),
     title:    e.title,
     location: e.location,
     startsAt: e.startsAt,
@@ -572,7 +554,7 @@ export async function getNewsPageData(): Promise<{
   }));
 
   return {
-    featuredStory: toNewsStory(featured),
+    featuredStory: featured ? toNewsStory(featured) : null,
     newsStories:   rest.map(toNewsStory),
     events,
   };
@@ -588,8 +570,8 @@ export async function getEvent(id: string): Promise<EventItem | null> {
   const raw = await fetchCollectionItem("Events", id);
   if (!raw) return null;
   return {
-    id:       raw._id ?? raw.id,
-    uuid:     raw._id ?? raw.id,
+    id:       raw.uuid ?? raw._id ?? raw.id,
+    uuid:     raw.uuid ?? raw._id ?? raw.id,
     title:    raw.title,
     location: raw.location,
     startsAt: raw.startsAt,
@@ -609,13 +591,13 @@ function toSuccessStory(raw: Raw): SuccessStory {
     }));
 
   return {
-    id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     image:       cockpitAsset(raw.image),
     title:       raw.title,
     description: raw.description,
-    industry: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.industryTitle ?? "" },
-    solution: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.solutionTitle  ?? "" },
+    industry: { id: raw.industryUuid ?? raw._id, uuid: raw.industryUuid ?? "", title: raw.industryTitle ?? "" },
+    solution: { id: raw.solutionUuid ?? raw._id, uuid: raw.solutionUuid ?? "", title: raw.solutionTitle ?? "" },
     detail: {
       challenges: {
         title:       raw.challengesTitle       ?? "",
@@ -632,7 +614,7 @@ function toSuccessStory(raw: Raw): SuccessStory {
         description: raw.impactDescription ?? "",
         items: (raw.impactItems ?? []).map((i: Raw, idx: number) => ({
           id:          idx + 1,
-          uuid:        i._id ?? i.id ?? String(idx),
+          uuid:        i.uuid ?? i._id ?? i.id ?? String(idx),
           value:       i.value,
           title:       i.title,
           description: i.description,
@@ -651,10 +633,6 @@ export async function getSuccessStoriesPageData(): Promise<{
     fetchCollection("SuccessStories"),
   ]);
 
-  if (!pageRaw && !storyDocs.length) {
-    const mock = await import("@/mock/success-stories");
-    return { content: mock.successStoriesContent, stories: mock.successStories };
-  }
 
   const content: SuccessStoriesContent = {
     header: {
@@ -677,4 +655,10 @@ export async function getSuccessStory(id: string): Promise<SuccessStory | null> 
   const raw = await fetchCollectionItem("SuccessStories", id);
   if (!raw) return null;
   return toSuccessStory(raw);
+}
+
+export async function getJob(id: string) {
+  const raw = await fetchCollectionItem("Jobs", id);
+  if (!raw) return null;
+  return { title: raw.title as string, department: raw.department as string, location: raw.location as string, employmentType: raw.employmentType as string, experience: raw.experience as string, description: (raw.description ?? "") as string, applicationUrl: (raw.applicationUrl ?? "") as string };
 }

@@ -5,15 +5,16 @@ import { SolutionTestimonial } from "@/components/features/legacy-solutions/solu
 import { Container } from "@/components/shared/container";
 import { SuccessStoriesUnderSection } from "@/components/shared/success-stories-under-section";
 import { TabGroup } from "@/components/shared/tab-group";
-import { getLegacySolution, getLegacySolutions, getSuccessStoriesPageData } from "@/lib/cms";
+import { getLegacySolution, getLegacySolutions, getSuccessStoriesPageData, getSiteSettings } from "@/lib/cms";
 import { notFound } from "next/navigation";
 
 export default async function page({ params }: { params: Promise<{ solution: string }> }) {
   const { solution: id } = await params;
-  const [activeSolution, solutions, { stories }] = await Promise.all([
+  const [activeSolution, solutions, { stories }, settings] = await Promise.all([
     getLegacySolution(id),
     getLegacySolutions(),
     getSuccessStoriesPageData(),
+    getSiteSettings(),
   ]);
 
   if (!activeSolution) notFound();
@@ -26,7 +27,7 @@ export default async function page({ params }: { params: Promise<{ solution: str
         <TabGroup
           tabs={solutions}
           activeUuid={activeSolution.uuid}
-          hrefPrefix="/solutions"
+          hrefPrefix="/legacy-solutions"
         />
       </Container>
 
@@ -39,8 +40,8 @@ export default async function page({ params }: { params: Promise<{ solution: str
       {stories.length > 0 && (
         <SuccessStoriesUnderSection
           successStories={{
-            title: "Success Stories",
-            description: "See how we've helped organisations like yours succeed.",
+            title: settings.solutionStoriesTitle,
+            description: settings.solutionStoriesDescription,
             items: stories.slice(0, 3),
           }}
         />

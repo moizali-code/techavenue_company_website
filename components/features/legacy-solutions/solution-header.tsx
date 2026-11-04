@@ -1,3 +1,5 @@
+"use client";
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
 import { RequestDemoModal } from "@/components/features/legacy-solutions/request-demo-modal";
 import { Container } from "@/components/shared/container";
 import { SplitSection } from "@/components/shared/split-section";
@@ -5,11 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { SolutionHeaderProps } from "@/types/features/legacy-solutions";
 
-const PRIMARY_ACTION_LABEL = "Request a Demo";
-const SECONDARY_ACTION_LABEL = "Watch the Demo";
 
 function SolutionHeader({ eyebrow, header, solutionOptions }: SolutionHeaderProps) {
   const { title, description, image, items } = header;
+  const settings = useSiteSettings();
 
   return (
     <Container>
@@ -48,7 +49,7 @@ function SolutionHeader({ eyebrow, header, solutionOptions }: SolutionHeaderProp
                     variant="brand"
                     className="border-2 border-[#1E3C8C] h-auto rounded-[4px] px-8 py-3.5 text-[15px] font-medium tracking-normal"
                   >
-                    {PRIMARY_ACTION_LABEL}
+                    {settings.requestDemoLabel}
                   </Button>
                 }
               />
@@ -59,7 +60,7 @@ function SolutionHeader({ eyebrow, header, solutionOptions }: SolutionHeaderProp
                 arrow
                 className="h-auto px-8 py-3.5 text-[15px] font-medium"
               >
-                {SECONDARY_ACTION_LABEL}
+                {settings.watchDemoLabel}
               </Button>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import { CoreServices } from "@/components/features/services/core-services";
 import { ServiceDetails } from "@/components/features/services/service-details";
 import { Jumbotron } from "@/components/shared/jumbotron";
@@ -19,7 +20,7 @@ export default async function page() {
         description={allServicesHeader.description}
         eyebrow={
           <Button variant={"tab"} className={"rounded-full "}>
-            Company
+            <WebsiteText name="servicesEyebrow" />
           </Button>
         }
         backgroundImage={allServicesHeader.image}

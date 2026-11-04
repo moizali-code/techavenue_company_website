@@ -1,4 +1,6 @@
 "use client";
+import { WebsiteText } from "@/components/shared/website-text";
+
 
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -12,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
-import { requestDemo } from "@/mock/request-demo";
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
 import type { RequestDemoModalProps } from "@/types/features/request-demo";
 import {
   requestDemoSchema,
@@ -28,7 +30,9 @@ const fieldClassNames = {
 function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { eyebrow, title, description, organizationSizes } = requestDemo;
+  const settings = useSiteSettings();
+  const { demoEyebrow: eyebrow, demoTitle: title, demoDescription: description } = settings;
+  const organizationSizes = settings.organizationSizes.map(item => item.name);
 
   const {
     control,
@@ -89,8 +93,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             <ValidatedTextInput<RequestDemoValues>
               name="fullName"
               control={control}
-              label="Full Name"
-              placeholder="John Doe"
+              label={settings.requestDemoModalFullName}
+              placeholder={settings.requestDemoModalJohnDoe}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -99,8 +103,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
               name="contactNumber"
               control={control}
               type="tel"
-              label="Contact Number"
-              placeholder="+1 (555) 000-0000"
+              label={settings.requestDemoModalContactNumber}
+              placeholder={settings.requestDemoModal15550000000}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -109,8 +113,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
               name="email"
               control={control}
               type="email"
-              label="Email Address"
-              placeholder="john@company.com"
+              label={settings.requestDemoModalEmailAddress}
+              placeholder={settings.requestDemoModalJohnCompanyCom}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -121,15 +125,15 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
               render={({ field, fieldState }) => (
                 <div className="flex w-full flex-col gap-1.5">
                   <label className={fieldClassNames.label}>
-                    Solution for Demo
-                  </label>
+<WebsiteText name="requestDemoModalSolutionForDemo" />
+</label>
 
                   <SelectField
                     value={field.value || null}
                     onValueChange={(value) => field.onChange(value ?? "")}
                     options={solutionOptions}
-                    placeholder="Select a solution"
-                    ariaLabel="Solution for Demo"
+                    placeholder={settings.requestDemoModalSelectASolution}
+                    ariaLabel={settings.requestDemoModalSolutionForDemo}
                     classNames={{ trigger: fieldClassNames.input }}
                   />
 
@@ -145,8 +149,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             <ValidatedTextInput<RequestDemoValues>
               name="companyName"
               control={control}
-              label="Company Name"
-              placeholder="Enterprise Corp"
+              label={settings.requestDemoModalCompanyName}
+              placeholder={settings.requestDemoModalEnterpriseCorp}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -154,8 +158,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             <ValidatedTextInput<RequestDemoValues>
               name="jobTitle"
               control={control}
-              label="Current Job Title"
-              placeholder="Director of IT"
+              label={settings.requestDemoModalCurrentJobTitle}
+              placeholder={settings.requestDemoModalDirectorOfIT}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -167,15 +171,15 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             render={({ field, fieldState }) => (
               <div className="flex w-full flex-col gap-1.5">
                 <label className={fieldClassNames.label}>
-                  Organization Size
-                </label>
+<WebsiteText name="requestDemoModalOrganizationSize" />
+</label>
 
                 <SelectField
                   value={field.value || null}
                   onValueChange={(value) => field.onChange(value ?? "")}
                   options={organizationSizes}
-                  placeholder="Select size"
-                  ariaLabel="Organization Size"
+                  placeholder={settings.requestDemoModalSelectSize}
+                  ariaLabel={settings.requestDemoModalOrganizationSize}
                   classNames={{ trigger: fieldClassNames.input }}
                 />
 
@@ -194,14 +198,14 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             render={({ field, fieldState }) => (
               <div className="flex w-full flex-col gap-1.5">
                 <label htmlFor="question" className={fieldClassNames.label}>
-                  Ask a Question
-                </label>
+<WebsiteText name="requestDemoModalAskAQuestion" />
+</label>
 
                 <Textarea
                   {...field}
                   id="question"
                   rows={4}
-                  placeholder="Tell us more about your specific needs..."
+                  placeholder={settings.requestDemoModalTellUsMoreAboutYourSpecificNeeds}
                   aria-invalid={fieldState.error ? true : undefined}
                   className="min-h-[110px] rounded-[6px] border-[#E4E6EB] bg-white px-3 py-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]"
                 />
@@ -234,10 +238,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
                     htmlFor="demo-consent"
                     className="text-[12px] leading-relaxed text-[#444651] lg:text-[13px]"
                   >
-                    I agree to be contacted by Tech Avenue regarding this
-                    request and receive relevant communications. I understand I
-                    can unsubscribe at any time.
-                  </label>
+<WebsiteText name="requestDemoModalIAgreeToBeContactedByTech" />
+</label>
                 </div>
 
                 {fieldState.error?.message && (
@@ -258,8 +260,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             onClick={closeModal}
             className="h-11 w-full rounded-[4px] border-[#1E3C8C] text-[14px] font-medium tracking-normal text-[#1E3C8C] md:w-[150px]"
           >
-            Cancel
-          </Button>
+<WebsiteText name="requestDemoModalCancel" />
+</Button>
 
           <Button
             type="submit"
@@ -268,8 +270,8 @@ function RequestDemoModal({ trigger, solutionOptions }: RequestDemoModalProps) {
             disabled={isSubmitting}
             className="h-11 w-full rounded-[4px] text-[14px] font-medium tracking-normal md:w-[170px]"
           >
-            Request Demo
-          </Button>
+<WebsiteText name="requestDemoModalRequestDemo" />
+</Button>
         </div>
       </form>
     </Modal>

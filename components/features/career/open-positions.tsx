@@ -1,4 +1,6 @@
 "use client";
+import { WebsiteText } from "@/components/shared/website-text";
+
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -208,8 +210,8 @@ function OpenPositions({
                       render={<Link href={`/career/${job.uuid}`} />}
                       className="h-11 w-full rounded-[4px] text-[14px] font-semibold tracking-normal"
                     >
-                      Apply Now
-                    </Button>
+<WebsiteText name="openPositionsApplyNow" />
+</Button>
                   </div>
                 }
                 classNames={{
@@ -228,8 +230,8 @@ function OpenPositions({
             ref={gridRef}
             className="rounded-[10px] border border-dashed border-[#E4E4E4] px-6 py-14 text-center text-[15px] text-[#444651]"
           >
-            No positions avaliable.
-          </div>
+<WebsiteText name="openPositionsNoPositionsAvaliable" />
+</div>
         )}
 
         <Paginator
