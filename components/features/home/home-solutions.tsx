@@ -76,7 +76,7 @@ function HomeSolutions({ heading, solutions }: HomeSolutionsProps) {
                     size="lg"
                     arrow
                     nativeButton={false}
-                    render={<Link href={`/solutions/${uuid}`} />}
+                    render={<Link href={`/legacy-solutions/${uuid}`} />}
                     className="h-12 w-full px-6 text-[15px] font-medium md:w-fit md:self-end"
                   >
                     View Solution

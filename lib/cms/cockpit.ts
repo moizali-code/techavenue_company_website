@@ -63,7 +63,7 @@ async function fetchCollection(model: string): Promise<Raw[]> {
     });
     if (!res.ok) return [];
     const json = await res.json();
-    return json.data ?? json.value ?? [];
+    return Array.isArray(json) ? json : json.data ?? json.value ?? [];
   } catch {
     return [];
   }
@@ -71,6 +71,15 @@ async function fetchCollection(model: string): Promise<Raw[]> {
 
 async function fetchCollectionItem(model: string, id: string): Promise<Raw> {
   try {
+    const filter = encodeURIComponent(JSON.stringify({ uuid: id }));
+    const byUuid = await fetch(`${COCKPIT_URL}/api/content/items/${model}?filter=${filter}&limit=1`, {
+      headers: HEADERS,
+      next: { revalidate: 60 },
+    });
+    if (byUuid.ok) {
+      const [match] = await byUuid.json();
+      if (match) return match;
+    }
     const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}/${id}`, {
       headers: HEADERS,
       next: { revalidate: 60 },
@@ -100,16 +109,16 @@ export async function getHomePageData() {
       experienceLabel:   raw.introExperienceLabel    ?? "",
       experienceValue:   raw.introExperienceValue    ?? "",
       description:       raw.introDescription        ?? "",
-      image:             cockpitAsset(raw.introImage),
+      image:             raw.introImage ? cockpitAsset(raw.introImage) : "",
     },
     stats: (raw.stats ?? []).map((s: Raw, i: number) => ({
-      uuid: s._id ?? s.id ?? String(i),
+      uuid: s.uuid ?? s._id ?? s.id ?? String(i),
       value: s.value,
       label: s.label,
     })),
     partners: (raw.partners ?? []).map((p: Raw, i: number): TrustedPartnerLogo => ({
       id: i + 1,
-      uuid: p._id ?? p.id ?? String(i),
+      uuid: p.uuid ?? p._id ?? p.id ?? String(i),
       image: cockpitAsset(p.image),
     })),
     about: {
@@ -118,13 +127,13 @@ export async function getHomePageData() {
       description: raw.aboutDescription ?? "",
       image:       cockpitAsset(raw.aboutImage),
       highlights:  (raw.aboutHighlights ?? []).map((h: Raw, i: number) => ({
-        uuid:  h._id ?? h.id ?? String(i),
+        uuid:  h.uuid ?? h._id ?? h.id ?? String(i),
         label: h.label,
         image: cockpitAsset(h.image),
       })),
     },
     missionVision: (raw.missionVision ?? []).map((m: Raw, i: number) => ({
-      uuid:        m._id ?? m.id ?? String(i),
+      uuid:        m.uuid ?? m._id ?? m.id ?? String(i),
       title:       m.title,
       description: m.description,
       image:       cockpitAsset(m.image),
@@ -137,7 +146,7 @@ export async function getHomePageData() {
     faqs: {
       heading: raw.faqsHeading ?? "",
       faqs: (raw.faqs ?? []).map((f: Raw, i: number) => ({
-        uuid:     f._id ?? f.id ?? String(i),
+        uuid:     f.uuid ?? f._id ?? f.id ?? String(i),
         question: f.question,
         answer:   f.answer,
       })),
@@ -145,7 +154,7 @@ export async function getHomePageData() {
   };
 
   const testimonials: HomeTestimonial[] = (raw.testimonials ?? []).map((t: Raw, i: number) => ({
-    uuid:   t._id ?? t.id ?? String(i),
+    uuid:   t.uuid ?? t._id ?? t.id ?? String(i),
     quote:  t.quote,
     name:   t.name,
     role:   t.role,
@@ -174,7 +183,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
       image:   cockpitAsset(raw.valuesImage),
       values:  (raw.values ?? []).map((v: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        v._id ?? v.id ?? String(i),
+        uuid:        v.uuid ?? v._id ?? v.id ?? String(i),
         title:       v.title,
         description: v.description,
       })),
@@ -188,7 +197,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
       description: raw.teamDescription ?? "",
       members:     (raw.team ?? []).map((m: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        m._id ?? m.id ?? String(i),
+        uuid:        m.uuid ?? m._id ?? m.id ?? String(i),
         name:        m.name,
         role:        m.role,
         image:       cockpitAsset(m.image),
@@ -271,7 +280,7 @@ export async function getCareerPageData(): Promise<{
       description: raw.hiringDescription ?? "",
       steps: (raw.hiringSteps ?? []).map((s: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        s._id ?? s.id ?? String(i),
+        uuid:        s.uuid ?? s._id ?? s.id ?? String(i),
         title:       s.title,
         description: s.description,
         image:       cockpitAsset(s.image),
@@ -282,7 +291,7 @@ export async function getCareerPageData(): Promise<{
       description: raw.followUsDescription ?? "",
       links: (raw.socialLinks ?? []).map((l: Raw, i: number) => ({
         id:    i + 1,
-        uuid:  l._id ?? l.id ?? String(i),
+        uuid:  l.uuid ?? l._id ?? l.id ?? String(i),
         label: l.label,
         href:  l.href,
         image: cockpitAsset(l.image),
@@ -296,7 +305,7 @@ export async function getCareerPageData(): Promise<{
     description: raw.lifeDescription ?? "",
     highlights:  (raw.lifeHighlights ?? []).map((h: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        h._id ?? h.id ?? String(i),
+      uuid:        h.uuid ?? h._id ?? h.id ?? String(i),
       title:       h.title,
       description: h.description,
       media:       cockpitAsset(h.media),
@@ -305,7 +314,7 @@ export async function getCareerPageData(): Promise<{
 
   const jobs: JobOpening[] = jobDocs.map((j: Raw, i: number) => ({
     id:             i + 1,
-    uuid:           j._id ?? j.id ?? String(i),
+    uuid:           j.uuid ?? j._id ?? j.id ?? String(i),
     title:          j.title,
     department:     j.department,
     location:       j.location,
@@ -334,7 +343,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
       description: raw.servicesDescription ?? "",
       services: (raw.coreServices ?? []).map((s: Raw, i: number) => ({
         id:          i + 1,
-        uuid:        s._id ?? s.id ?? String(i),
+        uuid:        s.uuid ?? s._id ?? s.id ?? String(i),
         articleUuid: s.articleUuid ?? "",
         image:       cockpitAsset(s.icon),
         title:       s.title,
@@ -343,7 +352,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
     },
     allServicesArticles: (raw.articles ?? []).map((a: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        a._id ?? a.id ?? String(i),
+      uuid:        a.uuid ?? a._id ?? a.id ?? String(i),
       eyebrow:     a.eyebrow,
       title:       a.title,
       description: a.description,
@@ -363,7 +372,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
 function toIndustry(raw: Raw): Industry {
   return {
     id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
@@ -419,13 +428,13 @@ export async function getIndustry(id: string): Promise<Industry | null> {
 function toLegacySolution(raw: Raw): Solution {
   return {
     id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
     header: {
       id:          raw._id ?? raw.id,
-      uuid:        raw._id ?? raw.id,
+      uuid:        raw.uuid ?? raw._id ?? raw.id,
       title:       raw.headerTitle       ?? "",
       description: raw.headerDescription ?? "",
       image:       cockpitAsset(raw.headerImage),
@@ -435,7 +444,7 @@ function toLegacySolution(raw: Raw): Solution {
       })),
     },
     highlights: (raw.highlights ?? []).map((h: Raw, i: number) => ({
-      uuid:  h._id ?? h.id ?? String(i),
+      uuid:  h.uuid ?? h._id ?? h.id ?? String(i),
       label: h.label,
       image: cockpitAsset(h.checkIcon ?? h.image),
     })),
@@ -484,7 +493,7 @@ export async function getLegacySolution(id: string): Promise<Solution | null> {
 function toSolutionPage(raw: Raw): SolutionPage {
   return {
     id:   raw._id ?? raw.id,
-    uuid: raw._id ?? raw.id,
+    uuid: raw.uuid ?? raw._id ?? raw.id,
     title: raw.title,
     image: cockpitAsset(raw.image),
     icon:  cockpitAsset(raw.icon),
@@ -497,14 +506,14 @@ function toSolutionPage(raw: Raw): SolutionPage {
       description: raw.solutionsDescription ?? "",
       items: (raw.solutionItems ?? []).map((i: Raw, idx: number) => ({
         id:          idx + 1,
-        uuid:        i._id ?? i.id ?? String(idx),
+        uuid:        i.uuid ?? i._id ?? i.id ?? String(idx),
         title:       i.title,
         description: i.description,
       })),
     },
     phases: (raw.phases ?? []).map((p: Raw, i: number) => ({
       id:          i + 1,
-      uuid:        p._id ?? p.id ?? String(i),
+      uuid:        p.uuid ?? p._id ?? p.id ?? String(i),
       title:       p.title,
       focus:       p.focus,
       description: p.description,
@@ -529,7 +538,7 @@ export async function getSolutionPage(id: string): Promise<SolutionPage | null> 
 function toNewsStory(raw: Raw): NewsStory {
   return {
     id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     category:    raw.category    ?? "",
     title:       raw.title       ?? "",
     description: raw.description ?? "",
@@ -559,7 +568,7 @@ export async function getNewsPageData(): Promise<{
 
   const events: EventItem[] = eventDocs.map((e: Raw, i: number) => ({
     id:       i + 1,
-    uuid:     e._id ?? e.id ?? String(i),
+    uuid:     e.uuid ?? e._id ?? e.id ?? String(i),
     title:    e.title,
     location: e.location,
     startsAt: e.startsAt,
@@ -585,7 +594,7 @@ export async function getEvent(id: string): Promise<EventItem | null> {
   if (!raw) return null;
   return {
     id:       raw._id ?? raw.id,
-    uuid:     raw._id ?? raw.id,
+    uuid:     raw.uuid ?? raw._id ?? raw.id,
     title:    raw.title,
     location: raw.location,
     startsAt: raw.startsAt,
@@ -606,12 +615,12 @@ function toSuccessStory(raw: Raw): SuccessStory {
 
   return {
     id:          raw._id ?? raw.id,
-    uuid:        raw._id ?? raw.id,
+    uuid:        raw.uuid ?? raw._id ?? raw.id,
     image:       cockpitAsset(raw.image),
     title:       raw.title,
     description: raw.description,
-    industry: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.industryTitle ?? "" },
-    solution: { id: raw._id ?? raw.id, uuid: raw._id ?? raw.id, title: raw.solutionTitle  ?? "" },
+    industry: { id: raw.industryUuid ?? "", uuid: raw.industryUuid ?? "", title: raw.industryTitle ?? "" },
+    solution: { id: raw.solutionUuid ?? "", uuid: raw.solutionUuid ?? "", title: raw.solutionTitle  ?? "" },
     detail: {
       challenges: {
         title:       raw.challengesTitle       ?? "",
@@ -628,7 +637,7 @@ function toSuccessStory(raw: Raw): SuccessStory {
         description: raw.impactDescription ?? "",
         items: (raw.impactItems ?? []).map((i: Raw, idx: number) => ({
           id:          idx + 1,
-          uuid:        i._id ?? i.id ?? String(idx),
+          uuid:        i.uuid ?? i._id ?? i.id ?? String(idx),
           value:       i.value,
           title:       i.title,
           description: i.description,
