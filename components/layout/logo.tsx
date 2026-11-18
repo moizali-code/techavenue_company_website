@@ -1,18 +1,19 @@
+import type { SiteSettings } from "@/lib/site-defaults";
 import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
-function Logo({ className }: { className?: string }) {
+function Logo({ className, settings }: { className?: string; settings: SiteSettings }) {
   return (
     <Link
       href="/"
-      aria-label="Tech Avenue — home"
+      aria-label={settings.homeLabel}
       className={cn("inline-flex shrink-0 items-center", className)}
     >
       <Image
-        src="/logo.png"
-        alt="Tech Avenue — leading the innovation drive"
+        src={settings.logo}
+        alt={settings.logoAlt}
         width={188}
         height={50}
         priority

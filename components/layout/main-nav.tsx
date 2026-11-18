@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Briefcase, CircleHelp, Info, Newspaper } from "lucide-react";
 
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import type { NavItem, NavLink } from "@/types/features/navigation";
@@ -18,12 +19,7 @@ import {
 
 type PlainNavLink = { title: string; description: string; href: string; image: string };
 
-const companyItems: NavLink[] = [
-  { title: "About Us", description: "Who we are, what we stand for, and the drive behind it.", href: "/about", icon: Info },
-  { title: "FAQs", description: "Answers to the questions we hear most often.", href: "/#faqs", icon: CircleHelp },
-  { title: "Career", description: "Open roles and what it is like to grow with us.", href: "/career", icon: Briefcase },
-  { title: "News & Media", description: "Announcements, press coverage, and company updates.", href: "/news", icon: Newspaper },
-];
+const companyIcons: Record<string, typeof Info> = { "/about": Info, "/#faqs": CircleHelp, "/career": Briefcase, "/news": Newspaper };
 
 type NavGroup = Extract<NavItem, { items: NavLink[] }>;
 const isNavGroup = (item: NavItem): item is NavGroup => Boolean(item.items);
@@ -38,18 +34,19 @@ function MainNav({
   solutionItems: PlainNavLink[];
 }) {
   const pathname = usePathname();
+  const settings = useSiteSettings();
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const navItems: NavItem[] = [
-    { label: "Home", href: "/" },
-    { label: "Company", items: companyItems },
-    { label: "Solutions", items: solutionItems },
-    { label: "Industries", items: industryItems },
-    { label: "Services", href: "/services" },
-    { label: "Success Stories", href: "/success-stories" },
-  ];
+  const groups: Record<string, NavLink[]> = {
+    company: settings.companyLinks.map(link => ({ ...link, icon: companyIcons[link.href] })),
+    solutions: solutionItems,
+    industries: industryItems,
+  };
+  const navItems: NavItem[] = settings.navigation.map(item => item.group
+    ? { label: item.label, items: groups[item.group] ?? [] }
+    : { label: item.label, href: item.href });
 
   return (
     <NavigationMenu className={className} align="center">

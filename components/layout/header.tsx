@@ -1,3 +1,4 @@
+import type { SiteSettings } from "@/lib/site-defaults";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { MainNav } from "@/components/layout/main-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { getIndustries, getSolutionPages } from "@/lib/cms";
 
-async function Header() {
+async function Header({ settings }: { settings: SiteSettings }) {
   const [industries, solutionPages] = await Promise.all([
     getIndustries(),
     getSolutionPages(),
@@ -31,7 +32,7 @@ async function Header() {
     <header className="sticky top-0 z-50 w-full  bg-background">
       <Container variant="bare">
         <div className="flex h-20 w-full items-center gap-6">
-          <Logo />
+          <Logo settings={settings} />
 
           <MainNav
             className="mx-auto hidden max-w-none lg:flex"
@@ -40,12 +41,12 @@ async function Header() {
           />
 
           <Button
-            render={<Link href="/contact" />}
+            render={<Link href={settings.contactHref} />}
             nativeButton={false}
             size="lg"
             className="ml-auto hidden h-11 rounded-[4px] bg-(image:--brand-gradient) px-[26px] py-[12px] text-brand-foreground transition-opacity hover:opacity-90 lg:inline-flex"
           >
-            Contact Us
+            {settings.contactLabel}
           </Button>
 
           <MobileNav

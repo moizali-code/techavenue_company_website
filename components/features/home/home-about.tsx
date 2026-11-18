@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import Link from "next/link";
 
 import { Container } from "@/components/shared/container";
@@ -48,8 +49,8 @@ function HomeAbout({
                 render={<Link href="/about" />}
                 className="h-12 w-fit px-6 text-[15px] font-medium"
               >
-                Learn More
-              </Button>
+<WebsiteText name="homeAboutLearnMore" />
+</Button>
             </div>
           }
           classNames={{

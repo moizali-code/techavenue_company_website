@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Briefcase, ChevronDown, CircleHelp, Info, Menu, Newspaper, X } from "lucide-react";
 
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
 import { cn } from "@/lib/utils";
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
@@ -12,12 +13,7 @@ import type { NavItem, NavLink } from "@/types/features/navigation";
 
 type PlainNavLink = { title: string; description: string; href: string; image: string };
 
-const companyItems: NavLink[] = [
-  { title: "About Us", description: "Who we are, what we stand for, and the drive behind it.", href: "/about", icon: Info },
-  { title: "FAQs", description: "Answers to the questions we hear most often.", href: "/#faqs", icon: CircleHelp },
-  { title: "Career", description: "Open roles and what it is like to grow with us.", href: "/career", icon: Briefcase },
-  { title: "News & Media", description: "Announcements, press coverage, and company updates.", href: "/news", icon: Newspaper },
-];
+const companyIcons: Record<string, typeof Info> = { "/about": Info, "/#faqs": CircleHelp, "/career": Briefcase, "/news": Newspaper };
 
 type NavGroup = Extract<NavItem, { items: NavLink[] }>;
 const isNavGroup = (item: NavItem): item is NavGroup => Boolean(item.items);
@@ -34,6 +30,7 @@ function MobileNav({
   const [open, setOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const pathname = usePathname();
+  const settings = useSiteSettings();
 
   const close = () => {
     setOpen(false);
@@ -43,14 +40,14 @@ function MobileNav({
   const toggleSection = (label: string) =>
     setOpenSection((current) => (current === label ? null : label));
 
-  const navItems: NavItem[] = [
-    { label: "Home", href: "/" },
-    { label: "Company", items: companyItems },
-    { label: "Solutions", items: solutionItems },
-    { label: "Industries", items: industryItems },
-    { label: "Services", href: "/services" },
-    { label: "Success Stories", href: "/success-stories" },
-  ];
+  const groups: Record<string, NavLink[]> = {
+    company: settings.companyLinks.map(link => ({ ...link, icon: companyIcons[link.href] })),
+    solutions: solutionItems,
+    industries: industryItems,
+  };
+  const navItems: NavItem[] = settings.navigation.map(item => item.group
+    ? { label: item.label, items: groups[item.group] ?? [] }
+    : { label: item.label, href: item.href });
 
   return (
     <div className={className}>
@@ -165,12 +162,12 @@ function MobileNav({
           </ul>
 
           <Button
-            render={<Link href="/contact" onClick={close} />}
+            render={<Link href={settings.contactHref} onClick={close} />}
             nativeButton={false}
             size="lg"
             className="mt-4 w-full bg-(image:--brand-gradient) text-brand-foreground transition-opacity hover:opacity-90"
           >
-            Contact Us
+            {settings.contactLabel}
           </Button>
         </div>
       )}

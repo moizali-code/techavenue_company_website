@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
 import { Card } from "@/components/shared/card";
 import { Container } from "@/components/shared/container";
 import { Jumbotron } from "@/components/shared/jumbotron";
@@ -14,6 +15,7 @@ import type { NewsGridProps } from "@/types/features/news";
 const STORIES_PER_PAGE = 9;
 
 function NewsGrid({ stories }: NewsGridProps) {
+  const settings = useSiteSettings();
   const [page, setPage] = useState(1);
   const gridRef = useRef<HTMLDivElement>(null);
   const previousPageRef = useRef(page);
@@ -37,10 +39,10 @@ function NewsGrid({ stories }: NewsGridProps) {
           align="left"
           eyebrow={
             <span className="text-[14px] font-semibold tracking-[0.12em] text-[#1E3C8C] uppercase">
-              Insight &amp; Innovation
+              {settings.newsEyebrow}
             </span>
           }
-          title="Latest Updates"
+          title={settings.newsHeading}
           classNames={{
             mainWrapper: "px-0 py-0 lg:px-0 lg:py-0 ",
             content: "max-w-full gap-0",

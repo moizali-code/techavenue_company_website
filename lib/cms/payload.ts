@@ -12,7 +12,7 @@ import type { TrustedPartnerLogo } from "@/types/shared/trusted-partners";
 
 // CMS_INTERNAL_URL: Docker-internal hostname (server-side SSR only, never sent to browser)
 // NEXT_PUBLIC_CMS_URL: Public hostname used by the browser for client-side fetches
-const CMS_URL = process.env.CMS_INTERNAL_URL ?? process.env.NEXT_PUBLIC_CMS_URL ?? "http://localhost:3001";
+const CMS_URL = process.env.CMS_INTERNAL_URL ?? process.env.NEXT_PUBLIC_CMS_URL ?? "http://localhost:3005";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 

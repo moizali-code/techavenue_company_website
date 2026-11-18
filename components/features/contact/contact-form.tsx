@@ -1,4 +1,7 @@
 "use client";
+import { WebsiteText } from "@/components/shared/website-text";
+import { useSiteSettings } from "@/components/layout/site-settings-provider";
+
 
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
@@ -26,6 +29,7 @@ const fieldClassNames = {
 };
 
 function ContactForm({ title, description, industryOptions, verticleOptions }: ContactFormProps) {
+  const settings = useSiteSettings();
   const {
     control,
     handleSubmit,
@@ -75,16 +79,16 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
               <ValidatedTextInput<ContactFormValues>
                 name="fullName"
                 control={control}
-                label="Full Name*"
-                placeholder="John Doe"
+                label={settings.contactFormFullName}
+                placeholder={settings.contactFormJohnDoe}
                 labelClassName={fieldClassNames.label}
                 inputClassName={fieldClassNames.input}
               />
               <ValidatedTextInput<ContactFormValues>
                 name="companyName"
                 control={control}
-                label="Company Name"
-                placeholder="Acme Corp"
+                label={settings.contactFormCompanyName}
+                placeholder={settings.contactFormAcmeCorp}
                 labelClassName={fieldClassNames.label}
                 inputClassName={fieldClassNames.input}
               />
@@ -92,8 +96,8 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                 name="email"
                 control={control}
                 type="email"
-                label="Email Address*"
-                placeholder="john@company.com"
+                label={settings.contactFormEmailAddress}
+                placeholder={settings.contactFormJohnCompanyCom}
                 labelClassName={fieldClassNames.label}
                 inputClassName={fieldClassNames.input}
               />
@@ -101,16 +105,16 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                 name="contactNumber"
                 control={control}
                 type="tel"
-                label="Contact Number*"
-                placeholder="+92 300 0000000"
+                label={settings.contactFormContactNumber}
+                placeholder={settings.contactForm923000000000}
                 labelClassName={fieldClassNames.label}
                 inputClassName={fieldClassNames.input}
               />
               <ValidatedTextInput<ContactFormValues>
                 name="organization"
                 control={control}
-                label="Organization*"
-                placeholder="Organization Type"
+                label={settings.contactFormOrganization}
+                placeholder={settings.contactFormOrganizationType}
                 labelClassName={fieldClassNames.label}
                 inputClassName={fieldClassNames.input}
               />
@@ -119,13 +123,15 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                 control={control}
                 render={({ field, fieldState }) => (
                   <div className="flex w-full flex-col gap-1.5">
-                    <label className={fieldClassNames.label}>Industry</label>
+                    <label className={fieldClassNames.label}>
+<WebsiteText name="contactFormIndustry" />
+</label>
                     <SelectField
                       value={field.value || null}
                       onValueChange={(value) => field.onChange(value ?? "")}
                       options={industryOptions}
-                      placeholder="Select industry"
-                      ariaLabel="Industry"
+                      placeholder={settings.contactFormSelectIndustry}
+                      ariaLabel={settings.contactFormIndustry}
                       classNames={{ trigger: fieldClassNames.input }}
                     />
                     {fieldState.error?.message && (
@@ -143,14 +149,14 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
               render={({ field, fieldState }) => (
                 <div className="flex w-full flex-col gap-1.5">
                   <label className={fieldClassNames.label}>
-                    Verticle of Interest
-                  </label>
+<WebsiteText name="contactFormVerticleOfInterest" />
+</label>
                   <SelectField
                     value={field.value || null}
                     onValueChange={(value) => field.onChange(value ?? "")}
                     options={verticleOptions}
-                    placeholder="Select a verticle"
-                    ariaLabel="Verticle of Interest"
+                    placeholder={settings.contactFormSelectAVerticle}
+                    ariaLabel={settings.contactFormVerticleOfInterest}
                     classNames={{ trigger: fieldClassNames.input }}
                   />
                   {fieldState.error?.message && (
@@ -164,8 +170,8 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
             <ValidatedTextInput<ContactFormValues>
               name="subject"
               control={control}
-              label="Subject*"
-              placeholder="Brief subject of inquiry"
+              label={settings.contactFormSubject}
+              placeholder={settings.contactFormBriefSubjectOfInquiry}
               labelClassName={fieldClassNames.label}
               inputClassName={fieldClassNames.input}
             />
@@ -175,13 +181,13 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
               render={({ field, fieldState }) => (
                 <div className="flex w-full flex-col gap-1.5">
                   <label htmlFor="message" className={fieldClassNames.label}>
-                    Message*
-                  </label>
+<WebsiteText name="contactFormMessage" />
+</label>
                   <Textarea
                     {...field}
                     id="message"
                     rows={5}
-                    placeholder="How can we help you?"
+                    placeholder={settings.contactFormHowCanWeHelpYou}
                     aria-invalid={fieldState.error ? true : undefined}
                     className="min-h-[140px] rounded-[6px] border-transparent bg-[#F5F6F8] px-3 py-3 text-[14px] text-[#191C1E] placeholder:text-[#9A9CA5]"
                   />
@@ -211,10 +217,8 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                       htmlFor="consent"
                       className="text-[13px] leading-relaxed text-[#444651]"
                     >
-                      I agree to be contacted by Tech Avenue regarding my
-                      inquiry and understand that my information will be
-                      processed according to the company&apos;s privacy policy.
-                    </label>
+<WebsiteText name="contactFormIAgreeToBeContactedByTech" />
+</label>
                   </div>
                   {fieldState.error?.message && (
                     <p role="alert" className="text-sm text-destructive">
@@ -234,8 +238,8 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                 render={<Link href={successStoriesHref} />}
                 className="h-12 w-full text-[14px] font-medium tracking-normal"
               >
-                View Success Stories
-              </Button>
+<WebsiteText name="contactFormViewSuccessStories" />
+</Button>
               <Button
                 type="submit"
                 variant="brand"
@@ -243,8 +247,8 @@ function ContactForm({ title, description, industryOptions, verticleOptions }: C
                 disabled={isSubmitting}
                 className="h-12 w-full rounded-[4px] text-[14px] font-medium tracking-normal"
               >
-                Send Message
-              </Button>
+<WebsiteText name="contactFormSendMessage" />
+</Button>
             </div>
           </form>
         </div>

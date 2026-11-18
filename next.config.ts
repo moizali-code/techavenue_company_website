@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const provider = process.env.CMS_PROVIDER ?? "payload";
+const provider = process.env.CMS_PROVIDER ?? "cockpit";
 
 const nextConfig: NextConfig = {
   images: {
@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       { protocol: "http", hostname: "localhost", port: "3001" },
       { protocol: "http", hostname: "localhost", port: "9002" },
       { protocol: "http", hostname: "minio", port: "9000" },
-      { protocol: "http", hostname: "localhost", port: "8090" },
+      { protocol: "http", hostname: "localhost", port: "8091" },
       { protocol: "http", hostname: "cockpit" },
     ],
   },

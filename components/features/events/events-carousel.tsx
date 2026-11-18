@@ -1,3 +1,4 @@
+import { getSiteSettings } from "@/lib/cms";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 
@@ -8,7 +9,8 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { formatDay } from "@/lib/formatters/day-formatter";
 import type { EventsCarouselProps } from "@/types/features/events";
 
-function EventsCarousel({ events }: EventsCarouselProps) {
+async function EventsCarousel({ events }: EventsCarouselProps) {
+  const settings = await getSiteSettings();
   return (
     <div className="bg-[#F8F8F8]">
       <Container>
@@ -18,7 +20,7 @@ function EventsCarousel({ events }: EventsCarouselProps) {
           className="px-0 py-12"
           header={
             <h2 className="font-poppins text-[25px] font-semibold text-[#191C1E] md:text-[30px] lg:text-[34px]">
-              Global Events Calendar
+              {settings.eventsHeading}
             </h2>
           }
         >

@@ -1,4 +1,6 @@
 "use client";
+import { WebsiteText } from "@/components/shared/website-text";
+
 
 import Image from "next/image";
 
@@ -40,7 +42,8 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
         <div className="flex min-h-0 flex-col gap-4 p-5 md:gap-5 md:overflow-y-auto md:p-6 lg:gap-6 lg:p-8">
           <div className="flex flex-col gap-1 pr-8">
             <DialogTitle className="font-poppins text-[18px] font-semibold text-[#000000] md:text-[22px] lg:text-[24px]">
-              About {name}
+<WebsiteText name="teamMemberModalAbout" />
+{name}
             </DialogTitle>
             <p className="text-[13px] font-normal text-[#494949] lg:text-[14px]">
               {role}
@@ -69,8 +72,8 @@ function TeamMemberModal({ member, trigger }: TeamMemberModalProps) {
                 />
               }
             >
-              Close
-            </DialogClose>
+<WebsiteText name="teamMemberModalClose" />
+</DialogClose>
           </div>
         </div>
       </div>

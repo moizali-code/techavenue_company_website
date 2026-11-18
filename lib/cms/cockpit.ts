@@ -1,3 +1,4 @@
+import { siteDefaults, type SiteSettings } from "@/lib/site-defaults";
 import type { AboutPageContent } from "@/types/features/about";
 import type { CareerData, JobOpening, LifeAtTechAvenueProps } from "@/types/features/career";
 import type { EventItem } from "@/types/features/events";
@@ -13,7 +14,7 @@ import type { TrustedPartnerLogo } from "@/types/shared/trusted-partners";
 const COCKPIT_URL = (
   process.env.COCKPIT_INTERNAL_URL ??
   process.env.NEXT_PUBLIC_COCKPIT_URL ??
-  "http://localhost:8090"
+  "http://localhost:8091"
 ).replace(/\/$/, "");
 
 const HEADERS: Record<string, string> = {
@@ -26,79 +27,65 @@ type Raw = any;
 
 const PLACEHOLDER = "/placeholder.svg";
 
+const ASSETS_URL = (
+  `${process.env.NEXT_PUBLIC_COCKPIT_URL ?? "http://localhost:8091"}/storage/uploads`
+).replace(/\/$/, "");
+
 function cockpitAsset(field: unknown): string {
   if (!field) return PLACEHOLDER;
   if (typeof field === "string") {
     if (!field) return PLACEHOLDER;
-    return field.startsWith("http") ? field : `${COCKPIT_URL}/storage/uploads/${field}`;
+    return field.startsWith("http") ? field : `${ASSETS_URL}/${field.replace(/^\/+/, "")}`;
   }
   if (typeof field === "object" && field !== null) {
     const f = field as Record<string, unknown>;
-    const path = (f.path ?? f._id ?? f.id) as string | undefined;
+    const path = (f.path ?? f.uuid ?? f._id ?? f.id) as string | undefined;
     if (!path) return PLACEHOLDER;
     if (path.startsWith("http")) return path;
-    return `${COCKPIT_URL}/storage/uploads/${path}`;
+    return `${ASSETS_URL}/${path.replace(/^\/+/, "")}`;
   }
   return PLACEHOLDER;
 }
 
+async function cockpitRequest(path: string): Promise<Raw> {
+  const res = await fetch(`${COCKPIT_URL}/api/content/${path}`, { headers: HEADERS, next: { revalidate: 60 } });
+  if (!res.ok) throw new Error(`Cockpit content request failed (${res.status}): ${path.split("?")[0]}`);
+  return res.json();
+}
+
 async function fetchSingleton(model: string): Promise<Raw> {
-  try {
-    const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}`, {
-      headers: HEADERS,
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+  return cockpitRequest(`item/${model}`);
 }
 
 async function fetchCollection(model: string): Promise<Raw[]> {
-  try {
-    const res = await fetch(`${COCKPIT_URL}/api/content/items/${model}?limit=100`, {
-      headers: HEADERS,
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return [];
-    const json = await res.json();
-    return Array.isArray(json) ? json : json.data ?? json.value ?? [];
-  } catch {
-    return [];
+  const items: Raw[] = [];
+  for (let skip = 0; ; skip += 100) {
+    const json = await cockpitRequest(`items/${model}?limit=100&skip=${skip}`);
+    const page = Array.isArray(json) ? json : json.data ?? json.value ?? [];
+    items.push(...page);
+    if (page.length < 100) return items;
   }
 }
 
 async function fetchCollectionItem(model: string, id: string): Promise<Raw> {
-  try {
-    const filter = encodeURIComponent(JSON.stringify({ uuid: id }));
-    const byUuid = await fetch(`${COCKPIT_URL}/api/content/items/${model}?filter=${filter}&limit=1`, {
-      headers: HEADERS,
-      next: { revalidate: 60 },
-    });
-    if (byUuid.ok) {
-      const [match] = await byUuid.json();
-      if (match) return match;
-    }
-    const res = await fetch(`${COCKPIT_URL}/api/content/item/${model}/${id}`, {
-      headers: HEADERS,
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+  const filter = encodeURIComponent(JSON.stringify({ $or: [{ uuid: id }, { _id: id }] }));
+  return cockpitRequest(`item/${model}?filter=${filter}`);
+}
+
+export async function getSiteSettings(): Promise<SiteSettings> {
+  const raw = await fetchSingleton("SiteSettings");
+  const settings = Object.fromEntries(Object.entries(siteDefaults).map(([key, value]) => [key, raw?.[key] ?? value])) as SiteSettings;
+  settings.logo = cockpitAsset(settings.logo);
+  settings.companyLinks = settings.companyLinks.map(link => ({ ...link, image: link.image ? cockpitAsset(link.image) : "" }));
+  settings.socialLinks = settings.socialLinks.map(link => ({ ...link, image: link.image ? cockpitAsset(link.image) : "" }));
+  return settings;
 }
 
 // ─── home ─────────────────────────────────────────────────────────────────────
 
 export async function getHomePageData() {
   const raw = await fetchSingleton("Home");
-  if (!raw) {
-    const { homeData, testimonials } = await import("@/mock/home");
-    return { homeData, testimonials };
-  }
+  if (!raw) throw new Error("Publish the Home singleton in Cockpit.");
 
   const homeData: HomeData = {
     intro: {
@@ -109,7 +96,7 @@ export async function getHomePageData() {
       experienceLabel:   raw.introExperienceLabel    ?? "",
       experienceValue:   raw.introExperienceValue    ?? "",
       description:       raw.introDescription        ?? "",
-      image:             raw.introImage ? cockpitAsset(raw.introImage) : "",
+      image:             cockpitAsset(raw.introImage),
     },
     stats: (raw.stats ?? []).map((s: Raw, i: number) => ({
       uuid: s.uuid ?? s._id ?? s.id ?? String(i),
@@ -169,7 +156,7 @@ export async function getHomePageData() {
 
 export async function getAboutPageData(): Promise<AboutPageContent> {
   const raw = await fetchSingleton("About");
-  if (!raw) return (await import("@/mock/about")).aboutPageContent;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     header: {
@@ -215,7 +202,7 @@ export async function getAboutPageData(): Promise<AboutPageContent> {
 
 export async function getContactPageData() {
   const raw = await fetchSingleton("Contact");
-  if (!raw) return (await import("@/mock/contact")).contactSection;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     header: {
@@ -256,10 +243,7 @@ export async function getCareerPageData(): Promise<{
     fetchCollection("Jobs"),
   ]);
 
-  if (!raw) {
-    const mock = await import("@/mock/career");
-    return { careerData: mock.careerData, jobs: mock.jobs, lifeAtTechAvenue: mock.lifeAtTechAvenue };
-  }
+  if (!raw) throw new Error("Publish the Career singleton in Cockpit.");
 
   const careerData: CareerData = {
     header: {
@@ -330,7 +314,7 @@ export async function getCareerPageData(): Promise<{
 
 export async function getServicesPageData(): Promise<ServicesPageContent> {
   const raw = await fetchSingleton("Services");
-  if (!raw) return (await import("@/mock/services")).allServicesPageContent;
+  if (!raw) throw new Error("Publish the page singleton in Cockpit.");
 
   return {
     allServicesHeader: {
@@ -362,7 +346,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
         .split("\n")
         .map((line: string) => line.trim())
         .filter(Boolean)
-        .map((title: string) => ({ image: PLACEHOLDER, title })),
+        .map((title: string, index: number) => ({ image: cockpitAsset((a.featureIcons ?? "").split("\n")[index]), title })),
     })),
   };
 }
@@ -371,7 +355,7 @@ export async function getServicesPageData(): Promise<ServicesPageContent> {
 
 function toIndustry(raw: Raw): Industry {
   return {
-    id:          raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
     uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
@@ -413,7 +397,6 @@ function toIndustry(raw: Raw): Industry {
 
 export async function getIndustries(): Promise<Industry[]> {
   const docs = await fetchCollection("Industries");
-  if (!docs.length) return (await import("@/mock/industry")).industries;
   return docs.map(toIndustry);
 }
 
@@ -427,13 +410,13 @@ export async function getIndustry(id: string): Promise<Industry | null> {
 
 function toLegacySolution(raw: Raw): Solution {
   return {
-    id:          raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
     uuid:        raw.uuid ?? raw._id ?? raw.id,
     title:       raw.title,
     image:       cockpitAsset(raw.icon ?? raw.image),
     description: raw.description,
     header: {
-      id:          raw._id ?? raw.id,
+      id:          raw.uuid ?? raw._id ?? raw.id,
       uuid:        raw.uuid ?? raw._id ?? raw.id,
       title:       raw.headerTitle       ?? "",
       description: raw.headerDescription ?? "",
@@ -478,7 +461,6 @@ function toLegacySolution(raw: Raw): Solution {
 
 export async function getLegacySolutions(): Promise<Solution[]> {
   const docs = await fetchCollection("LegacySolutions");
-  if (!docs.length) return (await import("@/mock/legacy-solutions")).solutions;
   return docs.map(toLegacySolution);
 }
 
@@ -492,7 +474,7 @@ export async function getLegacySolution(id: string): Promise<Solution | null> {
 
 function toSolutionPage(raw: Raw): SolutionPage {
   return {
-    id:   raw._id ?? raw.id,
+    id:   raw.uuid ?? raw._id ?? raw.id,
     uuid: raw.uuid ?? raw._id ?? raw.id,
     title: raw.title,
     image: cockpitAsset(raw.image),
@@ -523,7 +505,6 @@ function toSolutionPage(raw: Raw): SolutionPage {
 
 export async function getSolutionPages(): Promise<SolutionPage[]> {
   const docs = await fetchCollection("SolutionPages");
-  if (!docs.length) return (await import("@/mock/solutions")).solutionPages;
   return docs.map(toSolutionPage);
 }
 
@@ -537,7 +518,7 @@ export async function getSolutionPage(id: string): Promise<SolutionPage | null> 
 
 function toNewsStory(raw: Raw): NewsStory {
   return {
-    id:          raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
     uuid:        raw.uuid ?? raw._id ?? raw.id,
     category:    raw.category    ?? "",
     title:       raw.title       ?? "",
@@ -549,7 +530,7 @@ function toNewsStory(raw: Raw): NewsStory {
 }
 
 export async function getNewsPageData(): Promise<{
-  featuredStory: NewsStory;
+  featuredStory: NewsStory | null;
   newsStories: NewsStory[];
   events: EventItem[];
 }> {
@@ -558,13 +539,9 @@ export async function getNewsPageData(): Promise<{
     fetchCollection("Events"),
   ]);
 
-  if (!newsDocs.length) {
-    const mock = await import("@/mock/news");
-    return { featuredStory: mock.featuredStory, newsStories: mock.newsStories, events: mock.events };
-  }
 
   const featured = newsDocs.find((d: Raw) => d.featured) ?? newsDocs[0];
-  const rest = newsDocs.filter((d: Raw) => (d._id ?? d.id) !== (featured?._id ?? featured?.id));
+  const rest = newsDocs.filter((d: Raw) => (d.uuid ?? d._id ?? d.id) !== (featured?.uuid ?? featured?._id ?? featured?.id));
 
   const events: EventItem[] = eventDocs.map((e: Raw, i: number) => ({
     id:       i + 1,
@@ -577,7 +554,7 @@ export async function getNewsPageData(): Promise<{
   }));
 
   return {
-    featuredStory: toNewsStory(featured),
+    featuredStory: featured ? toNewsStory(featured) : null,
     newsStories:   rest.map(toNewsStory),
     events,
   };
@@ -593,7 +570,7 @@ export async function getEvent(id: string): Promise<EventItem | null> {
   const raw = await fetchCollectionItem("Events", id);
   if (!raw) return null;
   return {
-    id:       raw._id ?? raw.id,
+    id:       raw.uuid ?? raw._id ?? raw.id,
     uuid:     raw.uuid ?? raw._id ?? raw.id,
     title:    raw.title,
     location: raw.location,
@@ -614,13 +591,13 @@ function toSuccessStory(raw: Raw): SuccessStory {
     }));
 
   return {
-    id:          raw._id ?? raw.id,
+    id:          raw.uuid ?? raw._id ?? raw.id,
     uuid:        raw.uuid ?? raw._id ?? raw.id,
     image:       cockpitAsset(raw.image),
     title:       raw.title,
     description: raw.description,
-    industry: { id: raw.industryUuid ?? "", uuid: raw.industryUuid ?? "", title: raw.industryTitle ?? "" },
-    solution: { id: raw.solutionUuid ?? "", uuid: raw.solutionUuid ?? "", title: raw.solutionTitle  ?? "" },
+    industry: { id: raw.industryUuid ?? raw._id, uuid: raw.industryUuid ?? "", title: raw.industryTitle ?? "" },
+    solution: { id: raw.solutionUuid ?? raw._id, uuid: raw.solutionUuid ?? "", title: raw.solutionTitle ?? "" },
     detail: {
       challenges: {
         title:       raw.challengesTitle       ?? "",
@@ -656,10 +633,6 @@ export async function getSuccessStoriesPageData(): Promise<{
     fetchCollection("SuccessStories"),
   ]);
 
-  if (!pageRaw && !storyDocs.length) {
-    const mock = await import("@/mock/success-stories");
-    return { content: mock.successStoriesContent, stories: mock.successStories };
-  }
 
   const content: SuccessStoriesContent = {
     header: {
@@ -682,4 +655,10 @@ export async function getSuccessStory(id: string): Promise<SuccessStory | null> 
   const raw = await fetchCollectionItem("SuccessStories", id);
   if (!raw) return null;
   return toSuccessStory(raw);
+}
+
+export async function getJob(id: string) {
+  const raw = await fetchCollectionItem("Jobs", id);
+  if (!raw) return null;
+  return { title: raw.title as string, department: raw.department as string, location: raw.location as string, employmentType: raw.employmentType as string, experience: raw.experience as string, description: (raw.description ?? "") as string, applicationUrl: (raw.applicationUrl ?? "") as string };
 }

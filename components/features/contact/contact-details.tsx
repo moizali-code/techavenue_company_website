@@ -1,3 +1,4 @@
+import { WebsiteText } from "@/components/shared/website-text";
 import Link from "next/link";
 import { Clock, ExternalLink, Globe, Mail, MapPin, Phone } from "lucide-react";
 
@@ -47,8 +48,8 @@ function ContactDetails({
               <div className="flex flex-col gap-2">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
                   <MapPin className="size-4 text-[#1E3C8C]" />
-                  Head Office
-                </span>
+<WebsiteText name="contactDetailsHeadOffice" />
+</span>
                 <p className="text-[16px] leading-relaxed font-medium text-[#191C1E]">
                   {officeAddress}
                 </p>
@@ -57,8 +58,8 @@ function ContactDetails({
                 <div className="flex flex-col gap-2">
                   <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
                     <Phone className="size-4 text-[#1E3C8C]" />
-                    Phone
-                  </span>
+<WebsiteText name="contactDetailsPhone" />
+</span>
                   <Link
                     href={`tel:${phone.replace(/[^\d+]/g, "")}`}
                     className="text-[16px] text-[#191C1E] transition-colors hover:text-brand-link"
@@ -69,8 +70,8 @@ function ContactDetails({
                 <div className="flex flex-col gap-2">
                   <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
                     <Mail className="size-4 text-[#1E3C8C]" />
-                    Email
-                  </span>
+<WebsiteText name="contactDetailsEmail" />
+</span>
                   <Link
                     href={`mailto:${email}`}
                     className="text-[16px] break-all text-[#191C1E] transition-colors hover:text-brand-link"
@@ -82,8 +83,8 @@ function ContactDetails({
               <div className="flex flex-col gap-2">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
                   <Globe className="size-4 text-[#1E3C8C]" />
-                  Website
-                </span>
+<WebsiteText name="contactDetailsWebsite" />
+</span>
                 <Link
                   href={`https://${website}`}
                   target="_blank"
@@ -96,8 +97,8 @@ function ContactDetails({
               <div className="flex flex-col gap-2 border-t border-[#E6E6E6] pt-6">
                 <span className="flex items-center gap-2 text-[12px] font-bold tracking-[0.12em] text-[#1E3C8C] uppercase">
                   <Clock className="size-4 text-[#1E3C8C]" />
-                  Business Hours
-                </span>
+<WebsiteText name="contactDetailsBusinessHours" />
+</span>
                 <p className="text-[16px] text-[#191C1E]">{businessHours}</p>
                 <p className="text-[14px] text-[#7A7C85]">{weekendHours}</p>
               </div>
@@ -127,8 +128,8 @@ function ContactDetails({
                 }
                 className="h-12 w-full gap-2 rounded-none text-[15px] font-medium tracking-normal"
               >
-                Get Directions
-                <ExternalLink className="size-4 text-[#1E3C8C]" />
+<WebsiteText name="contactDetailsGetDirections" />
+<ExternalLink className="size-4 text-[#1E3C8C]" />
               </Button>
             </FadeIn>
           </div>
