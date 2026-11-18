@@ -48,7 +48,7 @@ function cockpitAsset(field: unknown): string {
 }
 
 async function cockpitRequest(path: string): Promise<Raw> {
-  const res = await fetch(`${COCKPIT_URL}/api/content/${path}`, { headers: HEADERS, cache: "no-store" });
+  const res = await fetch(`${COCKPIT_URL}/api/content/${path}`, { headers: HEADERS, next: { revalidate: 60 } });
   if (!res.ok) throw new Error(`Cockpit content request failed (${res.status}): ${path.split("?")[0]}`);
   return res.json();
 }
